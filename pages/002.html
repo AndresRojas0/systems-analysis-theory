@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="análisis-de-sistemas-modelo-de-datos"><strong>Análisis de Sistemas: Modelo de Datos</strong></h1>
+    <h2 id="conceptos-generales"><strong>Conceptos Generales</strong></h2>
+    <h3 id="memoria-esencial"><strong>Memoria Esencial</strong></h3>
+    <p>Cuando construimos el <strong>Modelo Ambiental del Sistema</strong>, nos concentramos en las interfaces entre el sistema y su ambiente, estableciendo sus límites.<br>El sistema posee dos fuentes de información:</p>
+    <ul>
+    <li><strong>El ambiente</strong>: Provee datos al sistema a través de los flujos de entrada.</li>
+    <li><strong>La memoria del sistema</strong>: Mantenida por actividades custodiales.</li>
+    </ul>
+    <p><strong>Definición:</strong></p>
+    <blockquote>
+    <p>La <strong>memoria esencial</strong> de un sistema son todos los datos que el sistema debe almacenar o guardar para poder producir las respuestas a todos los eventos que lo afectan.</p>
+    </blockquote>
+    <h2 id="modelo-de-datos"><strong>Modelo de Datos</strong></h2>
+    <p>La memoria esencial no es una colección desorganizada de datos, sino que está estructurada.</p>
+    <p><strong>Definición:</strong></p>
+    <blockquote>
+    <p>El <strong>Modelo de Datos</strong> de un sistema es la explicitación de la forma en que la memoria esencial del sistema está estructurada y de la relación existente entre sus componentes.</p>
+    </blockquote>
+    <p>Es importante que el modelo se construya sin preocuparse por la representación física, aplicando el concepto de <strong>tecnología perfecta</strong>.</p>
+    <h2 id="objetivos-del-modelo-de-datos"><strong>Objetivos del Modelo de Datos</strong></h2>
+    <p>Todo modelo de datos debe cumplir con:</p>
+    <ol>
+    <li><strong>Estructura mínima</strong>: Evitar redundancias y garantizar integridad.</li>
+    <li><strong>No pérdida de información</strong>: Asegurar respuestas completas del sistema.</li>
+    <li><strong>Facilidad en mantenimiento</strong>: Simplificación en las altas, bajas y modificaciones de datos.</li>
+    <li><strong>Máxima supervivencia</strong>: Capacidad de adaptación a cambios futuros.</li>
+    </ol>
+    <h3 id="inserción-en-el-ciclo-de-desarrollo"><strong>Inserción en el ciclo de desarrollo</strong></h3>
+    <p>$$
+    \text{Problemas, requerimientos y objetivos} \Rightarrow \text{Modelo Ambiental} \Rightarrow \text{Modelo de Datos} \Rightarrow \text{Modelo de Comportamiento}
+    $$</p>
+    <h2 id="construcción-del-modelo-de-datos"><strong>Construcción del Modelo de Datos</strong></h2>
+    <h3 id="etapas"><strong>Etapas</strong></h3>
+    <ol>
+    <li><strong>Obtener el Mapa de Información Preliminar</strong></li>
+    <li><strong>Optimizar el Mapa</strong></li>
+    </ol>
+    <h3 id="diagrama-de-entidad-relación-der"><strong>Diagrama de Entidad-Relación (DER)</strong></h3>
+    <p>Un <strong>DER</strong> es una herramienta que representa los objetos del mundo real y sus relaciones dentro del sistema.</p>
+    <h4 id="ejemplo-de-der"><strong>Ejemplo de DER</strong></h4>
+    <p>$$
+    \begin{array}{c}
+    \textbf{AULA} \
+    | \
+    \textbf{CURSO PROGRAMADO} \Rightarrow \textbf{DÍA} \
+    \Downarrow \
+    \textbf{INSTRUCTOR}
+    \end{array}
+    $$</p>
+    <h2 id="elementos-del-der"><strong>Elementos del DER</strong></h2>
+    <h3 id="entidades"><strong>Entidades</strong></h3>
+    <p>Son clases de objetos del mundo real con un rol definido en el sistema.</p>
+    <p>Ejemplo de entidad:</p>
+    <p>$$
+    \text{INSTRUCTOR}
+    $$</p>
+    <h3 id="relaciones"><strong>Relaciones</strong></h3>
+    <p>Representan asociaciones entre entidades.</p>
+    <p>Ejemplo de relación:</p>
+    <p>$$
+    \text{TEMA} \rightarrow \text{abarca} \rightarrow \text{CURSO}
+    $$</p>
+    <h3 id="entidad-asociativa"><strong>Entidad Asociativa</strong></h3>
+    <p>Actúa como relación y como entidad al mismo tiempo.</p>
+    <p>Ejemplo de entidad asociativa:</p>
+    <p>$$
+    \text{HOMBRE} \rightarrow \text{Casamiento} \rightarrow \text{MUJER}
+    $$</p>
+    <h3 id="subtipificación-y-supertipos"><strong>Subtipificación y Supertipos</strong></h3>
+    <p>$$
+    \text{MAMÍFERO} \Rightarrow { \text{HUMANO}, \text{GATO}, \text{RATÓN} }
+    $$</p>
+    <p>$$
+    \text{ITEM DE INVENTARIO} \Rightarrow { \text{ITEM TERMINADO}, \text{ITEM SEMIELABORADO} }
+    $$</p>
+    <h2 id="normalización"><strong>Normalización</strong></h2>
+    <h3 id="definiciones"><strong>Definiciones</strong></h3>
+    <ul>
+    <li><strong>Clave candidata</strong>: Conjunto de atributos que identifican de manera única una ocurrencia.</li>
+    <li><strong>Clave primaria</strong>: Clave candidata elegida como principal.</li>
+    <li><strong>Dependencia funcional</strong>: Si un atributo X determina un único valor de Y, se dice que (X \rightarrow Y).</li>
+    </ul>
+    <h3 id="proceso-de-normalización"><strong>Proceso de Normalización</strong></h3>
+    <ol>
+    <li><p><strong>Primera Forma Normal (1NF)</strong></p>
+    <ul>
+    <li>Elimina atributos multivalor.</li>
+    <li>Ejemplo:
+    $$
+    \text{Proveedor} \rightarrow { \text{Razón Social}, \text{Domicilio}, \text{Localidad} }
+    $$</li>
+    </ul>
+    </li>
+    <li><p><strong>Segunda Forma Normal (2NF)</strong></p>
+    <ul>
+    <li>Asegura que los atributos no clave dependan completamente de la clave.</li>
+    <li>Ejemplo:
+    $$
+    \text{Proveedor} \rightarrow { \text{Razón Social}, \text{Domicilio}, \text{Localidad} }
+    $$
+    $$
+    \text{Producto por Proveedor} \rightarrow { \text{Código Producto}, \text{Cantidad} }
+    $$</li>
+    </ul>
+    </li>
+    <li><p><strong>Tercera Forma Normal (3NF)</strong></p>
+    <ul>
+    <li>Elimina dependencias funcionales entre atributos no clave.</li>
+    <li>Ejemplo:
+    $$
+    \text{Localidad} \rightarrow \text{Categoría}
+    $$</li>
+    </ul>
+    </li>
+    </ol>
+    <h3 id="ventajas-de-la-normalización"><strong>Ventajas de la Normalización</strong></h3>
+    <ul>
+    <li><strong>Evita redundancia</strong></li>
+    <li><strong>Facilita mantenimiento</strong></li>
+    <li><strong>Mejora integridad de datos</strong></li>
+    </ul>
+    <hr>
+    <h1 id="optimización-del-mapa-de-información-preliminar"><strong>Optimización del Mapa de Información Preliminar</strong></h1>
+    <h2 id="conceptos-previos"><strong>Conceptos Previos</strong></h2>
+    <p>Antes de optimizar, es importante comprender algunos conceptos fundamentales:</p>
+    <h3 id="clave-candidata"><strong>Clave Candidata</strong></h3>
+    <blockquote>
+    <p>Conjunto de atributos que pueden identificar de manera única a una ocurrencia de una entidad.</p>
+    </blockquote>
+    <p>Ejemplo:<br>Si una entidad <strong>Alumno</strong> tiene los atributos:
+    [
+    { \text{Número de Legajo}, \text{Tipo de Documento}, \text{Número de Documento} }
+    ]
+    entonces, <strong>Número de Legajo</strong> y <strong>(Tipo de Documento, Número de Documento)</strong> podrían ser claves candidatas.</p>
+    <h3 id="clave-primaria"><strong>Clave Primaria</strong></h3>
+    <blockquote>
+    <p>Es la clave candidata seleccionada como identificador principal de la entidad.</p>
+    </blockquote>
+    <p>Ejemplo:
+    [
+    \text{Alumno} = { \underline{\text{Número de Legajo}}, \text{Nombre}, \text{Fecha de Nacimiento} }
+    ]</p>
+    <h3 id="clave-alternativa"><strong>Clave Alternativa</strong></h3>
+    <blockquote>
+    <p>Claves candidatas que no fueron elegidas como clave primaria.</p>
+    </blockquote>
+    <p>Ejemplo:
+    [
+    \text{Tipo de Documento} + \text{Número de Documento}
+    ]</p>
+    <hr>
+    <h2 id="dependencia-funcional"><strong>Dependencia Funcional</strong></h2>
+    <p>Se dice que un atributo ( Y ) <strong>depende funcionalmente</strong> de otro atributo ( X ), si para cada valor de ( X ) existe un único valor de ( Y ).</p>
+    <p>Ejemplo:
+    [
+    \text{Número de Legajo} \rightarrow \text{Nombre del Alumno}
+    ]</p>
+    <hr>
+    <h2 id="normalización-y-formas-normales"><strong>Normalización y Formas Normales</strong></h2>
+    <h3 id="primera-forma-normal-1nf"><strong>Primera Forma Normal (1NF)</strong></h3>
+    <blockquote>
+    <p>Una entidad está en <strong>1NF</strong> si no tiene atributos multivalor.</p>
+    </blockquote>
+    <p>Ejemplo antes de normalizar:
+    [
+    \text{Proveedor} = { \text{Código}, \text{Razón Social}, \text{Domicilio}, { \text{Código Producto}, \text{Cantidad} } }
+    ]</p>
+    <p>Después de aplicar <strong>1NF</strong>:
+    [
+    \text{Proveedor} = { \text{Código}, \text{Razón Social}, \text{Domicilio} }
+    ]
+    [
+    \text{Productos por Proveedor} = { \text{Código Proveedor}, \text{Código Producto}, \text{Cantidad} }
+    ]</p>
+    <h3 id="segunda-forma-normal-2nf"><strong>Segunda Forma Normal (2NF)</strong></h3>
+    <blockquote>
+    <p>Una entidad está en <strong>2NF</strong> si está en <strong>1NF</strong> y todo atributo no clave depende de la clave en forma funcionalmente completa.</p>
+    </blockquote>
+    <p>Ejemplo:
+    [
+    \text{Proveedor} = { \text{Código Proveedor}, \text{Razón Social}, \text{Domicilio}, \text{Localidad}, \text{Categoría} }
+    ]
+    [
+    \text{Productos por Proveedor} = { \text{Código Proveedor}, \text{Código Producto}, \text{Cantidad} }
+    ]</p>
+    <h3 id="tercera-forma-normal-3nf"><strong>Tercera Forma Normal (3NF)</strong></h3>
+    <blockquote>
+    <p>Una entidad está en <strong>3NF</strong> si está en <strong>2NF</strong> y no existen dependencias funcionales entre atributos no clave.</p>
+    </blockquote>
+    <p>Ejemplo de entidad no normalizada:
+    [
+    \text{Proveedor} = { \text{Código Proveedor}, \text{Razón Social}, \text{Domicilio}, \text{Localidad}, \text{Categoría} }
+    ]
+    [
+    \text{Localidad} \rightarrow \text{Categoría}
+    ]</p>
+    <p>Después de aplicar <strong>3NF</strong>:
+    [
+    \text{Proveedor} = { \text{Código Proveedor}, \text{Razón Social}, \text{Domicilio}, \text{Localidad} }
+    ]
+    [
+    \text{Localidad} = { \text{Nombre Localidad}, \text{Categoría} }
+    ]</p>
+    <hr>
+    <h2 id="transformación-del-der-en-un-mapa-de-información"><strong>Transformación del DER en un Mapa de Información</strong></h2>
+    <p>El <strong>DER</strong> se transforma en un <strong>Mapa de Información</strong> utilizando cardinalidades:</p>
+    <h3 id="ejemplo-de-vinculaciones"><strong>Ejemplo de Vinculaciones</strong></h3>
+    <h4 id="relación-1-a-1"><strong>Relación 1 a 1</strong></h4>
+    <p>[
+    A \leftrightarrow B
+    ]</p>
+    <h4 id="relación-1-a-n"><strong>Relación 1 a N</strong></h4>
+    <p>[
+    A \rightarrow B
+    ]</p>
+    <h4 id="relación-n-a-m"><strong>Relación N a M</strong></h4>
+    <p>[
+    A \leftrightarrow B
+    ]</p>
+    <p>Ejemplo aplicado a un sistema de gestión de stock:</p>
+    <p>[
+    \begin{array}{c}
+    \textbf{ITEM DE STOCK} \
+    | \
+    \textbf{MATERIA PRIMA} \quad \textbf{SEMIELABORADO} \quad \textbf{TERMINADO} \
+    \Downarrow \
+    \textbf{PROVEEDOR} \rightarrow \textbf{ORDEN DE COMPRA}
+    \end{array}
+    ]</p>
+    <h3 id="diccionario-de-datos"><strong>Diccionario de Datos</strong></h3>
+    <table>
+    <thead>
+    <tr>
+    <th>Entidad</th>
+    <th>Atributos</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+    <td><strong>Proveedor</strong></td>
+    <td>Código Proveedor, Razón Social, Domicilio, Localidad</td>
+    </tr>
+    <tr>
+    <td><strong>Orden de Compra</strong></td>
+    <td>Número de Orden, Fecha, Código Proveedor, Código Ítem, Cantidad Pedida</td>
+    </tr>
+    <tr>
+    <td><strong>Ítem de Stock</strong></td>
+    <td>Código Ítem, Descripción, Unidad de Medida, Stock</td>
+    </tr>
+    <tr>
+    <td><strong>Materia Prima</strong></td>
+    <td>Presentación, Lote de Compra, Stock Mínimo, Precio de Costo</td>
+    </tr>
+    <tr>
+    <td><strong>Semielaborado</strong></td>
+    <td>Proceso Actual</td>
+    </tr>
+    <tr>
+    <td><strong>Terminado</strong></td>
+    <td>Precio de Costo, Margen de Ganancia, Precio de Venta</td>
+    </tr>
+    </tbody></table>
+    <hr>
+    <h2 id="conclusiones"><strong>Conclusiones</strong></h2>
+    <ul>
+    <li><strong>El Modelo de Datos debe minimizar redundancias</strong> para optimizar almacenamiento.</li>
+    <li><strong>Debe garantizar la integridad y consistencia de los datos</strong>.</li>
+    <li><strong>Las formas normales permiten mejorar la organización de la información</strong> evitando problemas de mantenimiento.</li>
+    </ul>
+    <hr>
+    
+</body>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</html>

@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackedit.io/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="análisis-de-sistemas">ANÁLISIS DE SISTEMAS</h1>
+    <h1 id="requerimientos-y-modelo-ambiental">Requerimientos y Modelo
+    Ambiental</h1>
+    <h2 id="introducción">Introducción</h2>
+    <p>Los usuarios, es decir personas, empresas u organizaciones, solicitan
+    los servicios de un Analista de Sistemas, para iniciar el desarrollo de
+    un sistema de información, con alguna razón aparente, con algún <em>“por
+    qué”</em>. Todo análisis de un sistema de información, debe tener una
+    razón de existir.</p>
+    <p>La pregunta es: <em>¿por qué es necesario analizar un sistema de
+    información?</em>. O expresado de otra forma, <em>¿cuándo el usuario se
+    da cuenta que necesita analizar su actual sistema de
+    información?</em>.</p>
+    <p>En términos generales, podríamos decir que el análisis de un sistema
+    de información, surge para responder a uno o a varios problemas que
+    posee el usuario con su actual sistema. Los problemas no son otra cosa
+    que falencias detectadas por el usuario. El sistema actual al que nos
+    referimos puede ser manual, informal o puede estar automatizado. Estos
+    problemas, dan origen a oportunidades de mejoras, los cuales, a su vez,
+    son el puntapié inicial, para poder obtener los <em>objetivos</em>,
+    sobre los cuales se basará todo el <em>ciclo de desarrollo del
+    sistema</em>.</p>
+    <p>Aunque existen distintos tipos de ciclos de desarrollo, que no son
+    objeto explicación dentro de esta publicación, que pueden aplicarse a
+    los sistemas de información, todos ellos tienen en común las etapas que
+    deben cumplirse y difieren básicamente en el orden en que estas etapas
+    de realizan. Estas etapas comunes son: análisis, diseño, codificación,
+    prueba, implementación y mantenimiento. Todo lo que se expresa a
+    continuación se encuentra dentro de la primera etapa de cualquier ciclo
+    de desarrollo de sistemas.</p>
+    <p>Dentro de este ciclo de desarrollo, encontramos en la etapa de
+    análisis, una de las actividades, que podríamos llamar análisis de
+    requerimientos, la cual, se considera clave, para poder continuar con el
+    resto de las etapas.</p>
+    <p>Por lo tanto el primer paso en el proceso de análisis de un sistema
+    de información implica la <em>identificación de las necesidades</em> del
+    usuario a través del descubrimiento de sus problemas, transformarlos en
+    objetivos y requerimientos para un nuevo sistema de información.</p>
+    <h2 id="problemas-del-usuario">Problemas Del Usuario</h2>
+    <p>No es agradable, para el usuario, tener que reconocer ante un
+    extraño, un Analista no es, al principio, otra cosa que un simple
+    tercero, un extraño; que tiene problemas. Sin embargo, debe reconocer
+    que hoy en día, para subsistir, es de suma importancia reconocer los
+    síntomas de los problemas, para poder diagnosticarlos, y luego
+    enfrentarlos y resolverlos.</p>
+    <p>Pero, <em>¿qué es un problema y como surge?</em>. Para poder
+    responder a esta pregunta, podríamos pensar en aquellas situaciones
+    donde nunca se logran las metas fijadas, o los casos en que éstas ya no
+    se cumplen o que para cumplirlas se desperdician demasiados
+    recursos.</p>
+    <p>Muchas veces, el usuario, percibe ciertos síntomas, que lo obligan a
+    recurrir a un analista, ya que los considera problemas potenciales.</p>
+    <p>A menudo el problema aparente puede no ser el asunto real que hay que
+    tratar. En su prisa por obtener un resultado, los directivos muchas
+    veces tratan asuntos secundarios, los síntomas y no las causas de sus
+    problemas, para tener la impresión de que han hecho algo positivo.
+    Evidentemente, existe el peligro de que los problemas subyacentes
+    vuelvan a presentarse más tarde, por lo que habrá que gastar más energía
+    en el mismo problema. La tentación de evitar el asunto real también
+    puede provocar el efecto “corsé”. Es decir, al contener los problemas en
+    un campo, pueden salir problemas en otro.</p>
+    <p>Es tarea del analista descubrir los verdaderos problemas del usuario
+    antes de continuar para no malgastar ni tiempo ni recursos de ningún
+    tipo en soluciones momentáneas basadas en las causas aparentes de los
+    problemas.</p>
+    <p>La definición del problema exige habilidades de observación aguda, y
+    la capacidad de adoptar una visión muy amplia. No puede lograrse nada si
+    no se tiene una imagen clara y objetiva del problema, quien esta
+    implicado y que están diciendo. También es importante establecer qué no
+    es el problema y los límites de que es realmente los que puede
+    lograrse.</p>
+    <p>Los problemas, pueden ser internos o externos.</p>
+    <p>Dentro de los internos, podríamos enumerar:</p>
+    <ul>
+    <li>No cumplimiento de las metas básicas, del desempeño de la empresa u
+    organización debido a:
+    <ul>
+    <li>La existencia de una gran cantidad de errores.</li>
+    <li>Un desarrollo lento, incompleto o incorrecto del trabajo.</li>
+    <li>La no realización de un trabajo.</li>
+    </ul></li>
+    <li>Sistema manuales o informales.</li>
+    <li>Cambios de conducta, en los empleados, por ejemplo insatisfacciones,
+    ausentismo anormal no relacionadas con lo salarial.</li>
+    <li>Alta rotación de los empleados.</li>
+    </ul>
+    <p>Dentro de los externos están: - Quejas o sugerencias de los clientes,
+    vendedores o proveedores. - Pérdidas de clientes. - Bajas en las
+    ventas.</p>
+    <p>Cuando se ha identificado el problema real subyacente, hay que
+    definirlo con exactitud. Las personas pueden coincidir en que existe un
+    problema, pero describirlo de modos distintos. Estas definiciones
+    distintas llevarán probablemente a estrategias distintas para su
+    solución. Una definición adecuada puede ser de gran ayuda para
+    considerar y resolver los problemas. Muchos definen los problemas con
+    relación a la facilidad o dificultad para resolverlos. En cuanto ven que
+    existe un problema, llevan a cabo un control subconsciente de
+    factibilidad para saber si creen que pueden resolverlo. Solo si obtienen
+    una respuesta positiva invertirán tiempo o energía para entender las
+    causas y ramificaciones del problema. Adoptar este planteamiento limita
+    normalmente las perspectivas del individuo sobre el problema y sus
+    posibles soluciones. Si se toma el tiempo necesario para desarrollar
+    modos alternativos de definir o interpretar un problema, es probable que
+    aumenten el número y la calidad de sus posibles soluciones.</p>
+    <p>Supongamos por ejemplo que luego de una primera entrevista con un
+    importante suministrador de repuestos para coches descubrimos que
+    necesita un sistema de información para el control de su inventario de
+    repuestos debido a que nos ha manifestado que con el sistema manual
+    actual tiene los siguientes problemas o inconvenientes:</p>
+    <ul>
+    <li>Imposibilidad de obtener rápidamente el estado de un
+    componente.</li>
+    <li>Tiempo medio de 2 o 3 días para actualizar un archivo de
+    tarjetas.</li>
+    </ul>
+    <p><em>¿Cómo responde entonces el Analista ante estos problemas?</em>
+    Deberemos verlos como oportunidades de mejoras.</p>
+    <p><em>Una Mejora</em> es un cambio que trae consigo beneficios.</p>
+    <p>Existen muchas posibilidades de mejoras, tales como: - Acelerar
+    procesos. - Simplificar procesos eliminando pasos innecesarios o
+    duplicados. - Combinar procesos. - Reducir errores de captura de datos,
+    modificando las formas de ingreso de los mismos. - Eliminar de
+    información redundante y agregar información faltante. - Mejorar: - La
+    integración de sistemas y subsistemas. - La aceptación del sistema por
+    parte del usuario. - La relación cliente/proveedor/vendedor con el
+    sistema.</p>
+    <p>Estas <em>posibilidades de mejoras</em>, pueden traer como
+    consecuencia, que el usuario descubra nuevas necesidades de información,
+    para poder manejar su negocio, que antes no surgían debido a que “el
+    bosque no deja ver los árboles”, es decir los problemas acaparan toda la
+    atención de los usuarios no dejando tiempo para imaginar o percibir la
+    información que realmente se necesita, o bien estas necesidades surgían,
+    pero se descartaban, ante la imposibilidad de obtenerla en tiempo y
+    forma. A estas nuevas necesidades de información las llamamos nuevos
+    requerimientos del sistema. Algunos de estos nuevos requerimientos
+    surgirán del usuario apenas el analista proponga las mejoras pero la
+    mayoría de ellos deberá descubrirlos y proponerlos el analista a través
+    de un exhaustivo análisis del problema.</p>
+    <p>Si bien un Analista, es capaz de identificar las oportunidades de
+    mejoras, la gente que está en continuo contacto con el problema,
+    constituye la mejor fuente de información, de las mejoras que deben
+    realizarse.</p>
+    <p>La parte más difícil, de la propuesta de los cambios a realizar es
+    que las soluciones deben ser de gran valor, para contrarrestar el costo
+    del cambio y el desconcierto característico de estas situaciones.</p>
+    <p>Volviendo al ejemplo del suministrador de repuestos para coches, una
+    vez que el analista ha identificado los problemas antes mencionados,
+    está en condiciones de determinar que información va a producir el nuevo
+    sistema y que datos se le proveerán al mismo.</p>
+    <ul>
+    <li>El cliente desea un informe diario que indique los componentes que
+    se han tomado del inventario y el número de componentes similares que
+    quedan.</li>
+    <li>El cliente indica que los encargados del inventario registrarán el
+    número de identificación de cada componente una vez que se retira del
+    inventario.</li>
+    </ul>
+    <h2 id="objetivos-del-sistema">Objetivos Del Sistema</h2>
+    <p>Una vez identificados los problemas y las oportunidades de mejoras,
+    el siguiente paso consiste en determinar los objetivos del sistema.</p>
+    <p><em>¿Qué es un objetivo?</em> Es una meta a alcanzar. En nuestro
+    caso, los objetivos deben permitir responder a la pregunta, <em>¿por qué
+    estamos construyendo el sistema?</em>; <em>¿qué hace el sistema?</em>, o
+    <em>¿qué se pretende que haga el sistema?</em></p>
+    <p>La definición de los objetivos del sistema también sirve para
+    delimitarlo.</p>
+    <p>La <em>declaración de objetivos</em>, es el instrumento, mediante el
+    cual, el analista explicita los objetivos del sistema, para su revisión
+    con el usuario. Puede estar compuesta, como mínimo, por una descripción
+    muy general del sistema, seguida por una lista de responsabilidades
+    funcionales, no detalladas, sino más bien funciones o actividades
+    generales del sistema.</p>
+    <p>Dentro de los objetivos del sistema debemos tener en cuenta la
+    información que se va a obtener del mismo, la información que se le va a
+    suministrar y las funciones y su rendimiento esperado.</p>
+    <p>Es importante distinguir entre lo que el usuario necesita (elementos
+    críticos para la realización) y lo que el usuario quiere ( elementos
+    deseables pero no esenciales).</p>
+    <p>Pueden existir situaciones, en que sea necesario, explicitar las
+    exclusiones, es decir, que es lo que el sistema no hará.</p>
+    <p>También, puede darse el caso, de que esta declaración, <em>incluya
+    pautas u objetivos</em>, para etapas posteriores del ciclo de
+    desarrollo, tales como las etapas de diseño y la de implementación; como
+    ejemplo de esto tenemos criterios de performance, tecnología a emplear,
+    seguridad, volumen de información, etc.</p>
+    <p>Independientemente de la forma que tome, la declaración de objetivos,
+    debe considerarse, como una herramienta de negociación entre el Analista
+    y el Usuario. Una vez que ambos, están de acuerdo con la declaración de
+    los objetivos, puede comenzarse, con la determinación de los
+    requerimientos del sistema.</p>
+    <p>Muchos autores, hablan de objetivos de nivel superior y objetivos de
+    nivel inferior, otros, hablan de objetivos lógicos y objetivos técnicos,
+    otros, de objetivos de la empresa y objetivos del sistema, mientras que
+    otros hablan de objetivos de análisis y objetivos de diseño.</p>
+    <p>No existe una clasificación única, ni tampoco una clasificación
+    óptima, ya que podemos encontrarnos, con sistemas, para los cuales, es
+    fácil aplicar una clasificación, y otros sistemas, para los cuales, será
+    mejor otra clasificación.</p>
+    <p>Lo importante, es que la declaración de objetivos, tenga todo lo
+    necesario, para poder comenzar a trabajar con el modelado del
+    sistema.</p>
+    <p>Un error muy común, es considerar a la declaración de objetivos, como
+    fija e inamovible. Tal como anteriormente se dijo, es el punto de
+    partida, para el ciclo de desarrollo. Por tanto a medida que se avance
+    en el mismo, sin duda, surgirán situaciones, para las cuales, se deberá
+    volver a revisar esta declaración.</p>
+    <p>En el desarrollo de un sistema, la retroalimentación, entre las
+    distintas etapas será una constante.</p>
+    <h2
+    id="requerimientos-y-su-determinación-mediante-el-relevamiento">Requerimientos
+    Y Su Determinación Mediante El Relevamiento</h2>
+    <p>Como veremos más adelante, la “metodología esencial” para el análisis
+    de sistemas, hace principal hincapié, en la determinación de los
+    <em>“verdaderos requerimientos o requerimientos esenciales”</em> del
+    sistema.</p>
+    <p>Pero, <em>¿qué es un requerimiento?</em>. Podemos decir que, un
+    requerimiento, es una característica o función que debe tener o cumplir
+    el sistema para poder satisfacer los objetivos del mismo. Es una
+    condición o capacidad que un usuario determinado necesita para resolver
+    un problema o alcanzar un objetivo.</p>
+    <p>Puede consistir, en una forma de captar o procesar datos, de producir
+    información, de controlar una actividad de negocio o de dar apoyo a la
+    gerencia.</p>
+    <p>La determinación de los requerimientos, significa, estudiar el
+    sistema existente, y recopilar la información necesaria, en relación con
+    los objetivos, para encontrar cuales son estos requerimientos.</p>
+    <p>Puede ser que en ese proceso, no solo encontremos, requerimientos
+    exclusivos de la etapa de análisis, sino también, de las demás etapas
+    del ciclo de desarrollo. A los primeros, sobre los que basamos nuestra
+    labor de análisis, los llamamos requerimientos esenciales o funcionales
+    y a los otros los llamamos falsos requerimientos o requerimientos no
+    funcionales.</p>
+    <p>El analista de sistema, al no trabajar como gerente o empleado, en el
+    negocio del Usuario, no tiene el mismo conocimiento, sobre hechos y
+    datos específicos; por lo tanto, un paso inicial en la investigación, es
+    conocer la situación, es decir conocer el funcionamiento del
+    sistema.</p>
+    <p><em>¿Qué hacemos como Analista, para conocer el funcionamiento del
+    sistema? ¿Cómo lo hacemos?</em>.</p>
+    <p>Para ello, tendremos que valernos de <em>técnicas</em>, que nos
+    permitirán <em>conocer</em>, el funcionamiento y los datos
+    fundamentales, que maneja el sistema.</p>
+    <p>Mediante el <em>relevamiento</em>, y posterior <em>análisis</em>,
+    trataremos de conocer, como los elementos que componen el sistema,
+    interactúan entre sí, para lograr los objetivos.</p>
+    <p>Surgen aquí tres preguntas elementales: que es el relevamiento?, ¿Por
+    qué relevamos?, ¿Cuándo relevamos?.</p>
+    <p>Al relevamiento lo podemos definir de varias formas: - Consiste, en
+    tratar de <em>conocer</em> o comprender, como los elementos que componen
+    el sistema, interactúan entre sí, para lograr objetivos comunes. - Con
+    él, tratamos de <em>conocer</em> o de contestarnos, ciertas preguntas
+    básicas, tales como: con que datos trabaja el sistema?. Con quienes
+    interactúa el sistema? - Con él, tratamos de <em>conocer</em> aquella
+    información del sistema, que me permitirán comprender, su
+    comportamiento. - Con él, tratamos de <em>conocer</em> los
+    requerimientos del sistema.</p>
+    <p>En resumen: - Efectuamos un relevamiento, por falta de conocimientos
+    para entender de modo concreto, el alcance y los límites del sistema. -
+    Relevamos, cuando no existe un conocimiento de la situación de análisis.
+    - Relevamos para intentar identificar las necesidades de los usuarios
+    involucrados en el desarrollo y resolver las discrepancias que puedan
+    surgir entre los mismos, con el propósito de definir requerimientos que
+    satisfagan dichas necesidades sujetas a las restricciones de los
+    usuarios. En otras palabras, se trata de conocer al máximo sobre el
+    problema del usuario.</p>
+    <p>Como se expresó anteriormente existen ciertos tipos de
+    <em>requerimientos</em> a los que podríamos llamar <em>funcionales,
+    básicos o esenciales</em>. Para poder obtener este tipo de
+    requerimientos nos debemos independizar de la tecnología existente o
+    futura en la que será implementado el sistema, es decir debemos imaginar
+    una situación ideal sin restricciones tecnológicas. Los motivos que nos
+    llevan a realizar esta idealización podemos resumirlos diciendo que esto
+    nos permite reducir la complejidad de los modelo y fundamentalmente nos
+    da la oportunidad de idear e imaginar soluciones mucho más creativas y
+    perdurables en el tiempo, teniendo como premisa que los cambios
+    tecnológicos que puedan ocurrir en el ambiente del sistema no afecten a
+    su estructura interna, a su esencia. Lo único que puede modificar esta
+    esencia es la aparición de nuevos requerimientos.</p>
+    <p>Sobre estos requerimientos los analistas estructuran su
+    investigación, y buscan respuestas a las siguientes preguntas: - ¿Cuáles
+    son los proceso básico? y ¿Cuál es el propósito de cada uno particular?
+    - ¿Cuáles son los pasos que se realizan? - ¿Qué datos se utilizan o
+    producen, durante cada proceso? - ¿Qué ocurre con la información
+    resultante? ¿Quién la utiliza? - ¿Cómo se obtiene dicha información
+    resultante? ¿Se obtiene como resultado de algún cálculo? - ¿Quién
+    ejecuta dicha actividad? - ¿Qué es, lo que motiva la realización de cada
+    proceso; que es, lo que lo dispara?</p>
+    <p>También, debemos tener en cuenta, que antes de relevar a los Usuarios
+    del sistema, debemos hacernos preguntas como: que conocemos sobre este
+    sistema, en base a sistemas semejantes, que hayan pasado por nuestras
+    manos en algún momento, o simplemente por nuestra experiencia diaria en
+    algún tipo de trabajo? Debemos concebir una idea quizás no detallada,
+    pero sí, general, antes de enfrentarnos de lleno al problema.</p>
+    <p>Para conseguir la información las fuentes que deberemos tener en
+    cuenta son: - Actores - Grupos formales e informales - Documentos
+    internos y externos - Sistemas desarrollado anteriormente - Leyes
+    vigentes - Estándares</p>
+    <p>Es importante mantener durante todo el ciclo de desarrollo una fluida
+    comunicación con los usuarios finales ya que éstos son la fuente de
+    información por excelencia. Serán los que nos planteen, de manera
+    explícita o implícita, los requerimientos del sistema a desarrollar.
+    También es fundamental poder identificar con precisión a
+    <em>usuarios</em> y <em>sponsor</em> del sistema.</p>
+    <p>Los sponsor son las personas comprometidas con el desarrollo del
+    sistema, o sea los responsables dentro del conjunto de usuarios.</p>
+    <p>Es importante tener en cuenta a los grupos formales e informales de
+    la organización para poder detectar requisitos comunes a conjuntos de
+    personas.</p>
+    <p>También es útil contar con formularios, manuales de procedimientos y
+    toda la documentación referente al contexto del problema, ya que la
+    misma nos ayudará a evacuar dudas. La documentación más trascendental
+    será aquella que sea más referenciada por los actores.</p>
+    <p>Al referirnos a sistemas desarrollado previamente, hablamos de
+    sistemas implementado en la organización del cual obtenemos información
+    sobre las interfaces que tendrá el nuevo sistema con los mismos.</p>
+    <p>Por último, las leyes vigentes y los estándares de la organización
+    son fuentes de información y de restricciones que no pueden quedar fuera
+    de nuestra investigación del problema.</p>
+    <p>Para realizar el relevamiento utilizaremos técnicas, que nos
+    proporcionen, cuando se apliquen, un antecedente de los datos
+    fundamentales, y de las descripciones del sistema. Las técnicas de
+    relevamiento más comunes, se describen a continuación: - Lectura de
+    documentos y formularios: consiste en la lectura de la documentación más
+    referenciada por los actores. Pueden ser manuales de procedimientos de
+    la organización, estándares, memos, etc. - Observación directa e
+    inferencia: consiste en observar el comportamiento del los usuarios de
+    un sistema existente (automatizado o manual) y luego inferir las
+    necesidades basándose en ese comportamiento. - Cuestionarios: es útil
+    utilizar esta técnica cuando el número de usuarios involucrados es muy
+    alto. - Entrevistas: La entrevista es la técnica más comúnmente
+    utilizada para la recolección de información. Hay muchos aspectos
+    sociales que deben ser tratados con los usuarios en las mismas. La
+    información recolectada puede transmitir factores organizacionales y
+    contextuales siempre y cuando se efectúen las preguntas correctas.
+    También si las personas entrevistadas son las correctas la información
+    obtenida representa las múltiples opiniones de las distintas comunidades
+    que están afectadas por el desarrollo del sistema. Otra limitación de
+    utilizar únicamente la entrevista es una gran responsabilidad que recae
+    sobre el analista, ya que es el único encargado de integrar diferentes
+    interpretaciones, objetivos, estilos de comunicación provenientes de las
+    distintas comunidades afectadas por el sistema que está siendo relevado
+    y además debe usar una terminología simple para crear un único conjunto
+    de requerimientos. Esta integración es una tarea dificultosa a menos que
+    las entrevistas se estructuren de alguna forma. Podría ser útil usar un
+    glosario de los términos específicos del sistema para reducir el número
+    de inconsistencias en las distintas entrevistas. Aún con una entrevista
+    estructurada, el analista debe realizar la compleja tarea de decidir si
+    un trozo de información es un requerimiento o información de diseño.
+    Esta tarea requerirá un analista experimentado tanto en el dominio del
+    sistema como en técnicas de desarrollo. - Análisis de Dominios: Los
+    requerimientos que fueron captados correctamente para una determinada
+    aplicación pueden ser rehusados para especificar otra similar. El rehuso
+    se justifica ya que la identificación de requerimientos es la etapa de
+    mayor trabajo y la que consume más tiempo y recursos, por lo tanto
+    cualquier reducción en tiempo y recursos resulta significativa para
+    mejorar la productividad. Una de las técnicas para hacer rehuso de
+    requerimientos es el análisis de dominio, que es la actividad que
+    identifica objetos y operaciones de una clase de sistemas similares en
+    un particular dominio del problema como también de las necesidades y
+    requerimientos para un conjunto de sistemas que parecen similares.</p>
+    <p>Existen actualmente otras técnicas, que ayudan y aceleran el proceso
+    de detección de requerimientos, tales como:</p>
+    <ul>
+    <li>Enfoques de Grupos: estas técnicas se basan en reuniones de
+    analistas y grupos de usuarios. Entre las principales mencionaremos:
+    <ul>
+    <li>Sesiones JAD (Joint Application Design), consiste en un esquema de
+    reuniones estructuradas. Esta técnica ha sido particularmente exitosa y
+    ha permitido lograr acelerar los procesos de análisis de requerimientos
+    y diseño, además del hecho que es posible lograr un diseño que satisface
+    los deseos del usuario final en un porcentaje mucho mayor. Como su
+    nombre lo dice, JAD es una técnica para diseño. Sin embargo se entiende
+    que el esfuerzo de diseño debe estar basado en un conjunto de
+    requerimientos bien comprendidos tanto por los desarrolladores como por
+    los usuarios. Por lo tanto, JAD se puede dividir principalmente en dos
+    etapas JAD/Plan y JAD/Design cuyos objetivos se muestran la Figura 1. La
+    idea básica de JAD es la de seleccionar usuarios claves de la
+    organización y conducir workshops que progresan a través de una serie de
+    pasos estructurados para lograr la especificación de requerimientos y de
+    diseño de un sistema particular. Seleccionar la gente correcta
+    contribuye a la toma de decisiones más rápidas y acertadas. Son
+    reuniones estructuradas porque el workshop tiene una agenda
+    predeterminada que nos protegen de caer en sesiones descontroladas que
+    no conducen a ningún lado.</li>
+    <li>Brainstorming, consiste en un esquema de reuniones no estructuradas.
+    Es un conjunto simple de técnicas para la generación de ideas. Permite a
+    los participantes sugerir y explorar ideas en una atmósfera libre de
+    críticas y juicios. A los propósitos de la definición de requerimientos,
+    puede ser útil en la generación de una gran cantidad de visiones
+    distintas sobre un problema y en la formulación del problema de
+    distintas formas. Es usado cuando se necesita solucionar un problema
+    complejo donde la solución no aparece a simple vista o cuando se quiere
+    innovar. El brainstorming se divide generalmente en dos etapas. El
+    objetivo de la primera etapa es generar la mayor cantidad de ideas que
+    se pueda, basándonos en cuatro principios para facilitar la reunión. El
+    objetivo de la segunda etapa es reducir la gran cantidad de ideas
+    generadas en la etapa anterior a un número más manejable. Para lograr
+    esto existen cinco técnicas de gran utilidad. En la Figura 2 se muestran
+    los principios y técnicas en las que se basan ambas etapas del
+    brainstorming.</li>
+    </ul></li>
+    </ul>
+    <p>Figura 1 - Sesiones JAD</p>
+    <p>Figura 2 - Principios y técnicas de las Etapas del Brainstorming</p>
+    <ul>
+    <li>Prototipación: en algunas situaciones, puede ser más fácil para los
+    usuarios comprender y expresar sus necesidades mediante la comparación
+    de las mismas con un sistema existente que les sirva de referencia.
+    Cuando ese sistema de referencia no existe, la prototipación puede ser
+    utilizada para crear uno que contenga las características más
+    importantes. Mediante la observación del prototipo, los usuarios pueden
+    detectar cuáles son sus necesidades reales. El proceso de prototipación
+    empieza con un estudio preliminar de los requerimientos del usuario.
+    Luego sigue un proceso iterativo que consiste en construir el prototipo
+    y evaluarlo junto con el usuario. Cada iteración permite al usuario
+    comprender mejor sus requerimientos, incluyendo una comprensión de las
+    implicancias de requerimientos articulados en iteraciones anteriores.
+    Finalmente, un conjunto de requerimientos final puede ser formulado y el
+    prototipo se descarta. Por supuesto, la prototipación de un sistema será
+    útil sólo si el prototipo puede ser construido sustancialmente rápido.
+    Un proceso de prototipación es una herramienta que debe ser utilizada
+    como medio para detectar y comprender requerimientos y debe ser seguida
+    de un proceso de desarrollo estructurado y administrado para la
+    construcción del sistema. Los desarrolladores deberán tener cuidado y
+    evitar cualquier compromiso con el usuario que se base sobre la entrega
+    de un prototipo como producto terminado.</li>
+    <li>Identificación de Factores Críticos: La premisa básica de esta
+    técnica es que un sistema depende generalmente de un pequeño conjunto de
+    factores críticos. Una estrategia para asegurar el éxito es mejorar la
+    performance del sistema en relación a estos factores, y desde luego, un
+    enfoque efectivo para la definición de requerimientos consiste en
+    identificar los factores críticos y concentrarse en ellos. Esta técnica
+    es muy utilizada para la construcción de sistemas de información de
+    soporte a las decisiones. El proceso consta de seis etapas importantes:
+    <ul>
+    <li>Comprender la operación del sistema.</li>
+    <li>Identificar los factores que son críticos para la efectividad del
+    sistema.</li>
+    <li>Identificar las fortalezas y debilidades del sistema con respecto a
+    cada uno de los factores.</li>
+    <li>Identificar oportunidades y áreas problemáticas.</li>
+    <li>Recabar detalles relevantes para mejorar la performance del sistema
+    en relación con los factores críticos de éxito.</li>
+    <li>Formular requerimientos utilizando estos detalles.</li>
+    </ul></li>
+    </ul>
+    <p>Ya sabemos qué, cómo y a quién relevar, ahora veremos Porqué es
+    importante un buen relevamiento ? Como respuesta a esta pregunta podemos
+    decir que:</p>
+    <ul>
+    <li>Se cometen muchos errores en la fase de detección
+    requerimientos.</li>
+    <li>La mayoría de estos errores no se detectan apenas se cometen.</li>
+    <li>La mayoría de estos errores pueden ser detectados apenas se
+    cometen.</li>
+    <li>No detectar estos errores contribuye a elevar los costos del
+    desarrollo del sistema.</li>
+    <li>Los errores cometidos y no detectados en la fase de detección de
+    requerimientos se acarrean a las otras etapas llegando a construir un
+    sistema que no responde a una realidad, es decir que no es útil para el
+    usuario.</li>
+    </ul>
+    <p>De acuerdo a un estudio hecho en el laboratorio de Investigaciones
+    Navales de USA se detectó que la mayoría de los errores hechos en la
+    Detección de Requerimientos son: Requerimientos Incorrectos, Omisiones,
+    Inconsistencias y ambigüedades. En la Figura 3 se muestran los
+    porcentajes de cada uno de los tipos de errores.</p>
+    <p>Para los dos primeros casos es evidente que si no se hace una buena
+    recolección de los datos difícilmente podamos salvar estos errores.</p>
+    <p>Figura 3 - Errores cometidos en la Especificación de
+    Requerimientos</p>
+    <p>Como se muestra en la Figura 4, cuando hacemos la especificación de
+    requisitos obtenemos una parte de la especificación que está correcta y
+    algunos errores de especificación, que no son descubiertos.</p>
+    <p>Luego en la etapa de diseño, de la especificación correcta
+    obtendremos una parte del diseño que será correcta y otra con errores,
+    además de otra basada en especificaciones incorrectas.</p>
+    <p>Cuando hagamos la implementación, de el diseño correcto obtendremos
+    programas correctos y errores de programación que se pueden corregir,
+    pero también obtendremos programas basados en diseños incorrectos (es
+    muy difícil corregirlos) y programas basados en especificaciones
+    incorrectas (errores ocultos). De lo que vimos antes podemos decir que
+    sería bueno poder detectar cuanto antes estos errores que se cometen en
+    las etapas más tempranas del desarrollo, ya que es muy difícil y costoso
+    corregirlas luego de haber implementado el sistema.</p>
+    <p>Figura 4 - Propagación de errores entre las distintas etapas del
+    Ciclo de Desarrollo</p>
+    <p>A través de la aplicación conjunta de varias de las técnicas de
+    relevamiento antes descriptas intentamos minimizar los requerimientos
+    erróneos de cualquier tipo.</p>
+    <p>Con las técnicas de relevamiento descriptas anteriormente no solo se
+    definen los requerimientos del sistema, también se construye lo que
+    llamamos la Narrativa del sistema. La Narrativa de un sistema de
+    información es una descripción textual de la lógica del sistema, es un
+    documento donde debemos volcar el resultado del relevamiento. Debe ser
+    clara, concisa, un máximo 2 páginas, y ordenada. Lo primero que debe
+    contener toda narrativa debe ser el propósito general para el que será
+    creado el sistema que no debe extenderse más allá de uno o dos párrafos.
+    Luego se deben reseñar todos los hechos relevantes; dicho de otra manera
+    se deben describir: - Quiénes son los responsables de mantener la
+    información relevante para el sistema. El propio sistema, algún otro
+    sistema dentro o fuera de la organización. En este último caso es
+    importante explicar como se tiene acceso a la misma. - Cuáles son las
+    distintas etapas o pasos a seguir y el orden de los mismos para
+    completar cada uno de los requerimientos. - Qué información arriba y/o
+    produce cada paso. - Qué decisiones deberá tomar el sistema y en base a
+    que información. - Todo aquello en lo que el usuario ponga énfasis y/o
+    el analista considere importante para construir con éxito el
+    sistema.</p>
+    <p>La narrativa del sistema es una buena herramienta que, entre otras
+    cosas, permite al analista verificar tempranamente, antes de comenzar a
+    modelar, la operatoria del sistema con el usuario y así asegurarse un
+    entendimiento común.</p>
+    <p>Debemos aclarar en este punto, antes de comenzar a modelar, que
+    aunque la narrativa del sistema es la entrada válida para comenzar a
+    modelar el modelo ambiental, no debe verse como si estuviera “grabada en
+    piedra”. Como resultado del modelado la narrativa puede sufrir
+    modificaciones y agregados para completar y/o incorporar nuevos
+    requerimientos; también puede darse el caso de que se eliminen
+    requerimientos y por lo tanto se suprima de la narrativa todo aquello
+    que se refiera al dichos requerimientos.</p>
+    <p>Todas estas modificaciones se producen debido a que estamos en la
+    etapa de comprensión y definición del sistema por lo que los
+    requerimientos están en “tela de juicio” y debe existir una
+    retroalimentación desde los modelos hacia las definiciones que generaron
+    dichos modelos.</p>
+    <p>Una vez que hemos detectado y verificados con los usuarios los
+    requerimientos del sistema estamos en condiciones de comenzar a modelar
+    el sistema a construir. En la Figura 5 se resumen todos los pasos
+    anteriormente descriptos, desde el planteo del problema del usuario
+    hasta la narración de los requerimientos esenciales o funcionales del
+    sistema detectadas a través de las diferentes técnicas de relevamiento,
+    y los distintos modelos que debemos construir a partir de los pasos
+    anteriores, para realizar un análisis completo del sistema. Cada uno de
+    estos modelos profundiza el entendimiento de ciertos aspectos del
+    sistema permitiendo al analista manejar en forma organizada la
+    complejidad total del problema del usuario.</p>
+    <p>Figura 5 - Etapas del Análisis de Sistemas</p>
+    <h2 id="modelo-ambiental">Modelo Ambiental</h2>
+    <p>El modelo ambiental, también llamado modelo contextual, explora el
+    límite del sistema basándose en los requerimientos planteados por el
+    analista y consensuados por el usuario. A través de este modelo podemos
+    confirmar que los requerimientos definidos a través del relevamiento
+    tienen sentido sin incurrir en el costo de una especificación detallada.
+    El modelo ambiental tiene por objeto mostrar las interacciones del
+    sistema con su ambiente.</p>
+    <p>Para poder modelar el ambiente de un sistema, desde el punto de vista
+    del análisis estructurado, contamos con las siguientes herramientas: -
+    Diagrama de contexto. - Lista de Eventos. - Visiones de contexto. -
+    Diccionario de Datos (DD) de: - Flujos de entrada y salida. - Entidades
+    de Datos y Almacenes. - Estructuras de datos. - Datos elementales.</p>
+    <p>Para poder explicar con mayor claridad cual es el uso de cada una de
+    estas herramientas vamos a referirnos a un ejemplo concreto. A
+    continuación se presenta la narrativa de un sistema que permite
+    gestionar los torneos de golf que se organizan en un club.</p>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Cuando la Asociación aprueba la realización de un torneo, la
+    Administración del club informa al sistema y éste registra los datos
+    correspondientes: nombre del torneo, entidad organizadora, lugar y fecha
+    de realización, la fecha de cierre de la inscripción y la cantidad
+    máxima de participantes.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>A mediados de cada mes, cuando la Administración lo requiera, el
+    sistema emitirá, para ser remitido a la dirección de cada uno de los
+    socios cuyo estado sea activo, los datos que tiene sobre los torneos a
+    realizarse en el período que la Administración solicite.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Existe un almacén SOCIOS, que administra otro sistema dentro del
+    club, que contiene los siguientes datos: NroSocio, NombreyApellido,
+    FechaIngreso, FechaNacimiento, Dirección, Teléfono, TipoDocumento y
+    NúmeroDocumento, Estado del socio (activo o inactivo), Handicap y
+    Categoría.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Los torneos son abiertos, y por lo tanto se admiten jugadores que
+    sean socios o no del club.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Cuando un jugador desea participar en un torneo que organiza el
+    club, se inscribe indicando el nombre del torneo y el número de socio,
+    en caso de ser socio; y si no lo es, indica el nombre del torneo, su
+    nombre y su handicap. El sistema chequea si la inscripción es posible en
+    cuanto a la fecha de cierre de la inscripción y a la cantidad máxima de
+    participantes y avisa al jugador si su inscripción ha sido aceptada o
+    no, y en este último caso, informa también el motivo de la no
+    aceptación. Si la inscripción es aceptada, el sistema registra el nombre
+    del torneo, nombre del jugador y handicap, asignándole un número de
+    inscripción correlativo dentro de cada torneo.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>El día posterior al cierre de la inscripción de un torneo, el
+    sistema genera un listado para la Administración con los siguientes
+    datos: nombre del torneo, fecha de realización, y por cada jugador
+    inscripto, su número de inscripción, su nombre y handicap.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Cuando llega el día de realización del torneo, el sistema emite para
+    cada jugador inscripto una tarjeta que ha de completar durante el juego.
+    Esta contiene impresa: nombre del torneo, número de inscripto, nombre y
+    handicap del jugador. En este proceso se depura el almacén que contenía
+    las inscripciones.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Cuando un jugador termina de jugar, presenta su tarjeta, en la que
+    ha agregado los golpes realizados en cada uno de los 18 hoyos. El
+    sistema registrará todos los datos contenidos en ella.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <colgroup>
+    <col style="width: 100%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Cada 2 meses, el sistema generará un listado sobre los torneos
+    realizados en el club, para la Asociación Argentina de Golf,
+    conteniendo: fecha de emisión del listado, y para cada torneo, su nombre
+    y fecha de realización, y por cada jugador que participó, el nombre,
+    total de golpes brutos, handicap y total de golpes netos. Este proceso
+    depura el almacén que tenía los resultados de cada torneo y el que tenía
+    los datos de los torneos.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <table>
+    <thead>
+    <tr>
+    <th>Los golpes netos se obtienen por diferencia entre golpes brutos y
+    handicap.</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <p>Figura 6 - Narrativa del Sistema “Administración de Torneos de
+    Golf”</p>
+    <h2 id="diagrama-de-contexto"><em>Diagrama De Contexto</em></h2>
+    <p>A través de esta <em>herramienta gráfica</em> podemos modelar el
+    límite entre nuestro sistema y el resto del mundo. Al sistema se lo
+    representa como una única burbuja (círculo) y dentro de ella el nombre
+    que le hemos dado, esto lo podemos ver en la Figura 6 que nos muestra el
+    diagrama de contexto del sistema que estamos estudiando. En él también
+    podemos ver:</p>
+    <ul>
+    <li>Quién interactúa con el sistema: se las conoce como entidades
+    externas y se representan con rectángulos etiquetados con el nombre de
+    la entidad que se trata. Dentro de las entidades externas encontramos:
+    <ul>
+    <li>Departamentos o áreas de la organización (Asociación Argentina de
+    Golf, Administración).</li>
+    <li>Personas que forman parte o no de la organización (Socios,
+    Jugadores).</li>
+    <li>Otros sistemas con los que se mantiene una interface (en el ejemplo
+    sería el sistema que dentro de sus funciones administra los socios del
+    club).</li>
+    </ul></li>
+    <li>Qué información se intercambia: se los conoce como <em>flujos de
+    datos</em> y se representan con flechas. Dentro de los flujos de datos
+    distinguimos:
+    <ul>
+    <li>Flujos de entrada o estímulos: datos que envían al sistema las
+    entidades externas para su procesamiento y/o almacenamiento (Información
+    Sobre Torneos, Período).</li>
+    <li>Flujos de salida o respuestas externas: datos que el sistema le
+    envía a las entidades externas (Próximos Torneos, Tarjetas).</li>
+    </ul></li>
+    <li>Qué información se comparte con otros sistemas: se los conoce como
+    <em>almacenes externos o compartidos</em> y se representan con dos
+    líneas paralelas como es el caso del almacén Socios. Estos almacenes
+    pueden ser mantenidos por un determinado sistema y solamente consultados
+    por otros, o quizás un sistema mantenga algunos datos y otro sistema los
+    restantes. Un flujo de datos desde el sistema al almacén indica que el
+    sistema está actualizándolo (se está agregando, modificando o eliminado
+    información en el almacén) y un flujo de datos desde el almacén hacia el
+    sistema indica que este último está consultando o tomando datos del
+    mismo. Es importante identificarlos lo más temprano posible básicamente
+    porque:</li>
+    <li>No debe modificarse su estructura, sin antes analizar el impacto que
+    esto puede producir en los otros sistemas que lo comparten. Por
+    estructura de un almacén entendemos a que atributos o elementos de datos
+    tiene, cuales son sus características o valores posibles y como están
+    organizados, más adelante veremos en detalle estos conceptos por
+    separado.</li>
+    <li>Podemos utilizar la información que contienen, es decir podemos
+    tomar la información que contienen para utilizarla en las respuestas y/o
+    actividades del nuevo sistema sin necesidad de crear las actividades
+    necesarias para capturar dicha información. Debemos aclarar que las
+    entidades que interactuan con el sistema que se esta analizando pueden
+    relacionarse, comunicarse o interactuar entre ellas, sin embargo estas
+    relaciones no nos interesan, no las reflejamos en los distintos modelos
+    que se van construyendo básicamente porque las consideramos fuera del
+    ámbito de control del sistema, es decir dichas relaciones no forman
+    parte del ambiente. Si observamos que alguna de estar interacciones
+    afecta al funcionamiento del sistema, o es vital para lograr los
+    objetivos propuestos, entonces a alguna de las entidades, para este caso
+    particular, se la considera parte del sistema. Dicho de otra manera
+    dicha entidad está dentro del sistema para una o más funciones
+    determinadas.</li>
+    </ul>
+    <p>Figura 7 - Diagrama de Contexto del Sistema de Administración de
+    Torneos de Golf</p>
+    <h2 id="lista-de-eventos"><em>Lista De Eventos</em></h2>
+    <p>Un <em>Evento</em> es algún hecho o acontecimiento que se produce en
+    el contexto o ambiente del sistema y que de algún modo influye sobre el
+    sistema. Esta influencia se traduce en la activación de una serie de
+    funciones dentro del sistema que terminan en la elaboración de una
+    respuesta que se realiza cada vez que ocurre o sucede tal evento.</p>
+    <p>Existen dos tipos de eventos: - Externos, son los iniciados por
+    acontecimientos del contexto del sistema, suceden en cualquier momento.
+    A cada evento externo se asocia <em>un único estímulo o flujo de
+    entrada</em>. - Temporales, son iniciados por el transcurso del tiempo;
+    ocurren en intervalos fijos o relativamente fijos de tiempo. Este tipo
+    de eventos no tienen asociado <em>ningún estímulo</em>. En el diagrama
+    de contexto se identifica la ocurrencia de un evento de este tipo por
+    una línea de trazos que va desde al ambiente hacia el sistema y sobre la
+    misma se coloca la temporalidad con la que ocurren Diariamente,
+    Bimestralmente, etc. Los eventos temporales pueden ser de dos tipos
+    diferentes: - Eventos temporales <em>absolutos</em>, ocurren a
+    intervalos fijos de tiempo (Bimestralmente, informar torneos
+    realizados). - Eventos temporales <em>relativos</em>, ocurren en tiempos
+    que dependen de otros datos (Diariamente, si comienza algún torneo,
+    emitir tarjetas).</p>
+    <p>En la Figura 8, donde se muestran los eventos del sistema de
+    Administración de Torneos de Golf, podemos identificar como externos a
+    los evento 1, 2, 3 y 6 y como temporales a los eventos 4, 5 y 7.</p>
+    <p><em>¿Cómo sabemos si un evento es Externo o es Temporal?</em> En
+    algunos casos pueden presentarse dudas sobre como clasificar a un
+    determinado evento.</p>
+    <p>Por ejemplo si nos fijamos en la narrativa del sistema en el párrafo
+    de donde surge el evento 2 dice “A mediados de cada mes, cuando la
+    Administración lo requiera, el sistema emitirá…”. Esta frase hace
+    referencia por un lado a un período de tiempo “A mediados de cada mes”
+    por lo que podríamos suponer que es un evento temporal, pero luego
+    aclara “cuando la Administración lo requiera” por lo que podríamos creer
+    que es externo. Si continuamos leyendo, más adelante dice “.. en el
+    período que la Administración solicite”, esto significa que alguien
+    fuera del sistema, una entidad externa, es la que dispara la ocurrencia
+    del evento y no el paso del tiempo como creíamos al principio. Por lo
+    tanto el evento es externo y tiene asociado un estímulo que no es más
+    que el período que debe comprender el listado. La periodicidad que se
+    enuncia no es del sistema, sino de la entidad externa que dispara al
+    evento y esto significa que generalmente esta actividad se realiza a
+    mediados de cada mes pero puede dispararse cuando lo disponga o requiera
+    la Administración independientemente del tiempo.</p>
+    <p>Otro ejemplo común en el que podemos confundir eventos externos con
+    temporales es cuando el sistema tiene todos la información necesaria
+    para generar su(s) respuesta(s) y no necesita ningún dato de entrada
+    pero depende de que alguien o algo fuera del sistema lo active. Estos
+    eventos se clasifican como externos y al estímulo o flujo de entrada lo
+    llamamos flujo vacío porque no transporta información sino únicamente la
+    orden de para que ocurra el evento. Supongamos que el listado con los
+    torneos realizados, evento 7, no se emite cada 2 meses sino que lo pide
+    la Administración cuando lo considera necesario o cuando la Asociación
+    se lo reclama. Si esto fuera así este evento no dejaría de ser temporal
+    y pasaría a ser externo porque la Administración toma la decisión de
+    listar y entonces el evento ocurre, además como en la memoria del
+    sistema, tenemos todos los torneos finalizados solo es necesario
+    proporcionarle al sistema la orden sin estar acompañada de ningún otro
+    dato. 1. Asociación aprueba realización de torneo 2. Administración
+    requiere informe de próximos torneos 3. Jugador se inscribe a un torneo
+    4. El día posterior al cierre de la inscripción, informar jugadores
+    inscriptos 5. Diariamente, si comienza algún torneo, emitir tarjetas 6.
+    Jugador presenta tarjeta o Jugador termina de jugar 7. Bimestralmente,
+    informar torneos realizados</p>
+    <p>Figura 8 - Lista de Eventos del Sistema de Administración de Torneos
+    de Golf</p>
+    <p>Una lista de Eventos es una herramienta textual donde se enuncian
+    todos los eventos que ponen en funcionamiento al sistema. La lista de
+    eventos y el diagrama de contexto se complementan, son dos caras de la
+    misma moneda, una gráfica y la otra textual, por lo que podemos empezar
+    a modelar por cualquiera de las dos o podemos crearlas en forma
+    paralela. Podemos decir que la lista de eventos es un catálogo de todos
+    los eventos del sistema bajo estudio. Dentro de las lista de eventos los
+    mismos deben estar cronológicamente ordenados para facilitar la
+    comprensión. Dicho de otra forma deben ordenarse de acuerdo a la
+    secuencia en que pueden ir ocurriendo los distintos hechos o
+    acontecimientos que disparan a cada uno de los eventos. Por ejemplo,
+    antes de que un jugador pueda inscribirse en un torneo determinado
+    (evento 3) es necesario que se confirme la realización del torneo
+    (evento 1). Además podemos numerar a los eventos para facilitar su
+    identificación durante todo el ciclo de desarrollo del sistema.</p>
+    <p>Otro aspecto a tener en cuenta para facilitar la comprensión y el
+    entendimiento es la estandarización en la enunciación de los eventos.
+    Como regla general enunciamos a los eventos de la siguiente manera: -
+    Eventos externos: Entidad externo (Sujeto) + Verbo (Acción) + Objetivo -
+    Eventos temporales: Tiempo o Período de tiempo + Verbo (Acción) +
+    Respuesta</p>
+    <p>En la enunciación de cualquier evento es importante que se refleje lo
+    que dispara su ocurrencia y la finalidad del mismo.</p>
+    <p>Desde el punto de vista del análisis esencial, un sistema está
+    compuesto por actividades esenciales y memoria esencial.</p>
+    <p>La <em>Memoria esencial</em>, esta formada por todos los datos que el
+    sistema tendría que almacenar aún cuando fuese implementado usando
+    tecnología perfecta. Por lo dicho anteriormente <em>la memoria esencial
+    está compuesta por almacenes</em>.</p>
+    <p>Las <em>Actividades esenciales</em>, son todas aquellas tareas,
+    actividades internas ó procesos que el sistema tendría que realizar aún
+    cuando fuese implementado usando tecnología perfecta. Por esta
+    definición se puede decir que <em>un evento es una actividad
+    esencial</em>.</p>
+    <p>Dentro de las actividades esenciales podemos distinguir dos
+    tipos:</p>
+    <ul>
+    <li><em>Actividades fundamentales</em>:
+    <ul>
+    <li>Son las que ayudan a justificar la existencia del sistema</li>
+    <li>Son parte del propósito real del sistema</li>
+    <li>Son solo reconocibles a la luz de los objetivos del sistema</li>
+    </ul></li>
+    <li><em>Actividades custodiales</em>, son las que capturan, almacenan y
+    mantienen los datos del ambiente, necesarios para las actividades
+    fundamentales.</li>
+    </ul>
+    <p>Estas actividades están compuestas por: - <em>Una definición del
+    estímulo</em>, que es, lo que permite a la actividad reconocer la
+    llegada del estímulo o la circunstancia bajo la cuál se dispara la
+    respuesta planeada. - <em>Una respuesta planeada</em>, que está formada
+    por el conjunto de acciones que necesitará hacer el sistema para
+    realizar la actividad, incluido el resultado que no es otra cosa que la
+    respuesta planeada. Recordar siempre que <em>una respuesta planeada es
+    iniciada por un evento</em>. A las respuestas planeadas las clasificamos
+    en: - <em>Respuestas Externas</em>: son las que cruzan los límites del
+    sistema. A las que se dirigen a entidades del ambiente las llamamos
+    salidas, son los flujos de datos que hacíamos referencia, en el diagrama
+    de contexto, dentro de la información que se intercambia entre el
+    sistema y su ambiente. Una misma salida puede ser repetitiva, es decir
+    que puede enviarse a entidades eternas distintas, por ejemplo un sistema
+    de depósitos de mercaderías puede enviar en el mismo momento, como
+    respuesta del mismo evento el original del remito al cliente y una copia
+    al área de facturación para que realice la factura cuando crea
+    conveniente. También podemos encontrar más de una respuesta externa,
+    para distintas entidades, como resultado de una actividad esencial. Un
+    ejemplo de esto último sería, si en el sistemas de Administración de
+    torneos de golf la actividad que genera las tarjetas para cada jugador
+    inscripto además tendría que generar un ranking con el handicap de los
+    mismos para la administración. En esta actividad que se genera una
+    tarjeta para cada jugador también tenemos el caso de una misma salida
+    repetida pero, a diferencia del ejemplo del remito, se envían a la misma
+    entidad del ambiente. Las otras respuestas externas son los flujos de
+    datos que actualizan almacenes que se comparten con otros sistemas y que
+    colocamos en el modelo ambiental fuera del los límites del sistema que
+    se está analizando. - <em>Respuestas Internas</em>: a diferencia de las
+    anteriores, no cruzan los límites del sistema, solo actualizan la
+    memoria esencial. Este tipo de respuesta están fuera del objeto del
+    modelo ambiental y las reflejamos recién cuando comenzamos a construir
+    el modelo de comportamiento del sistema.</p>
+    <p>Para producir respuestas planeadas correctas, las actividades
+    fundamentales deben tener toda la información. Una parte puede venir
+    desde el ambiente, en cuyo caso formaría parte de la definición del
+    estímulo y el resto deberá obtenerse de la memoria esencial o deberá ser
+    producido por la actividad misma.</p>
+    <p>La tecnología del ambiente siempre se la considera imperfecta, y
+    obliga al sistema a recordar datos, que no son elaborados por las
+    actividades fundamentales, pero sí necesarios para la realización de las
+    mismas.</p>
+    <p>Podemos ampliar la definición de <em>memoria esencial</em>, diciendo
+    que son los <em>datos imprescindibles</em> requeridos por una actividad
+    fundamental y que son producidos por ésta y/o por otra actividad
+    fundamental y/o capturados del ambiente y recordados o almacenados en el
+    sistema.</p>
+    <p><em>¿Cuáles son los datos imprescindibles que deben almacenarse?</em>
+    Cuando hablamos de datos imprescindibles nos referimos a los datos
+    necesarios y suficientes para producir los requeridos, eliminado de esta
+    forma datos que puedan calcularse como por ejemplo la edad de los socios
+    del club, la calculamos como la diferencia entre una fecha dada y la
+    fecha de nacimiento. Este último es el dato necesario y suficiente que
+    se almacena. Otro ejemplo lo constituye el atributo golpes brutos del
+    listado de torneos realizados que se genera para la Asociación Argentina
+    de Golf, este atributo no se almacena sino que se obtiene de la
+    diferencia entre los golpes brutos y el handicap.</p>
+    <p>También se eliminan de la memoria esencial la duplicidad de datos,
+    esto es guardar en distintas partes de la memoria de un sistema el mismo
+    atributo o dato.</p>
+    <p>Estos conceptos se ampliaran y verán en detalle más adelante, durante
+    el transcurso de esta materia, en el modelo de datos.</p>
+    <p>Las tareas de mantenimiento de la información esencial es realizada
+    por otro tipo de actividad esencial que son las <em>actividades
+    custodiales</em>.</p>
+    <p>En particular en las actividades de custodia, la respuesta consiste
+    en actualizar la memoria esencial, en lugar de efectuar una salida al
+    ambiente, generan las respuestas planeadas internas que describimos con
+    anterioridad.</p>
+    <p>Hay actividades esenciales que son de ambos tipos, dado que llevan a
+    cabo respuestas planeadas fundamentales y al mismo tiempo mantienen la
+    memoria esencial del sistema, a estas actividades se las denomina
+    <em>actividades fundamentales compuestas</em>.</p>
+    <p>En el ejemplo del sistema de administración de torneos de golf
+    podemos clasificar a los eventos dependiendo del tipo de actividad
+    esencial que realizan de la siguiente manera: - Actividades Custodiales:
+    eventos 1 y 6. - Actividades Fundamentales: eventos 2, 4 y 7. -
+    Actividades Compuestas: eventos 3 y 5.</p>
+    <h2 id="visiones-de-contexto"><em>Visiones De Contexto</em></h2>
+    <p>En el relevamiento de los requerimientos del sistema surgen entre
+    otras cosas, políticas, reglas, restricciones, condiciones, cotas y/o
+    límites externos al sistema, que pueden llegar a afectarlo,
+    restringiendo, imponiendo o condicionando al mismo directa o
+    indirectamente. A todas estas se las conoce como visiones de
+    contexto.</p>
+    <p>Cada visión de contexto se debe escribir en uno o dos párrafos con un
+    lenguaje apropiado, de forma que sea fácilmente comprensible para el
+    analista y el usuario.</p>
+    <p>Las visiones de contexto son aquellas partes que describen como debe
+    funcionar o realizarse una tarea o, bajo que condiciones puede
+    realizarse la tarea, impidiendo o negando que pueda hacerse o ejecutarse
+    de otro modo.</p>
+    <p>No se deben considerar todas las visiones de contexto de una
+    organización, sino solamente aquellas que afectan el funcionamiento del
+    sistema que se está analizando. Son todas aquellas que hacen del sistema
+    un sistema particular del negocio en el que estamos trabajando.</p>
+    <p><em>¿Qué sucedería si los analistas no haríamos el ejercicio de
+    extraer en el análisis las visiones de contexto?</em> Si no lo
+    hiciéramos podríamos incurrir o caer en el error de que el sistema
+    puede, o mejor dicho, debe funcionar bajo cualquier variante, para todas
+    las condiciones y en cualquier momento. Todo esto nos llevaría a hacer
+    de los sistemas grandes proyectos, de tiempos largos, con una gran
+    demanda de recursos y alto costo para el usuario que, en la mayoría de
+    los casos, se harían proyectos inmanejables con alta probabilidad de
+    fracaso.</p>
+    <p>Para descubrir si una regla o política es o no una visión de contexto
+    del sistema lo primero que deberíamos preguntarnos es <em>¿qué pasa si
+    dicha regla o política se modifica?</em> Si la respuesta es que
+    deberíamos cambiar algo de los modelos construidos, entonces decimos que
+    es una visión de contexto a tener en cuenta. Dicho de otra forma,
+    cualquier regla o política definida como una <em>visión de contexto</em>
+    que afecta al sistema que estamos analizando <em>debe quedar reflejada
+    en alguno de los modelos que construimos sobre el sistema</em>. Es
+    imposible establecer recetas para descubrir o reconocer las visiones de
+    contexto, sin embargo podemos expresar algunas pautas generales a tener
+    en cuenta.</p>
+    <p><strong>Pauta 1: Saber Que No Es Una Visión De Contexto</strong></p>
+    <p>No se consideran como visiones de contexto: - Los datos que entran al
+    sistema. - La información que sale del sistema. - La enumeración de los
+    valores que puede tomar un dato o atributo determinado. - Reglas de la
+    empresa que no afectan al sistema. - La periodicidad de los eventos
+    temporales. - Definiciones de términos propios del sistema, esto se
+    puede reflejar en un glosario.</p>
+    <p><strong>Pauta 2: Visiones Triviales</strong></p>
+    <p>Llamamos visiones triviales a aquellas visiones de contexto obvias,
+    evidentes y claras que se aplican o son comunes a la mayoría de los
+    sistemas. Por ejemplo decir que una factura, un remito o un ticket de
+    supermercado contienen uno o más productos, es algo sabido por todos,
+    por lo que no la consideramos como una visión de contexto. Si por alguna
+    razón en un sistema determinado uno de estos documentos debe contener un
+    único producto podemos aclararlo a través de una visión de contexto por
+    considerarse una excepción a un principio general.</p>
+    <p><strong>Pauta 3: Visiones Que Afectan A Los Procesos</strong></p>
+    <p>Estas visiones de contexto expresan: - Condiciones que deben
+    cumplirse para que determinada actividad puede realizarse. Para que
+    estas condiciones se las considere visiones de contexto, obviamente el
+    sistema deberá verificar que se cumplan. - En que momento o situación un
+    atributo discreto toma un determinado valor.</p>
+    <p><strong>Pauta 4: Visiones Que Afectan A La Estructura De Los
+    Datos</strong></p>
+    <p>Esta visiones nos definen como organizar la memoria esencial del
+    sistema. Su importancia y aplicación quedará más clara cuando modelemos
+    los datos que debe recordar el sistema. Por ejemplo al decir que un
+    proveedor ofrece más de un producto vamos a estructurar los almacenes de
+    una forma distinta que si un proveedor ofrece un único producto. El
+    primer caso, más de un producto, también puede considerarse dentro del
+    grupo de las visiones triviales.</p>
+    <p><strong>Pauta 5: Formas De Calcular Un Atributo</strong></p>
+    <p>Al igual que con las visiones triviales, no nos referimos a la forma
+    de obtener todos los atributos de cálculo como por ejemplo, un total, un
+    porcentaje común, una suma, un promedio, etc. Dentro de esta pauta
+    consideramos visiones de contexto a aquellos cálculos complejos,
+    fórmulas no conocidas por el analista.</p>
+    <p>Con respecto a esta pauta existen opiniones contrapuestas. Hay
+    quienes consideran conveniente explicitarlas como visiones y quienes
+    aseguran que no es necesario ya que existe otra herramienta, las
+    miniespecificaciones de procesos, que veremos más adelante en el modelo
+    de comportamiento, donde también se expresa como se calcula dicho
+    atributo.</p>
+    <p>Lo aconsejable en estos casos es asegurarse que en alguna de las dos
+    herramientas se exprese, pero no en forma arbitraria sino en donde quede
+    más claro para cada caso particular. Si se explícita como una visión de
+    contexto, en la miniespecificación del proceso que realice dicho cálculo
+    debemos expresa que el atributo se obtiene según la visión de contexto
+    número y el número que corresponda dentro de la lista de visiones
+    confeccionada en el modelo ambiental del sistema.</p>
+    <p>Es importante recalcar que lo expuesto son solo pautas y no recetas
+    como se mencionó anteriormente. También podemos notar que una visión
+    puede encontrarse en varias pautas o en ninguna, por lo tanto lo
+    anterior es una guía y no una técnica formal. Para determinar si estamos
+    en presencia de una visión de contexto además hace falta recurrir al
+    sentido común, la imaginación, la experiencia y la práctica del
+    analista.</p>
+    <p>Algunas de ellas pueden estar relacionadas con: - Atributos de
+    entidades, entidades y/o relaciones: las reflejamos en el Diccionario de
+    Datos. - Actividades fundamentales o custodiales del sistema: las
+    reflejamos en las Miniespecificaciones, y posteriormente, en la etapa de
+    diseño, deberán estar presentes en los módulos de las cartas de
+    estructura correspondiente o en la(s) herramienta que se utilice para
+    diseñar según la metodología utilizada. - Interface del usuario: las
+    modelo en el diseño de los formatos de E/S del sistema. -
+    Implementación: deben estar reflejadas en el modelo de datos físico y/o
+    en los módulos de los programas, ambos en la etapa de diseño. Ejemplos
+    de esto lo constituyen el volumen de información almacenado en el
+    sistema, los tiempos de respuesta de los eventos, etc.</p>
+    <p>Las visiones de contexto del sistema de Administración de Torneos de
+    Golf se muestran en la siguiente figura: 1. Los torneos son abiertos,
+    por lo que se admiten jugadores que sean o no socios del club. 2. El
+    número de inscripción es correlativo dentro de un torneo.</p>
+    <p>Figura 9 - Visiones de Contexto del Sistema de Administración de
+    Torneos de Golf</p>
+    <p>Si no consideramos la visión número uno, podríamos creer que los
+    torneos se organizan exclusivamente para socios, cosa que no es cierta.
+    Esta visión de contexto nos hace modelar tanto la información de entrada
+    del sistema del evento número tres como la estructura de la memoria
+    esencial donde se guarden todos los jugadores inscriptos a los distintos
+    torneos que organiza el club.</p>
+    <p>La visión número dos nos dice como generar el número de inscripción,
+    si bien esto no afecta al modelo ambiental del sistema hay que tenerlo
+    en cuenta para modelar la memoria y el modelo de comportamiento del
+    sistema.</p>
+    <p>Antes de continuar debemos aclarar que no es necesario hacer ningún
+    tipo de clasificación de las visiones de contexto. Estas clasificaciones
+    expuestas anteriormente solo sirven a efectos de realizar una
+    explicación detallada y más clara de las mismas.</p>
+    <h2 id="diccionario-de-datos"><em>Diccionario De Datos</em></h2>
+    <p>Cuando dentro del ciclo de desarrollo de un sistema de información es
+    necesario describir o especificar el significado de los componentes,
+    debemos usar una herramienta donde eliminemos todas las ambigüedades.
+    Estas se dan con mucha frecuencia en nuestro lenguaje natural y pueden
+    dificultar nuestro entendimiento de los requerimientos del usuario. Por
+    ejemplo supongamos que vamos a un restaurante y leemos en la carta la
+    siguiente oferta del día: “Polenta con salsa y albóndigas con papas o
+    empanadas de carne y guiso de mondongo”</p>
+    <p>Esto podría interpretarse de diferentes maneras: 1- (Polenta con
+    Salsa y Albóndigas con Papas) o (Empanadas de Carne y Guiso de Mondongo)
+    2- Polenta con Salsa y (Albóndigas con Papas o Empanadas de Carne) y
+    Guiso de Mondongo 3- (Polenta con Salsa y (Albóndigas con Papas o
+    Empanadas de Carne)) y Guiso de Mondongo 4- Polenta con Salsa y
+    (Albóndigas con Papas o Empanadas de Carne) y Guiso de Mondongo)</p>
+    <p>En este simple caso, eliminamos la ambigüedad mediante paréntesis. En
+    el caso de los requerimientos de un sistema, necesitaremos una
+    herramienta textual que contemple una determinada notación y además
+    reglas: el <em>diccionario de datos</em>.</p>
+    <p>Esta herramienta contiene todos los <em>elementos de datos</em>, o
+    <em>datos elementales</em>, o <em>atributos</em> usados por el sistema,
+    y en ella podemos especificar: - El significado y contenido de los
+    <em>flujos de datos</em>. - El significado y contenido de los
+    <em>almacenes de datos</em>. - Los valores y unidades relevantes de los
+    elementos de datos, o datos elementales o atributos que se usan en el
+    sistema.</p>
+    <p><strong>Elementos Y Estructuras</strong></p>
+    <p>Antes de proseguir, es necesario introducir dos conceptos básicos de
+    esta herramienta: - <em>Elemento de dato, o dato elemental, o
+    atributo</em>: es la más pequeña unidad de información, para la cual no
+    existe descomposición que tenga sentido para el usuario. Por ejemplo: en
+    la Universidad Tecnológica Nacional cada alumno tiene asignado un número
+    de legajo que lo identifica. Para algunos sistemas puede ser suficiente
+    usar un atributo NroLegajo y para otros quizás puede ser necesario
+    descomponer este número en: regional, número y dígito verificador. Por
+    lo tanto NroLegajo es un atributo en el primer caso y en el segundo será
+    una estructura de datos y regional, número y dígito verificador serán
+    datos elementales. - Estructura de dato o atributo compuesto: está
+    formado por dos o más componentes, donde cada uno de ellos puede ser un
+    elemento de datos u otra estructura. Por ejemplo, podríamos usar la
+    estructura domicilio, que está formada por: calle, nro., piso, depto.,
+    ciudad y provincia.</p>
+    <p><strong>Notación</strong></p>
+    <p>El diccionario de datos suele emplear una notación conceptual
+    adaptada de la Forma Backus - Naur (BNF): + “=” significa “equivalente
+    a” + “+” significa “y” + [ | ] significa debe elegirse una de las
+    componentes separadas por la barra + { } significa iteraciones de la
+    componente encerrada + ( ) significa que la componente encerrada es
+    opcional + ** comentarios</p>
+    <p>Dentro del modelo ambiental se debe realizar el DD de los flujos de
+    entrada y salida, de los almacenes compartidos con otros sistemas, de
+    las estructuras utilizadas dentro de los flujos y almacenes y todos los
+    datos elementales que forman parte de un flujo, un almacén y/o una
+    estructura. Lo que sigue es el DD correspondiente al modelo ambiental
+    del Sistema de Administración de Torneos de Golf.</p>
+    <p>DD Flujos De Entrada Y Salida Del Sistema E Administración De Torneos
+    De Golf:</p>
+    <p>1 E InformaciónSobreTorneo = NombreTorneo + EnteOrganizador + Lugar +
+    FechaRealización + FechaCierreInscripción + MaximoDeParticipantes</p>
+    <p>2 E Período = FechaDesde + FechaHasta 2 S PróximosTorneos = 1{
+    DatosSocio(e) + 1{ NombreTorneo + EnteOrganizador + Lugar +
+    FechaRealización + FechaCierreInscripción + MáximoParticipantes } N }
+    N</p>
+    <p>3 E DatosDeInscripción = NombreTorneo + [NroSocio |
+    DatosJugador(e)]</p>
+    <p>3 S ResultadoInscripción = NombreTorneo + NombreyApellido + Resultado
+    + (Motivo)</p>
+    <p>4 S JugadoresInscriptos = NombreTorneo + FechaRealización + 1 {
+    NroInscripto + NombreyApellido + Handicap } N</p>
+    <p>5 S Tarjetas = 1{NombreTorneo + DatosJugador(e)} N</p>
+    <p>6 E TarjetaDelJugador = NombreTorneo + NroInscripto + 1 {NroHoyo +
+    Golpes} 18</p>
+    <p>7 S ResultadosDeTorneos = FechaListado + 1{NombreTorneo +
+    FechaRealización + 1{NombreyApellido + TotalGolpesBrutos + Handicap +
+    TotalGolpesNetos } N } N</p>
+    <p>Cada flujo de datos tiene un nombre único que lo identifica. Además,
+    este nombre no debe ser igual al de un atributo y/o estructura y/o
+    entidad.</p>
+    <p>Para mayor claridad se puede indicar el número de evento en el cual
+    participa el flujo de datos. Este número de evento debe ser el mismo que
+    el que posee en la lista de eventos. También se puede identificar de que
+    tipo es: de Entrada o de Salida.</p>
+    <p>Muchas veces un flujo de datos puede tener asociado un calificador,
+    que es un adjetivo que hace referencia al uso que se le pretende dar el
+    flujo de datos. Los calificadores se usan para distinguir entre flujos
+    que tienen idéntico contenido, pero que tienen significados
+    diferentes.</p>
+    <p>El principio de almacenar en la memoria esencial solo los datos
+    imprescindibles, eliminando atributos de cálculo y atributos redundantes
+    también es aplicable a los flujos de datos de entrada del sistema. Para
+    estos se consideran indispensables los datos que sirven para identificar
+    o seleccionar de la memoria esencial la o las ocurrencias de una o más
+    de una entidad, para realizar la respuesta planeada del evento disparado
+    por dicho flujo de entrada. Tomemos como ejemplo el flujo de entrada del
+    evento 6.</p>
+    <p>Si tomamos la tarjeta de un jugador particular como documento, papel
+    físico, veremos que en ella figura como información asociada al jugador
+    el número de inscripción asignado por el sistema al jugador en un torneo
+    determinado, su nombre y apellido y su handicap. Ahora bien, cuando el
+    jugador presenta su tarjeta para que el sistema registre los golpes
+    realizados en cada hoyo, ¿Qué datos son imprescindible para identificar
+    al jugador? Por lo expresado en la visión de contexto número 2 sólo hace
+    falta el nombre del torneo y el número de inscripto, cualquier otro dato
+    del jugador, en este caso es redundante.</p>
+    <p>Lo mismo sucede cuando un socio se inscribe a un torneo, solo debe
+    proporcionar al sistema su número de socio y los demás datos del socio,
+    cuando el sistema los necesite por ejemplo para darle el resultado de la
+    inscripción, los obtendrá del almacén socios.</p>
+    <p>Lo expresado recientemente sobre los flujos de entrada es aplicable
+    para deducir y distinguir que información debe ingresar a cualquier
+    sistema cuando nos encontramos frente a los documentos que se presentan
+    como entrada de un evento.</p>
+    <p>Por lo dicho no debe interpretarse que se aplica el mismo criterio
+    para los flujos de salida. En este caso acompañar todo identificación de
+    sus datos asociados no se considera redundante, sino que por el
+    contrario es útil para quien lo recibe debido a que el ambiente del
+    sistema es imperfecto.</p>
+    <p>DD De Estructuras Del Sistema De Administración De Torneos De
+    Golf:</p>
+    <ul>
+    <li>Documento = TipoDocumento + NúmeroDocumento</li>
+    <li>DatosJugador = NroInscripto + NombreyApellido + Handicap</li>
+    <li>DatosSocio = NroSocio + NombreyApellido + Dirección</li>
+    </ul>
+    <p>Todos los datos elementales que se utilizan en el DD de flujos, de
+    estructuras, almacenes y entidades del modelo de datos deben describirse
+    en el DD Elementales, acompañando a cada uno de ellos de una breve
+    descripción textual de su significado, el tipo de dato. Para aquellos
+    atributos discretos, es decir que solo pueden tomar un valor de una
+    lista determinada, se debe especificar además cada uno de dichos valores
+    como se muestra a continuación:</p>
+    <p>DD Elementos Discretos Del Sistema De Administración De Torneos De
+    Golf:</p>
+    <p>Atributo | Descripción | Valores Posibles Estado | Indica el estado
+    que el socio posee para el club. | Activo, Inactivo. Resultado | Indica
+    el resultado de la inscripción, la cual puede ser aceptada o rechazada.
+    | Aceptada, Rechazada. Motivo | Motivo por el cual se rechaza la
+    inscripción. | “Ya cerró la inscripción”, “No hay más cupo”.</p>
+    <p>DD De Almacenes Externos: - Socios = NroSocio + NombreyApellido +
+    FechaIngreso + FechaNacimiento + Direccion + Telefono + Documento(e) +
+    Estado + Handicap + Categoria</p>
+    <h2 id="reglas-y-consejos-para-usar-la-notación"><em>Reglas Y Consejos
+    Para Usar la Notación</em></h2>
+    <p><strong>Composición</strong></p>
+    <p>Cada uno de los atributos que componen una entidad, entidad
+    asociativa y flujo de datos, estructuras y almacenes debe listarse
+    separados por el signo +. Ejemplo: Código + Descripción + Estado</p>
+    <p><strong>Selección</strong></p>
+    <p>Se usa para indicar que en un determinado momento, sólo uno de varios
+    posibles componentes va a estar presente. Esto debería leerse como
+    elegir una, pero sólo una componente de la siguiente lista. Como ejemplo
+    de esto tenemos el flujo de entrada del evento 3.</p>
+    <p>DatosDeInscripción = NombreTorneo + [NroSocio | DatosJugador(e)]</p>
+    <p>En este caso si el jugador que se inscribe es socio del club se
+    ingresara su número de socio, caso contrario se ingresaran el nombre,
+    apellido y handicap del jugador, estos datos se encuentran agrupados en
+    la estructura DatosJugador.</p>
+    <p>La primera componente de la selección se muestra acompañada con un [,
+    seguida por una |. La última componente se muestra entre la | y el ].
+    Las componentes intermedias, si es que existen, aparecen entre dos |.
+    Debe haber como mínimo dos opciones.</p>
+    <p><strong>Iteración</strong></p>
+    <p>Una estructura de datos puede estar compuesta de varias iteraciones
+    de otros componentes, estructuras y/o atributos. Esto se indica
+    mostrando a los componente entre {}. Esto debería leerse como
+    “iteraciones de”. Como ejemplo de esto tenemos el flujo de salida del
+    evento 5.</p>
+    <p>Tarjetas = 1{NombreTorneo + DatosJugador(e)} N</p>
+    <p>La N indica que existe un número indefinido de pares de estas dos
+    componentes.</p>
+    <p>Si existe un límite inferior para el número de iteraciones, el mismo
+    se muestra antes del {. Si el límite inferior no se indica, implica que
+    puede haber cero o más iteraciones.</p>
+    <p>Si existe un límite superior para el número de iteraciones, el mismo
+    se muestra después del }, si no existe colocamos la N como límite
+    superior.</p>
+    <p>Si el límite inferior coincide con el límite superior, implica que
+    exactamente ese número de iteraciones debe ocurrir.</p>
+    <p>Recordemos que las componentes encerradas entre { } representa una
+    ocurrencia de la iteración. Esto significa que sus nombres no tienen por
+    qué estar un plural.</p>
+    <p>Es aconsejable colocar la repetición en el flujo de datos, almacén,
+    entidad u otra estructura que la referencie y no definir estructuras
+    completamente repetitivas para poder reutilizarla en distintos casos con
+    o sin repeticiones, con repeticiones acotadas o no, etc.</p>
+    <p><strong>Opcionalidad</strong></p>
+    <p>Puede suceder que algunos atributos y/o estructuras no estén siempre
+    presente. Estos componentes se dicen opcionales y se muestran encerrados
+    entre ( ). Por ejemplo la salida del evento 3.</p>
+    <p>ResultadoInscripción = NombreTorneo + NombreyApellido + Resultado +
+    (Motivo)</p>
+    <p>Esto significa que NombreTorneo, NombreyApellido y Resultado siempre
+    estarán presentes; mientras que Motivo puede estar presente o no, solo
+    estará presente en los casos en que la inscripción sea rechazada.</p>
+    <p><strong>Complejidad</strong></p>
+    <p>Una composición compleja puede ser a veces difícil de comprender. Es
+    recomendable que en casos extremos se creen estructuras, para que no
+    exista más de un nivel dentro de otro. Ejemplo, supongamos un flujo de
+    datos llamado almuerzo, el cual está compuesto por:</p>
+    <p>[[[Paté | Pasta] | [Sopa de Pollo | Sopa de Cebolla]] + ½ Entrecot +
+    [Helado | Torta] | Sandwich]</p>
+    <p>podríamos simplificarlo de la siguiente manera: [completo(e) |
+    Sandwich]</p>
+    <p>donde la estructura completo está compuesto por: [Paté | pasta | sopa
+    de pollo | sopa de cebolla ] + ½ Entrecot + [helado | torta]</p>
+    <p>Forma de Estructurar un Diccionario de Datos</p>
+    <p>Como esta herramienta es netamente textual es importante organizarla
+    de forma tal que sea fácil de localizar cada uno de los componentes
+    descriptos en ella, ya que será consultada y eventualmente actualizada
+    por todas aquellas personas involucradas en el desarrollo del sistema
+    durante todo su ciclo de vida.</p>
+    <p>Una forma lógica de ordenarlo es por tipo de componente que se
+    describe, es decir realizar el diccionario de datos por separado de los
+    flujos de entrada y salida, de los almacenes, de las entidades que luego
+    surjan del modelo de datos, de las estructuras y de los atributos
+    elementales del sistema que se esta analizando.</p>
+    <h2 id="conclusión">Conclusión</h2>
+    <p>El análisis de un sistema de información se centra en especificar y
+    definir qué debe realizar el sistema para darle una solución a los
+    problemas del usuario, excluyendo toda influencia de la tecnología. Es
+    importante mantener durante esta etapa un dialogo fluido con los
+    usuarios para que el producto final, el sistema implementado, refleje lo
+    que ellos realmente quieren y necesitan. A través de la especificación
+    de los requerimientos comprendemos y acotamos al sistema, definiendo su
+    funcionalidad. Podemos decir que los requerimientos son una especie de
+    contrato entre los usuarios y los analista, un contrato donde se fija lo
+    que los primeros esperan y lo que los analistas se comprometen a
+    realizar.</p>
+    <p>El modelo ambiental, a través de sus herramientas gráficas y
+    escritas, nos permite validar los requerimientos definidos y definir el
+    límite entre un sistema y el resto del mundo. La construcción de este
+    modelo es la primera y más crítica tarea del análisis estructurado y,
+    aunque pueda parecer fácil, se requiere mucha habilidad por parte del
+    analista, especialmente para construir la lista de eventos. Como ya
+    dijimos al principio los errores que se cometen aquí son costosos de
+    corregir más adelante en el ciclo de vida.</p>
+</body>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</html>
