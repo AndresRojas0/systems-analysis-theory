@@ -1,6 +1,65 @@
 body {
-    padding: 200px 100px 200px 100px;
     /* background-color: #1D1E22; */
     background-color: #FBF0D9;
     color: #5F4B32;
+    padding: 200px 25px 200px 25px;
   }
+
+/* MEDIA QUERIES */
+
+/* Mobile first, we start from the smallest viewport width */
+
+/* From 320px and up */
+@media (min-width: 320px) {
+  body {
+    background-color: #1D1E22;
+    color: white;
+    padding: 200px 25px 200px 25px;
+  }
+ }
+ 
+ /* From 768px and up */
+ @media (min-width: 768px) {
+   body {
+     background-color: #FBF0D9;
+     color: #5F4B32;
+     padding: 200px 100px 200px 100px;
+   }
+ }
+ 
+ /* From 1024px and up */
+ @media (min-width: 1024px) {
+   body {
+     background-color: #FBF0D9;
+     color: #5F4B32;
+     padding: 200px 100px 200px 100px;
+   }
+ }
+ 
+ /* From 1224px and up */
+ @media (min-width: 1224px) {
+   body {
+     background-color: #FBF0D9;
+     color: #5F4B32;
+     padding: 200px 100px 200px 100px;
+   }
+ }
+ 
+ /* From 1824px and up */
+ @media (min-width: 1824px) {
+   body {
+     background-color: #FBF0D9;
+     color: #5F4B32;
+     padding: 200px 100px 200px 100px;
+   }
+ }
+ 
+ /*  max-width query */
+ /* From 850px and up, until 950px  */
+ @media (min-width: 850px) and (max-width: 950px) {
+   body {
+     background-color: #F0F8FF;
+     color: #5F4B32;
+     padding: 200px 100px 200px 100px;
+   }
+ }
