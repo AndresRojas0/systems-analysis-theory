@@ -3,7 +3,83 @@ body {
     background-color: #FBF0D9;
     color: #5F4B32;
     padding: 200px 25px 200px 25px;
-  }
+}
+
+figure {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background: whitesmoke; 
+  padding: 0px;
+}
+
+figure p {
+  margin: 10px;
+}
+
+img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+figcaption {
+  background-color: #222;
+  color: #fff;
+  font-style: italic;
+  align-self: stretch;
+  text-align: center;
+}
+
+
+
+/* Figure 01 styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.box {
+  background-color: #a9c9f6;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.arrow-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  font-size: 40px;
+  color: gray;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.sub-box {
+  background-color: #a9c9f6;
+  padding: 15px;
+  text-align: center;
+  width: 40%;
+}
+
+
 
 /* MEDIA QUERIES */
 
@@ -16,6 +92,10 @@ body {
     color: white;
     padding: 200px 25px 200px 25px;
   }
+
+  figure p {
+    color: #1D1E22;
+  }
  }
  
  /* From 768px and up */
@@ -25,6 +105,10 @@ body {
      color: #5F4B32;
      padding: 200px 100px 200px 100px;
    }
+
+   figure p {
+    color: #5F4B32;
+  }
  }
  
  /* From 1024px and up */
