@@ -8,276 +8,77 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="análisis-de-sistemas-modelo-de-datos"><strong>Análisis de Sistemas: Modelo de Datos</strong></h1>
-    <h2 id="conceptos-generales"><strong>Conceptos Generales</strong></h2>
-    <h3 id="memoria-esencial"><strong>Memoria Esencial</strong></h3>
-    <p>Cuando construimos el <strong>Modelo Ambiental del Sistema</strong>, nos concentramos en las interfaces entre el sistema y su ambiente, estableciendo sus límites.<br>El sistema posee dos fuentes de información:</p>
+    <h1 id="-an-lisis-de-sistemas-modelo-de-datos-"><strong>Análisis de Sistemas: Modelo de Datos</strong></h1>
+    <h2 id="-conceptos-generales-"><strong>Conceptos Generales</strong></h2>
+    <h3 id="-memoria-esencial-"><em>Memoria Esencial</em></h3>
+    <p>Cuando construimos el <strong>Modelo Ambiental del Sistema</strong>, nos concentramos en las interfaces entre éste y el ambiente que lo rodea, tratando de establecer además los límites o alcances del sistema.</p>
+    <p>En otras palabras, nos concentramos en <strong>qué</strong> entra al sistema (qué eventos ocurren en el ambiente que lo afectan) y <strong>qué</strong> sale (las respuestas externas que produce mi sistema, como consecuencia de los eventos).</p>
+    <p>En forma paralela y junto con el Modelo Ambiental, establecemos <strong>con qué</strong> el sistema va a producir las respuestas. </p>
+    <p>Como estamos trabajando con Sistemas de Información, es obvio que el sistema
+    necesitará <strong>datos</strong> para responder a cada evento.</p>
+    <p>El sistema posee dos fuentes de información: </p>
     <ul>
-    <li><strong>El ambiente</strong>: Provee datos al sistema a través de los flujos de entrada.</li>
-    <li><strong>La memoria del sistema</strong>: Mantenida por actividades custodiales.</li>
+    <li>El ambiente: que mediante los flujos de entrada (de entidades y/o almacenes externos) provee al sistema parte de lo necesario para producir sus respuestas y que es la que descubrimos en el Modelo Ambiental. </li>
+    <li>La propia memoria del sistema (mantenida por actividades custodiales), la cual también es alcanzada por el término de tecnología perfecta. Esto significa que el sistema podrá acceder a su memoria de cualquier forma y además, será ilimitada (tener presente que lo planteamos desde el punto de vista esencial).</li>
     </ul>
-    <p><strong>Definición:</strong></p>
+    <p>Pero, ¿por qué un sistema necesitará recordar datos?. Porque el medio ambiente no es perfecto (no siempre se acuerda de todo), y/o no es confiable. Es decir: el concepto de tecnología perfecta no se extiende al ambiente que rodea el sistema. Por ejemplo: </p>
+    <ul>
+    <li>En un sistema de Ventas no podemos pretender que cada vez que el sistema deba generar una factura, el ambiente tenga que informarle todos los datos del cliente y todos los datos del producto y todos los datos de los impuestos a aplicar para que el sistema se limite a actuar como una simple calculadora. No siempre el sistema podrá recordar esa información. </li>
+    <li>En un sistema de Sueldos y Jornales no podemos pretender que cada vez que se tengan que liquidar los sueldos de los empleados sea necesario ingresar la antigüedad y la categoría. Alguien podría falsear estos datos para cobrar un poco más. En este caso, el ambiente no sería tan confiable.</li>
+    </ul>
+    <p>Por lo tanto, podemos concluir que:</p>
     <blockquote>
-    <p>La <strong>memoria esencial</strong> de un sistema son todos los datos que el sistema debe almacenar o guardar para poder producir las respuestas a todos los eventos que lo afectan.</p>
+    <p><strong>La memoria esencial de un sistema son todos los datos que el sistema debe almacenar o guardar (recordar) para poder producir las respuestas a todos los eventos que lo afectan.</strong></p>
     </blockquote>
-    <h2 id="modelo-de-datos"><strong>Modelo de Datos</strong></h2>
-    <p>La memoria esencial no es una colección desorganizada de datos, sino que está estructurada.</p>
-    <p><strong>Definición:</strong></p>
+    <h3 id="-modelo-de-datos-"><em>Modelo de Datos</em></h3>
+    <p>La memoria esencial de un sistema no es una “bolsa” que contiene información sin ningún tipo de organización. Al contrario, la memoria esencial está organizada de alguna forma y esa organización se hace explícita cuando construimos el Modelo de Datos.</p>
+    <p>Entonces:</p>
     <blockquote>
-    <p>El <strong>Modelo de Datos</strong> de un sistema es la explicitación de la forma en que la memoria esencial del sistema está estructurada y de la relación existente entre sus componentes.</p>
+    <p><strong>El Modelo de Datos de un sistema es la explicitación de la forma en que la memoria esencial del sistema está estructurada y de la relación existentes entre sus componentes, teniendo siempre presente la realidad sobre la cual el sistema opera.</strong></p>
     </blockquote>
-    <p>Es importante que el modelo se construya sin preocuparse por la representación física, aplicando el concepto de <strong>tecnología perfecta</strong>.</p>
-    <h2 id="objetivos-del-modelo-de-datos"><strong>Objetivos del Modelo de Datos</strong></h2>
-    <p>Todo modelo de datos debe cumplir con:</p>
+    <p>Es además importante destacar que el Modelo de Datos se construye sin ninguna preocupación por la representación física (cómo se archiva, cómo se accede, cuán complejo es un cálculo, ...), es decir: aplicando el concepto de tecnología perfecta.</p>
+    <p>Ahora bien, como todo sistema forma parte de un sistema mayor, podemos preguntarnos qué datos se incluyen y qué datos se excluyen del Modelo. Es el Modelo Ambiental el que nos guiará en su construcción. Tenemos que ser conscientes de que ambos modelos deberían construirse juntos y por lo tanto la retroalimentación debe hacerse durante dicha construcción. Lo importante es poder realizarla en esta etapa temprana del proceso de análisis.</p>
+    <p><em>Esto no hace más que destacar la importancia de ambos modelos (Modelo Ambiental y Modelo de Datos) y de su adecuada construcción. El costo de no construir bien estos modelo es muy alto si se lo detecta tardíamente. Es más, si se detecta durante el uso del sistema, puede llegar a ser imposible reconstruir la información que no se recordó oportunamente.</em></p>
+    <p>Además, es importante la forma en que se construye el Modelo de Datos, ya que ésta puede afectar, en el futuro el diseño de la estructura física definitiva. </p>
+    <p>Por lo tanto, podemos concluir que:</p>
+    <blockquote>
+    <p><strong>El Modelo de Datos debe construirse con profundidad, teniendo como objetivo modelar la estructura de los datos de manera tal que garantice el funcionamiento del sistema y facilite la tarea posterior de diseño de la estructura.</strong></p>
+    </blockquote>
+    <h3 id="-objetivos-a-los-que-apunta-todo-modelo-de-datos-"><em>Objetivos a los que apunta todo Modelo de Datos</em></h3>
+    <p>Es deseable que todo modelo de datos cumpla los siguientes objetivos:</p>
     <ol>
-    <li><strong>Estructura mínima</strong>: Evitar redundancias y garantizar integridad.</li>
-    <li><strong>No pérdida de información</strong>: Asegurar respuestas completas del sistema.</li>
-    <li><strong>Facilidad en mantenimiento</strong>: Simplificación en las altas, bajas y modificaciones de datos.</li>
-    <li><strong>Máxima supervivencia</strong>: Capacidad de adaptación a cambios futuros.</li>
+    <li><strong>Estructura mínima</strong>: que va mucho más allá del potencial ahorro de espacio de almacenamiento, sino que está íntimamente ligado al concepto de <strong>no redundancia</strong> y, en consecuencia, de <strong>integridad</strong>.</li>
+    <li><strong>Que asegure la no pérdida de información</strong>: es decir, que le permita al sistema responder a todos los eventos que lo afectan, respetando las visiones de contexto.</li>
+    <li><strong>Que facilite los procesos de mantenimiento (ABM)</strong>: el mantenimiento en tiempo y forma de los datos es importantísimo y ABMs simplificados se traducen en software simplificado, y ello en <strong>calidad del sistema</strong>.</li>
+    <li><strong>Máxima supervivencia</strong>: con la máxima capacidad para soportar cambios ambientales y nuevos requerimientos.</li>
     </ol>
-    <h3 id="inserción-en-el-ciclo-de-desarrollo"><strong>Inserción en el ciclo de desarrollo</strong></h3>
-    <p>$$
-    \text{Problemas, requerimientos y objetivos} \Rightarrow \text{Modelo Ambiental} \Rightarrow \text{Modelo de Datos} \Rightarrow \text{Modelo de Comportamiento}
-    $$</p>
-    <h2 id="construcción-del-modelo-de-datos"><strong>Construcción del Modelo de Datos</strong></h2>
-    <h3 id="etapas"><strong>Etapas</strong></h3>
+    <h3 id="-qu-relaci-n-existe-entre-estos-objetivos-"><em>¿Qué relación existe entre estos objetivos?</em></h3>
+    <p>El concepto de no redundancia hace que se faciliten los procesos de mantenimiento o ABMs, ya que de no cumplirse esto, se podría llegar a tener un mismo conjunto de datos distribuidos en distintos lugares del Modelo ; lo que obligaría, al hacer el mantenimiento de los mismos, a recordar que es necesario actualizarlos en dos o más lugares diferentes.</p>
+    <p>El concepto de integridad implica la completitud del Modelo en lo referente a la relación de los datos.</p>
+    <p>Se deberá buscar una estructura mínima óptima que a su vez asegure la no pérdida de información, validando que el sistema pueda seguir produciendo las respuestas, respetando las visiones de contexto, y en un todo con los objetivos planteados.</p>
+    <h3 id="-inserci-n-dentro-del-ciclo-de-desarrollo-"><em>Inserción dentro del ciclo de desarrollo</em></h3>
+    <h2 id="-construcci-n-del-modelo-de-datos-"><strong>Construcción del Modelo de Datos</strong></h2>
+    <h3 id="-etapas-"><em>Etapas</em></h3>
+    <p>No existe una “receta”, sino herramientas y métodos para construirlo y formas de validarlo.</p>
+    <p>Podemos encarar la construcción del mismo, dividiéndolo en etapas:</p>
     <ol>
-    <li><strong>Obtener el Mapa de Información Preliminar</strong></li>
-    <li><strong>Optimizar el Mapa</strong></li>
+    <li>Obtener el Mapa de información preliminar, en el cual explicitamos los componentes y las relaciones entre ellos.</li>
+    <li>Optimizar el Mapa anterior, en la cual tratamos de satisfacer las objetivos a cumplir; afianzamos los componentes; construimos un Mapa de información canónico o normalizado y lo validamos.</li>
     </ol>
-    <h3 id="diagrama-de-entidad-relación-der"><strong>Diagrama de Entidad-Relación (DER)</strong></h3>
-    <p>Un <strong>DER</strong> es una herramienta que representa los objetos del mundo real y sus relaciones dentro del sistema.</p>
-    <h4 id="ejemplo-de-der"><strong>Ejemplo de DER</strong></h4>
-    <p>$$
-    \begin{array}{c}
-    \textbf{AULA} \
-    | \
-    \textbf{CURSO PROGRAMADO} \Rightarrow \textbf{DÍA} \
-    \Downarrow \
-    \textbf{INSTRUCTOR}
-    \end{array}
-    $$</p>
-    <h2 id="elementos-del-der"><strong>Elementos del DER</strong></h2>
-    <h3 id="entidades"><strong>Entidades</strong></h3>
-    <p>Son clases de objetos del mundo real con un rol definido en el sistema.</p>
-    <p>Ejemplo de entidad:</p>
-    <p>$$
-    \text{INSTRUCTOR}
-    $$</p>
-    <h3 id="relaciones"><strong>Relaciones</strong></h3>
-    <p>Representan asociaciones entre entidades.</p>
-    <p>Ejemplo de relación:</p>
-    <p>$$
-    \text{TEMA} \rightarrow \text{abarca} \rightarrow \text{CURSO}
-    $$</p>
-    <h3 id="entidad-asociativa"><strong>Entidad Asociativa</strong></h3>
-    <p>Actúa como relación y como entidad al mismo tiempo.</p>
-    <p>Ejemplo de entidad asociativa:</p>
-    <p>$$
-    \text{HOMBRE} \rightarrow \text{Casamiento} \rightarrow \text{MUJER}
-    $$</p>
-    <h3 id="subtipificación-y-supertipos"><strong>Subtipificación y Supertipos</strong></h3>
-    <p>$$
-    \text{MAMÍFERO} \Rightarrow { \text{HUMANO}, \text{GATO}, \text{RATÓN} }
-    $$</p>
-    <p>$$
-    \text{ITEM DE INVENTARIO} \Rightarrow { \text{ITEM TERMINADO}, \text{ITEM SEMIELABORADO} }
-    $$</p>
-    <h2 id="normalización"><strong>Normalización</strong></h2>
-    <h3 id="definiciones"><strong>Definiciones</strong></h3>
-    <ul>
-    <li><strong>Clave candidata</strong>: Conjunto de atributos que identifican de manera única una ocurrencia.</li>
-    <li><strong>Clave primaria</strong>: Clave candidata elegida como principal.</li>
-    <li><strong>Dependencia funcional</strong>: Si un atributo X determina un único valor de Y, se dice que (X \rightarrow Y).</li>
-    </ul>
-    <h3 id="proceso-de-normalización"><strong>Proceso de Normalización</strong></h3>
+    <h2 id="-obtener-el-mapa-de-informaci-n-preliminar-"><strong>Obtener el Mapa de Información Preliminar</strong></h2>
+    <p>Para obtener el Mapa de Información preliminar, es necesario realizar una serie de
+    pasos: </p>
     <ol>
-    <li><p><strong>Primera Forma Normal (1NF)</strong></p>
-    <ul>
-    <li>Elimina atributos multivalor.</li>
-    <li>Ejemplo:
-    $$
-    \text{Proveedor} \rightarrow { \text{Razón Social}, \text{Domicilio}, \text{Localidad} }
-    $$</li>
-    </ul>
-    </li>
-    <li><p><strong>Segunda Forma Normal (2NF)</strong></p>
-    <ul>
-    <li>Asegura que los atributos no clave dependan completamente de la clave.</li>
-    <li>Ejemplo:
-    $$
-    \text{Proveedor} \rightarrow { \text{Razón Social}, \text{Domicilio}, \text{Localidad} }
-    $$
-    $$
-    \text{Producto por Proveedor} \rightarrow { \text{Código Producto}, \text{Cantidad} }
-    $$</li>
-    </ul>
-    </li>
-    <li><p><strong>Tercera Forma Normal (3NF)</strong></p>
-    <ul>
-    <li>Elimina dependencias funcionales entre atributos no clave.</li>
-    <li>Ejemplo:
-    $$
-    \text{Localidad} \rightarrow \text{Categoría}
-    $$</li>
-    </ul>
-    </li>
+    <li>Construir y refinar el Diagrama de Entidad Relación (DER)</li>
+    <li>“Mapear” el DER para lograr el Mapa de Información preliminar</li>
     </ol>
-    <h3 id="ventajas-de-la-normalización"><strong>Ventajas de la Normalización</strong></h3>
-    <ul>
-    <li><strong>Evita redundancia</strong></li>
-    <li><strong>Facilita mantenimiento</strong></li>
-    <li><strong>Mejora integridad de datos</strong></li>
-    </ul>
-    <hr>
-    <h1 id="optimización-del-mapa-de-información-preliminar"><strong>Optimización del Mapa de Información Preliminar</strong></h1>
-    <h2 id="conceptos-previos"><strong>Conceptos Previos</strong></h2>
-    <p>Antes de optimizar, es importante comprender algunos conceptos fundamentales:</p>
-    <h3 id="clave-candidata"><strong>Clave Candidata</strong></h3>
-    <blockquote>
-    <p>Conjunto de atributos que pueden identificar de manera única a una ocurrencia de una entidad.</p>
-    </blockquote>
-    <p>Ejemplo:<br>Si una entidad <strong>Alumno</strong> tiene los atributos:
-    [
-    { \text{Número de Legajo}, \text{Tipo de Documento}, \text{Número de Documento} }
-    ]
-    entonces, <strong>Número de Legajo</strong> y <strong>(Tipo de Documento, Número de Documento)</strong> podrían ser claves candidatas.</p>
-    <h3 id="clave-primaria"><strong>Clave Primaria</strong></h3>
-    <blockquote>
-    <p>Es la clave candidata seleccionada como identificador principal de la entidad.</p>
-    </blockquote>
-    <p>Ejemplo:
-    [
-    \text{Alumno} = { \underline{\text{Número de Legajo}}, \text{Nombre}, \text{Fecha de Nacimiento} }
-    ]</p>
-    <h3 id="clave-alternativa"><strong>Clave Alternativa</strong></h3>
-    <blockquote>
-    <p>Claves candidatas que no fueron elegidas como clave primaria.</p>
-    </blockquote>
-    <p>Ejemplo:
-    [
-    \text{Tipo de Documento} + \text{Número de Documento}
-    ]</p>
-    <hr>
-    <h2 id="dependencia-funcional"><strong>Dependencia Funcional</strong></h2>
-    <p>Se dice que un atributo ( Y ) <strong>depende funcionalmente</strong> de otro atributo ( X ), si para cada valor de ( X ) existe un único valor de ( Y ).</p>
-    <p>Ejemplo:
-    [
-    \text{Número de Legajo} \rightarrow \text{Nombre del Alumno}
-    ]</p>
-    <hr>
-    <h2 id="normalización-y-formas-normales"><strong>Normalización y Formas Normales</strong></h2>
-    <h3 id="primera-forma-normal-1nf"><strong>Primera Forma Normal (1NF)</strong></h3>
-    <blockquote>
-    <p>Una entidad está en <strong>1NF</strong> si no tiene atributos multivalor.</p>
-    </blockquote>
-    <p>Ejemplo antes de normalizar:
-    [
-    \text{Proveedor} = { \text{Código}, \text{Razón Social}, \text{Domicilio}, { \text{Código Producto}, \text{Cantidad} } }
-    ]</p>
-    <p>Después de aplicar <strong>1NF</strong>:
-    [
-    \text{Proveedor} = { \text{Código}, \text{Razón Social}, \text{Domicilio} }
-    ]
-    [
-    \text{Productos por Proveedor} = { \text{Código Proveedor}, \text{Código Producto}, \text{Cantidad} }
-    ]</p>
-    <h3 id="segunda-forma-normal-2nf"><strong>Segunda Forma Normal (2NF)</strong></h3>
-    <blockquote>
-    <p>Una entidad está en <strong>2NF</strong> si está en <strong>1NF</strong> y todo atributo no clave depende de la clave en forma funcionalmente completa.</p>
-    </blockquote>
-    <p>Ejemplo:
-    [
-    \text{Proveedor} = { \text{Código Proveedor}, \text{Razón Social}, \text{Domicilio}, \text{Localidad}, \text{Categoría} }
-    ]
-    [
-    \text{Productos por Proveedor} = { \text{Código Proveedor}, \text{Código Producto}, \text{Cantidad} }
-    ]</p>
-    <h3 id="tercera-forma-normal-3nf"><strong>Tercera Forma Normal (3NF)</strong></h3>
-    <blockquote>
-    <p>Una entidad está en <strong>3NF</strong> si está en <strong>2NF</strong> y no existen dependencias funcionales entre atributos no clave.</p>
-    </blockquote>
-    <p>Ejemplo de entidad no normalizada:
-    [
-    \text{Proveedor} = { \text{Código Proveedor}, \text{Razón Social}, \text{Domicilio}, \text{Localidad}, \text{Categoría} }
-    ]
-    [
-    \text{Localidad} \rightarrow \text{Categoría}
-    ]</p>
-    <p>Después de aplicar <strong>3NF</strong>:
-    [
-    \text{Proveedor} = { \text{Código Proveedor}, \text{Razón Social}, \text{Domicilio}, \text{Localidad} }
-    ]
-    [
-    \text{Localidad} = { \text{Nombre Localidad}, \text{Categoría} }
-    ]</p>
-    <hr>
-    <h2 id="transformación-del-der-en-un-mapa-de-información"><strong>Transformación del DER en un Mapa de Información</strong></h2>
-    <p>El <strong>DER</strong> se transforma en un <strong>Mapa de Información</strong> utilizando cardinalidades:</p>
-    <h3 id="ejemplo-de-vinculaciones"><strong>Ejemplo de Vinculaciones</strong></h3>
-    <h4 id="relación-1-a-1"><strong>Relación 1 a 1</strong></h4>
-    <p>[
-    A \leftrightarrow B
-    ]</p>
-    <h4 id="relación-1-a-n"><strong>Relación 1 a N</strong></h4>
-    <p>[
-    A \rightarrow B
-    ]</p>
-    <h4 id="relación-n-a-m"><strong>Relación N a M</strong></h4>
-    <p>[
-    A \leftrightarrow B
-    ]</p>
-    <p>Ejemplo aplicado a un sistema de gestión de stock:</p>
-    <p>[
-    \begin{array}{c}
-    \textbf{ITEM DE STOCK} \
-    | \
-    \textbf{MATERIA PRIMA} \quad \textbf{SEMIELABORADO} \quad \textbf{TERMINADO} \
-    \Downarrow \
-    \textbf{PROVEEDOR} \rightarrow \textbf{ORDEN DE COMPRA}
-    \end{array}
-    ]</p>
-    <h3 id="diccionario-de-datos"><strong>Diccionario de Datos</strong></h3>
-    <table>
-    <thead>
-    <tr>
-    <th>Entidad</th>
-    <th>Atributos</th>
-    </tr>
-    </thead>
-    <tbody><tr>
-    <td><strong>Proveedor</strong></td>
-    <td>Código Proveedor, Razón Social, Domicilio, Localidad</td>
-    </tr>
-    <tr>
-    <td><strong>Orden de Compra</strong></td>
-    <td>Número de Orden, Fecha, Código Proveedor, Código Ítem, Cantidad Pedida</td>
-    </tr>
-    <tr>
-    <td><strong>Ítem de Stock</strong></td>
-    <td>Código Ítem, Descripción, Unidad de Medida, Stock</td>
-    </tr>
-    <tr>
-    <td><strong>Materia Prima</strong></td>
-    <td>Presentación, Lote de Compra, Stock Mínimo, Precio de Costo</td>
-    </tr>
-    <tr>
-    <td><strong>Semielaborado</strong></td>
-    <td>Proceso Actual</td>
-    </tr>
-    <tr>
-    <td><strong>Terminado</strong></td>
-    <td>Precio de Costo, Margen de Ganancia, Precio de Venta</td>
-    </tr>
-    </tbody></table>
-    <hr>
-    <h2 id="conclusiones"><strong>Conclusiones</strong></h2>
-    <ul>
-    <li><strong>El Modelo de Datos debe minimizar redundancias</strong> para optimizar almacenamiento.</li>
-    <li><strong>Debe garantizar la integridad y consistencia de los datos</strong>.</li>
-    <li><strong>Las formas normales permiten mejorar la organización de la información</strong> evitando problemas de mantenimiento.</li>
-    </ul>
-    <hr>
+    <h3 id="-diagrama-de-entidad-relaci-n-der-"><em>Diagrama de Entidad - Relación (DER)</em></h3>
+    <p>Un Diagrama de Entidad Relación es una herramienta para identificar los objetos o cosas que le interesan al sistema, que componen la memoria esencial del mismo y cómo se relacionan. Es una herramienta de modelado semántica que ayuda a clarificar conceptos.</p>
+    <p>También puede emplearse como una herramienta para descubrir reglas y eventos, en concordancia con lo dicho anteriormente sobre la retroalimentación que existe en la construcción del Modelo Ambiental y el Modelo de Datos.</p>
+    <p>Un DER muestra un <strong>conjunto</strong> de objetos del <strong>mundo real</strong> que son <strong>significativos</strong> para el sistema y sobre los cuales éste necesita almacenar información. Son aspectos de la realidad para los cuales no se asume ningún tipo de implementación posible.</p>
+    <p>El Modelo de Datos usa el DER para mostrar las entidades y relaciones de las cuales el sistema es responsable (ya sea de recolectar información o de usar información).</p>
+    <p><strong>Ejemplo:</strong></p>
+    
     
 </body>
 </html>
