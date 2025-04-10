@@ -57,6 +57,11 @@
     <p>El concepto de integridad implica la completitud del Modelo en lo referente a la relación de los datos.</p>
     <p>Se deberá buscar una estructura mínima óptima que a su vez asegure la no pérdida de información, validando que el sistema pueda seguir produciendo las respuestas, respetando las visiones de contexto, y en un todo con los objetivos planteados.</p>
     <h3 id="-inserci-n-dentro-del-ciclo-de-desarrollo-"><em>Inserción dentro del ciclo de desarrollo</em></h3>
+    <pre><code>              Problemas, requerimientos y objetivos
+                   Modelo Ambiental  |  Modelo <span class="hljs-keyword">de</span> Datos
+    Punto <span class="hljs-keyword">de</span> Control--&gt; -------------------------
+                        Modelo <span class="hljs-keyword">de</span> Comportamiento
+    </code></pre><p><em>Figura 1</em></p>
     <h2 id="-construcci-n-del-modelo-de-datos-"><strong>Construcción del Modelo de Datos</strong></h2>
     <h3 id="-etapas-"><em>Etapas</em></h3>
     <p>No existe una “receta”, sino herramientas y métodos para construirlo y formas de validarlo.</p>
@@ -78,7 +83,159 @@
     <p>Un DER muestra un <strong>conjunto</strong> de objetos del <strong>mundo real</strong> que son <strong>significativos</strong> para el sistema y sobre los cuales éste necesita almacenar información. Son aspectos de la realidad para los cuales no se asume ningún tipo de implementación posible.</p>
     <p>El Modelo de Datos usa el DER para mostrar las entidades y relaciones de las cuales el sistema es responsable (ya sea de recolectar información o de usar información).</p>
     <p><strong>Ejemplo:</strong></p>
+    <pre><code><span class="hljs-symbol">DER:</span> Programación de Cursos
+    </code></pre><p><em>Figura 2</em></p>
+    <p><strong>Entidad</strong></p>
+    <p><em>Figura 3</em></p>
+    <p>Una entidad es una clase de objeto del mundo real cuyo rol o función dentro del sistema está bien definido. Puede corresponder a un objeto tangible, intangible o a conceptos abstractos. El sistema usará información de una entidad, interactuando con ocurrencias de la misma. Toda entidad tiene un nombre único que debería reflejar el rol que posee dentro del sistema.</p>
+    <p>Una entidad representa en su totalidad a un conjunto de posibles ocurrencias. Por ejemplo, la entidad Curso podría tener muchas ocurrencias. Tres de estas ocurrencias podría ser &quot;Introducción al Cálculo Numérico&quot;, &quot;Virus Informáticos - cómo combatirlos&quot; y &quot;Musicoterapia - nuevos avances&quot;.</p>
+    <p>El sistema identificará ocurrencias individuales de una entidad y la información almacenada sobre ella. Esta información puede referirse a las relaciones en las que participa la entidad o a los atributos que posee. Cada ocurrencia de una entidad debe ser distinta de las demás, pero debe cumplir el mismo rol que las demás ocurrencias de la entidad.</p>
+    <p>Supongamos que existe una entidad en nuestro DER llamada Instructor; sobre la cual podemos decir que: &quot;...Existe una clase de personas del mundo real que poseen ciertas propiedades en común. Instructor es el nombre genérico con el cual se llama a cualquiera de ellas. Existen muchas ocurrencias de Instructor, cada una unívocamente identificada. Ciertos aspectos de Instructor (tales como sus atributos o su participación en relaciones) son de importancia para el sistema...&quot;.</p>
+    <p>Algunas entidades representarán objetos tangibles físicos que juegan roles particulares en su interacción con el sistema. En términos generales son fáciles de identificar y presentan poca dificultad. Por ejemplo: para una empresa que dicta cursos para empresas, las entidades Instructor y Aula son importantes.</p>
+    <p>Otras entidades tienen una naturaleza más abstracta. Ejemplos incluyen entidades que representan períodos de tiempo como Día y conceptos abstractos como Curso.</p>
+    <p>Como dijimos anteriormente, si una entidad Instructor forma parte de nuestro DER, entonces, existe un conjunto de cosas del mundo real, cada una de las cuales es una ocurrencia de Instructor. Cada una de estas ocurrencias debería poder referenciarse (por ejemplo, señalándola) y afirmar: Esto es un Instructor. Esta afirmación debe ser verificable; es decir: debe poder determinarse si es verdadera o falsa. Si bien no es posible &quot;apuntar&quot; a entidades abstractas como Curso, debería ser posible referenciar ocurrencias individuales y declarar que son ocurrencias de esta entidad.</p>
+    <p>Si una potencial entidad no satisface este criterio, entonces no es una entidad.</p>
+    <p>Por ejemplo: para un negocio que se dedica a la venta de artículos de ferretería, podríamos haber modelado lo siguiente (fragmento del DER del subsistema de ventas).</p>
+    <p><em>Figura 4</em></p>
+    <p>Sin embargo, un revisión más detallada de este fragmento del DER nos permite concluir que Margen de Ganancia no posee ocurrencias a las cuales podamos referenciar o apuntar, o bien describirlas con atributos. La entidad deberá transformarse en atributo de Rubro, Subrubro, Producto y Artículo, y el DER quedaría:</p>
+    <p><em>Figura 5</em></p>
+    <p>Conclusiones:</p>
+    <blockquote>
+    <p>Una entidad es un objeto componente de la memoria esencial sobre la cual el sistema necesite recordar o almacenar información. Y se caracteriza porque:</p>
+    <ul>
+    <li>Se describe por uno o más atributos o elementos de datos.</li>
+    <li>Posee una o más ocurrencias.</li>
+    <li>Cada ocurrencia posee uno o más atributos que la identifica de forma única.</li>
+    </ul>
+    </blockquote>
+    <p><strong>Relación</strong></p>
+    <p><em>Figura 6</em></p>
+    <p>Una relación representa una posible asociación que puede darse entre ocurrencia de entidades. Cada ocurrencia de una relación corresponde a ocurrencias específicas de aquellas entidades que están relacionadas.</p>
+    <p>Una relación puede considerarse como un patrón al cual se le puede adicionar referencias a entidades específicas para obtener hechos específicos acerca del mundo real. Por ejemplo:</p>
+    <pre><code><span class="hljs-attribute">CURSO - abarca - TEMA</span>
+    </code></pre><p><em>Figura 7</em></p>
+    <p>actúa como un template o patrón en el cual ocurrencias de Curso y Tema pueden ingresarse para obtener hechos específicos:</p>
+    <pre><code>Introducció<span class="hljs-built_in">n</span> al Ruso - abarca - el alfabeto Cirílico
     
+    Master en navegació<span class="hljs-built_in">n</span> - abarca - medició<span class="hljs-built_in">n</span> angular
+    
+    Astronomía esférica - abarca - medició<span class="hljs-built_in">n</span> angular
+    </code></pre><p>Cada ocurrencia de una relación corresponde a una asociación de cero o más ocurrencias de cada una de las entidades que participan en la relación.</p>
+    <p>Cada ocurrencia de una relación muestra que un evento ocurrió y que éste involucró a las ocurrencias específicas de las entidades que participan en la relación. Algunas relaciones sólo recuerdan la ocurrencia de un evento (Ej.: Persona se casó con Persona); se dice que son relaciones tipo “trace”, ya que registran el evento. Otras, en cambio reflejan una relación de continuidad entre entidades (Ej.: Persona está casada con Persona); se dice que son asociaciones continuas. La heurística dice que las relaciones tipo “trace” tienen una alta probabilidad de tener atributos y transformarse entonces, en entidades asociativas.</p>
+    <p><strong>Relaciones de orden superior:</strong></p>
+    <p>Una relación que involucre a más de dos ocurrencias de entidades se dice que es de orden superior. Una relación de 3º orden aparece en el DER con tres líneas que salen del diamante. Por ejemplo:</p>
+    <p><em>Figura 8</em></p>
+    <p>puede indicarse: Persona es hijo de Hombre y Mujer.</p>
+    <p><strong>Relaciones recursivas:</strong></p>
+    <p>Muchas veces una relación involucra ocurrencias de una misma entidad, por ejemplo:</p>
+    <p><em>Figura 9</em></p>
+    <p>Cuando una entidad se repite en una relación, se dice que la relación es recursiva.</p>
+    <p>Para indicar en el ejemplo cuál de los empleados se reporta a quién, indicamos:</p>
+    <blockquote>
+    <p>Empleado(subordinado) se reporta a Empleado(jefe)</p>
+    </blockquote>
+    <p>esto permite a cada ocurrencia de la relación formar parte de un par de empleados, uno en el rol de jefe y otro en el rol de subordinado.</p>
+    <p>En este tipo de relaciones, la misma ocurrencia de una entidad puede desempeñar el mismo rol, pero no en el mismo momento.</p>
+    <p><strong>Relaciones simétricas:</strong></p>
+    <p>Para la mayoría de las relaciones recursivas, la distinción entre los distintos roles que una entidad puede desempeñar en la relación debe ser clara a efectos de que la relación esté definida correctamente.</p>
+    <p>Para algunas relaciones recursivas, la posición de la entidad en la relación no es significativa. Estas relaciones se conocen como simétricas. La relación “es amigo de”, es un ejemplo de una relación simétrica.</p>
+    <p><em>Figura 10</em></p>
+    <p>Para este tipo de relaciones no es necesario distinguir el rol que juegan las entidades. Para el ejemplo anterior, podríamos indicar: Persona es amiga de Persona.</p>
+    <p><strong>Relaciones recursivas de orden superior</strong></p>
+    <p>La relación de 3º orden que se indicó anteriormente (ver (*)), podría haberse modelado de la siguiente manera:</p>
+    <p><em>Figura 11</em></p>
+    <p>indicando: Persona es hija de Persona(madre) y Persona(padre)</p>
+    <p>Conclusiones:</p>
+    <blockquote>
+    <p>Una relación es una posible asociación entre ocurrencias de diferentes entidades.</p>
+    <p>Puede considerarse como un patrón.</p>
+    <p>Muestran que un evento ocurre.</p>
+    </blockquote>
+    <p><strong>Entidad asociativa</strong></p>
+    <p><em>Figura 12</em></p>
+    <p>Una entidad asociativa actúa al mismo tiempo como una relación y como una entidad. </p>
+    <p>Como relación, indica que existe una asociación entre entidades, y tal como sucede con todas las relaciones, una ocurrencia de una entidad asociativa no puede existir sin que previamente existan las ocurrencias de las otras entidades.</p>
+    <p>Una relación debería transformarse en una entidad asociativa si la relación posee atributos o bien la relación actúa como entidad en otras relaciones.</p>
+    <p><strong>La entidad asociativa como una relación con atributos:</strong></p>
+    <p>Los atributos de una entidad asociativa no describen a las entidades que participan de la relación, sino más bien a la asociación entre ellas. Por ejemplo, dada la siguiente relación:</p>
+    <p><em>Figura 13</em></p>
+    <p>podríamos decir que es necesario recordar la fecha en la cual se casaron por Civil. Este atributo (fecha del Civil) no es un atributo ni de la entidad Hombre, ni de la entidad Mujer, sino que describe cuándo se estableció la ocurrencia de la relación. Para modelar esta situación, reemplazamos la relación “está casado con” por la entidad asociativa Casamiento, con “fecha del Civil” como atributo.</p>
+    <p><em>Figura 14</em></p>
+    <p>La entidad asociativa mantiene la propiedad de ser una relación (cada ocurrencia de Casamiento recuerda el hecho de que un determinado Hombre se casó con una determinada Mujer en una determinada fecha).</p>
+    <p><strong>La entidad asociativa como entidad en otras relaciones:</strong></p>
+    <p>Una entidad asociativa puede participar en relaciones con otras entidades. La entidad asociativa actúa como relación en el sentido de que “recuerda” la asociación original y también como una entidad involucrada como participante en relaciones posteriores. Por ejemplo, la entidad asociativa <em>Curso programado</em> actúa como una relación entre las entidades <em>Curso</em>, <em>Aula</em> y <em>Día</em>, y también como una entidad en la relación “reserva lugar en”:</p>
+    <p><em>Figura 15</em></p>
+    <p>Para que una ocurrencia de una entidad asociativa pueda participar en otra relación por sí misma, primero debe crearse. No tiene sentido pensar en un <em>Delegado</em> de una empresa reservando lugar en un <em>Curso programado</em> antes de que éste haya sido creado definiendo una asociación entre Curso, Aula y Día.</p>
+    <p>Muchas veces, una entidad asociativa es inicialmente identificada y modelada como una entidad. Una vez detectado su doble comportamiento, basta con transformarla a una entidad asociativa. Una buena pista para ver si una entidad es asociativa es verificar si la entidad sospechosa no puede existir independientemente de las otras entidades con las cuales participa en una relación.</p>
+    <p>Conclusiones:</p>
+    <blockquote>
+    <p>Una entidad asociativa es una entidad que actúa como relación y como entidad.
+    Surge de una relación acerca de la cual se desea guardar información. 
+    Una ocurrencia de una entidad asociativa no existe si no existen las ocurrencias de las entidades que intervienen en la relación de la cual surge.
+    La inversa no se cumple.</p>
+    </blockquote>
+    <p><strong>Subtipo</strong></p>
+    <p><em>Figura 16</em></p>
+    <p>El subtipo de una entidad está formado por un grupo bien definido de ocurrencias de una entidad, que pueden considerarse como una entidad por derecho propio. Como ejemplo podemos considerar a la entidad Mamífero. Ocurrencias individuales de esta entidad podrían ser: Arquímedes, Juan María Traverso, Tom y Jerry.</p>
+    <p>Un grupo bien definido es la entidad Humano, que contiene varias ocurrencias (dos de las cuales se mencionaron en el párrafo anterior). Decimos que esta entidad es un subtipo de la entidad Mamífero. Otros subtipos de la misma son Gato y Ratón.</p>
+    <p><em>Figura 17</em></p>
+    <p>Esta subtipificación también podría visualizarse con un diagrama de Venn, que muestra a cada entidad como un subconjunto conteniendo ocurrencias de la misma:</p>
+    <p><em>Figura 18</em></p>
+    <p>Una ocurrencia del subtipo es siempre una ocurrencia del supertipo (Ej.: una ocurrencia de Gato es automáticamente una ocurrencia de Mamífero). Como consecuencia, cualquier propiedad que posea el supertipo es automáticamente una propiedad del subtipo. Podemos decir que el subtipo hereda las propiedades del supertipo.</p>
+    <p>Además de las propiedades heredadas, un subtipo puede tener uno o ambos (pero nunca ninguno) de lo siguiente:</p>
+    <ol>
+    <li>Atributos específicos: algún subtipo puede tener atributos que no son relevantes para otros subtipos. Esto se contrasta con los atributos comunes, que se declaran en el supertipo.</li>
+    <li>Relaciones específicas: algunas relaciones pueden afectar solamente a cierto subtipo de una entidad. Por ejemplo, un Delegado de una empresa sólo puede “reservar lugar” en un Curso público:</li>
+    </ol>
+    <p><em>Figura 19</em></p>
+    <p><strong>Múltiples supertipos:</strong></p>
+    <p>Una entidad puede ser un subtipo de subtipificaciones de varias entidades diferentes. En este caso, hereda cualquier relación y atributos comunes a ambos supertipos. Por ejemplo:</p>
+    <p><em>Figura 20</em></p>
+    <p>un Ítem terminado es un tipo de Ítem de manufactura y también un tipo de Ítem de inventario. Esto también puede mostrarse como un diagrama de Venn:</p>
+    <p><em>Figura 21</em></p>
+    <p>Como consecuencia, cualquier ocurrencia de Ítem terminado es también de Ítem de manufactura e Ítem de inventario, y por lo tanto, tiene atributos heredados de ambos.</p>
+    <p>Conclusiones:</p>
+    <blockquote>
+    <p>Un subtipo consiste en un subconjunto de ocurrencias de una entidad que puede considerarse como una entidad por derecho propio. 
+    Lo importante: explicitar subtipos sólo si semánticamente es necesario.</p>
+    </blockquote>
+    <p><strong>Subtificación</strong></p>
+    <p><em>Figura 22</em></p>
+    <p>Una subtipificación indica que a la entidad involucrada se la considera como compuesta por grupos distintos y bien identificables, cada uno de los cuales se lo considera un subtipo. Su importancia radica en la semántica, ya que permite que el modelador piense en conceptos generales, de alto nivel (relaciones, atributos) como relevantes para el supertipo y pueda detallar aquellos relacionados ç con cada uno de los subtipos, sin llegar a verse desbordado por la complejidad.</p>
+    <p>Como un simple ejemplo, consideremos la subtipificación de la entidad Mamífero en Gato, Ratón, ... . Esta subtipificación hace una distinción entre diferentes especies, a las que cada ocurrencia de un Mamífero pertenece, por lo tanto, podemos llamarla “especie”. En este ejemplo, la subtipificación “especie” tiene 3 subtipos. En términos generales, una subtipificación puede tener varios subtipos.</p>
+    <p><strong>La subtipificación genera subtipos mutuamente excluyentes:</strong>
+    Dentro de una subtipificación, no existe ocurrencia del supertipo que sea simultáneamente una ocurrencia de más de un subtipo de ella.</p>
+    <p><strong>Alcance de una subtipificación:</strong>
+    Decimos que una subtipificación está completa si cualquier ocurrencia del supertipo es una ocurrencia de exactamente uno de sus subtipos.</p>
+    <p>Algunas subtipificaciones poseen ocurrencias del supertipo que no caen en ninguna de las ocurrencias de los subtipos. Estos casos se los conoce como subtipificaciones parciales. Ejemplo de esto es la subtipificación “especie” que presentamos en párrafos anteriores.</p>
+    <p><strong>Múltiples subtipificaciones:</strong>
+    Existen diferentes maneras para subtipificar una determinada entidad, de manera tal que cada subtipificación se identifica con un nombre único.</p>
+    <p>Por ejemplo: la entidad Persona podría subtipificarse por “género” en Femenino y Masculino; y por “antigüedad” en Niño, Adolescente, Adulto y Anciano:</p>
+    <p><em>Figura 23</em></p>
+    <p>Este DER debería leerse:
+    “Cada Persona puede ser Femenino o Masculino. La misma persona puede ser un Niño, o un Adolescente, o un Adulto, o un Anciano“</p>
+    <p>Ambas subtipificaciones del ejemplo son completas. Como consecuencia de ello podemos decir que:
+    “Cada Persona es, o bien Femenino o bien Masculino. La misma persona puede ser, o bien un Niño, o bien un Adolescente, o bien un Adulto, o bien un Anciano“</p>
+    <p><strong>Subtipificaciones sin nombre:</strong>
+    El nombre de una subtipificación sirve para distinguirla, si es que existen más de una para una entidad. Una subtipificación de una entidad puede no tener nombre, sobre todo si el mismo nada aporta al porqué fue necesario distinguir a los subtipos.</p>
+    <p><strong>Subtipificaciones de una entidad asociativa:</strong>
+    Si se define que una entidad asociativa va a tener subtipos, entonces, cada ocurrencia de uno de ellos debe ser una ocurrencia del supertipo. Cada ocurrencia del subtipo es, por lo tanto, una entidad asociativa, que hace referencia a las mismas entidades a las que hace referencia el supertipo.</p>
+    <p>Ejemplo:</p>
+    <p><em>Figura 24</em></p>
+    <p>Al momento de volcar cada una de estas entidades y relaciones al Diccionario de
+    Datos tendríamos definiciones de:</p>
+    <ul>
+    <li>Curso programado como entidad asociativa;</li>
+    <li>“disponibilidad” como una subtipificación;</li>
+    <li>Curso público como entidad asociativa, y</li>
+    <li>Curso interno como entidad asociativa</li>
+    </ul>
+    <p>Conclusiones:</p>
+    <blockquote>
+    <p>La subtipificación divide a una entidad en grupos bien definidos e identificables, cada uno de los cuales puede considerarse como una entidad.
+    Cada uno de esos grupos es mutuamente excluyente.
+    La subtipificación sólo debe aplicarse si semánticamente es necesario.</p>
+    </blockquote>    
     
 </body>
 </html>
