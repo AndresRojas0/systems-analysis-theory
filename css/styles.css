@@ -96,6 +96,10 @@ figcaption {
   figure p {
     color: #1D1E22;
   }
+
+  blockquote {
+    color: white;
+  }
  }
  
  /* From 768px and up */
@@ -107,6 +111,10 @@ figcaption {
    }
 
    figure p {
+    color: #5F4B32;
+  }
+
+   blockquote {
     color: #5F4B32;
   }
  }
