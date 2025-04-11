@@ -199,7 +199,7 @@
     <p>Un subtipo consiste en un subconjunto de ocurrencias de una entidad que puede considerarse como una entidad por derecho propio. 
     Lo importante: explicitar subtipos sólo si semánticamente es necesario.</p>
     </blockquote>
-    <p><strong>Subtificación</strong></p>
+    <p><strong>Subtipificación</strong></p>
     <p><em>Figura 22</em></p>
     <p>Una subtipificación indica que a la entidad involucrada se la considera como compuesta por grupos distintos y bien identificables, cada uno de los cuales se lo considera un subtipo. Su importancia radica en la semántica, ya que permite que el modelador piense en conceptos generales, de alto nivel (relaciones, atributos) como relevantes para el supertipo y pueda detallar aquellos relacionados ç con cada uno de los subtipos, sin llegar a verse desbordado por la complejidad.</p>
     <p>Como un simple ejemplo, consideremos la subtipificación de la entidad Mamífero en Gato, Ratón, ... . Esta subtipificación hace una distinción entre diferentes especies, a las que cada ocurrencia de un Mamífero pertenece, por lo tanto, podemos llamarla “especie”. En este ejemplo, la subtipificación “especie” tiene 3 subtipos. En términos generales, una subtipificación puede tener varios subtipos.</p>
@@ -287,8 +287,8 @@
     <p>Agreguemos un nuevo requerimiento en el que deseamos conocer cuales son las comisiones en que se dicta nuestra materia y los docentes asignados a las mismas:</p>
     <p>Flujo de Salida: Listado De Comisiones = 1{NroComisión + Aula + 1{Apellido + Nombre}n}n</p>
     <p>Estudiando este flujo de salida podríamos sugerir la idea de estar trabajando con docentes y con comisiones. Y también con la idea que el objetivo de este listado es mostrar quienes dictan clases en las comisiones.</p>
-    <p><em>Figura 27</em>
-    Nuestro DER tomaría la siguiente forma:</p>
+    <p><em>Figura 27</em></p>
+    <p>Nuestro DER tomaría la siguiente forma:</p>
     <p>Comisión = Comisión + Aula </p>
     <p>el dato Comisión podría confundirse con el nombre del objeto, entonces lo cambiamos a NroComision, lo mismo se debe hacer para con el flujo de datos de salida.</p>
     <p>Supongamos que ahora tenemos un nuevo requerimiento, este nos dice que además de conocer quienes son los docentes que dictan clase en las comisiones, también se desea saber que función cumplen, es decir, si ese docente en esa comisión es de práctica, de teoría o de practica/teoría.</p>
