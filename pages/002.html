@@ -57,11 +57,15 @@
     <p>El concepto de integridad implica la completitud del Modelo en lo referente a la relación de los datos.</p>
     <p>Se deberá buscar una estructura mínima óptima que a su vez asegure la no pérdida de información, validando que el sistema pueda seguir produciendo las respuestas, respetando las visiones de contexto, y en un todo con los objetivos planteados.</p>
     <h3 id="-inserci-n-dentro-del-ciclo-de-desarrollo-"><em>Inserción dentro del ciclo de desarrollo</em></h3>
-    <pre><code>              Problemas, requerimientos y objetivos
-                   Modelo Ambiental  |  Modelo <span class="hljs-keyword">de</span> Datos
-    Punto <span class="hljs-keyword">de</span> Control--&gt; -------------------------
-                        Modelo <span class="hljs-keyword">de</span> Comportamiento
-    </code></pre><p><em>Figura 1</em></p>
+
+    <figure>
+        <pre><code>               Problemas, requerimientos y objetivos
+                Modelo Ambiental  |  Modelo de Datos 
+Punto de Control--&gt; ---------------------------
+                    Modelo de Comportamiento
+        </code></pre>
+        <figcaption>Figura 1 - Punto de inserción</figcaption>
+    </figure>
     <h2 id="-construcci-n-del-modelo-de-datos-"><strong>Construcción del Modelo de Datos</strong></h2>
     <h3 id="-etapas-"><em>Etapas</em></h3>
     <p>No existe una “receta”, sino herramientas y métodos para construirlo y formas de validarlo.</p>
@@ -83,10 +87,15 @@
     <p>Un DER muestra un <strong>conjunto</strong> de objetos del <strong>mundo real</strong> que son <strong>significativos</strong> para el sistema y sobre los cuales éste necesita almacenar información. Son aspectos de la realidad para los cuales no se asume ningún tipo de implementación posible.</p>
     <p>El Modelo de Datos usa el DER para mostrar las entidades y relaciones de las cuales el sistema es responsable (ya sea de recolectar información o de usar información).</p>
     <p><strong>Ejemplo:</strong></p>
-    <pre><code><span class="hljs-symbol">DER:</span> Programación de Cursos
-    </code></pre><p><em>Figura 2</em></p>
+    <figure>
+        <img src="../images/figure_202.jpg" alt="Figura 2" style="width:50%">
+        <figcaption>Figura 2 - DER: Programación de Cursos</figcaption>
+    </figure>
     <p><strong>Entidad</strong></p>
-    <p><em>Figura 3</em></p>
+    <figure>
+        <img src="../images/figure_203.jpg" alt="Figura 3" style="width:50%">
+        <figcaption>Figura 3 - Entidad: INSTRUCTOR</figcaption>
+    </figure>
     <p>Una entidad es una clase de objeto del mundo real cuyo rol o función dentro del sistema está bien definido. Puede corresponder a un objeto tangible, intangible o a conceptos abstractos. El sistema usará información de una entidad, interactuando con ocurrencias de la misma. Toda entidad tiene un nombre único que debería reflejar el rol que posee dentro del sistema.</p>
     <p>Una entidad representa en su totalidad a un conjunto de posibles ocurrencias. Por ejemplo, la entidad Curso podría tener muchas ocurrencias. Tres de estas ocurrencias podría ser &quot;Introducción al Cálculo Numérico&quot;, &quot;Virus Informáticos - cómo combatirlos&quot; y &quot;Musicoterapia - nuevos avances&quot;.</p>
     <p>El sistema identificará ocurrencias individuales de una entidad y la información almacenada sobre ella. Esta información puede referirse a las relaciones en las que participa la entidad o a los atributos que posee. Cada ocurrencia de una entidad debe ser distinta de las demás, pero debe cumplir el mismo rol que las demás ocurrencias de la entidad.</p>
@@ -96,9 +105,15 @@
     <p>Como dijimos anteriormente, si una entidad Instructor forma parte de nuestro DER, entonces, existe un conjunto de cosas del mundo real, cada una de las cuales es una ocurrencia de Instructor. Cada una de estas ocurrencias debería poder referenciarse (por ejemplo, señalándola) y afirmar: Esto es un Instructor. Esta afirmación debe ser verificable; es decir: debe poder determinarse si es verdadera o falsa. Si bien no es posible &quot;apuntar&quot; a entidades abstractas como Curso, debería ser posible referenciar ocurrencias individuales y declarar que son ocurrencias de esta entidad.</p>
     <p>Si una potencial entidad no satisface este criterio, entonces no es una entidad.</p>
     <p>Por ejemplo: para un negocio que se dedica a la venta de artículos de ferretería, podríamos haber modelado lo siguiente (fragmento del DER del subsistema de ventas).</p>
-    <p><em>Figura 4</em></p>
+    <figure>
+        <img src="../images/figure_204.jpg" alt="Figura 4" style="width:50%">
+        <figcaption>Figura 4 - Fragmento del DER del subsistema de ventas</figcaption>
+    </figure>
     <p>Sin embargo, un revisión más detallada de este fragmento del DER nos permite concluir que Margen de Ganancia no posee ocurrencias a las cuales podamos referenciar o apuntar, o bien describirlas con atributos. La entidad deberá transformarse en atributo de Rubro, Subrubro, Producto y Artículo, y el DER quedaría:</p>
-    <p><em>Figura 5</em></p>
+    <figure>
+        <img src="../images/figure_205.jpg" alt="Figura 5" style="width:50%">
+        <figcaption>Figura 5 - DER resultante</figcaption>
+    </figure>
     <p>Conclusiones:</p>
     <blockquote>
     <p>Una entidad es un objeto componente de la memoria esencial sobre la cual el sistema necesite recordar o almacenar información. Y se caracteriza porque:</p>
