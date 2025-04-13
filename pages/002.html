@@ -249,7 +249,7 @@
     <p>Un supertipo es un agrupamiento general de entidades, al que puede considerarse como una entidad.</p>
     <p>Contiene los atributos comunes a todos los subtipos que se desprenden de él.</p>
     </blockquote>
-    <p><strong>Cómo detectar objetos y relaciones</strong></p>
+    <h3 id="-c-mo-detectar-objetos-y-relaciones-"><em>Cómo detectar objetos y relaciones</em></h3>
     <p>Los objetos y relaciones pueden detectarse de varias maneras:</p>
     <ul>
     <li>Partiendo de las conclusiones del relevamiento de la situación actual o bien de la narrativa del nuevo sistema, para lo cual es necesario:<ul>
@@ -321,7 +321,7 @@
     <p>Con todos los cambios producidos por el atributo Año podemos concluir que los tipos de objetos asociativos arrastran en su definición de datos los atributos que identifican a cada una de las entidades que participan de la relación.</p>
     <p>Evidentemente podríamos continuar suponiendo distintos casos agregando otros requerimientos y ajustarlos a visiones de contexto en algunos casos; pero en síntesis la cátedra pretende reconocer métodos alternativos de construcción y comprensión de los datos.</p>
     <p>• Cualquier combinación posible de las formas antes mencionadas.</p>
-    <h2 id="-c-mo-refinar-el-der-"><em>Cómo refinar el DER</em></h2>
+    <h3 id="-c-mo-refinar-el-der-"><em>Cómo refinar el DER</em></h3>
     <p>Para poder refinar el DER, pueden seguirse los siguientes pasos:</p>
     <ol>
     <li>Identificar relaciones de las cuales surjan tipos de objetos asociativos.</li>
@@ -334,7 +334,7 @@
     <li>Detectar entidades asociativas seguidas y ver si se pueden unir.</li>
     <li>Realizar el Diccionario de datos de cada entidad.</li>
     </ol>
-    <h2 id="-c-mo-realizar-el-diccionario-de-datos-que-completa-el-der-"><em>Cómo realizar el Diccionario de datos que completa el DER</em></h2>
+    <h3 id="-c-mo-realizar-el-diccionario-de-datos-que-completa-el-der-"><em>Cómo realizar el Diccionario de datos que completa el DER</em></h3>
     <p>Así como en el Modelo Ambiental tengo el Diccionario de Datos de Flujos, estructuras, Elementos de datos discretos y Almacenes externos, el DER necesita que los atributos que caracterizan cada una de las entidades sean explicitados en esta herramienta.</p>
     <p>Las entidades se describen de la misma manera que los almacenes externos ; es decir : se indica el nombre de la entidad, seguida de los atributos que la describen, empleando la notación formal del Diccionario de Datos.</p>
     <p>Para los supertipos sería conveniente listar sólo los valores comunes a los subtipos (ya que los valores propios de cada subtipo también son parte del supertipo).</p>
@@ -352,7 +352,7 @@
     <p>SEMIELABORADO = proceso actual </p>
     <p>TERMINADO = precio de costo + margen de ganancia + precio de venta + presentación + ubicación en depósito</p>
     <p>Es importante aclarar que será necesario completar el Diccionario de Datos de elementos, si es que aparecen nuevos elementos de datos al construir el DER.</p>
-    <h2 id="-c-mo-mapear-el-der-al-gr-fico-que-forma-parte-de-un-mapa-de-informaci-n-preliminar-"><em>Cómo “mapear” el DER al gráfico que forma parte de un Mapa de Información preliminar:</em></h2>
+    <h3 id="-c-mo-mapear-el-der-al-gr-fico-que-forma-parte-de-un-mapa-de-informaci-n-preliminar-"><em>Cómo “mapear” el DER al gráfico que forma parte de un Mapa de Información preliminar:</em></h3>
     <p>Como dijimos anteriormente, el DER muestra los objetos que componen la memoria esencial y las relaciones existentes entre ellos. Vimos también que una relación establece una asociación entre una o varias ocurrencias de una entidad y una o varias ocurrencias de otra u otras entidades.</p>
     <p>El una o varias se llama cardinalidad.</p>
     <p>Ahora bien, como tecnológicamente todavía no existen bases de datos orientadas a objetos nos vemos forzado a hacer una mapeo del DER a otra representación a partir de la cual la podamos optimizar, teniendo presente los objetivos a cumplir por todo Modelo de Datos y que además se pueda implementar luego en una arquitectura de bases de datos relacional.</p>
@@ -496,7 +496,7 @@
     <p>SEMIELABORADO = proceso actual</p>
     <p>TERMINADO = precio de costo + margen de ganancia + precio de venta + presentación + ubicación en depósito</p>
     <h2 id="optimizaci-n-del-mapa-preliminar">Optimización del Mapa preliminar</h2>
-    <h2 id="-algunos-conceptos-previos-"><em>Algunos conceptos previos</em></h2>
+    <h3 id="-algunos-conceptos-previos-"><em>Algunos conceptos previos</em></h3>
     <p>Como vimos anteriormente, con el Gráfico de vinculaciones más el Diccionario de Datos obtenemos un Mapa de Información preliminar, donde explicitamos las vinculaciones entre las entidades : es decir inter-entidad.</p>
     <p>El próximo paso es optimizarlo para que pueda cumplir los objetivos de todo Modelo de datos.</p>
     <p>Antes de comenzar a describir cómo optimizar, será necesario volcar algunos conceptos o definiciones que intervienen en este proceso.</p>
@@ -515,7 +515,7 @@
     <p>El resto de las claves candidatas que no hayan sido elegidas como primaria, se denominan claves alternativas.</p>
     </blockquote>
     <p>Ejemplo: <em>tipo documento</em> + <em>número documento</em> podría constituir una clave alternativa de la entidad <em>Alumnos</em>.</p>
-    <h2 id="-dependencia-funcional-"><em>Dependencia funcional</em></h2>
+    <h3 id="-dependencia-funcional-"><em>Dependencia funcional</em></h3>
     <p>Para optimizar el Mapa de Información preliminar, será necesario analizar en profundidad, para cada una de las entidades del mismo, las vinculaciones que existen entre los atributos o elementos de datos que componen a cada una, llamadas vinculaciones intra-entidad.</p>
     <p>Además, para el estudio de esas vinculaciones, aplicaremos el concepto de dependencia funcional.</p>
     <blockquote>
@@ -531,6 +531,69 @@
     <p><em>Figura 57</em></p>
     <p><strong>Importante:</strong>
     Reconocer las dependencias funcionales entre atributos exige una previa explicitación del significado real de cada atributo.</p>
+    <p><strong>Dependencias completas y no completas:</strong></p>
+    <p>Volvamos al ejemplo</p>
+    <p><em>Figura 58</em></p>
+    <ul>
+    <li>título y editorial dependen funcionalmente de código libro.</li>
+    <li>título y editorial también depende funcionalmente del par código libro y número edición, ya que para un valor de código libro + número edición, corresponde un único valor de titulo y editorial.</li>
+    </ul>
+    <p>Por lo tanto:</p>
+    <ul>
+    <li>título y editorial dependen funcionalmente en forma completa de código libro.</li>
+    <li>título y editorial dependen funcionalmente en forma no completa de códigolibro y número edición.</li>
+    </ul>
+    <p><strong>De ahora en adelante y salvo indicación expresa, cada vez que hablemos de dependencias funcionales, nos estaremos refiriendo a las que son completas.</strong></p>
+    <p><strong>Carácter unívoco:</strong></p>
+    <p>El concepto de dependencia funcional tiene carácter unívoco y no biunívoco.</p>
+    <p>Hay dependencia funcional entre código libro y editorial, porque a un valor de código libro le corresponde un único valor de editorial. Esto es suficiente para que exista dependencia funcional. Es evidente que aquí no aparece el carácter de biunívoco; es decir, a una editorial le corresponden muchos código libro.</p>
+    <p>Supongamos la entidad:
+    <em>Empresa = código empresa + razón social + domicilio + CUIT + situación tributaria.</em></p>
+    <p>Como sabemos que el CUIT es único para cada empresa, así como el código que a cada una le asigna el sistema, podemos graficar las dependencias funcionales entre código empresa y CUIT de la siguientes manera:</p>
+    <p>código empresa ↔ CUIT</p>
+    <p>y aquí estamos frente a dos dependencias funcionales diferentes.</p>
+    <p><strong>Transitividad:</strong></p>
+    <p>Sea la entidad E y sus atributos X, Y y Z (E = X + Y + Z); donde X determina funcionalmente a Y, e Y determina funcionalmente a Z. Entonces, X determina funcionalmente en forma transitiva a Z.</p>
+    <p>En símbolos:</p>
+    <p>X → Y → Z</p>
+    <p>X → Z</p>
+    <p>Ejemplo:</p>
+    <p>Supongamos que luego de construir el DER, nos queda una entidad</p>
+    <p><em>Proveedores = código proveedor + razón social + domicilio + localidad + categoría + 1{código producto + cantidad}n</em></p>
+    <p>y tenemos las siguientes visiones de contexto:</p>
+    <ul>
+    <li>el sistema asignará un código único al proveedor</li>
+    <li>un proveedor vende varios productos y cada producto se identifica con un código</li>
+    <li>un producto puede ser vendido por varios proveedores</li>
+    <li>una localidad tiene una única categoría</li>
+    </ul>
+    <p>El análisis de dependencias funcionales sería el siguiente:</p>
+    <p><em>Figura 59</em></p>
+    <h3 id="-normalizaci-n-"><em>Normalización</em></h3>
+    <p>Hasta ahora nos hemos puesto de acuerdo en ciertas definiciones básicas y todavía no hemos abordado cómo optimizar nuestro modelo de datos, para que pueda satisfacer los objetivos tratados anteriormente y que recordamos simplemente enumerándolos:</p>
+    <ol>
+    <li>Estructura mínima</li>
+    <li>Que asegure la no pérdida de información</li>
+    <li>Que facilite los procesos de mantenimiento (ABM)</li>
+    <li>Máxima supervivencia</li>
+    </ol>
+    <p>Es aquí donde aparece la normalización como herramienta para optimizar y poder lograr estas objetivos.</p>
+    <blockquote>
+    <p>La normalización es una disciplina que, vía la aplicación sistemática de una sucesión de pasos formales, va transformando entidades originales en otras más adecuadas (en función de las objetivos), basándose en el significado de los datos o tratando de modelar su estructura real. Esta disciplina es una buena ayuda para la optimización del modelo de datos pero no es la panacea.</p>
+    </blockquote>
+    <p>Formas normales:
+    Son los estado por los que va pasando una entidad durante esos sucesivos pasos de transformación. Así, se habla de una entidad en:</p>
+    <ul>
+    <li>1ra. forma normal (1NF)</li>
+    <li>2da. forma normal (2NF)</li>
+    <li>3ra. forma normal (3NF)</li>
+    <li>Forma normal de Boyce-Codd (BCNF)</li>
+    <li>4ta. forma normal (4NF)</li>
+    <li>Etc.</li>
+    </ul>
+    <blockquote>
+    <p>Se dice que una entidad está en una particular forma normal si las dependencias funcionales entre sus atributos cumplen determinadas condiciones. Cada forma normal representa un avance respecto de su forma normal predecesora.</p>
+    </blockquote>
     
 </body>
 </html>
