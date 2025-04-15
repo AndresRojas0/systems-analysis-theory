@@ -207,7 +207,10 @@ Punto de Control--&gt; ---------------------------
     <p>La entidad asociativa mantiene la propiedad de ser una relación (cada ocurrencia de Casamiento recuerda el hecho de que un determinado Hombre se casó con una determinada Mujer en una determinada fecha).</p>
     <p><strong>La entidad asociativa como entidad en otras relaciones:</strong></p>
     <p>Una entidad asociativa puede participar en relaciones con otras entidades. La entidad asociativa actúa como relación en el sentido de que “recuerda” la asociación original y también como una entidad involucrada como participante en relaciones posteriores. Por ejemplo, la entidad asociativa <em>Curso programado</em> actúa como una relación entre las entidades <em>Curso</em>, <em>Aula</em> y <em>Día</em>, y también como una entidad en la relación “reserva lugar en”:</p>
-    <p><em>Figura 15</em></p>
+    <figure>
+        <img src="../images/figure_215.jpg" alt="Figura 15" style="width:50%">
+        <figcaption>Figura 15 - Entidad asociativa como entidad en otras relaciones</figcaption>
+    </figure>
     <p>Para que una ocurrencia de una entidad asociativa pueda participar en otra relación por sí misma, primero debe crearse. No tiene sentido pensar en un <em>Delegado</em> de una empresa reservando lugar en un <em>Curso programado</em> antes de que éste haya sido creado definiendo una asociación entre Curso, Aula y Día.</p>
     <p>Muchas veces, una entidad asociativa es inicialmente identificada y modelada como una entidad. Una vez detectado su doble comportamiento, basta con transformarla a una entidad asociativa. Una buena pista para ver si una entidad es asociativa es verificar si la entidad sospechosa no puede existir independientemente de las otras entidades con las cuales participa en una relación.</p>
     <p>Conclusiones:</p>
@@ -218,24 +221,42 @@ Punto de Control--&gt; ---------------------------
     La inversa no se cumple.</p>
     </blockquote>
     <p><strong>Subtipo</strong></p>
-    <p><em>Figura 16</em></p>
+    <figure>
+        <img src="../images/figure_216.jpg" alt="Figura 16" style="width:50%">
+        <figcaption>Figura 16 - Subtipo</figcaption>
+    </figure>
     <p>El subtipo de una entidad está formado por un grupo bien definido de ocurrencias de una entidad, que pueden considerarse como una entidad por derecho propio. Como ejemplo podemos considerar a la entidad Mamífero. Ocurrencias individuales de esta entidad podrían ser: Arquímedes, Juan María Traverso, Tom y Jerry.</p>
     <p>Un grupo bien definido es la entidad Humano, que contiene varias ocurrencias (dos de las cuales se mencionaron en el párrafo anterior). Decimos que esta entidad es un subtipo de la entidad Mamífero. Otros subtipos de la misma son Gato y Ratón.</p>
-    <p><em>Figura 17</em></p>
+    <figure>
+        <img src="../images/figure_217.jpg" alt="Figura 17" style="width:50%">
+        <figcaption>Figura 17 - Supertipo, Subtipificación y Subtipo</figcaption>
+    </figure>
     <p>Esta subtipificación también podría visualizarse con un diagrama de Venn, que muestra a cada entidad como un subconjunto conteniendo ocurrencias de la misma:</p>
-    <p><em>Figura 18</em></p>
+    <figure>
+        <img src="../images/figure_218.jpg" alt="Figura 18" style="width:50%">
+        <figcaption>Figura 18 - Diagrama de Venn de la subtipificación</figcaption>
+    </figure>
     <p>Una ocurrencia del subtipo es siempre una ocurrencia del supertipo (Ej.: una ocurrencia de Gato es automáticamente una ocurrencia de Mamífero). Como consecuencia, cualquier propiedad que posea el supertipo es automáticamente una propiedad del subtipo. Podemos decir que el subtipo hereda las propiedades del supertipo.</p>
     <p>Además de las propiedades heredadas, un subtipo puede tener uno o ambos (pero nunca ninguno) de lo siguiente:</p>
     <ol>
     <li>Atributos específicos: algún subtipo puede tener atributos que no son relevantes para otros subtipos. Esto se contrasta con los atributos comunes, que se declaran en el supertipo.</li>
     <li>Relaciones específicas: algunas relaciones pueden afectar solamente a cierto subtipo de una entidad. Por ejemplo, un Delegado de una empresa sólo puede “reservar lugar” en un Curso público:</li>
     </ol>
-    <p><em>Figura 19</em></p>
+    <figure>
+        <img src="../images/figure_219.jpg" alt="Figura 19" style="width:50%">
+        <figcaption>Figura 19 - Propiedades heredadas</figcaption>
+    </figure>
     <p><strong>Múltiples supertipos:</strong></p>
     <p>Una entidad puede ser un subtipo de subtipificaciones de varias entidades diferentes. En este caso, hereda cualquier relación y atributos comunes a ambos supertipos. Por ejemplo:</p>
-    <p><em>Figura 20</em></p>
+    <figure>
+        <img src="../images/figure_220.jpg" alt="Figura 20" style="width:50%">
+        <figcaption>Figura 20 - Múltiples supertipos</figcaption>
+    </figure>
     <p>un Ítem terminado es un tipo de Ítem de manufactura y también un tipo de Ítem de inventario. Esto también puede mostrarse como un diagrama de Venn:</p>
-    <p><em>Figura 21</em></p>
+    <figure>
+        <img src="../images/figure_221.jpg" alt="Figura 21" style="width:50%">
+        <figcaption>Figura 21 - Diagrama de Venn</figcaption>
+    </figure>
     <p>Como consecuencia, cualquier ocurrencia de Ítem terminado es también de Ítem de manufactura e Ítem de inventario, y por lo tanto, tiene atributos heredados de ambos.</p>
     <p>Conclusiones:</p>
     <blockquote>
@@ -243,7 +264,10 @@ Punto de Control--&gt; ---------------------------
     Lo importante: explicitar subtipos sólo si semánticamente es necesario.</p>
     </blockquote>
     <p><strong>Subtipificación</strong></p>
-    <p><em>Figura 22</em></p>
+    <figure>
+        <img src="../images/figure_222.jpg" alt="Figura 22" style="width:50%">
+        <figcaption>Figura 22 - Subtipificación</figcaption>
+    </figure>
     <p>Una subtipificación indica que a la entidad involucrada se la considera como compuesta por grupos distintos y bien identificables, cada uno de los cuales se lo considera un subtipo. Su importancia radica en la semántica, ya que permite que el modelador piense en conceptos generales, de alto nivel (relaciones, atributos) como relevantes para el supertipo y pueda detallar aquellos relacionados ç con cada uno de los subtipos, sin llegar a verse desbordado por la complejidad.</p>
     <p>Como un simple ejemplo, consideremos la subtipificación de la entidad Mamífero en Gato, Ratón, ... . Esta subtipificación hace una distinción entre diferentes especies, a las que cada ocurrencia de un Mamífero pertenece, por lo tanto, podemos llamarla “especie”. En este ejemplo, la subtipificación “especie” tiene 3 subtipos. En términos generales, una subtipificación puede tener varios subtipos.</p>
     <p><strong>La subtipificación genera subtipos mutuamente excluyentes:</strong>
@@ -254,7 +278,10 @@ Punto de Control--&gt; ---------------------------
     <p><strong>Múltiples subtipificaciones:</strong>
     Existen diferentes maneras para subtipificar una determinada entidad, de manera tal que cada subtipificación se identifica con un nombre único.</p>
     <p>Por ejemplo: la entidad Persona podría subtipificarse por “género” en Femenino y Masculino; y por “antigüedad” en Niño, Adolescente, Adulto y Anciano:</p>
-    <p><em>Figura 23</em></p>
+    <figure>
+        <img src="../images/figure_223.jpg" alt="Figura 23" style="width:50%">
+        <figcaption>Figura 23 - Múltiples subtipificaciones</figcaption>
+    </figure>
     <p>Este DER debería leerse:
     “Cada Persona puede ser Femenino o Masculino. La misma persona puede ser un Niño, o un Adolescente, o un Adulto, o un Anciano“</p>
     <p>Ambas subtipificaciones del ejemplo son completas. Como consecuencia de ello podemos decir que:
@@ -264,7 +291,10 @@ Punto de Control--&gt; ---------------------------
     <p><strong>Subtipificaciones de una entidad asociativa:</strong>
     Si se define que una entidad asociativa va a tener subtipos, entonces, cada ocurrencia de uno de ellos debe ser una ocurrencia del supertipo. Cada ocurrencia del subtipo es, por lo tanto, una entidad asociativa, que hace referencia a las mismas entidades a las que hace referencia el supertipo.</p>
     <p>Ejemplo:</p>
-    <p><em>Figura 24</em></p>
+    <figure>
+        <img src="../images/figure_224.jpg" alt="Figura 24" style="width:50%">
+        <figcaption>Figura 24 - Subtipificaciones de una entidad asociativa</figcaption>
+    </figure>
     <p>Al momento de volcar cada una de estas entidades y relaciones al Diccionario de
     Datos tendríamos definiciones de:</p>
     <ul>
@@ -280,7 +310,10 @@ Punto de Control--&gt; ---------------------------
     La subtipificación sólo debe aplicarse sólo si semánticamente es necesario.</p>
     </blockquote>
     <p><strong>Supertipo</strong></p>
-    <p><em>Figura 25</em></p>
+    <figure>
+        <img src="../images/figure_225.jpg" alt="Figura 25" style="width:50%">
+        <figcaption>Figura 25 - Supertipo</figcaption>
+    </figure>
     <p>Podemos considerar a un supertipo como un agrupamiento general de varias entidades. Este agrupamiento es considerado como una entidad por derecho propio. Las entidades que son agrupadas dentro de esta entidad más general se conocen como subtipos.</p>
     <p>Cuando una entidad posee subtipos, existen ciertas propiedades generales que son comunes con todos los subtipos:</p>
     <ol>
@@ -325,12 +358,18 @@ Punto de Control--&gt; ---------------------------
     <p>Supongamos además que los Apellidos de los docentes no se repiten. Imaginemos además que esto es lo único que necesitamos del sistema. </p>
     <p>El Listado de Docentes contiene entonces el apellido y nombre del docente, su dirección y su teléfono. Si tuviéramos que pensar que describen estos atributos contestaríamos al docente. Además el sistema necesita conservar estos datos para poder responder con el requerimiento. Podríamos decir entonces que estamos en presencia de un tipo de objeto: DOCENTE.</p>
     <p>Nuestro DER sería: </p>
-    <p><em>Figura 26</em></p>
+    <figure>
+        <img src="../images/figure_226.jpg" alt="Figura 26" style="width:50%">
+        <figcaption>Figura 26 - Ejemplo DER: Docente</figcaption>
+    </figure>
     <p>Docente = Apellido + Nombre + Tel + Domicilio</p>
     <p>Agreguemos un nuevo requerimiento en el que deseamos conocer cuales son las comisiones en que se dicta nuestra materia y los docentes asignados a las mismas:</p>
     <p>Flujo de Salida: Listado De Comisiones = 1{NroComisión + Aula + 1{Apellido + Nombre}n}n</p>
     <p>Estudiando este flujo de salida podríamos sugerir la idea de estar trabajando con docentes y con comisiones. Y también con la idea que el objetivo de este listado es mostrar quienes dictan clases en las comisiones.</p>
-    <p><em>Figura 27</em></p>
+    <figure>
+        <img src="../images/figure_227.jpg" alt="Figura 27" style="width:50%">
+        <figcaption>Figura 27 - Se crea relación entre Docente y Comisión</figcaption>
+    </figure>
     <p>Nuestro DER tomaría la siguiente forma:</p>
     <p>Comisión = Comisión + Aula </p>
     <p>el dato Comisión podría confundirse con el nombre del objeto, entonces lo cambiamos a NroComision, lo mismo se debe hacer para con el flujo de datos de salida.</p>
@@ -343,7 +382,10 @@ Punto de Control--&gt; ---------------------------
     <p>1) Si cada docente solo desempeñan una única función</p>
     <p>2) o por el contrario, pueden desempeñar cualquier función.</p>
     <p>Si contempláramos la primer alternativa veríamos que la función sería una característica exclusiva del docente, mientras que si observamos la segunda concluiríamos que esto de la función no es del docente, ni de la comisión solamente, sino que lo es de la relación entre el docente y la comisión. Este atributo debe ser agregado a la relación y por lo tanto toma la forma de Entidad o Tipo de objeto asociativo:</p>
-    <p><em>Figura 28</em></p>
+    <figure>
+        <img src="../images/figure_228.jpg" alt="Figura 28" style="width:50%">
+        <figcaption>Figura 28 - Se crea una entidad asociativa</figcaption>
+    </figure>
     <p>Algunas de las cosas que sufren cambios son: el nombre de la relación que se traslada de lugar y quizás toma un nombre mas significativo, también aparece en el diccionario de datos.</p>
     <p>Dictado = Apellido + NroComisión + Función</p>
     <p>Supongamos que el entrevistado nos dice que: “..los números de comisión son únicos durante el año en vigencia; pero no así de un año al otro.</p>
@@ -385,7 +427,10 @@ Punto de Control--&gt; ---------------------------
     <p>Ejemplo:
     Supongamos un sistema de Gestión de Stock de una empresa que manufactura los productos que vende.</p>
     <p><strong>DER (fragmento)</strong></p>
-    <p><em>Figura 29</em></p>
+    <figure>
+        <img src="../images/figure_229.jpg" alt="Figura 29" style="width:50%">
+        <figcaption>Figura 29 - Ejemplo DER: Gestión de Stock</figcaption>
+    </figure>
     <p><strong>Diccionario de Datos</strong></p>
     <p><strong>Entidades</strong></p>
     <p>PROVEEDOR = código proveedor + domicilio + 0{teléfono}n</p>
@@ -407,20 +452,20 @@ Punto de Control--&gt; ---------------------------
     <p>En el gráfico, las entidades se muestran de la misma forma que el DER, es decir: con rectángulos identificados con el nombre de la entidad.</p>
     <p>Las vinculaciones entre ellas pueden explicitarse de diferentes maneras, en este apunte se verá la notación empleada por Martin, a saber:</p>
     <p><strong>Vinculación 1 a 1:</strong></p>
-    <p><em>Figura 30</em></p>
+    <figure>
+        <img src="../images/figure_230.jpg" alt="Figura 30" style="width:50%">
+        <figcaption>Figura 30 - Vinculación 1 a 1</figcaption>
+    </figure>
     <ul>
     <li>En todo instante, a cada ocurrencia de A le
     corresponde una y sólo una ocurrencia de B. Y a cada ocurrencia de B le corresponde una y sólo una ocurrencia de A.</li>
     </ul>
-    <p><em>Figura 31</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una o ninguna ocurrencia de B. Y a cada ocurrencia de B le corresponde una y sólo una ocurrencia de A.</li>
     </ul>
-    <p><em>Figura 32</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una y sólo una ocurrencia de B. Y a cada ocurrencia de B le corresponde una o ninguna ocurrencia de A.</li>
     </ul>
-    <p><em>Figura 33</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una o ninguna ocurrencia de B. Y a cada ocurrencia de B le corresponde una o ninguna ocurrencia de A.</li>
     </ul>
