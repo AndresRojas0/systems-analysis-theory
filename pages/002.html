@@ -8,7 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="-an-lisis-de-sistemas-modelo-de-datos-"><strong>Análisis de Sistemas: Modelo de Datos</strong></h1>
+    <h1 id="an-lisis-de-sistemas">ANÁLISIS DE SISTEMAS</h1>
+    <h1 id="modelo-de-datos">Modelo de Datos</h1>
     <h2 id="-conceptos-generales-"><strong>Conceptos Generales</strong></h2>
     <h3 id="-memoria-esencial-"><em>Memoria Esencial</em></h3>
     <p>Cuando construimos el <strong>Modelo Ambiental del Sistema</strong>, nos concentramos en las interfaces entre éste y el ambiente que lo rodea, tratando de establecer además los límites o alcances del sistema.</p>
@@ -124,26 +125,38 @@ Punto de Control--&gt; ---------------------------
     </ul>
     </blockquote>
     <p><strong>Relación</strong></p>
-    <p><em>Figura 6</em></p>
+    <figure>
+        <img src="../images/figure_206.jpg" alt="Figura 6" style="width:50%">
+        <figcaption>Figura 6 - Relación</figcaption>
+    </figure>
     <p>Una relación representa una posible asociación que puede darse entre ocurrencia de entidades. Cada ocurrencia de una relación corresponde a ocurrencias específicas de aquellas entidades que están relacionadas.</p>
     <p>Una relación puede considerarse como un patrón al cual se le puede adicionar referencias a entidades específicas para obtener hechos específicos acerca del mundo real. Por ejemplo:</p>
-    <pre><code><span class="hljs-attribute">CURSO - abarca - TEMA</span>
-    </code></pre><p><em>Figura 7</em></p>
+    <figure>
+        <img src="../images/figure_207.jpg" alt="Figura 7" style="width:50%">
+        <figcaption>Figura 7 - Ejemplo de una relación</figcaption>
+    </figure>
     <p>actúa como un template o patrón en el cual ocurrencias de Curso y Tema pueden ingresarse para obtener hechos específicos:</p>
-    <pre><code>Introducció<span class="hljs-built_in">n</span> al Ruso - abarca - el alfabeto Cirílico
+    <pre><code>
+    Introducción al Ruso - abarca - el alfabeto Cirílico
     
-    Master en navegació<span class="hljs-built_in">n</span> - abarca - medició<span class="hljs-built_in">n</span> angular
+    Master en navegación - abarca - medición angular
     
-    Astronomía esférica - abarca - medició<span class="hljs-built_in">n</span> angular
+    Astronomía esférica - abarca - medición angular
     </code></pre><p>Cada ocurrencia de una relación corresponde a una asociación de cero o más ocurrencias de cada una de las entidades que participan en la relación.</p>
     <p>Cada ocurrencia de una relación muestra que un evento ocurrió y que éste involucró a las ocurrencias específicas de las entidades que participan en la relación. Algunas relaciones sólo recuerdan la ocurrencia de un evento (Ej.: Persona se casó con Persona); se dice que son relaciones tipo “trace”, ya que registran el evento. Otras, en cambio reflejan una relación de continuidad entre entidades (Ej.: Persona está casada con Persona); se dice que son asociaciones continuas. La heurística dice que las relaciones tipo “trace” tienen una alta probabilidad de tener atributos y transformarse entonces, en entidades asociativas.</p>
     <p><strong>Relaciones de orden superior:</strong></p>
     <p>Una relación que involucre a más de dos ocurrencias de entidades se dice que es de orden superior. Una relación de 3º orden aparece en el DER con tres líneas que salen del diamante. Por ejemplo:</p>
-    <p><em>Figura 8</em></p>
+    <figure>
+        <img src="../images/figure_208.jpg" alt="Figura 8" style="width:50%">
+        <figcaption>Figura 8 - Ejemplo de una relación de orden superior</figcaption>
+    </figure>
     <p>puede indicarse: Persona es hijo de Hombre y Mujer.</p>
     <p><strong>Relaciones recursivas:</strong></p>
     <p>Muchas veces una relación involucra ocurrencias de una misma entidad, por ejemplo:</p>
-    <p><em>Figura 9</em></p>
+    <figure>
+        <img src="../images/figure_209.jpg" alt="Figura 9" style="width:50%">
+        <figcaption>Figura 9 - Ejemplo de una relación recursiva</figcaption>
+    </figure>
     <p>Cuando una entidad se repite en una relación, se dice que la relación es recursiva.</p>
     <p>Para indicar en el ejemplo cuál de los empleados se reporta a quién, indicamos:</p>
     <blockquote>
@@ -154,11 +167,17 @@ Punto de Control--&gt; ---------------------------
     <p><strong>Relaciones simétricas:</strong></p>
     <p>Para la mayoría de las relaciones recursivas, la distinción entre los distintos roles que una entidad puede desempeñar en la relación debe ser clara a efectos de que la relación esté definida correctamente.</p>
     <p>Para algunas relaciones recursivas, la posición de la entidad en la relación no es significativa. Estas relaciones se conocen como simétricas. La relación “es amigo de”, es un ejemplo de una relación simétrica.</p>
-    <p><em>Figura 10</em></p>
+    <figure>
+        <img src="../images/figure_210.jpg" alt="Figura 10" style="width:50%">
+        <figcaption>Figura 10 - Ejemplo de una relación simétrica</figcaption>
+    </figure>
     <p>Para este tipo de relaciones no es necesario distinguir el rol que juegan las entidades. Para el ejemplo anterior, podríamos indicar: Persona es amiga de Persona.</p>
     <p><strong>Relaciones recursivas de orden superior</strong></p>
     <p>La relación de 3º orden que se indicó anteriormente (ver (*)), podría haberse modelado de la siguiente manera:</p>
-    <p><em>Figura 11</em></p>
+    <figure>
+        <img src="../images/figure_211.jpg" alt="Figura 11" style="width:50%">
+        <figcaption>Figura 11 - Ejemplo de relación recursiva de orden superior</figcaption>
+    </figure>
     <p>indicando: Persona es hija de Persona(madre) y Persona(padre)</p>
     <p>Conclusiones:</p>
     <blockquote>
@@ -167,15 +186,24 @@ Punto de Control--&gt; ---------------------------
     <p>Muestran que un evento ocurre.</p>
     </blockquote>
     <p><strong>Entidad asociativa</strong></p>
-    <p><em>Figura 12</em></p>
+    <figure>
+        <img src="../images/figure_212.jpg" alt="Figura 12" style="width:50%">
+        <figcaption>Figura 12 - Entidad asociativa</figcaption>
+    </figure>
     <p>Una entidad asociativa actúa al mismo tiempo como una relación y como una entidad. </p>
     <p>Como relación, indica que existe una asociación entre entidades, y tal como sucede con todas las relaciones, una ocurrencia de una entidad asociativa no puede existir sin que previamente existan las ocurrencias de las otras entidades.</p>
     <p>Una relación debería transformarse en una entidad asociativa si la relación posee atributos o bien la relación actúa como entidad en otras relaciones.</p>
     <p><strong>La entidad asociativa como una relación con atributos:</strong></p>
     <p>Los atributos de una entidad asociativa no describen a las entidades que participan de la relación, sino más bien a la asociación entre ellas. Por ejemplo, dada la siguiente relación:</p>
-    <p><em>Figura 13</em></p>
+    <figure>
+        <img src="../images/figure_213.jpg" alt="Figura 13" style="width:50%">
+        <figcaption>Figura 13 - Ejemplo de una relación</figcaption>
+    </figure>
     <p>podríamos decir que es necesario recordar la fecha en la cual se casaron por Civil. Este atributo (fecha del Civil) no es un atributo ni de la entidad Hombre, ni de la entidad Mujer, sino que describe cuándo se estableció la ocurrencia de la relación. Para modelar esta situación, reemplazamos la relación “está casado con” por la entidad asociativa Casamiento, con “fecha del Civil” como atributo.</p>
-    <p><em>Figura 14</em></p>
+    <figure>
+        <img src="../images/figure_214.jpg" alt="Figura 14" style="width:50%">
+        <figcaption>Figura 14 - Ejemplo anterior usando entidad asociativa</figcaption>
+    </figure>
     <p>La entidad asociativa mantiene la propiedad de ser una relación (cada ocurrencia de Casamiento recuerda el hecho de que un determinado Hombre se casó con una determinada Mujer en una determinada fecha).</p>
     <p><strong>La entidad asociativa como entidad en otras relaciones:</strong></p>
     <p>Una entidad asociativa puede participar en relaciones con otras entidades. La entidad asociativa actúa como relación en el sentido de que “recuerda” la asociación original y también como una entidad involucrada como participante en relaciones posteriores. Por ejemplo, la entidad asociativa <em>Curso programado</em> actúa como una relación entre las entidades <em>Curso</em>, <em>Aula</em> y <em>Día</em>, y también como una entidad en la relación “reserva lugar en”:</p>
