@@ -495,70 +495,66 @@ Punto de Control--&gt; ---------------------------
     </ul>
     <hr>
     <p><strong>Vinculación N (muchos) a 1:</strong></p>
-    <p><em>Figura 39</em></p>
+    <figure>
+        <img src="../images/figure_232.jpg" alt="Figura 32" style="width:50%">
+        <figcaption>Figura 32 - Vinculación N (muchos) a 1</figcaption>
+    </figure>
     <ul>
     <li>En todo instante, a cada ocurrencia de A le corresponde una y sólo una ocurrencia de B. Y a cada ocurrencia de B le corresponden muchas ocurrencias de A.</li>
     </ul>
-    <p><em>Figura 40</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una o ninguna ocurrencia de B. Y a cada ocurrencia de B le corresponden muchas ocurrencias de A.</li>
     </ul>
-    <p><em>Figura 41</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una y sólo una ocurrencia de B. Y a cada ocurrencia de B le corresponden muchas o ninguna ocurrencia de A.</li>
     </ul>
-    <p><em>Figura 42</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponden una o ninguna ocurrencia de B. Y a cada ocurrencia de B le corresponden muchas o ninguna ocurrencia de A.</li>
     </ul>
-    <p><em>Figura 43</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una y sólo una ocurrencia de B. Y a cada ocurrencia de B le corresponde una o muchas ocurrencias de A.</li>
     </ul>
-    <p><em>Figura 44</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una o ninguna ocurrencia de A. Y a cada ocurrencia de B le corresponde una o muchas ocurrencias de A.</li>
     </ul>
     <hr>
     <p><strong>Vinculación N a M (muchos a muchos):</strong></p>
-    <p><em>Figura 45</em></p>
+    <figure>
+        <img src="../images/figure_233.jpg" alt="Figura 33" style="width:50%">
+        <figcaption>Figura 33 - Vinculación N (muchos) a M (muchos)</figcaption>
+    </figure>
     <ul>
     <li>En todo instante, a cada ocurrencia de A le corresponden muchas ocurrencias de B. Y a cada ocurrencia de B le corresponden muchas ocurrencias de A.</li>
     </ul>
-    <p><em>Figura 46</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde muchas o ninguna ocurrencia de B. Y a cada ocurrencia de B le corresponden muchas ocurrencias de A.</li>
     </ul>
-    <p><em>Figura 47</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una o muchas ocurrencias de B. Y a cada ocurrencia de B le corresponden muchas ocurrencias de A.</li>
     </ul>
-    <p><em>Figura 48</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponden muchas ocurrencias de B. Y a cada ocurrencia de B le corresponden muchas o ninguna ocurrencia de A.</li>
     </ul>
-    <p><em>Figura 49</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponden muchas o ninguna ocurrencia de B. Y a cada ocurrencia de B le corresponden muchas o ninguna ocurrencia de A.</li>
     </ul>
-    <p><em>Figura 50</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponde una o muchas ocurrencias de B. Y a cada ocurrencia de B le corresponden muchas o ninguna ocurrencia de A.</li>
     </ul>
-    <p><em>Figura 51</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponden muchas ocurrencias de B. Y a cada ocurrencia de B le corresponde una o muchas ocurrencias de A.</li>
     </ul>
-    <p><em>Figura 52</em></p>
     <ul>
     <li>O bien: En todo instante, a cada ocurrencia de A le corresponden muchas o ninguna ocurrencia de B. Y a cada ocurrencia de B le corresponde una o muchas ocurrencias de A.</li>
     </ul>
-    <p><em>Figura 53</em></p>
     <ul>
     <li>En todo instante, a cada ocurrencia de A le corresponde una o muchas ocurrencias de B. Y a cada ocurrencia de B le corresponde una o muchas ocurrencias de A.</li>
     </ul>
     <p>Veamos cómo queda el gráfico del Mapa de Información Preliminar de nuestro fragmento de DER del ejemplo del sistema de Gestión de Stock presentado cuando tratamos la construcción del Diccionario de Datos:</p>
-    <p><em>Figura 54</em></p>
+    <figure>
+        <img src="../images/figure_234.jpg" alt="Figura 34" style="width:50%">
+        <figcaption>Figura 34 - Mapa de Información Preliminar: Sistema Gestión de Stock</figcaption>
+    </figure>
     <hr>
     <p>Veamos qué nos están diciendo las vinculaciones :</p>
     <ul>
@@ -573,7 +569,10 @@ Punto de Control--&gt; ---------------------------
     </ul>
     <p>Podemos observar además, que las relaciones de subtipo se corresponden uno a uno con las vinculaciones de nuestro gráfico. Pero, ¿porqué la relación de la cual surge la entidad Orden de Compra se mapea en dos vinculaciones ?. Porque Orden de Compra es una entidad asociativa que involucra a dos entidades : Materia Prima y Proveedores. No olvidemos que una entidad asociativa muestra que un evento ocurre, relacionando a dos o más entidades y además el sistema deberá recordar datos de esa relación. La entidad asociativa contendrá datos comunes con todas las entidades que participan de la relación de la cual surgen.</p>
     <p>El Mapa de Información preliminar de nuestro ejemplo será:</p>
-    <p><em>Figura 55</em></p>
+    <figure>
+        <img src="../images/figure_235.jpg" alt="Figura 35" style="width:50%">
+        <figcaption>Figura 35 - Mapa de Información Preliminar: Sistema Gestión de Stock</figcaption>
+    </figure>
     <p><strong>Diccionario de datos</strong></p>
     <p>PROVEEDOR = código proveedor + domicilio + 0{teléfono}n</p>
     <p>ORDEN DE COMPRA = número de orden + fecha + código proveedor + 1{código ítem + cantidad pedida}n</p>
