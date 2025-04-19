@@ -682,6 +682,421 @@ Punto de Control--&gt; ---------------------------
     <blockquote>
     <p>Se dice que una entidad está en una particular forma normal si las dependencias funcionales entre sus atributos cumplen determinadas condiciones. Cada forma normal representa un avance respecto de su forma normal predecesora.</p>
     </blockquote>
+    <h2 id="proceso-de-normalizaci-n">Proceso de normalización</h2>
+    <h3 id="-qu-haremos-"><em>¿Qué haremos?</em></h3>
+    <p>De ahora en más, a partir de un caso en particular: </p>
+    <ul>
+    <li>definiremos las tres primeras formas normales. </li>
+    <li>evaluaremos el cumplimiento de los objetivos. </li>
+    <li>definiremos un criterio para reconocer cuáles son las buenas descomposiciones. </li>
+    </ul>
+    <h3 id="-presentaci-n-del-caso-"><em>Presentación del caso</em></h3>
+    <p>Sea la entidad</p>
+    <p><em>Proveedores = código proveedor + razón social + domicilio + localidad + categoría + 1{código producto + cantidad}n</em></p>
+    <p>Y un conjunto de visiones de contexto que determinan las siguientes dependencias funcionales:</p>
+    <p><em>Figura 57</em></p>
+    <p><strong>Observaciones:</strong></p>
+    <ul>
+    <li>cantidad es la cantidad que el proveedor nos vende de cada producto.</li>
+    <li>categoría depende de la localidad donde se domicilia el proveedor.</li>
+    </ul>
+    <h3 id="-primera-forma-normal-"><em>Primera Forma Normal</em></h3>
+    <blockquote>
+    <p>Una entidad está en primer forma normal o 1NF si no tiene atributos multivalor.</p>
+    </blockquote>
+    <p>Esta definición está íntimamente ligada al concepto de clave candidata., ya que elegir una <strong>clave candidata</strong> asegura eliminar todos los atributos multivalor.</p>
+    <p>En nuestro caso, la única clave candidata es <em>código proveedor + código producto</em>. Eligiendo como clave candidata a este par de atributos, desaparecen los atributos multivalor. En cambio, si se hubiera elegido sólo <em>código proveedor</em> como clave, <em>código producto + cantidad</em> provista serían grupos repetitivos o atributos multivalor: para un valor de <em>código proveedor</em>, habría varios valores de <em>código producto</em>.</p>
+    <p><strong>Por lo tanto, pasar de una entidad no normalizada a una entidad en 1NF implica elegir una clave que cumpla con la definición de clave candidata.</strong></p>
+    <p><strong>Observación:</strong> Mostraremos más resaltada a la clave candidata en el grafo.</p>
+    <p><em>Figura 58</em></p>
+    <h3 id="-segunda-forma-normal-"><em>Segunda Forma Normal</em></h3>
+    <blockquote>
+    <p>Una entidad está en segunda forma normal o 2NF si y sólo si se está en 1NF y todo atributo no clave depende de la clave en forma funcionalmente completa.</p>
+    </blockquote>
+    <p>Es decir: se agrega la restricción de que toda dependencia funcional sea completa. Para lograr satisfacer esta restricción, es preciso descomponer la entidad original en nuevas entidades. </p>
+    <p>En nuestro caso: </p>
+    <p><em>Figura 59</em></p>
+    <p>Al descomponer la entidad original en dos entidades, los atributos no clave de cada una de ellas, dependen de la clave y ahora en forma completa. Por lo tanto, están en 2NF.</p>
+    <p>Veámoslo a nivel de diccionario de datos: </p>
+    <p>Antes de normalizar: 
+    <em>Proveedores = código proveedor + razón social + domicilio + localidad + categoría + 1{código producto + cantidad}n</em></p>
+    <p><strong>1NF</strong> 
+    <em>Proveedores = código proveedor + código producto + cantidad + razón social + domicilio+ localidad + categoría</em></p>
+    <p><strong>2NF</strong>
+    <em>Proveedores = código proveedor + razón social + domicilio + localidad + categoría</em>
+    <em>Productos por proveedor = código proveedor + código producto + cantidad</em></p>
+    <p>Podemos concluir que el proceso de normalización, al llegar a la 2NF termina “rompiendo” los grupos repetitivos, los cuales pasan a formar parte de una nueva entidad dentro de la cual ya no son más grupos repetitivos.</p>
+    <h3 id="-tercera-forma-normal-"><em>Tercera Forma Normal</em></h3>
+    <blockquote>
+    <p>Una entidad está en tercera forma normal o 3NF si y sólo si está en 2NF y no existen dependencias funcionales entre atributos no clave.</p>
+    </blockquote>
+    <p>Para lograr satisfacer esta restricción, es preciso descomponer nuevamente aquellas entidades que no la cumplan.</p>
+    <p>Veamos nuestro caso: 
+    <em>Figura 60</em>
+    cumple con la restricción; es decir: no hay dependencias funcionales entre atributos no clave. Por lo tanto, no sólo está en 2NF sino que también está en 3NF.</p>
+    <p>En cambio la otra entidad obtenida:
+    <em>Figura 61</em>
+    muestra una dependencia funcional entre localidad y categoría. Por lo tanto , es preciso descomponerla en dos.</p>
+    <p>Este es el resultado de esa descomposición:
+    <em>Figura 62</em></p>
+    <h3 id="-c-mo-evolucion-la-entidad-de-nuestro-caso-"><em>¿Cómo evolucionó la entidad de nuestro caso?</em></h3>
+    <p>La entidad original de nuestro caso, evolucionó de la siguiente manera:</p>
+    <p><em>Figura 63</em></p>
+    <p>La entidad original no normalizada, fue sustituida sin pérdida de información por tres entidades en 3NF, más adecuada desde el punto de vista de los objetivos.</p>
+    <h3 id="-observaci-n-"><em>Observación</em></h3>
+    <p>De lo visto hasta aquí, podemos concluir que:</p>
+    <blockquote>
+    <p>Una entidad está en 3NF si y sólo si, en todo momento, está formada por: </p>
+    <ul>
+    <li>un identificador único o clave. </li>
+    <li>“n” atributos funcionalmente dependientes de la clave en forma completa y mutuamente independientes entre sí.</li>
+    </ul>
+    </blockquote>
+    <h2 id="-por-qu-conviene-normalizar-">¿Por qué conviene normalizar?</h2>
+    <p>A medida que abordamos las tres primeras formas normales vimos como la entidad original desnormalizada fue reemplazada sin pérdida de información, por una estructura más adecuada teniendo presente los objetivos que debería tener todo Modelo de Datos.</p>
+    <p>Pero, ¿por qué más adecuada? Veamos con el caso presentado. 
+    Para ello, representaremos la entidad en 1NF como una tabla:</p>
+    <table>
+    <thead>
+    <tr>
+    <th>Proveedor</th>
+    <th>Producto</th>
+    <th>Razón Soc</th>
+    <th>Cant</th>
+    <th>Domicilio</th>
+    <th>Localidad</th>
+    <th>Categoría</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>100</td>
+    <td>20</td>
+    <td>Juan ...</td>
+    <td>12</td>
+    <td>Alem ...</td>
+    <td>Rosario</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>100</td>
+    <td>30</td>
+    <td>Juan ...</td>
+    <td>15</td>
+    <td>Alem ...</td>
+    <td>Rosario</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>100</td>
+    <td>40</td>
+    <td>Juan ...</td>
+    <td>20</td>
+    <td>Alem ...</td>
+    <td>Rosario</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>200</td>
+    <td>20</td>
+    <td>Pedro ...</td>
+    <td>10</td>
+    <td>Jujuy ...</td>
+    <td>San Loren</td>
+    <td>15</td>
+    </tr>
+    <tr>
+    <td>200</td>
+    <td>35</td>
+    <td>Pedro ...</td>
+    <td>18</td>
+    <td>Jujuy ...</td>
+    <td>San Loren</td>
+    <td>15</td>
+    </tr>
+    <tr>
+    <td>200</td>
+    <td>40</td>
+    <td>Pedro ...</td>
+    <td>28</td>
+    <td>Jujuy ...</td>
+    <td>San Loren</td>
+    <td>15</td>
+    </tr>
+    <tr>
+    <td>300</td>
+    <td>10</td>
+    <td>José ...</td>
+    <td>100</td>
+    <td>Córdoba..</td>
+    <td>Rosario</td>
+    <td>20</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>y centraremos nuestra análisis en el cumplimiento del tercer objetivos: <strong>Facilitar los procesos de mantenimiento o ABM.</strong></p>
+    <h3 id="-problemas-con-la-primer-forma-normal-"><em>Problemas con la primer forma normal</em></h3>
+    <p><strong>Altas</strong>
+    Supongamos que necesita decir que tengo un proveedor nuevo, código 400,razón social José Solís, de Córdoba. Hasta tanto no le compre algún producto, no puedo incorporar esta información, ya que código producto es parte de la clave.Por lo tanto, tengo información en la realidad que no existe en el Modelo de Datos.</p>
+    <p><strong>Bajas</strong>
+    Supongamos que el proveedor 300 no provee más el producto 10. Si elimino esa ocurrencia, pierdo información respecto a su razón social y domicilio.</p>
+    <p><strong>Modificaciones</strong>
+    Supongamos que el proveedor 200 se muda. Es preciso modificar 3 ocurrencias. Por lo tanto, con la entidad en 1NF no se cumple el objetivo de minimizar laestructura de datos ni de facilitarlos procesos de mantenimiento.</p>
+    <p>Vemos qué sucede en 2NF:</p>
+    <table>
+    <thead>
+    <tr>
+    <th>Proveedor</th>
+    <th>Producto</th>
+    <th>Cant</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>100</td>
+    <td>20</td>
+    <td>12</td>
+    </tr>
+    <tr>
+    <td>100</td>
+    <td>30</td>
+    <td>15</td>
+    </tr>
+    <tr>
+    <td>100</td>
+    <td>40</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>200</td>
+    <td>20</td>
+    <td>10</td>
+    </tr>
+    <tr>
+    <td>200</td>
+    <td>35</td>
+    <td>18</td>
+    </tr>
+    <tr>
+    <td>200</td>
+    <td>40</td>
+    <td>28</td>
+    </tr>
+    <tr>
+    <td>300</td>
+    <td>10</td>
+    <td>100</td>
+    </tr>
+    </tbody>
+    </table>
+    <table>
+    <thead>
+    <tr>
+    <th>Proveedor</th>
+    <th>Razón Soc</th>
+    <th>Domicilio</th>
+    <th>Localidad</th>
+    <th>Categoría</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>100</td>
+    <td>Juan ...</td>
+    <td>Alem ...</td>
+    <td>Rosario</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>200</td>
+    <td>Pedro ...</td>
+    <td>Jujuy ...</td>
+    <td>San Loren</td>
+    <td>15</td>
+    </tr>
+    <tr>
+    <td>300</td>
+    <td>José ...</td>
+    <td>Córdoba..</td>
+    <td>Rosario</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>400</td>
+    <td>José S..</td>
+    <td>Maipú ...</td>
+    <td>Córdoba</td>
+    <td>25</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>Los tres problemas anteriores se resolvieron: </p>
+    <ul>
+    <li>Puedo incorporar los datos del proveedor 400, aunque todavía no le compre ningún producto. </li>
+    <li>Si el proveedor 300 deja de proveer el producto 10, no pierdo sus datos. </li>
+    <li>Si el proveedor 200 se muda, sólo debo modificar una ocurrencia.</li>
+    </ul>
+    <h3 id="-problemas-con-la-segunda-forma-normal-"><em>Problemas con la segunda forma normal</em></h3>
+    <p><strong>Altas</strong>
+    No puedo informar que la categoría de Tucumán es 35 hasta no tener algún proveedor en Tucumán. </p>
+    <p><strong>Bajas</strong>
+    Si elimino el proveedor 200, pierdo la información de que la categoría de San Lorenzo es 15.</p>
+    <p><strong>Modificaciones</strong>
+    Supongamos que Rosario cambia de categoría. Debo modificar 2 ocurrencias. Esto obliga a continuar buscando una estructura que cumpla mejor con los objetivos.</p>
+    <p>Veamos que sucede en 3NF:</p>
+    <table>
+    <thead>
+    <tr>
+    <th>Proveedor</th>
+    <th>Producto</th>
+    <th>Cant</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>100</td>
+    <td>20</td>
+    <td>12</td>
+    </tr>
+    <tr>
+    <td>100</td>
+    <td>30</td>
+    <td>15</td>
+    </tr>
+    <tr>
+    <td>100</td>
+    <td>40</td>
+    <td>20</td>
+    </tr>
+    </tbody>
+    </table>
+    <table>
+    <thead>
+    <tr>
+    <th>Proveedor</th>
+    <th>Razón Soc</th>
+    <th>Domicilio</th>
+    <th>Localidad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>100</td>
+    <td>Juan ...</td>
+    <td>Alem ...</td>
+    <td>Rosario</td>
+    </tr>
+    <tr>
+    <td>300</td>
+    <td>José P...</td>
+    <td>Córdoba..</td>
+    <td>Rosario</td>
+    </tr>
+    <tr>
+    <td>400</td>
+    <td>José S...</td>
+    <td>Maipú ...</td>
+    <td>Córdoba</td>
+    </tr>
+    </tbody>
+    </table>
+    <table>
+    <thead>
+    <tr>
+    <th>Localidad</th>
+    <th>Categoría</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Rosario</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>San Loren</td>
+    <td>40</td>
+    </tr>
+    <tr>
+    <td>Córdoba</td>
+    <td>25</td>
+    </tr>
+    <tr>
+    <td>Tucumán</td>
+    <td>35</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>Los tres problemas anteriores están resueltos: </p>
+    <ul>
+    <li>Puedo decir que la categoría de Tucumán es 35, aún sin tener proveedores en esa localidad. </li>
+    <li>Puedo eliminar al proveedor 200, junto con todos los productos que mevende, sin perder información sobre la categoría de San Lorenzo. </li>
+    <li>Si Rosario cambia de categoría, puedo informarlo modificando una sola ocurrencia.</li>
+    </ul>
+    <p><strong>Conclusiones</strong> 
+    Por qué, entonces conviene normalizar? Porque obtengo un Modelo de Datos que satisface dos de los principales objetivos : </p>
+    <ol>
+    <li>Estructura mínima. </li>
+    <li>Simplificación de los procesos de mantenimiento. </li>
+    </ol>
+    <p>Respetando, además, el hecho de que no hubo pérdida de información de la estructura original en la estructura normalizada. El cuarto objetivo: <strong>máxima supervivencia</strong>, quizás esté más asociado a una inteligente explicitación de las visiones. No obstante, es prácticamente imposible explicitar todas las visiones asociadas a un problema real y tanto más difícil es explicitar las que podrían aparecer con el transcurso del tiempo.</p>
+    <p>Respecto al segundo, <strong>asegurar la no pérdida de información</strong>, será necesario, para terminar la optimización del Modelo de Datos volver al Modelo Ambiental y verificar que:
+    a) tomando evento por evento de salida, conjuntamente con el Diccionario de Datos de flujos, todos los elementos que aparecen en los mismos provengan del medio ambiente y/o de atributos de las entidades ya normalizadas y/o se obtengan por cálculo. Y en este último caso, que todos los elementos que intervienen en ese cálculo provengan del medio ambiente y/o de atributos de las entidades ya normalizadas.
+    b) tomando evento por evento de entrada, conjuntamente con el Diccionario de Datos de flujos, todos los elementos que aparecen en los mismos se almacenen en entidades ya normalizadas o intervengan en un proceso de cálculo.
+    c) para todas las entidades internas (de las cuales el sistema es responsable) que intervengan en la generación de la respuesta de los eventos que disparan actividades fundamentales, que existan los eventos responsables de disparar actividades de custodia, para que dichas entidades se mantengan.</p>
+    <p>Estas verificaciones son importantes. Recordemos que el sistema no “inventa” ninguna información.</p>
+    <h3 id="-mapa-de-informaci-n-can-nico-o-normalizado-"><strong>Mapa de Información canónico o normalizado</strong></h3>
+    <p>Es una herramienta gráfica que consiste en representar a cada entidad normalizada con un rectángulo, explicitando el nombre y los atributos que la componen, resaltando la clave; y a cada vinculación entre las entidades, del mismo formato a las empleadas en el Mapa de Información preliminar.</p>
+    <p>Veamos cómo queda el mapa canónico de nuestro caso:</p>
+    <p><em>Figura 64</em></p>
+    <p><strong>Las vinculaciones que generalmente aparecerán en nuestro mapa canónico luego de haber normalizado el DER serán del tipo 1 a N. En caso de que llegaran a quedar entidades vinculadas 1 a 1, entonces debería unirlas en una sola entidad.</strong></p>
+    <p><strong>Buenas descomposiciones</strong> </p>
+    <p>En el proceso de normalización, vimos que una vez obtenida la 1NF (establecida la clave), ocurren una serie de descomposiciones. </p>
+    <p>El problema es cómo reconocer cuáles son buenas descomposiciones posibles. </p>
+    <p>Ante la situación anteriormente vista:</p>
+    <p><em>Figura 65</em></p>
+    <p>Para poder responder a estas preguntas veamos antes las siguientes definiciones:</p>
+    <blockquote>
+    <p>En toda descomposición de una entidad en varias entidades, debe lograrse que las nuevas entidades sean independientes.
+    Un conjunto de entidades es independiente si y sólo si cada una de ellas puede ser actualizada sin afectar necesariamente a las otras.</p>
+    </blockquote>
+    <p>¿Cómo reconocer cuándo dos entidades son independientes?</p>
+    <blockquote>
+    <p>Teorema: 
+    Dos entidades E1 y E2, producto de la descomposición de una entidad E son independientes si y sólo si se cumplen las dos siguientes condiciones: 
+    a) Toda dependencia funcional en E puede ser lógicamente deducida de las dependencias funcionales en E1 y E2 más la vinculación entre E1 y E2. 
+    b) Los atributos comunes a E1 y E2 deben ser claves candidatas al menos de una de ellas.</p>
+    </blockquote>
+    <p>Por lo tanto: </p>
+    <table>
+    <thead>
+    <tr>
+    <th>Descomposición</th>
+    <th>Condición A</th>
+    <th>Condición B</th>
+    <th>Conclusión</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>(1)</td>
+    <td>Se cumple</td>
+    <td>Se cumple</td>
+    <td>Buena descomposición</td>
+    </tr>
+    <tr>
+    <td>(2)</td>
+    <td>No se cumple: la dependencia funcional entre localidad y categoría no se arrastra</td>
+    <td>Se cumple</td>
+    <td>Mala descomposición</td>
+    </tr>
+    <tr>
+    <td>(3)</td>
+    <td>No se cumple: la dependencia funcional entre código proveedor y localidad no se arrastra</td>
+    <td>No se cumple: el atributo común categoría no es clave de ninguna entidad</td>
+    <td>Mala descomposición</td>
+    </tr>
+    </tbody>
+    </table>
     
 </body>
 </html>
