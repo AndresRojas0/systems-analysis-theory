@@ -10,7 +10,7 @@
 <body>
     <h1 id="an-lisis-de-sistemas">ANÁLISIS DE SISTEMAS</h1>
     <h1 id="modelo-de-datos">Modelo de Datos</h1>
-    <h2 id="-conceptos-generales-"><strong>Conceptos Generales</strong></h2>
+    <h2 id="conceptos-generales"><strong>Conceptos Generales</strong></h2>
     <h3 id="-memoria-esencial-"><em>Memoria Esencial</em></h3>
     <p>Cuando construimos el <strong>Modelo Ambiental del Sistema</strong>, nos concentramos en las interfaces entre éste y el ambiente que lo rodea, tratando de establecer además los límites o alcances del sistema.</p>
     <p>En otras palabras, nos concentramos en <strong>qué</strong> entra al sistema (qué eventos ocurren en el ambiente que lo afectan) y <strong>qué</strong> sale (las respuestas externas que produce mi sistema, como consecuencia de los eventos).</p>
@@ -67,7 +67,7 @@ Punto de Control--&gt; ---------------------------
         </code></pre>
         <figcaption>Figura 1 - Punto de inserción</figcaption>
     </figure>
-    <h2 id="-construcci-n-del-modelo-de-datos-"><strong>Construcción del Modelo de Datos</strong></h2>
+    <h2 id="construcción-del-modelo-de-datos"><strong>Construcción del Modelo de Datos</strong></h2>
     <h3 id="-etapas-"><em>Etapas</em></h3>
     <p>No existe una “receta”, sino herramientas y métodos para construirlo y formas de validarlo.</p>
     <p>Podemos encarar la construcción del mismo, dividiéndolo en etapas:</p>
@@ -75,7 +75,7 @@ Punto de Control--&gt; ---------------------------
     <li>Obtener el Mapa de información preliminar, en el cual explicitamos los componentes y las relaciones entre ellos.</li>
     <li>Optimizar el Mapa anterior, en la cual tratamos de satisfacer las objetivos a cumplir; afianzamos los componentes; construimos un Mapa de información canónico o normalizado y lo validamos.</li>
     </ol>
-    <h2 id="-obtener-el-mapa-de-informaci-n-preliminar-"><strong>Obtener el Mapa de Información Preliminar</strong></h2>
+    <h2 id="obtener-el-mapa-de-informacion-preliminar"><strong>Obtener el Mapa de Información Preliminar</strong></h2>
     <p>Para obtener el Mapa de Información preliminar, es necesario realizar una serie de
     pasos: </p>
     <ol>
@@ -580,7 +580,7 @@ Punto de Control--&gt; ---------------------------
     <p>MATERIA PRIMA = presentación + lote de compra + stock mínimo + punto de pedido + precio de costo + ubicación en depósito + 1{código proveedor + precio proveedor}n</p>
     <p>SEMIELABORADO = proceso actual</p>
     <p>TERMINADO = precio de costo + margen de ganancia + precio de venta + presentación + ubicación en depósito</p>
-    <h2 id="optimizaci-n-del-mapa-preliminar">Optimización del Mapa preliminar</h2>
+    <h2 id="optimizacion-del-mapa-preliminar">Optimización del Mapa preliminar</h2>
     <h3 id="-algunos-conceptos-previos-"><em>Algunos conceptos previos</em></h3>
     <p>Como vimos anteriormente, con el Gráfico de vinculaciones más el Diccionario de Datos obtenemos un Mapa de Información preliminar, donde explicitamos las vinculaciones entre las entidades : es decir inter-entidad.</p>
     <p>El próximo paso es optimizarlo para que pueda cumplir los objetivos de todo Modelo de datos.</p>
@@ -691,7 +691,7 @@ Punto de Control--&gt; ---------------------------
     <blockquote>
     <p><strong>Se dice que una entidad está en una particular forma normal si las dependencias funcionales entre sus atributos cumplen determinadas condiciones. Cada forma normal representa un avance respecto de su forma normal predecesora.</strong></p>
     </blockquote>
-    <h2 id="proceso-de-normalizaci-n">Proceso de normalización</h2>
+    <h2 id="proceso-de-normalizacion">Proceso de normalización</h2>
     <h3 id="-qu-haremos-"><em>¿Qué haremos?</em></h3>
     <p>De ahora en más, a partir de un caso en particular: </p>
     <ul>
@@ -786,7 +786,7 @@ Punto de Control--&gt; ---------------------------
     <li>“n” atributos funcionalmente dependientes de la clave en forma completa y mutuamente independientes entre sí.</li>
     </ul></strong>
     </blockquote>
-    <h2 id="-por-qu-conviene-normalizar-">¿Por qué conviene normalizar?</h2>
+    <h2 id="por-que-conviene-normalizar">¿Por qué conviene normalizar?</h2>
     <p>A medida que abordamos las tres primeras formas normales vimos como la entidad original desnormalizada fue reemplazada sin pérdida de información, por una estructura más adecuada teniendo presente los objetivos que debería tener todo Modelo de Datos.</p>
     <p>Pero, ¿por qué más adecuada? Veamos con el caso presentado. 
     Para ello, representaremos la entidad en 1NF como una tabla:</p>
