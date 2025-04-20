@@ -79,8 +79,8 @@ Punto de Control--&gt; ---------------------------
     <p>Para obtener el Mapa de Información preliminar, es necesario realizar una serie de
     pasos: </p>
     <ol>
-    <li>Construir y refinar el Diagrama de Entidad Relación (DER)</li>
-    <li>“Mapear” el DER para lograr el Mapa de Información preliminar</li>
+    <li>Construir y refinar el Diagrama de Entidad Relación (DER).</li>
+    <li>“Mapear” el DER para lograr el Mapa de Información preliminar.</li>
     </ol>
     <h3 id="-diagrama-de-entidad-relaci-n-der-"><em>Diagrama de Entidad - Relación (DER)</em></h3>
     <p>Un Diagrama de Entidad Relación es una herramienta para identificar los objetos o cosas que le interesan al sistema, que componen la memoria esencial del mismo y cómo se relacionan. Es una herramienta de modelado semántica que ayuda a clarificar conceptos.</p>
@@ -98,31 +98,31 @@ Punto de Control--&gt; ---------------------------
         <figcaption>Figura 3 - Entidad: INSTRUCTOR</figcaption>
     </figure>
     <p>Una entidad es una clase de objeto del mundo real cuyo rol o función dentro del sistema está bien definido. Puede corresponder a un objeto tangible, intangible o a conceptos abstractos. El sistema usará información de una entidad, interactuando con ocurrencias de la misma. Toda entidad tiene un nombre único que debería reflejar el rol que posee dentro del sistema.</p>
-    <p>Una entidad representa en su totalidad a un conjunto de posibles ocurrencias. Por ejemplo, la entidad Curso podría tener muchas ocurrencias. Tres de estas ocurrencias podría ser &quot;Introducción al Cálculo Numérico&quot;, &quot;Virus Informáticos - cómo combatirlos&quot; y &quot;Musicoterapia - nuevos avances&quot;.</p>
+    <p>Una entidad representa en su totalidad a un conjunto de posibles ocurrencias. Por ejemplo, la entidad <em>Curso</em> podría tener muchas ocurrencias. Tres de estas ocurrencias podría ser &quot;Introducción al Cálculo Numérico&quot;, &quot;Virus Informáticos - cómo combatirlos&quot; y &quot;Musicoterapia - nuevos avances&quot;.</p>
     <p>El sistema identificará ocurrencias individuales de una entidad y la información almacenada sobre ella. Esta información puede referirse a las relaciones en las que participa la entidad o a los atributos que posee. Cada ocurrencia de una entidad debe ser distinta de las demás, pero debe cumplir el mismo rol que las demás ocurrencias de la entidad.</p>
-    <p>Supongamos que existe una entidad en nuestro DER llamada Instructor; sobre la cual podemos decir que: &quot;...Existe una clase de personas del mundo real que poseen ciertas propiedades en común. Instructor es el nombre genérico con el cual se llama a cualquiera de ellas. Existen muchas ocurrencias de Instructor, cada una unívocamente identificada. Ciertos aspectos de Instructor (tales como sus atributos o su participación en relaciones) son de importancia para el sistema...&quot;.</p>
-    <p>Algunas entidades representarán objetos tangibles físicos que juegan roles particulares en su interacción con el sistema. En términos generales son fáciles de identificar y presentan poca dificultad. Por ejemplo: para una empresa que dicta cursos para empresas, las entidades Instructor y Aula son importantes.</p>
-    <p>Otras entidades tienen una naturaleza más abstracta. Ejemplos incluyen entidades que representan períodos de tiempo como Día y conceptos abstractos como Curso.</p>
-    <p>Como dijimos anteriormente, si una entidad Instructor forma parte de nuestro DER, entonces, existe un conjunto de cosas del mundo real, cada una de las cuales es una ocurrencia de Instructor. Cada una de estas ocurrencias debería poder referenciarse (por ejemplo, señalándola) y afirmar: Esto es un Instructor. Esta afirmación debe ser verificable; es decir: debe poder determinarse si es verdadera o falsa. Si bien no es posible &quot;apuntar&quot; a entidades abstractas como Curso, debería ser posible referenciar ocurrencias individuales y declarar que son ocurrencias de esta entidad.</p>
+    <p>Supongamos que existe una entidad en nuestro DER llamada <em>Instructor</em>; sobre la cual podemos decir que: &quot;...Existe una clase de personas del mundo real que poseen ciertas propiedades en común. Instructor es el nombre genérico con el cual se llama a cualquiera de ellas. Existen muchas ocurrencias de Instructor, cada una unívocamente identificada. Ciertos aspectos de Instructor (tales como sus atributos o su participación en relaciones) son de importancia para el sistema...&quot;.</p>
+    <p>Algunas entidades representarán objetos tangibles físicos que juegan roles particulares en su interacción con el sistema. En términos generales son fáciles de identificar y presentan poca dificultad. Por ejemplo: para una empresa que dicta cursos para empresas, las entidades <em>Instructor</em> y <em>Aula</em> son importantes.</p>
+    <p>Otras entidades tienen una naturaleza más abstracta. Ejemplos incluyen entidades que representan períodos de tiempo como <em>Día</em> y conceptos abstractos como <em>Curso</em>.</p>
+    <p>Como dijimos anteriormente, si una entidad <em>Instructor</em> forma parte de nuestro DER, entonces, existe un conjunto de cosas del mundo real, cada una de las cuales es una ocurrencia de <em>Instructor</em>. Cada una de estas ocurrencias debería poder referenciarse (por ejemplo, señalándola) y afirmar: Esto es un Instructor. Esta afirmación debe ser verificable; es decir: debe poder determinarse si es verdadera o falsa. Si bien no es posible &quot;apuntar&quot; a entidades abstractas como <em>Curso</em>, debería ser posible referenciar ocurrencias individuales y declarar que son ocurrencias de esta entidad.</p>
     <p>Si una potencial entidad no satisface este criterio, entonces no es una entidad.</p>
     <p>Por ejemplo: para un negocio que se dedica a la venta de artículos de ferretería, podríamos haber modelado lo siguiente (fragmento del DER del subsistema de ventas).</p>
     <figure>
         <img src="../images/figure_204.jpg" alt="Figura 4" style="width:50%">
         <figcaption>Figura 4 - Fragmento del DER del subsistema de ventas</figcaption>
     </figure>
-    <p>Sin embargo, un revisión más detallada de este fragmento del DER nos permite concluir que Margen de Ganancia no posee ocurrencias a las cuales podamos referenciar o apuntar, o bien describirlas con atributos. La entidad deberá transformarse en atributo de Rubro, Subrubro, Producto y Artículo, y el DER quedaría:</p>
+    <p>Sin embargo, un revisión más detallada de este fragmento del DER nos permite concluir que <em>Margen de Ganancia</em> no posee ocurrencias a las cuales podamos referenciar o apuntar, o bien describirlas con atributos. La entidad deberá transformarse en atributo de <em>Rubro</em>, <em>Subrubro</em>, <em>Producto</em> y <em>Artículo</em>, y el DER quedaría:</p>
     <figure>
         <img src="../images/figure_205.jpg" alt="Figura 5" style="width:50%">
         <figcaption>Figura 5 - DER resultante</figcaption>
     </figure>
     <p>Conclusiones:</p>
     <blockquote>
-    <p>Una entidad es un objeto componente de la memoria esencial sobre la cual el sistema necesite recordar o almacenar información. Y se caracteriza porque:</p>
-    <ul>
+    <p><strong>Una entidad es un objeto componente de la memoria esencial sobre la cual el sistema necesite recordar o almacenar información. Y se caracteriza porque:</strong></p>
+    <ul><strong>
     <li>Se describe por uno o más atributos o elementos de datos.</li>
     <li>Posee una o más ocurrencias.</li>
     <li>Cada ocurrencia posee uno o más atributos que la identifica de forma única.</li>
-    </ul>
+    </ul></strong>
     </blockquote>
     <p><strong>Relación</strong></p>
     <figure>
@@ -160,7 +160,7 @@ Punto de Control--&gt; ---------------------------
     <p>Cuando una entidad se repite en una relación, se dice que la relación es recursiva.</p>
     <p>Para indicar en el ejemplo cuál de los empleados se reporta a quién, indicamos:</p>
     <blockquote>
-    <p>Empleado(subordinado) se reporta a Empleado(jefe)</p>
+    <p><strong>Empleado(subordinado) se reporta a Empleado(jefe)</strong></p>
     </blockquote>
     <p>esto permite a cada ocurrencia de la relación formar parte de un par de empleados, uno en el rol de jefe y otro en el rol de subordinado.</p>
     <p>En este tipo de relaciones, la misma ocurrencia de una entidad puede desempeñar el mismo rol, pero no en el mismo momento.</p>
@@ -181,9 +181,9 @@ Punto de Control--&gt; ---------------------------
     <p>indicando: Persona es hija de Persona(madre) y Persona(padre)</p>
     <p>Conclusiones:</p>
     <blockquote>
-    <p>Una relación es una posible asociación entre ocurrencias de diferentes entidades.</p>
-    <p>Puede considerarse como un patrón.</p>
-    <p>Muestran que un evento ocurre.</p>
+    <p><strong>Una relación es una posible asociación entre ocurrencias de diferentes entidades.</strong></p>
+    <p><strong>Puede considerarse como un patrón.</strong></p>
+    <p><strong>Muestran que un evento ocurre.</strong></p>
     </blockquote>
     <p><strong>Entidad asociativa</strong></p>
     <figure>
@@ -215,10 +215,10 @@ Punto de Control--&gt; ---------------------------
     <p>Muchas veces, una entidad asociativa es inicialmente identificada y modelada como una entidad. Una vez detectado su doble comportamiento, basta con transformarla a una entidad asociativa. Una buena pista para ver si una entidad es asociativa es verificar si la entidad sospechosa no puede existir independientemente de las otras entidades con las cuales participa en una relación.</p>
     <p>Conclusiones:</p>
     <blockquote>
-    <p>Una entidad asociativa es una entidad que actúa como relación y como entidad.
+    <p><strong>Una entidad asociativa es una entidad que actúa como relación y como entidad.
     Surge de una relación acerca de la cual se desea guardar información. 
     Una ocurrencia de una entidad asociativa no existe si no existen las ocurrencias de las entidades que intervienen en la relación de la cual surge.
-    La inversa no se cumple.</p>
+    La inversa no se cumple.</strong></p>
     </blockquote>
     <p><strong>Subtipo</strong></p>
     <figure>
@@ -260,8 +260,8 @@ Punto de Control--&gt; ---------------------------
     <p>Como consecuencia, cualquier ocurrencia de Ítem terminado es también de Ítem de manufactura e Ítem de inventario, y por lo tanto, tiene atributos heredados de ambos.</p>
     <p>Conclusiones:</p>
     <blockquote>
-    <p>Un subtipo consiste en un subconjunto de ocurrencias de una entidad que puede considerarse como una entidad por derecho propio. 
-    Lo importante: explicitar subtipos sólo si semánticamente es necesario.</p>
+    <p><strong>Un subtipo consiste en un subconjunto de ocurrencias de una entidad que puede considerarse como una entidad por derecho propio. 
+    Lo importante: explicitar subtipos sólo si semánticamente es necesario.</p></strong>
     </blockquote>
     <p><strong>Subtipificación</strong></p>
     <figure>
@@ -305,9 +305,9 @@ Punto de Control--&gt; ---------------------------
     </ul>
     <p>Conclusiones:</p>
     <blockquote>
-    <p>La subtipificación divide a una entidad en grupos bien definidos e identificables, cada uno de los cuales puede considerarse como una entidad.
+    <p><strong>La subtipificación divide a una entidad en grupos bien definidos e identificables, cada uno de los cuales puede considerarse como una entidad.
     Cada uno de esos grupos es mutuamente excluyente.
-    La subtipificación sólo debe aplicarse sólo si semánticamente es necesario.</p>
+    La subtipificación sólo debe aplicarse sólo si semánticamente es necesario.</strong></p>
     </blockquote>
     <p><strong>Supertipo</strong></p>
     <figure>
@@ -322,8 +322,8 @@ Punto de Control--&gt; ---------------------------
     </ol>
     <p>Conclusiones:</p>
     <blockquote>
-    <p>Un supertipo es un agrupamiento general de entidades, al que puede considerarse como una entidad.</p>
-    <p>Contiene los atributos comunes a todos los subtipos que se desprenden de él.</p>
+    <p><strong>Un supertipo es un agrupamiento general de entidades, al que puede considerarse como una entidad.</strong></p>
+    <p><strong>Contiene los atributos comunes a todos los subtipos que se desprenden de él.</strong></p>
     </blockquote>
     <h3 id="-c-mo-detectar-objetos-y-relaciones-"><em>Cómo detectar objetos y relaciones</em></h3>
     <p>Los objetos y relaciones pueden detectarse de varias maneras:</p>
@@ -351,7 +351,7 @@ Punto de Control--&gt; ---------------------------
     <li>Partiendo de los requerimientos del sistema, para lo cual veremos un ejemplo: </li>
     </ul>
     <blockquote>
-    <p>Objetivo: Realizar un DER a partir de los requerimientos (específicamente de los flujos de salida) paso a paso tratando de aplicar un análisis deductivo.</p>
+    <p><strong>Objetivo: Realizar un DER a partir de los requerimientos (específicamente de los flujos de salida) paso a paso tratando de aplicar un análisis deductivo.</strong></p>
     </blockquote>
     <p>Supongamos que nuestro sistema en estudio se encarga de manejar la información de docentes, grupos, alumnos y trabajos prácticos de la materia Análisis de Sistemas.</p>
     <p>Flujo de Salida: Listado Docentes = 1{Apellido + Nombre + Tel + Domicilio}n</p>
@@ -587,38 +587,47 @@ Punto de Control--&gt; ---------------------------
     <p>Antes de comenzar a describir cómo optimizar, será necesario volcar algunos conceptos o definiciones que intervienen en este proceso.</p>
     <p><strong>Clave candidata</strong></p>
     <blockquote>
-    <p>Es posible que existan más de un atributo o conjunto de atributos que puedan identificar unívocamente a una ocurrencia de una entidad. A éstos se los llama claves candidatas. Dicho de otra manera, son todas las posibles claves de una entidad.</p>
+    <p><strong>Es posible que existan más de un atributo o conjunto de atributos que puedan identificar unívocamente a una ocurrencia de una entidad. A éstos se los llama claves candidatas. Dicho de otra manera, son todas las posibles claves de una entidad.</strong></p>
     </blockquote>
     <p>Ejemplo: <em>número legajo</em> al igual que <em>tipo documento</em> + <em>número documento</em> podrían ser pensadas, bajo ciertas condiciones, como claves candidatas de la entidad <em>Alumnos</em>.</p>
     <p><strong>Clave primaria</strong></p>
     <blockquote>
-    <p>En el caso de que haya varias claves candidatas, se elige una como identificador principal y a ésa se la llama clave primaria. Para indicarla en el Diccionario de datos, se la subraya.</p>
+    <p><strong>En el caso de que haya varias claves candidatas, se elige una como identificador principal y a ésa se la llama clave primaria. Para indicarla en el Diccionario de datos, se la subraya.</strong></p>
     </blockquote>
     <p>Ejemplo: Se puede elegir a <em>número legajo</em> como clave primaria de la entidad <em>Alumnos</em>.</p>
     <p><strong>Clave alternativa</strong></p>
     <blockquote>
-    <p>El resto de las claves candidatas que no hayan sido elegidas como primaria, se denominan claves alternativas.</p>
+    <p><strong>El resto de las claves candidatas que no hayan sido elegidas como primaria, se denominan claves alternativas.</strong></p>
     </blockquote>
     <p>Ejemplo: <em>tipo documento</em> + <em>número documento</em> podría constituir una clave alternativa de la entidad <em>Alumnos</em>.</p>
     <h3 id="-dependencia-funcional-"><em>Dependencia funcional</em></h3>
     <p>Para optimizar el Mapa de Información preliminar, será necesario analizar en profundidad, para cada una de las entidades del mismo, las vinculaciones que existen entre los atributos o elementos de datos que componen a cada una, llamadas vinculaciones intra-entidad.</p>
     <p>Además, para el estudio de esas vinculaciones, aplicaremos el concepto de dependencia funcional.</p>
     <blockquote>
-    <p>Sea una entidad E y sus atributo X e Y (E = X + Y), decimos que X determina funcionalmente a Y si y sólo si, para cada valor de X existe un único valor de Y en todo instante. En otras palabras, dado el valor de X, queda determinado unívocamente el valor de Y. Se indica: X ---&gt; Y</p>
+    <p><strong>Sea una entidad E y sus atributo X e Y (E = X + Y), decimos que X determina funcionalmente a Y si y sólo si, para cada valor de X existe un único valor de Y en todo instante. En otras palabras, dado el valor de X, queda determinado unívocamente el valor de Y. Se indica: X ---&gt; Y</strong></p>
     </blockquote>
     <p><strong>Ejemplos:</strong></p>
     <p>1- Sea la entidad <em>Empleados</em> = <em>número legajo</em> + <em>nombre</em> y la siguiente visión de contexto: <em>el sistema asignará un número de legajo único</em>. Así, dado un número de legajo hay un único nombre de empleado que se corresponde con él. Esto se indica: <em>número legajo</em> -------------&gt; <em>nombre</em></p>
     <p>2- Sea la entidad <em>Libros</em> = <em>código libro</em> + <em>título</em> + <em>editorial</em> + 1{<em>número edición</em> + <em>fecha edición</em>}n y las siguientes visiones de contexto: <em>el sistema asignará un código de libro único</em>, <em>un libro puede ser editado varias veces</em>, <em>un libro es editado por una única editorial</em>, <em>cada edición de un libro tiene una única fecha de edición</em>. Por lo tanto:</p>
-    <p><em>Figura 56</em></p>
+    <figure>
+        <img src="../images/figure_236.jpg" alt="Figura 36" style="width:50%">
+        <figcaption>Figura 36 - Grafo de Dependencias Funcionales</figcaption>
+    </figure>
     <p>Este esquema suele llamarse grafo de dependencias funcionales y representa las relaciones que existen entre los atributos de una entidad.</p>
     <p>Supongamos ahora que modificamos la tercer visión de contexto: un libro puede ser editado por varias editoriales. Tendremos los siguientes cambios:</p>
     <p><em>Libro = código libro + título + 1{editorial +1{ número edición + fecha edición}n}n</em></p>
-    <p><em>Figura 57</em></p>
+    <figure>
+        <img src="../images/figure_237.jpg" alt="Figura 37" style="width:50%">
+        <figcaption>Figura 37 - Grafo de Dependencias Funcionales</figcaption>
+    </figure>
     <p><strong>Importante:</strong>
     Reconocer las dependencias funcionales entre atributos exige una previa explicitación del significado real de cada atributo.</p>
     <p><strong>Dependencias completas y no completas:</strong></p>
     <p>Volvamos al ejemplo</p>
-    <p><em>Figura 58</em></p>
+    <figure>
+        <img src="../images/figure_238.jpg" alt="Figura 38" style="width:50%">
+        <figcaption>Figura 38 - Grafo de Dependencias Funcionales</figcaption>
+    </figure>
     <ul>
     <li>título y editorial dependen funcionalmente de código libro.</li>
     <li>título y editorial también depende funcionalmente del par código libro y número edición, ya que para un valor de código libro + número edición, corresponde un único valor de titulo y editorial.</li>
@@ -653,7 +662,10 @@ Punto de Control--&gt; ---------------------------
     <li>una localidad tiene una única categoría</li>
     </ul>
     <p>El análisis de dependencias funcionales sería el siguiente:</p>
-    <p><em>Figura 59</em></p>
+    <figure>
+        <img src="../images/figure_239.jpg" alt="Figura 39" style="width:50%">
+        <figcaption>Figura 39 - Análisis de Dependencias Funcionales</figcaption>
+    </figure>
     <h3 id="-normalizaci-n-"><em>Normalización</em></h3>
     <p>Hasta ahora nos hemos puesto de acuerdo en ciertas definiciones básicas y todavía no hemos abordado cómo optimizar nuestro modelo de datos, para que pueda satisfacer los objetivos tratados anteriormente y que recordamos simplemente enumerándolos:</p>
     <ol>
@@ -664,7 +676,7 @@ Punto de Control--&gt; ---------------------------
     </ol>
     <p>Es aquí donde aparece la normalización como herramienta para optimizar y poder lograr estas objetivos.</p>
     <blockquote>
-    <p>La normalización es una disciplina que, vía la aplicación sistemática de una sucesión de pasos formales, va transformando entidades originales en otras más adecuadas (en función de las objetivos), basándose en el significado de los datos o tratando de modelar su estructura real. Esta disciplina es una buena ayuda para la optimización del modelo de datos pero no es la panacea.</p>
+    <p><strong>La normalización es una disciplina que, vía la aplicación sistemática de una sucesión de pasos formales, va transformando entidades originales en otras más adecuadas (en función de las objetivos), basándose en el significado de los datos o tratando de modelar su estructura real. Esta disciplina es una buena ayuda para la optimización del modelo de datos pero no es la panacea.</strong></p>
     </blockquote>
     <p>Formas normales:
     Son los estado por los que va pasando una entidad durante esos sucesivos pasos de transformación. Así, se habla de una entidad en:</p>
@@ -677,7 +689,7 @@ Punto de Control--&gt; ---------------------------
     <li>Etc.</li>
     </ul>
     <blockquote>
-    <p>Se dice que una entidad está en una particular forma normal si las dependencias funcionales entre sus atributos cumplen determinadas condiciones. Cada forma normal representa un avance respecto de su forma normal predecesora.</p>
+    <p><strong>Se dice que una entidad está en una particular forma normal si las dependencias funcionales entre sus atributos cumplen determinadas condiciones. Cada forma normal representa un avance respecto de su forma normal predecesora.</strong></p>
     </blockquote>
     <h2 id="proceso-de-normalizaci-n">Proceso de normalización</h2>
     <h3 id="-qu-haremos-"><em>¿Qué haremos?</em></h3>
@@ -691,7 +703,10 @@ Punto de Control--&gt; ---------------------------
     <p>Sea la entidad</p>
     <p><em>Proveedores = código proveedor + razón social + domicilio + localidad + categoría + 1{código producto + cantidad}n</em></p>
     <p>Y un conjunto de visiones de contexto que determinan las siguientes dependencias funcionales:</p>
-    <p><em>Figura 57</em></p>
+    <figure>
+        <img src="../images/figure_240.jpg" alt="Figura 40" style="width:50%">
+        <figcaption>Figura 40 - Dependencias Funcionales</figcaption>
+    </figure>
     <p><strong>Observaciones:</strong></p>
     <ul>
     <li>cantidad es la cantidad que el proveedor nos vende de cada producto.</li>
@@ -699,20 +714,26 @@ Punto de Control--&gt; ---------------------------
     </ul>
     <h3 id="-primera-forma-normal-"><em>Primera Forma Normal</em></h3>
     <blockquote>
-    <p>Una entidad está en primer forma normal o 1NF si no tiene atributos multivalor.</p>
+    <p><strong>Una entidad está en primer forma normal o 1NF si no tiene atributos multivalor.</strong></p>
     </blockquote>
     <p>Esta definición está íntimamente ligada al concepto de clave candidata., ya que elegir una <strong>clave candidata</strong> asegura eliminar todos los atributos multivalor.</p>
     <p>En nuestro caso, la única clave candidata es <em>código proveedor + código producto</em>. Eligiendo como clave candidata a este par de atributos, desaparecen los atributos multivalor. En cambio, si se hubiera elegido sólo <em>código proveedor</em> como clave, <em>código producto + cantidad</em> provista serían grupos repetitivos o atributos multivalor: para un valor de <em>código proveedor</em>, habría varios valores de <em>código producto</em>.</p>
     <p><strong>Por lo tanto, pasar de una entidad no normalizada a una entidad en 1NF implica elegir una clave que cumpla con la definición de clave candidata.</strong></p>
     <p><strong>Observación:</strong> Mostraremos más resaltada a la clave candidata en el grafo.</p>
-    <p><em>Figura 58</em></p>
+    <figure>
+        <img src="../images/figure_241.jpg" alt="Figura 41" style="width:50%">
+        <figcaption>Figura 41 - Grafo y clave candidata resaltada</figcaption>
+    </figure>
     <h3 id="-segunda-forma-normal-"><em>Segunda Forma Normal</em></h3>
     <blockquote>
-    <p>Una entidad está en segunda forma normal o 2NF si y sólo si se está en 1NF y todo atributo no clave depende de la clave en forma funcionalmente completa.</p>
+    <p><strong>Una entidad está en segunda forma normal o 2NF si y sólo si se está en 1NF y todo atributo no clave depende de la clave en forma funcionalmente completa.</strong></p>
     </blockquote>
     <p>Es decir: se agrega la restricción de que toda dependencia funcional sea completa. Para lograr satisfacer esta restricción, es preciso descomponer la entidad original en nuevas entidades. </p>
     <p>En nuestro caso: </p>
-    <p><em>Figura 59</em></p>
+    <figure>
+        <img src="../images/figure_242.jpg" alt="Figura 42" style="width:50%">
+        <figcaption>Figura 42 - Descomposición de la entidad original</figcaption>
+    </figure>
     <p>Al descomponer la entidad original en dos entidades, los atributos no clave de cada una de ellas, dependen de la clave y ahora en forma completa. Por lo tanto, están en 2NF.</p>
     <p>Veámoslo a nivel de diccionario de datos: </p>
     <p>Antes de normalizar: 
@@ -725,29 +746,45 @@ Punto de Control--&gt; ---------------------------
     <p>Podemos concluir que el proceso de normalización, al llegar a la 2NF termina “rompiendo” los grupos repetitivos, los cuales pasan a formar parte de una nueva entidad dentro de la cual ya no son más grupos repetitivos.</p>
     <h3 id="-tercera-forma-normal-"><em>Tercera Forma Normal</em></h3>
     <blockquote>
-    <p>Una entidad está en tercera forma normal o 3NF si y sólo si está en 2NF y no existen dependencias funcionales entre atributos no clave.</p>
+    <p><strong>Una entidad está en tercera forma normal o 3NF si y sólo si está en 2NF y no existen dependencias funcionales entre atributos no clave.</strong></p>
     </blockquote>
     <p>Para lograr satisfacer esta restricción, es preciso descomponer nuevamente aquellas entidades que no la cumplan.</p>
     <p>Veamos nuestro caso: 
-    <em>Figura 60</em>
+    <figure>
+        <img src="../images/figure_243.jpg" alt="Figura 43" style="width:50%">
+        <figcaption>Figura 43 - Descomposición de entidades</figcaption>
+    </figure>
     cumple con la restricción; es decir: no hay dependencias funcionales entre atributos no clave. Por lo tanto, no sólo está en 2NF sino que también está en 3NF.</p>
     <p>En cambio la otra entidad obtenida:
-    <em>Figura 61</em>
+    <figure>
+        <img src="../images/figure_244.jpg" alt="Figura 44" style="width:50%">
+        <figcaption>Figura 44 - Descomposición de entidades</figcaption>
+    </figure>
     muestra una dependencia funcional entre localidad y categoría. Por lo tanto , es preciso descomponerla en dos.</p>
     <p>Este es el resultado de esa descomposición:
-    <em>Figura 62</em></p>
+    <figure>
+        <img src="../images/figure_245.jpg" alt="Figura 45" style="width:50%">
+        <figcaption>Figura 45 - Resultado de esa descomposición de entidades</figcaption>
+    </figure>
     <h3 id="-c-mo-evolucion-la-entidad-de-nuestro-caso-"><em>¿Cómo evolucionó la entidad de nuestro caso?</em></h3>
     <p>La entidad original de nuestro caso, evolucionó de la siguiente manera:</p>
-    <p><em>Figura 63</em></p>
+    <figure>
+        <img src="../images/figure_246.jpg" alt="Figura 46" style="width:50%">
+        <figcaption>Figura 46 - Evolución de la entidad de nuestro caso</figcaption>
+    </figure>
+    <figure>
+        <img src="../images/figure_247.jpg" alt="Figura 47" style="width:50%">
+        <figcaption>Figura 47 - Evolución de la entidad de nuestro caso</figcaption>
+    </figure>
     <p>La entidad original no normalizada, fue sustituida sin pérdida de información por tres entidades en 3NF, más adecuada desde el punto de vista de los objetivos.</p>
     <h3 id="-observaci-n-"><em>Observación</em></h3>
     <p>De lo visto hasta aquí, podemos concluir que:</p>
     <blockquote>
-    <p>Una entidad está en 3NF si y sólo si, en todo momento, está formada por: </p>
-    <ul>
+    <p><strong>Una entidad está en 3NF si y sólo si, en todo momento, está formada por:</strong></p>
+    <ul><strong>
     <li>un identificador único o clave. </li>
     <li>“n” atributos funcionalmente dependientes de la clave en forma completa y mutuamente independientes entre sí.</li>
-    </ul>
+    </ul></strong>
     </blockquote>
     <h2 id="-por-qu-conviene-normalizar-">¿Por qué conviene normalizar?</h2>
     <p>A medida que abordamos las tres primeras formas normales vimos como la entidad original desnormalizada fue reemplazada sin pérdida de información, por una estructura más adecuada teniendo presente los objetivos que debería tener todo Modelo de Datos.</p>
@@ -886,6 +923,7 @@ Punto de Control--&gt; ---------------------------
     </tr>
     </tbody>
     </table>
+    <br>
     <table>
     <thead>
     <tr>
@@ -967,6 +1005,7 @@ Punto de Control--&gt; ---------------------------
     </tr>
     </tbody>
     </table>
+    <br>
     <table>
     <thead>
     <tr>
@@ -997,6 +1036,7 @@ Punto de Control--&gt; ---------------------------
     </tr>
     </tbody>
     </table>
+    <br>
     <table>
     <thead>
     <tr>
@@ -1053,15 +1093,15 @@ Punto de Control--&gt; ---------------------------
     <p><em>Figura 65</em></p>
     <p>Para poder responder a estas preguntas veamos antes las siguientes definiciones:</p>
     <blockquote>
-    <p>En toda descomposición de una entidad en varias entidades, debe lograrse que las nuevas entidades sean independientes.
-    Un conjunto de entidades es independiente si y sólo si cada una de ellas puede ser actualizada sin afectar necesariamente a las otras.</p>
+    <p><strong>En toda descomposición de una entidad en varias entidades, debe lograrse que las nuevas entidades sean independientes.
+    Un conjunto de entidades es independiente si y sólo si cada una de ellas puede ser actualizada sin afectar necesariamente a las otras.</strong></p>
     </blockquote>
     <p>¿Cómo reconocer cuándo dos entidades son independientes?</p>
     <blockquote>
-    <p>Teorema: 
+    <p><strong>Teorema: 
     Dos entidades E1 y E2, producto de la descomposición de una entidad E son independientes si y sólo si se cumplen las dos siguientes condiciones: 
     a) Toda dependencia funcional en E puede ser lógicamente deducida de las dependencias funcionales en E1 y E2 más la vinculación entre E1 y E2. 
-    b) Los atributos comunes a E1 y E2 deben ser claves candidatas al menos de una de ellas.</p>
+    b) Los atributos comunes a E1 y E2 deben ser claves candidatas al menos de una de ellas.</strong></p>
     </blockquote>
     <p>Por lo tanto: </p>
     <table>
