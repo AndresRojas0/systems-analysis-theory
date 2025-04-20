@@ -1081,16 +1081,22 @@ Punto de Control--&gt; ---------------------------
     b) tomando evento por evento de entrada, conjuntamente con el Diccionario de Datos de flujos, todos los elementos que aparecen en los mismos se almacenen en entidades ya normalizadas o intervengan en un proceso de cálculo.
     c) para todas las entidades internas (de las cuales el sistema es responsable) que intervengan en la generación de la respuesta de los eventos que disparan actividades fundamentales, que existan los eventos responsables de disparar actividades de custodia, para que dichas entidades se mantengan.</p>
     <p>Estas verificaciones son importantes. Recordemos que el sistema no “inventa” ninguna información.</p>
-    <h3 id="-mapa-de-informaci-n-can-nico-o-normalizado-"><strong>Mapa de Información canónico o normalizado</strong></h3>
+    <h3 id="-mapa-de-información-canónico-o-normalizado-"><strong>Mapa de Información canónico o normalizado</strong></h3>
     <p>Es una herramienta gráfica que consiste en representar a cada entidad normalizada con un rectángulo, explicitando el nombre y los atributos que la componen, resaltando la clave; y a cada vinculación entre las entidades, del mismo formato a las empleadas en el Mapa de Información preliminar.</p>
     <p>Veamos cómo queda el mapa canónico de nuestro caso:</p>
-    <p><em>Figura 64</em></p>
+    <figure>
+        <img src="../images/figure_248.jpg" alt="Figura 48" style="width:50%">
+        <figcaption>Figura 48 - MIP Mapa de Información Canónico</figcaption>
+    </figure>
     <p><strong>Las vinculaciones que generalmente aparecerán en nuestro mapa canónico luego de haber normalizado el DER serán del tipo 1 a N. En caso de que llegaran a quedar entidades vinculadas 1 a 1, entonces debería unirlas en una sola entidad.</strong></p>
     <p><strong>Buenas descomposiciones</strong> </p>
     <p>En el proceso de normalización, vimos que una vez obtenida la 1NF (establecida la clave), ocurren una serie de descomposiciones. </p>
     <p>El problema es cómo reconocer cuáles son buenas descomposiciones posibles. </p>
     <p>Ante la situación anteriormente vista:</p>
-    <p><em>Figura 65</em></p>
+    <figure>
+        <img src="../images/figure_249.jpg" alt="Figura 49" style="width:50%">
+        <figcaption>Figura 49 - Buenas descomposiciones posibles</figcaption>
+    </figure>
     <p>Para poder responder a estas preguntas veamos antes las siguientes definiciones:</p>
     <blockquote>
     <p><strong>En toda descomposición de una entidad en varias entidades, debe lograrse que las nuevas entidades sean independientes.
