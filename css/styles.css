@@ -93,8 +93,8 @@ table, th, td {
 /* From 320px and up */
 @media (min-width: 320px) {
   body {
-    background-color: #1D1E22;
-    color: white;
+    background-color: #1D1E22; /* #1c2127 */
+    color: #dadada; /* rgba(218,218,218,255) */
     font-size: 1em;
     padding: 200px 25px 200px 25px;
   }
@@ -104,10 +104,14 @@ table, th, td {
   }
 
   blockquote {
-    color: white;
+    color: #1cb7cf;
   }
- }
- 
+
+  p em {
+    color: #fc84b4;
+  }
+}
+
  /* From 768px and up */
  @media (min-width: 768px) {
    body {
@@ -122,6 +126,10 @@ table, th, td {
   }
 
    blockquote {
+    color: #5F4B32;
+  }
+
+  p em {
     color: #5F4B32;
   }
  }
