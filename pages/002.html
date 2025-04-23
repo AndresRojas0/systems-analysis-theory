@@ -1140,6 +1140,113 @@ Punto de Control--&gt; ---------------------------
     </tr>
     </tbody>
     </table>
-    
+
+    <h2 id="sub-esquema-de-navegación">Sub-esquema de Navegación</h2>
+    <p>Terminada la construccion del mapa canónico.</p>
+    <h3 id="-objetivos-"><em>Objetivos</em></h3>
+    <p>Es una herramienta gráfica que permite:</p>
+    <ol>
+    <li>Controlar la consistencia y coherencia del modelo de datos y el modelo ambiental.</li>
+    <li>Comprender cual es la lógica de obtención de los datos a través de las entidades, para
+    luego facilitar la construcción de los detalles de los procesos.</li>
+    </ol>
+    <p>El subesquema describe qué:
+    <ul>
+    <li>Datos de las entidades que se usan</li>
+    <li>Relaciones entre entidades facilitan el acceso a los datos</li>
+    <li>Condiciones internas del sistema que filtran las filas resultantes.</li>
+    <li>Condiciones externas al sistema que filtran las filas resultantes.</li>
+    </ul>
+    Se realiza por lo menos un subesquema de navegación por cada evento que dispare una actividad
+    fundamental o mixta.</p>
+    <h3 id="-procedimiento-"><em>Procedimiento</em></h3>
+    <ol>
+    <li>Detectar los eventos que disparan actividades fundamentales y/o mixtas.</li>
+    <li>De las actividades mixtas identificar solo la porción fundamental. No tener en cuenta la porción
+    custodial.</li>
+    <li>Estudiar que entidades, relaciones y datos deberían, en un principio, ser utilizados.</li>
+    <li>Decidir la entidad de comienzo.</li>
+    <li>Decidir las entidades por las que se continua</li>
+    <li>Estudiar que datos permiten &quot;navegar&quot; de una entidad a otra.</li>
+    <li>Determinar que datos se utilizan de cada entidad.</li>
+    <li>Establecer las condiciones externas.</li>
+    <li>Establecer las condiciones internas.</li>
+    </ol>
+    <p><strong>Navegar</strong> de una entidad a otra significa que puedo obtener ocurrencias en donde coinciden uno o
+    más datos de una entidad origen con uno o más datos en una entidad destino; o bien, coincide el
+    resultado de un cálculo en base a dato/s de una entidad origen con dato/s en una entidad destino.</p>
+    <p><strong>Ejemplo:</strong>
+    a) Fragmento de la Narrativa:
+    “Cada vez que Gerencia lo solicite, el sistema deberá liquidarle las comisiones por venta a los
+    vendedores, teniendo en cuenta el rango de fechas indicado. Todas las facturas que utilice en
+    el cálculo deberán ser actualizadas como “liquidadas”. La liquidación deberá tener el siguiente
+    formato, para cada vendedor:</p>
+    <figure>
+        <img src="../images/figure_250.jpg" alt="Figura 50" style="width:50%">
+        <figcaption>Figura 50 - Formato de liquidación</figcaption>
+    </figure>
+    <p><strong>Flujos</strong>
+    <br>
+    e: Período a liquidar = fecha desde + fecha hasta
+    <br>
+    s: Liquidación = 1{fecha liquidación + fecha desde + fecha hasta + código vendedor + nombre +
+    apellido + 0{código producto + nombre producto + venta + porcentaje + comision}n + total
+    comision
+    <br>
+    Elementos discretos:
+    <br>
+    Estado_liquidacion = “a liquidar”, “liquidada”</p>
+    <p>b) Mapa Canónico:</p>
+    <figure>
+        <img src="../images/figure_251.jpg" alt="Figura 51" style="width:50%">
+        <figcaption>Figura 51 - Mapa Canónico</figcaption>
+    </figure>
+    <p>c) Construcción:
+    Determinar entonces por cuál de las entidades se tendrá que comenzar. Si observamos un poco
+    el flujo de salida del evento, veremos que el sistema deberá generar una liquidación para cada
+    vendedor (y para todos ellos), por lo que podemos graficar esta situación de la siguiente
+    manera:</p>
+    <figure>
+        <img src="../images/figure_252.jpg" alt="Figura 52" style="width:50%">
+        <figcaption>Figura 52 - Recuperar todas las ocurrencias de entidad VENDEDOR</figcaption>
+    </figure>
+    <p>Se dibuja la entidad, junto con el acceso a la misma. En este caso no vamos a trabajar con un
+    vendedor determinado o un rango de vendedores, es decir: no accederemos a VENDEDORES
+    con ningún atributo o grupo de atributos, sino que recuperaremos todas las ocurrencias de esta
+    entidad. Por esa razón la flecha solo indica el comienzo.</p>
+    <p>Además, se van a recuperar datos del vendedor que deberán aparecer en el flujo de salida,
+    esta situación la graficamos de la siguiente manera:</p>
+    <figure>
+        <img src="../images/figure_253.jpg" alt="Figura 53" style="width:50%">
+        <figcaption>Figura 53 - Recuperar datos del vendedor que aparecerán en flujo salida</figcaption>
+    </figure>
+    <p>De todas las facturas de cada vendedor, sólo nos van a interesar aquellas comprendidas dentro
+    del rango de fechas indicado por Gerencia y que no estén liquidadas. Esta situación la
+    graficamos de la siguiente manera:</p>
+    <figure>
+        <img src="../images/figure_254.jpg" alt="Figura 54" style="width:50%">
+        <figcaption>Figura 54 - Recuperar facturas comprendidas dentro del rango de fechas</figcaption>
+    </figure>
+    <p>La línea punteada representará un filtro para la entidad con datos originados en forma interna
+    por el sistema (condición interna), mientras que el rango de fechas también será un filtro pero
+    con datos originados en el ambiente (condición externa) y se graficará con una línea llena.</p>
+    <p>No hay ningún dato de FACTURAS que se necesite en el flujo de salida, pero sí será necesario
+    navegar hacia PRODUCTOS POR FACTURA, para poder ir calculando el total vendido, agrupado
+    por cada producto:</p>
+    <figure>
+        <img src="../images/figure_255.jpg" alt="Figura 55" style="width:50%">
+        <figcaption>Figura 55 - Navegar hacia PRODUCTOS POR FACTURA para calcular el total vendido</figcaption>
+    </figure>
+    <p>Además, para cada producto que se haya vendido será necesario recuperar su nombre:</p>
+    <figure>
+        <img src="../images/figure_256.jpg" alt="Figura 56" style="width:50%">
+        <figcaption>Figura 56 - Recuperar nombre por cada producto vendido</figcaption>
+    </figure>
+    <p>Por último, debemos recuperar el porcentaje y el precio necesario para liquidar la comisión para
+        cada producto, por lo que nuestro sub-esquema de navegación quedará finalmente:</p>
+    <figure>
+        <img src="../images/figure_257.jpg" alt="Figura 57" style="width:50%">
+        <figcaption>Figura 57 - Recuperar porcentaje y precio necesario para liquidar la comisión</figcaption>
+    </figure>
 </body>
 </html>
