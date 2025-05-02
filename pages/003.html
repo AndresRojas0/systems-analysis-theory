@@ -34,8 +34,10 @@
         </ul>
         <p>Respecto a la complejidad de la miniespecificación, podemos tomar como guía el no excedernos de una hoja. Si la miniespecificación de un evento excede una hoja, entonces habrá que tomar medidas para reducir la complejidad de la misma, tal como veremos en este apunte.</p>
         <p><strong>Muy importante:</strong></p>
+        <blockquote>
         <p><strong>UNA MINIESPECIFICACIÓN NO ES UN PROGRAMA.</strong></p>
-        <h2 id="herramientas-que-se-usan-en-la-construcci-n-de-una-mini-especificaci-n-">Herramientas que se usan en la construcción de una mini especificación:</h2>
+        </blockquote>
+        <h2 id="herramientas-que-se-usan-en-la-construcci-n-de-una-miniespecificaci-n-">Herramientas que se usan en la construcción de una miniespecificación:</h2>
         <p>Para construir una miniespecificación tenemos una serie de herramientas, las cuales se podrían clasificar en:</p>
         <ul>
         <li><strong>Procedurales</strong>: lenguaje estructurado.</li>
@@ -44,13 +46,13 @@
         </ul>
         <h2 id="formato-que-deber-a-tener-una-miniespecificaci-n-">Formato que debería tener una miniespecificación:</h2>
         <p>Una miniespecificación debería tener el siguiente formato:</p>
-        <p>Evento N - Nombre de la burbuja del DFD
-        COMIENZO
-        .
-        .
-        .
-        FIN</p>
-        <h2 id="notaci-n-para-los-elementos-de-datos-de-almacenes-y-o-flujos-">Notación para los elementos de datos de almacenes y/o flujos:</h2>
+        <p><strong>Evento N - Nombre de la burbuja del DFD</strong></p>
+        <pre><code>COMIENZO
+        <span class="hljs-bullet">.
+        </span><span class="hljs-bullet">.
+        </span><span class="hljs-bullet">.
+        </span>FIN
+        </code></pre><h2 id="notaci-n-para-los-elementos-de-datos-de-almacenes-y-o-flujos-">Notación para los elementos de datos de almacenes y/o flujos:</h2>
         <p>Si bien en el diccionario de datos cada elemento de datos tiene un nombre único que lo identifica, 
         dentro de un flujo y/o almacén, en una miniespecificación puedo llegar a utilizar muchos elementos que 
         tienen el mismo bombre y que pertenecen a un flujo de entrada, varios fkujos de salida y/o varios almacenes.</p>
@@ -59,8 +61,7 @@
         <li><code>flujo.elemento_de_datos</code></li>
         <li><code>almacén.elemento_de_datos</code></li>
         </ul>
-        <p>Por supuesto, será necesario que esta notación se emplee sólo cuando sea necesario, es decir: para 
-        evitar ambigüedades en la miniespecificación.</p>
+        <p>Por supuesto, será necesario que esta notación se emplee sólo cuando sea necesario, es decir: para evitar ambigüedades en la miniespecificación.</p>
         <h2 id="lenguaje-estructurado-procedural-">Lenguaje estructurado (procedural)</h2>
         <p>Construir una miniespecificación con esta herramienta procedural consiste en emplear un lenguaje 
         estructurado, el cual brinda una serie de construcciones formales para estructurar la lógica de la respuesta del evento en términos de:</p>
@@ -75,10 +76,11 @@
         </ul>
         <p>A continuación daremos una <strong>guía</strong> sobre cuáles podrían ser dichas sentencias. La notación
         empleada es similar a la usada en los manuales de lenguaje de programación:</p>
-        <p>[ ] Para indicar que esa palabra es opcional dentro de la sentencia;
-        {construcción 1; construcción 2; ...; construcción n } para indicar que debe optarse por una de las
-        construcciones listadas;
-        Letra inclinada para indicar nombre de almacenes, atributos, variables.</p>
+        <ul>
+        <li>Corchetes [ ] para indicar que esa palabra es opcional dentro de la sentencia;</li>
+        <li>Llaves {construcción 1; construcción 2; ...; construcción n } para indicar que debe optarse por una de lasvconstrucciones listadas;</li>
+        <li><em>Letra inclinada</em> para indicar nombre de almacenes, atributos, variables.</li>
+        </ul>
         <h3 id="-funciones-predefinidas-"><em>Funciones predefinidas</em></h3>
         <ul>
         <li><code>HOY()</code> —  retorna la fecha actual o fecha del sistema </li>
@@ -116,7 +118,7 @@
         <ul>
         <li><code>Periodicidad ...</code></li>
         </ul>
-        <p>Ejemplos:</p>
+        <p><strong>Ejemplos:</strong></p>
         <ul>
         <li>&quot;Cada dos meses...&quot;</li>
         <li>&quot;Luego de 48 horas de haber ingresado a cámara de maduración...&quot;</li>
@@ -154,13 +156,14 @@
         </ul>
         <p><strong>Ejemplo:</strong></p>
         <p>Supongamos un almacén:</p>
-        <p>SOCIOS = número socio + nombre + domicilio + teléfono + fax + e-mail + fecha nacimiento + código categoría + estado</p>
+        <p><code>SOCIOS = número socio + nombre + domicilio + teléfono + fax + e-mail + fecha nacimiento + código categoría + estado</code></p>
         <p>Y las siguientes visiones de contexto:</p>
         <p>i - El sistema asignará un número de socio único</p>
         <p>ii - El sistema deberá asignar el estado “activo” cuando el socio ingrese al club.</p>
         <p>Y el siguiente DFD, correspondiente al evento: Ingresa un nuevo socio al club</p>
         <p><em>Figura 301</em></p>
-        <p>siendo inscripción al club = nombre + domicilio + teléfono + fax + e-mail + fecha nacimiento + código categoría</p>
+        <p>siendo:</p>
+        <p><code>inscripción al club = nombre + domicilio + teléfono + fax + e-mail + fecha nacimiento + código categoría</code></p>
         <p>Podríamos construir la miniespecificación para incorporar el nuevo socio de la siguiente manera:</p>
         <p>Evento 1 - Incorporar nuevo socio</p>
         <pre><code>COMIENZO
@@ -209,15 +212,16 @@
         7) fecha factura corresponda a MES() 
         8) fecha remito corresponda a AÑO() - 3</p>
         <p><strong>Observaciones respecto a las condiciones:</strong>
-        Ante anidamientos de condiciones muy completos por el uso de y y/u o en la sintaxis, podrán emplearse paréntesis para mayor claridad y/o para alterar el orden de precedencia de la y, o.</p>
+        Ante anidamientos de condiciones muy completos por el uso de <code>y</code> y/u <code>o</code> en la sintaxis, podrán emplearse paréntesis para mayor claridad y/o para alterar el orden de precedencia de la <code>y</code>, <code>o</code>.</p>
         <p><strong>Ejemplo 1:</strong></p>
         <p>Supongamos el siguiente almacén</p>
-        <pre><code><span class="hljs-attr">ARTICULOS</span> = código artículo + descripción + código rubro + precio costo + margen ganancia + punto pedido + estado
-        </code></pre><p>La siguiente visión de contexto :
+        <p><code>ARTICULOS = código artículo + descripción + código rubro + precio costo + margen ganancia + punto pedido + estado</code></p>
+        <p>La siguiente visión de contexto :
         i - el sistema colocará al artículo como “inhabilitado” cuando se lo quiera inhabilitar en forma individual o por rubro.</p>
         <p>Y el siguiente DFD correspondiente al evento : Se ha decidido inhabilitar artículos de un rubro.</p>
         <p><em>Figura 302</em></p>
-        <p>siendo inhabilitación por rubro = código rubro</p>
+        <p>siendo: </p>
+        <p><code>inhabilitación por rubro = código rubro</code></p>
         <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <p>Evento 18 - Inhabilitar artículos del rubro</p>
         <pre><code>COMIENZO
@@ -230,11 +234,12 @@
         </code></pre><p>En esta miniespecificación estoy indicando que, para todos los artículos que pertenezcan al código de rubro del flujo de entrada y no hayan sido previamente inhabilitado (ver visión de contexto), se modifique su estado. Estoy modificando muchas ocurrencias.</p>
         <p><strong>Ejemplo 2:</strong></p>
         <p>Supongamos un almacén</p>
-        <pre><code><span class="hljs-attr">SOCIOS</span> = número socio + nombre + domicilio + teléfo<span class="hljs-literal">no</span> + fax + e-mail + fecha nacimiento + código categoría + estado
-        </code></pre><p>Y el siguiente DFD, correspondiente al evento : Se producen novedades en los datos del socio</p>
+        <p><code>SOCIOS = número socio + nombre + domicilio + teléfono + fax + e-mail + fecha nacimiento + código categoría + estado</code></p>
+        <p>Y el siguiente DFD, correspondiente al evento: Se producen novedades en los datos del socio</p>
         <p><em>Figura 303</em></p>
-        <p>siendo novedades socio = número socio + (nombre) + (domicilio) + (teléfono) + (fax) + (e-mail) + (fecha nacimiento)</p>
-        <p>Podríamos construir la miniespecificación de la siguiente manera :</p>
+        <p>siendo:</p>
+        <p><code>novedades socio = número socio + (nombre) + (domicilio) + (teléfono) + (fax) + (e-mail) + (fecha nacimiento)</code></p>
+        <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <p>Evento 5 - Actualizar novedades del socio</p>
         <pre><code>COMIENZO
           Aceptar novedades socio
@@ -249,24 +254,23 @@
           donde condición 1 <span class="hljs-comment">[{y ; o} condición 2 <span class="hljs-comment">[...]</span>]</span>
         <span class="hljs-comment">[Fin-borrar]</span>
         
-        
         Ir a nombre-almacén 1 <span class="hljs-comment">[, nombre-almacén 2 <span class="hljs-comment">[, ...]</span> y {borrar ; eliminar ; dar de baja ; suprimir ;
         quitar} <span class="hljs-comment">[ocurrencia]</span>
           donde condición 1 <span class="hljs-comment">[{y ; o} condición 2 <span class="hljs-comment">[...]</span>]</span>
         <span class="hljs-comment">[Fin-ir]</span></span></span>
         </code></pre><p><strong>Ejemplo:</strong>
         Supongamos los siguientes almacenes:</p>
-        <pre><code>PRESUPUESTOS = <span class="hljs-built_in">n</span>úmero presupuesto + fecha presupuesto + <span class="hljs-built_in">n</span>úmero cliente + fecha vencimiento + estado
-        DETALLES PRESUPUESTO = <span class="hljs-built_in">n</span>úmero presupuesto + código artículo + cantidad + precio presupuestado
-        CONDICIONES PRESUPUESTO = <span class="hljs-built_in">n</span>úmero presupuesto + cantidad días + interés presupuesto
-        </code></pre><p>Donde:
-        interés presupuesto = </p>
+        <p><code>PRESUPUESTOS = número presupuesto + fecha presupuesto + número cliente + fecha vencimiento + estado</code></p>
+        <p><code>DETALLES PRESUPUESTO = número presupuesto + código artículo + cantidad + precio presupuestado</code></p>
+        <p><code>CONDICIONES PRESUPUESTO = número presupuesto + cantidad días + interés presupuesto</code></p>
+        <p>Donde:</p>
+        <p><code>interés presupuesto =</code></p>
         <ul>
         <li>puede tomar valores nulos, negativos y positivos;</li>
         <li>si es negativo significa un descuento sobre el precio presupuestado;</li>
         <li>si es positivo significa un recargo sobre el precio presupuestado;</li>
         </ul>
-        <p>Y el siguiente DFD del evento : Cada dos meses, eliminar todos aquellos presupuestos con estado “pendiente”</p>
+        <p>Y el siguiente DFD del evento: Cada dos meses, eliminar todos aquellos presupuestos con estado “pendiente”</p>
         <p><em>Figura 304</em></p>
         <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <p>Evento 15 - Eliminar presupuestos pendientes:</p>
@@ -289,7 +293,6 @@
           {Fin-cada-grupo ; Fin-cada-corte}]</span> *sólo si se indicó por cada grupo o por cada corte en datos-a-recuperar-n*
         <span class="hljs-comment">[Fin-sentencia]</span>
         
-        
         Ir a nombre-almacén 1 y Nombre-sentencia datos-a-recuperar-1 <span class="hljs-comment">[, datos-a-recuperar-2 <span class="hljs-comment">[,...]</span>]</span>
           <span class="hljs-comment">[para incluir en flujo-salida]</span>
           donde condición 1 <span class="hljs-comment">[{y ; o} condición 2 <span class="hljs-comment">[...]</span>]</span>
@@ -298,23 +301,23 @@
           {Fin-cada-grupo ; Fin-cada-corte}]</span> *sólo si se indicó por cada grupo o por cada corte en datos-a-recuperar-n*
         <span class="hljs-comment">[Fin-ir]</span></span></span>
         </code></pre><p>Donde:</p>
-        <p>Nombre-sentencia = {Seleccionar ; Buscar ; Recuperar}</p>
-        <p>datos-a-recuperar-n = {{todos los elementos ; ocurrencia completa ; *} ; objeto-r 1 [, objeto-r 2 [,...]]} de nombre-almacén 1 [ordenado por elemento-dato 1 [, elemento-dato 2 [,...]] [{agrupado por ; con corte por} elemento-dato 1 [, elemento-dato 2 [,...]] </p>
-        <p>Fin-sentencia = {Fin-seleccionar ; Fin-buscar ; Fin-recuperar} </p>
-        <p>sentencia-lenguaje-estructurado = cualquier sentencia válida de lenguaje estructurado objeto-r puede ser:</p>
+        <p><code>Nombre-sentencia = {Seleccionar ; Buscar ; Recuperar}</code></p>
+        <p><code>datos-a-recuperar-n = {{todos los elementos ; ocurrencia completa ; *} ; objeto-r 1 [, objeto-r 2 [,...]]} de nombre-almacén 1 [ordenado por elemento-dato 1 [, elemento-dato 2 [,...]] [{agrupado por ; con corte por} elemento-dato 1 [, elemento-dato 2 [,...]]</code></p>
+        <p><code>Fin-sentencia = {Fin-seleccionar ; Fin-buscar ; Fin-recuperar}</code></p>
+        <p><code>sentencia-lenguaje-estructurado = cualquier sentencia válida de lenguaje estructurado objeto-r puede ser:</code></p>
         <ul>
         <li>elemento-dato que se desea recuperar</li>
         <li>expresión aritmética. En este caso, cada uno de sus componentes pueden ser un elemento-dato o bien un valor constante, pero al menos uno de ellos debe ser un elemento-dato.</li>
         </ul>
-        <p>flujo-salida es el nombre del flujo de datos de salida que contendrá los datos tal cual salen del almacén.</p>
+        <p><code>flujo-salida</code> es el nombre del flujo de datos de salida que contendrá los datos tal cual salen del almacén.</p>
         <p><strong>Ejemplo 1:</strong></p>
         <p>Supongamos los siguientes almacenes:</p>
-        <pre><code>PRESUPUESTOS = <span class="hljs-built_in">n</span>úmero presupuesto + fecha presupuesto + <span class="hljs-built_in">n</span>úmero cliente + fecha vencimiento + estado
-        DETALLES PRESUPUESTO = <span class="hljs-built_in">n</span>úmero presupuesto + código artículo + cantidad + precio presupuestado
-        CONDICIONES PRESUPUESTO = <span class="hljs-built_in">n</span>úmero presupuesto + cantidad días + interés presupuesto
-        CLIENTES = <span class="hljs-built_in">n</span>úmero cliente + nombre completo + domicilio completo + situació<span class="hljs-built_in">n</span> tributaria + CUIT
-        </code></pre><p>Donde:</p>
-        <p>interés presupuesto = </p>
+        <p><code>PRESUPUESTOS = número presupuesto + fecha presupuesto + número cliente + fecha vencimiento + estado</code></p>
+        <p><code>DETALLES PRESUPUESTO = número presupuesto + código artículo + cantidad + precio presupuestado</code></p>
+        <p><code>CONDICIONES PRESUPUESTO = número presupuesto + cantidad días + interés presupuesto</code></p>
+        <p><code>CLIENTES = número cliente + nombre completo + domicilio completo + situación tributaria + CUIT</code></p>
+        <p>Donde:</p>
+        <p><code>interés presupuesto =</code></p>
         <ul>
         <li>puede tomar valores nulos, negativos y positivos;</li>
         <li>si es negativo significa un descuento sobre el precio presupuestado</li>
@@ -323,10 +326,8 @@
         <p>Y el siguiente DFD del evento: Se desea consultar un presupuesto</p>
         <p><em>Figura 305</em></p>
         <p>donde:</p>
-        <ul>
-        <li>presupuesto a consultar = número presupuesto y</li>
-        <li>presupuesto consultado = número presupuesto + fecha presupuesto + fecha vencimiento + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + estado + 1{código artículo + cantidad + precio presupuestado}n + 1{cantidad días + interés presupuesto}4 </li>
-        </ul>
+        <p><code>presupuesto a consultar = número presupuesto</code></p>
+        <p><code>presupuesto consultado = número presupuesto + fecha presupuesto + fecha vencimiento + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + estado + 1{código artículo + cantidad + precio presupuestado}n + 1{cantidad días + interés presupuesto}4</code></p>
         <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <p>Evento 10 - Mostrar datos del presupuesto</p>
         <pre><code>COMIENZO
@@ -374,10 +375,8 @@
         <p>Supongamos los mismos almacenes que para el ejemplo 1, y el siguiente DFD del evento: Se desean consultar los presupuestos pendientes</p>
         <p><em>Figura 306</em></p>
         <p>donde</p>
-        <ul>
-        <li>presupuestos pendientes = {}</li>
-        <li>presupuestos pendientes consultados = número presupuesto + fecha presupuesto + fecha vencimiento + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + 1{código artículo + cantidad + precio presupuestado}n + 1{cantidad días + interés presupuesto}4</li>
-        </ul>
+        <p><code>presupuestos pendientes = {}</code></p>
+        <p><code>presupuestos pendientes consultados = número presupuesto + fecha presupuesto + fecha vencimiento + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + 1{código artículo + cantidad + precio presupuestado}n + 1{cantidad días + interés presupuesto}4</code></p>
         <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <p>Evento 11 - Mostrar presupuestos pendientes</p>
         <pre><code>COMIENZO
@@ -422,10 +421,8 @@
         <p>Supongamos los mismos almacenes del Ejemplo 1 y el siguiente DFD para el evento: Se desea obtener estadística de presupuestos aceptados</p>
         <p><em>Figura 307</em></p>
         <p>donde:</p>
-        <ul>
-        <li>rango de meses = mes desde + mes hasta</li>
-        <li>estadística presupuesto = mes desde + mes hasta + 1{mes + total del mes}n</li>
-        </ul>
+        <p><code>rango de meses = mes desde + mes hasta</code></p>
+        <p><code>estadística presupuesto = mes desde + mes hasta + 1{mes + total del mes}n</code></p>
         <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <p>Evento 25 - Mostrar estadística presupuestos</p>
         <pre><code>COMIENZO
@@ -450,17 +447,13 @@
         FIN
         </code></pre><p><strong>Ejemplo 4:</strong></p>
         <p>Supongamos los siguientes almacenes:</p>
-        <ul>
-        <li>CTA. CTE. PROVEEDORES = número proveedor + fecha movimiento + código comprobante + número comprobante + importe débito + importe crédito</li>
-        <li>PROVEEDORES = número proveedor + nombre completo + domicilio completo + situación tributaria + CUITA + contacto comercial</li>
-        </ul>
+        <p><code>CTA. CTE. PROVEEDORES = número proveedor + fecha movimiento + código comprobante + número comprobante + importe débito + importe crédito</code></p>
+        <p><code>PROVEEDORES = número proveedor + nombre completo + domicilio completo + situación tributaria + CUITA + contacto comercial</code></p>
         <p>Y el siguiente DFD del evento: Se desea conocer el saldo de la cuenta corriente de un proveedor</p>
         <p><em>Figura 308</em></p>
         <p>donde:</p>
-        <ul>
-        <li>proveedor = número proveedor</li>
-        <li>saldo cuenta corriente = número proveedor + nombre completo + domicilio completo + saldo + cantidad movimientos + menor fecha en cta.cte</li>
-        </ul>
+        <p><code>proveedor = número proveedor</code></p>
+        <p><code>saldo cuenta corriente = número proveedor + nombre completo + domicilio completo + saldo + cantidad movimientos + menor fecha en cta.cte</code></p>
         <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <p>Evento 8 - Obtener saldo del proveedor</p>
         <pre><code><span class="hljs-symbol">COMIENZO</span>
@@ -476,29 +469,25 @@
         </span><span class="hljs-symbol">FIN</span>
         </code></pre><p><strong>Ejemplo 5:</strong></p>
         <p>Supongamos los siguientes almacenes</p>
-        <ul>
-        <li>REMITOS = número remito + fecha remito + número cliente + estado remito</li>
-        <li>DETALLES REMITO = número remito + código artículo + cantidad + estado artículo remito</li>
-        <li>FACTURAS = número factura + fecha factura + fecha vencimiento + número remito + número cliente + % IVA + estado factura</li>
-        <li>DETALLES FACTURA = número factura + código artículo + cantidad + precio unitario</li>
-        <li>ARTÍCULOS = código artículo + descripción + código rubro + precio costo + margen ganancia + precio venta</li>
-        <li>CLIENTES = número cliente + nombre completo + domicilio completo + situación tributaria + CUIT</li>
-        <li>IVA = % IVA</li>
-        </ul>
+        <p><code>REMITOS = número remito + fecha remito + número cliente + estado remito</code></p>
+        <p><code>DETALLES REMITO = número remito + código artículo + cantidad + estado artículo remito</code></p>
+        <p><code>FACTURAS = número factura + fecha factura + fecha vencimiento + número remito + número cliente + % IVA + estado factura</code></p>
+        <p><code>DETALLES FACTURA = número factura + código artículo + cantidad + precio unitario</code></p>
+        <p><code>ARTÍCULOS = código artículo + descripción + código rubro + precio costo + margen ganancia + precio venta</code></p>
+        <p><code>CLIENTES = número cliente + nombre completo + domicilio completo + situación tributaria + CUIT</code></p>
+        <p><code>IVA = % IVA</code></p>
         <p>Y el siguiente fragmento de la narrativa:</p>
-        <p>Todos los días, al inicio de la jornada, será necesario generar las facturas para aquellos remitos cuyo estado sea “entregado”. Para ello será necesario tener en cuenta cuáles artículos fueron entregados y cuáles devueltos. A cada remito procesado le cambiará el estado a “facturado” y a las facturas generadas, el estado
-        será “pendiente”. Las facturas deberán ser entregadas a Administración.</p>
+        <p>Todos los días, al inicio de la jornada, será necesario generar las facturas para aquellos remitos cuyo estado sea “entregado”. Para ello será necesario tener en cuenta cuáles artículos fueron entregados y cuáles devueltos. A cada remito procesado le cambiará el estado a “facturado” y a las facturas generadas, el estado será “pendiente”. Las facturas deberán ser entregadas a Administración.</p>
         <p>Y la siguiente versión de contexto:</p>
         <p>i - La empresa sólo mantiene relaciones comerciales con clientes inscriptos en IVA.
         ii - Todas las facturan vencen a los 30 días de la fecha de la misma.</p>
         <p>Y el siguiente DFD que corresponde al evento: Todos los días, al inicio de la jornada, generar facturas</p>
         <p><em>Figura 309</em></p>
         <p>donde:</p>
-        <p>facturas a entregar = 1{ número factura + fecha factura + fecha vencimiento + número remito + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + 1{código artículo + descripción + cantidad + precio unitario + precio total}n + subtotal factura + % IVA + total factura}n</p>
+        <p><code>facturas a entregar = 1{ número factura + fecha factura + fecha vencimiento + número remito + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + 1{código artículo + descripción + cantidad + precio unitario + precio total}n + subtotal factura + % IVA + total factura}n</code></p>
         <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <p>Evento 45 - Facturar remitos entregados</p>
-        <pre><code>Evento 45 - Facturar remitos entregados
-        COMIENZO
+        <pre><code>COMIENZO
           Todos los <span class="hljs-keyword">d</span>í<span class="hljs-keyword">as</span>, al inicio <span class="hljs-keyword">de</span> <span class="hljs-keyword">la</span> jornada ...
           Seleccionar <span class="hljs-keyword">n</span>úmero remito, <span class="hljs-keyword">n</span>úmero cliente <span class="hljs-keyword">de</span> REMITOS
             donde estado remito = “entregado”
@@ -551,7 +540,7 @@
             sentencia-lenguaje-estructurado, ...]
         [{Fin-verificar ; Fin-validar}]
         </code></pre><p><strong>Donde:</strong></p>
-        <p>En la último sentencia, elemento-dato [ + elemento-dato [+ ,,,] son los atributos clave de nombre almacén</p>
+        <p>En la último sentencia, <code>elemento-dato [ + elemento-dato [+ ,,,]</code> son los atributos clave de <code>nombre almacén</code></p>
         <h3 id="-sentencias-de-decisi-n-"><em>Sentencias de decisión:</em></h3>
         <p><strong>Decisión simple:</strong></p>
         <p>Una decisión es simple cuando tiene dos posibilidades.</p>
@@ -563,8 +552,8 @@
         </code></pre><p>Donde:</p>
         <p>condición también puede incluir:</p>
         <ul>
-        <li>{existe ; no existe} elemento-dato en flujo-datos-entrada</li>
-        <li>{existe ; no existe} ocurrencia en nombre-almacén</li>
+        <li><code>{existe ; no existe} elemento-dato</code> en <code>flujo-datos-entrada</code></li>
+        <li><code>{existe ; no existe}</code> ocurrencia en <code>nombre-almacén</code></li>
         </ul>
         <p><strong>Decisión múltiple:</strong></p>
         <p>Si una decisión tiene más de dos posibilidades, entonces es múltiple y plantearla con una construcción Si, entonces, sino no resultaría tan fácil.</p>
@@ -583,23 +572,21 @@
         <p>caso n puede ser:</p>
         <ul>
         <li>condición</li>
-        <li>{existe ; no existe} elemento-dato en flujo-datos-entrada</li>
-        <li>{existe ; no existe} ocurrencia en nombre-almacén</li>
+        <li><code>{existe ; no existe} elemento-dato</code> en <code>flujo-datos-entrada</code></li>
+        <li><code>{existe ; no existe}</code> ocurrencia en <code>nombre-almacén</code></li>
         </ul>
         <p><strong>Ejemplo 1:</strong></p>
         <p>Supongamos los siguientes almacenes:</p>
-        <pre><code>ALUMNOS = número legajo + nombre + tipo documento + número documento + fecha nacimiento + sexo + nacionalidad + domicilio + có<span class="hljs-keyword">digo </span>carrera + fecha <span class="hljs-keyword">inscripción
-        </span>CARRERAS = có<span class="hljs-keyword">digo </span>carrera + nombre carrera
-        MATERIAS = có<span class="hljs-keyword">digo </span>materia + nombre materia + año cursado + horas semanales + có<span class="hljs-keyword">digo </span>materia
-        MATERIAS POR ALUMNO = número legajo + có<span class="hljs-keyword">digo </span>materia + fecha <span class="hljs-keyword">inscripción </span>+ estado
-        </code></pre><p>Donde:</p>
+        <p><code>ALUMNOS = número legajo + nombre + tipo documento + número documento + fecha nacimiento + sexo + nacionalidad + domicilio + código carrera + fecha inscripción</code></p>
+        <p><code>CARRERAS = código carrera + nombre carrera</code></p>
+        <p><code>MATERIAS = código materia + nombre materia + año cursado + horas semanales + código materia</code></p>
+        <p><code>MATERIAS POR ALUMNO = número legajo + código materia + fecha inscripción + estado</code></p>
+        <p>Donde:</p>
         <p><code>estado = “libre”, “regular”</code></p>
         <p>Y el siguiente DFD que corresponde al evento: Alumno consulta las materias regulares que posee de un determinado año.</p>
         <p>Donde:</p>
-        <ul>
-        <li>materias a consultar = [número legajo | tipo documento + número documento] + año cursado</li>
-        <li>materias regulares = número legajo + nombre + tipo documento + número documento + código carrera + nombre carrera + año cursado + 0{código materia + nombre materia}n</li>
-        </ul>
+        <p><code>materias a consultar = [número legajo | tipo documento + número documento] + año cursado</code></p>
+        <p><code>materias regulares = número legajo + nombre + tipo documento + número documento + código carrera + nombre carrera + año cursado + 0{código materia + nombre materia}n</code></p>
         <p><em>Figura 310</em></p>
         <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
         <pre><code>COMIENZO
@@ -630,12 +617,12 @@
         FIN
         </code></pre><p><strong>Ejemplo 2:</strong></p>
         <p>Supongamos los siguientes almacenes:</p>
-        <pre><code>VENDEDORES = <span class="hljs-built_in">n</span>úmero vendedor + nombre vendedor + domicilio + zona venta
-        ZONAS = zona venta + nombre zona + localidad cabecera
-        CLIENTES = <span class="hljs-built_in">n</span>úmero cliente + nombre cliente + domicilio + zona venta
-        FACTURAS = <span class="hljs-built_in">n</span>úmero factura + fecha + <span class="hljs-built_in">n</span>úmero cliente + estado
-        DETALLE FACTURAS = <span class="hljs-built_in">n</span>úmero factura + código producto + cantidad + precio unitario
-        </code></pre><p>Donde:</p>
+        <p><code>VENDEDORES = número vendedor + nombre vendedor + domicilio + zona venta</code></p>
+        <p><code>ZONAS = zona venta + nombre zona + localidad cabecera</code></p>
+        <p><code>CLIENTES = número cliente + nombre cliente + domicilio + zona venta</code></p>
+        <p><code>FACTURAS = número factura + fecha + número cliente + estado</code></p>
+        <p><code>DETALLE FACTURAS = número factura + código producto + cantidad + precio unitario</code></p>
+        <p>Donde:</p>
         <p><code>estado = “pendiente”, “facturada”, “anulada”</code></p>
         <p>La siguiente visión de contexto:</p>
         <p>El rendimiento mensual de un vendedor tomará en cuenta el volumen de ventas como los totales de las facturas no anuladas y se considerará:</p>
@@ -719,11 +706,11 @@
         <p>Si en las sentencias para trabajar con ocurrencias de almacenes no deseáramos utilizar la propiedad de bucle o repetición, se podrían emplear estas sentencias.</p>
         <p><strong>Ejemplo:</strong></p>
         <p>Supongamos los siguientes almacenes:</p>
-        <pre><code>CLIENTES = <span class="hljs-built_in">n</span>úmero cliente + nombre + domicilio completo + situació<span class="hljs-built_in">n</span> tributaria + CUIT
-        PRODUCTOS = código producto + descripció<span class="hljs-built_in">n</span> + precio venta
-        REMITOS = <span class="hljs-built_in">n</span>úmero remito + fecha remito + <span class="hljs-built_in">n</span>úmero cliente + estado
-        DETALLE REMITOS = <span class="hljs-built_in">n</span>úmero remito + código producto + cantidad
-        </code></pre><p>Donde:</p>
+        <p><code>CLIENTES = número cliente + nombre + domicilio completo + situación tributaria + CUIT</code></p>
+        <p><code>PRODUCTOS = código producto + descripción + precio venta</code></p>
+        <p><code>REMITOS = número remito + fecha remito + número cliente + estado</code></p>
+        <p><code>DETALLE REMITOS = número remito + código producto + cantidad</code></p>
+        <p>Donde:</p>
         <p><code>estado = “pendiente”, “entregado”, “facturado”</code></p>
         <p>Las siguientes visiones de contexto:</p>
         <ul>
@@ -731,8 +718,8 @@
         <li>El sistema asignará a cada remito, el estado “pendiente” cuando se confeccionen; “entregado”, cuando Transporte lo notifique y “facturado” cuando se confeccione la factura por el mismo.</li>
         </ul>
         <p>Y el siguiente DFD que corresponde al evento: Cliente solicita productos</p>
-        <p>pedido = número cliente + 1{código producto + cantidad}n</p>
-        <p>remito a entregar = número remito + fecha remito + número cliente + nombre + domicilio completo + situación tributaria + CUIT + 1{código producto + descripción + cantidad}n</p>
+        <p><code>pedido = número cliente + 1{código producto + cantidad}n</code></p>
+        <p><code>remito a entregar = número remito + fecha remito + número cliente + nombre + domicilio completo + situación tributaria + CUIT + 1{código producto + descripción + cantidad}n</code></p>
         <p><em>Figura 312</em></p>
         <p>La miniespecificación podría construirse de la siguiente manera:</p>
         <p>Evento 9 – Generar remito</p>
@@ -755,11 +742,307 @@
           Fin-para
           Mostrar remito a entregar
         FIN
+        </code></pre><p>O bien, podría haberse hecho:</p>
+        <p>Evento 9 – Generar remito</p>
+        <pre><code>COMIENZO
+          Aceptar pedido
+          Seleccionar número cliente, nombre, domicilio completo, situación tributaria, CUIT de CLIENTES
+            donde número cliente = pedido.número cliente
+            para incluir en remito a entregar
+          Fin-seleccionar
+          Obtener (último)número remito de REMITOS
+          <span class="hljs-keyword">Insertar </span>en REMITOS con (último)número remito + <span class="hljs-number">1</span><span class="hljs-comment">; HOY(); número cliente de pedido; estado = “pendiente”</span>
+          Fin-<span class="hljs-keyword">insertar
+        </span>  Mientras exista có<span class="hljs-keyword">digo </span>producto en pedido, hacer:
+            <span class="hljs-keyword">Insertar </span>en DETALLE REMITOS con (último)número remito + <span class="hljs-number">1</span><span class="hljs-comment">; código producto y cantidad de pedido</span>
+            Fin-<span class="hljs-keyword">insertar
+        </span>    Seleccionar có<span class="hljs-keyword">digo </span>producto, descripción de PRODUCTOS
+              donde có<span class="hljs-keyword">digo </span>producto = pedido.có<span class="hljs-keyword">digo </span>producto
+              para incluir en remito a entregar
+            Fin-seleccionar
+          Fin-mientras
+          Mostrar remito a entregar
+        FIN
+        </code></pre><p>O bien: </p>
+        <p>Evento 9 – Generar remito</p>
+        <pre><code>COMIENZO
+          Aceptar pedido
+          Seleccionar <span class="hljs-keyword">n</span>úmero cliente, nombre, domicilio completo, situació<span class="hljs-keyword">n</span> tributaria, CUIT <span class="hljs-keyword">de</span> CLIENTES
+            donde <span class="hljs-keyword">n</span>úmero cliente = pedido.<span class="hljs-keyword">n</span>úmero cliente
+            para incluir <span class="hljs-keyword">en</span> remito a entregar
+          Fin-seleccionar
+          Obtener (último)<span class="hljs-keyword">n</span>úmero remito <span class="hljs-keyword">de</span> REMITOS
+          Insertar <span class="hljs-keyword">en</span> REMITOS con (último)<span class="hljs-keyword">n</span>úmero remito + 1; HOY(); <span class="hljs-keyword">n</span>úmero cliente <span class="hljs-keyword">de</span> pedido; estado = “pendiente”
+          Fin-insertar
+          Repetir hasta <span class="hljs-keyword">que</span> <span class="hljs-keyword">se</span> terminen código producto <span class="hljs-keyword">en</span> pedido:
+            Insertar <span class="hljs-keyword">en</span> DETALLE REMITOS con (último)<span class="hljs-keyword">n</span>úmero remito + 1; código producto y cantidad <span class="hljs-keyword">de</span> pedido
+            Fin-insertar
+            Seleccionar código producto, descripció<span class="hljs-keyword">n</span> <span class="hljs-keyword">de</span> PRODUCTOS
+              donde código producto = pedido.código producto
+              para incluir <span class="hljs-keyword">en</span> remito a entregar
+            Fin-seleccionar
+          Fin-repetir
+          Mostrar remito a entregar
+        FIN
         </code></pre><h3 id="-sentencias-de-control-"><em>Sentencias de control:</em></h3>
+        <p><code>salir</code></p>
+        <p><code>continuar</code></p>
+        <p>Estas sentencias suelen emplearse en sentencias de decisión (tanto simples como compuestas), incluso cuando estas sentencias de decisión se encuentran dentro de alguna sentencia de repetición.</p>
+        <p>Para ilustrar el uso de estas sentencias, veremos algunos ejemplos de formato.</p>
+        <p><strong>Ejemplo 1:</strong>
+        Evento n – Nombre burbuja</p>
+        <pre><code>COMIENZO
+          ...
+          ...
+          ...
+          Si condición, entonces:
+            ...
+            salir
+          sino
+            sentencia-lenguaje-estructurado
+            ...
+          Fin-si
+          ...
+          ...
+        FIN
+        </code></pre><p>La sentencia salir forzaría el fin de la miniespecificación.</p>
+        <p><strong>Ejemplo 2:</strong>
+        Evento n – Nombre burbuja</p>
+        <pre><code>COMIENZO
+          ...
+          ...
+          ...
+          Si condición, entonces:
+            continuar
+          sino
+            sentencia-lenguaje-estructurado
+            ...
+          Fin-si
+          ...
+          ...
+        FIN
+        </code></pre><p>La sentencia continuar implica seguir con la sentencia siguiente al Si-sino-Fin-si.</p>
+        <p><strong>Ejemplo 3:</strong>
+        Evento n – Nombre burbuja</p>
+        <pre><code>COMIENZO
+          ...
+          ...
+          ...
+          Para cada elemento-dato, hacer:
+            ...
+            Si condición, entonces:
+              ...
+              salir
+            sino
+              sentencia-lenguaje-estructurado
+              ...
+            Fin-si
+          Fin-para
+          ...
+          ...
+        FIN
+        </code></pre><p>La sentencia salir obligaría a finalizar el bucle de repetición impuesto por la sentencia Para cada.</p>
+        <p><strong>Ejemplo 4:</strong>
+        Evento n – Nombre burbuja</p>
+        <pre><code>COMIENZO
+          ...
+          ...
+          ...
+          Mientras condición, hacer:
+            ...
+            Si condición, entonces:
+              ...
+              continuar
+            sino
+              sentencia-lenguaje-estructurado
+              ...
+            Fin-si
+          ...
+          Fin-mientras
+          ...
+        FIN
+        </code></pre><p>La sentencia continuar volvería a desencadenar una nueva iteración o nuevo bucle de la sentencia Mientras.</p>
         <h3 id="-operaciones-aritm-ticas-"><em>Operaciones aritméticas:</em></h3>
+        <p>Muchas veces es necesario emplear expresiones aritméticas para explicitar la forma en que se calcula un determinado elemento de dato.</p>
+        <p>En este caso podemos recurrir a expresar:</p>
+        <p>Mediante palabras: </p>
+        <ul>
+        <li>Sumar</li>
+        <li>Restar</li>
+        <li>Dividir</li>
+        <li>Multiplicar</li>
+        <li>Obtener</li>
+        <li>Calcular</li>
+        </ul>
+        <p><strong>Ejemplos:</strong>
+        1) Obtener la raíz cuadrada de indicadores.índice principal para incluir en resultados (siendo indicadores un flujo de entrada y resultados un flujo de salida)
+        2) Calcular resultado.primer raíz como la raíz cuadrada de indicadores.índice principal (siendo indicadores un flujo de entrada y resultados un flujo de salida)
+        3) Calcular factura.total factura como la sumatoria de (DETALLE FACTURAS.precio unitario * DETALLE FACTURAS.cantidad) (siendo factura un flujo de salida)
+        4) Calcular factura.subtotal factura aplicando DESCUENTOS.porcentaje sobre factura.total factura.
+        5) Sumar MOVIMIENTOS.importe movimiento a totales.total movimiento (siendo totales un flujo de salida)
+        6) Multiplicar cantidad por índice para incluir en resultados (siendo resultados un flujo de salida)
+        7) Dividir v.total ventas por v.total facturas para incluir en estadística.relación ventas (siendo v.total ventas y v.total.facturas variables y estadística un flujo de salida)</p>
+        <p>El uso de palabras para expresiones aritméticas debe usarse siempre y cuando la expresión resultante se entienda.</p>
+        <p>Mediante símbolos aritméticos:</p>
+        <ul>
+        <li>Suma +</li>
+        <li>Resta -</li>
+        <li>Producto *</li>
+        <li>División /</li>
+        <li>Porcentaje %</li>
+        <li>Exponenciación ** </li>
+        <li>Símbolo de la raíz cuadrada √</li>
+        <li>Sumatoria ∑ </li>
+        <li>Productoria ∏</li>
+        <li>Símbolo de una integral ∫</li>
+        <li>etc.</li>
+        </ul>
+        <p><strong>Ejemplos:</strong></p>
+        <p>1) resultados.primer raíz = √indicadores.índice principal
+        2) factura.total factura = ∑ (DETALLE FACTURAS.precio unitario <em> DETALLE FACTURAS.cantidad)
+        3) factura.subtotal factura = (factura.total factura </em> DESCUENTOS.porcentaje) / 100
+        4) totales.total movimiento = totales.total movimiento + MOVIMIENTOS.importe
+        5) resultado.indicador = cantidad * índice
+        6) estadística.relación ventas = v.total ventas / v.total facturas</p>
+        <p>Mediante el diccionario de datos:</p>
+        <p>Si cuando construimos el diccionario de datos de elementos continuos indicamos la forma de cálculo, entonces ahorraríamos palabras en las miniespecificaciones.</p>
+        <p>Por ejemplo, supongamos que definimos en el diccionario de datos:</p>
+        <p><code>total factura = no puede contener valores nulos</code></p>
+        <p>se calcula como ∑ (DETALLE FACTURAS.precio unitario * DETALLE FACTURAS.cantidad)</p>
+        <p>entonces, en la miniespecificación, bastaría con la siguiente sentencia:</p>
+        <p><code>Obtener total factura(c)</code></p>
+        <p>donde con (c) estoy indicando que la fórmula para calcularlo está en el diccionario de datos.</p>
         <h3 id="-conclusiones-"><em>Conclusiones:</em></h3>
+        <p>La principal atracción de construir siempre una miniespecificación en una forma procedural con lenguaje estructurado es que, gracias a su gramática y vocabulario reducido y a su naturaleza “paso por paso“, brinda al analista la oportunidad de expresar con bastante exactitud lo que debe realizar cada evento para producir su respuesta, y por lo tanto verificable.</p>
+        <p>La segunda atracción está en que como el lenguaje estructurado tiene sus raíces en los lenguajes de programación estructurada, podría llegar a mplementarse fácilmente, si es que el sistema se va a implementar realmente con un lenguaje es esas características. Por lo tanto, onstruir miniespecificaciones de esta manera simplifica la generación de código.</p>
+        <p>No obstante, no debemos olvidar que la miniespecificación NO ES UN PROGRAMA, y que el lenguaje estructurado mal empleado puede llegar a ser peor que el lenguaje natural.</p>
+        <p>Es importante que en una miniespecificación en lenguaje estructurado se respeten las jerarquías de las sentencias empleando sangría, tal como se hizo con todos los ejemplos hasta ahora citados.</p>
+        <p>Otra forma de facilitar la lectura de una miniespecificación es emplear diagramas de acción, empleados por Martin &amp; McClure. Para ello, hemos transcripto miniespecificaciones de ejemplos anteriores, para que pueda compararse:</p>
+        <p>Evento 25 - Mostrar estadística presupuestos</p>
+        <pre><code>COMIENZO
+          Aceptar rango de meses
+          v<span class="hljs-selector-class">.total</span> <span class="hljs-selector-tag">del</span> mes = <span class="hljs-number">0</span>
+          Seleccionar número presupuesto de PRESUPUESTOS
+            donde fecha presupuesto corresponda entre (mes desde, mes hasta) y estado = “aceptado”
+            ordenado por MES(fecha presupuesto), con corte por MES(fecha presupuesto)
+            Seleccionar SUMATORIA(precio presupuesto) de DETALLES PRESUPUESTO
+              donde número presupuesto = PRESUPUESTOS.número presupuesto
+              v<span class="hljs-selector-class">.total</span> <span class="hljs-selector-tag">del</span> mes = v<span class="hljs-selector-class">.total</span> <span class="hljs-selector-tag">del</span> mes + SUMATORIA(precio presupuesto)
+            Fin-seleccionar
+            Por cada corte de MES(fecha presupuesto), hacer:
+              estadística presupuesto<span class="hljs-selector-class">.mes</span> = MES(fecha presupuesto)
+              estadística presupuesto<span class="hljs-selector-class">.total</span> <span class="hljs-selector-tag">del</span> mes = v<span class="hljs-selector-class">.total</span> <span class="hljs-selector-tag">del</span> mes
+              v<span class="hljs-selector-class">.total</span> <span class="hljs-selector-tag">del</span> mes = <span class="hljs-number">0</span>
+            Fin-cada-corte
+          Fin-seleccionar
+          estadística presupuesto<span class="hljs-selector-class">.mes</span> desde = rango de meses<span class="hljs-selector-class">.mes</span> desde
+          estadística presupuesto<span class="hljs-selector-class">.mes</span> hasta = rango de meses<span class="hljs-selector-class">.mes</span> hasta
+          Mostrar estadística presupuesto
+        FIN
+        </code></pre><p>La flecha está indicando el fin de la miniespecificación.</p>
         <h2 id="pre-condici-n-y-post-condici-n-no-procedural-">Pre-condición y post-condición (no procedural):</h2>
+        <p>Un problema, y muy grave del empleo del lenguaje estructurado, es que, al parecerse tanto a un lenguaje de programación, existe el peligro de que el analista preste más atención en construir una solución inteligente sin pensar lo suficiente en el problema. Muchas veces se complica la vida en explicitar la forma adecuada de acceder a los datos de un almacén en vez de reflejar los verdaderos requerimientos del sistema.</p>
+        <p>Lamentablemente, el uso de herramientas CASE refuerza esta actitud.</p>
+        <p>El uso de pre y post condición permite al analista enfocar su atención que qué es lo que debe hacer un evento en vez de las distintas maneras en que lo puede hacer.</p>
+        <p>¿Qué pasaría si a un analista se le pidiera que construya la miniespecificación de un evento que calcula la raíz cuadrada de un número?</p>
+        <p>Como sabemos, existen muchas formas de calcular la raíz cuadrada de un número: usando tablas logarítmicas; aplicando series matemáticas, ..., etc. Es más, bastaría con recurrir a una simple calculadora. </p>
+        <p>Lo importante es entender qué significa “calcular la raíz cuadrada”. Una cosa es decidir entre la mejor forma de implementar la solución (el uso de la calculadora sería un extremo), y otra, estar seguros de que realmente entendemos bien el problema. El uso de pre y post condición puede ayudar de la siguiente manera:</p>
+        <p>Evento x – Calcular la raíz cuadrada</p>
+        <pre><code>COMIENZO
+          Pre-condició<span class="hljs-built_in">n</span> <span class="hljs-symbol">1:</span> ocurre raíz a calcular y <span class="hljs-built_in">n</span>úmero es &gt;= <span class="hljs-number">0</span>
+          Post-condició<span class="hljs-built_in">n</span> <span class="hljs-symbol">1:</span> obtener la raíz cuadrada de <span class="hljs-built_in">n</span>úmero e incluirla en raíz calculada
+        FIN
+        </code></pre><p>siendo los flujos:</p>
+        <p><code>raíz a calcular = número</code></p>
+        <p><code>raíz calculada = número + raíz</code></p>
+        <p>Pre y post condición siempre constituyen un par, y puede haber muchos pares, generalmente uno o dos pares para las situaciones normales, correspondiendo el resto a errores o excepciones. Atención: esto no es una regla. Para completar el ejemplo de la raíz cuadrada, sería necesario miniespecificar el caso de que ingrese un número negativo, por lo que quedaría de la siguiente manera:</p>
+        <p>Evento x – Calcular la raíz cuadrada</p>
+        <pre><code>COMIENZO
+          Pre-condició<span class="hljs-built_in">n</span> <span class="hljs-symbol">1:</span> ocurre raíz a calcular y <span class="hljs-built_in">n</span>úmero es &gt;= <span class="hljs-number">0</span>
+          Post-condició<span class="hljs-built_in">n</span> <span class="hljs-symbol">1:</span> obtener la raíz cuadrada de <span class="hljs-built_in">n</span>úmero;
+            mostrar raíz calculada con <span class="hljs-built_in">n</span>úmero y la raíz cuadrada de <span class="hljs-built_in">n</span>úmero
+          Pre-condició<span class="hljs-built_in">n</span> <span class="hljs-symbol">2:</span> ocurre raíz a calcular y <span class="hljs-built_in">n</span>úmero es &lt; <span class="hljs-number">0</span>
+          Post-condició<span class="hljs-built_in">n</span> <span class="hljs-symbol">2:</span> mostrar raíz cuadrada con “el <span class="hljs-built_in">n</span>úmero es negativo”
+        FIN
+        </code></pre><p>siendo los flujos:</p>
+        <p><code>raíz a calcular = número</code></p>
+        <p><code>raíz calculada = número + [raíz | mensaje]</code></p>
+        <p>y mensaje = “el número es negativo”</p>
+        <p>Una pre-condición representa una “fotografía” de los flujos de entrada y también, si es necesario, de los almacenes internos y/o externos antes de que el evento comience a elaborar la respuesta; mientras que la post-condición representa una “fotografía” de los flujos de salida y también, si es necesario, de los almacenes internos y/o externos luego de que el evento haya terminado de elaborar la respuesta. Nada dice sobre el comportamiento del evento: sobre cómo elaboró la respuesta: para ello sería necesario una “película” en vez de una “fotografía”. Es por ellos que algunos autores dicen que con pre y post condición se construyen miniespecificaciones “externas”, mientras que con lenguaje estructurado, se construyen miniespecificaciones “internas”.</p>
+        <p>Las sentencias a emplear dentro de cada una de las condiciones están inspiradas en un lenguaje estructurado muy simplificado, dentro de lo posible en voz pasiva. La principal diferencia está en las sentencias empleadas para indicar la ocurrencia del evento: en lenguaje estructurado se emplea Aceptar flujoentrada, mientas que aquí, como se verá en los ejemplos, se emplea la construcción Ocurre flujo-entrada.</p>
+        <p>Por supuesto, no todos los eventos son tan simples como el de calcular la raíz cuadrada de un número, veamos cómo quedan algunos de los ejemplos ya desarrollados en lenguaje estructurado, si lo hubiéramos hecho con pre y post condición.</p>
+        <p><strong>Ejemplo 1:</strong>
+        Supongamos los siguientes almacenes:</p>
+        <p><code>PRESUPUESTOS = número presupuesto + fecha presupuesto + número cliente + fecha vencimiento + estado</code></p>
+        <p><code>DETALLES PRESUPUESTO = número presupuesto + código artículo + cantidad + precio presupuestado</code></p>
+        <p><code>CONDICIONES PRESUPUESTO = número presupuesto + cantidad días + interés presupuesto</code></p>
+        <p><code>CLIENTES = número cliente + nombre completo + domicilio completo + situación tributaria + CUIT</code></p>
+        <p>Donde:</p>
+        <p><code>interés presupuesto =</code></p>
+        <ul>
+        <li>puede tomar valores nulos, negativos y positivos;</li>
+        <li>si es negativo significa un descuento sobre el precio presupuestado</li>
+        <li>si es positivo significa un recargo sobre el precio presupuestado</li>
+        </ul>
+        <p>Y el siguiente DFD para el evento: Se desea obtener estadística de presupuestos aceptados</p>
+        <p><em>Figura 313</em></p>
+        <p>donde:</p>
+        <p><code>rango de meses = mes desde + mes hasta</code></p>
+        <p><code>estadística presupuesto = mes desde + mes hasta + 1{mes + total del mes}n</code></p>
+        <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
+        <p>Evento 25 - Mostrar estadística presupuestos</p>
+        <pre><code>COMIENZO
+          Pre-condición <span class="hljs-number">1</span>: ocurre rango de meses
+          Post-condición <span class="hljs-number">1</span>: mostrar estadística presupuesto <span class="hljs-keyword">con</span>:
+            <span class="hljs-keyword">mes</span> = <span class="hljs-keyword">mes</span> comprendido entre (<span class="hljs-keyword">mes</span> desde, <span class="hljs-keyword">mes</span> hasta) <span class="hljs-keyword">y</span>
+            total del <span class="hljs-keyword">mes</span> = SUMATORIA(precio presupuesto) de DETALLES
+            PRESUPUESTO para todos los PRESUPUESTOS <span class="hljs-keyword">con</span> estado = “aceptado” <span class="hljs-keyword">y</span> fecha comprendida entre (<span class="hljs-keyword">mes</span> desde <span class="hljs-keyword">y</span> <span class="hljs-keyword">mes</span> hasta) para cada <span class="hljs-keyword">mes</span>.
+        FIN
+        </code></pre><p>O bien, si hubiéramos usado el diccionario de elementos continuos para documentar cómo obtener total del mes:</p>
+        <p>Evento 25 - Mostrar estadística presupuestos</p>
+        <pre><code>COMIENZO
+          Pre-condición <span class="hljs-number">1</span>: ocurre rango de meses
+          Post-condición <span class="hljs-number">1</span>: mostrar estadística presupuesto <span class="hljs-keyword">con</span>:
+            <span class="hljs-keyword">mes</span> = <span class="hljs-keyword">mes</span> comprendido entre (<span class="hljs-keyword">mes</span> desde, <span class="hljs-keyword">mes</span> hasta) <span class="hljs-keyword">y</span> total del <span class="hljs-keyword">mes</span>(<span class="hljs-keyword">c</span>)
+        FIN
+        </code></pre><p>donde, en el diccionario de datos de elementos continuos definimos:</p>
+        <p><code>total del mes = puede tomar valores 0</code> 
+        se calcula como: SUMATORIA(precio presupuesto) de DETALLES PRESUPUESTO
+        para todos los PRESUPUESTOS con estado = “aceptado” y fecha entre (mes desde, mes hasta), para cada mes.</p>
+        <p><strong>Ejemplo 2:</strong>
+        Supongamos los siguientes almacenes:</p>
+        <p><code>CTA. CTE. PROVEEDORES = número proveedor + fecha movimiento + código comprobante + número comprobante + importe débito + importe crédito</code></p>
+        <p><code>PROVEEDORES = número proveedor + nombre completo + domicilio completo + situación tributaria + CUITA + contacto comercial</code></p>
+        <p>Y el siguiente DFD del evento: Se desea conocer el saldo de la cuenta corriente de un proveedor</p>
+        <p><em>Figura 314</em></p>
+        <p>donde:</p>
+        <p><code>proveedor = número proveedor</code></p>
+        <p><code>saldo cuenta corriente = número proveedor + nombre completo + domicilio completo + saldo + cantidad movimientos + menor fecha en cta.cte.</code></p>
+        <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
+        <p>Evento 8 - Obtener saldo del proveedor</p>
+        <pre><code>COMIENZO
+          Pre-1: ocurre proveedor
+          Pre-2: mostrar saldo cuenta corriente con:
+            número proveedor, nombre completo y domicilio completo de PROVEEDORES<span class="hljs-comment">;</span>
+            cantidad movimientos = CANTIDAD(ocurrencias) de CTA.CTE.PROVEEDORES<span class="hljs-comment">;</span>
+            menor fecha en cta.cte. = MÍNIMA(fecha movimiento) de CTA.CTE.PROVEEDORES<span class="hljs-comment">;</span>
+            saldo = SUMATORIA(importe cré<span class="hljs-keyword">dito </span>– importe dé<span class="hljs-keyword">bito) </span>de CTA.CTE.PROVEEDORES para ese proveedor.número proveedor
+        FIN
+        </code></pre><p>O bien, si se hubiera usado diccionario de datos de elementos continuos:</p>
+        <p>Evento 8 - Obtener saldo del proveedor</p>
+        <pre><code><span class="hljs-selector-tag">COMIENZO</span>
+          <span class="hljs-selector-tag">Pre-1</span>: <span class="hljs-selector-tag">ocurre</span> <span class="hljs-selector-tag">proveedor</span>
+          <span class="hljs-selector-tag">Pre-2</span>: <span class="hljs-selector-tag">mostrar</span> <span class="hljs-selector-tag">saldo</span> <span class="hljs-selector-tag">cuenta</span> <span class="hljs-selector-tag">corriente</span> <span class="hljs-selector-tag">con</span>:
+            <span class="hljs-selector-tag">n</span>ú<span class="hljs-selector-tag">mero</span> <span class="hljs-selector-tag">proveedor</span>, <span class="hljs-selector-tag">nombre</span> <span class="hljs-selector-tag">completo</span> <span class="hljs-selector-tag">y</span> <span class="hljs-selector-tag">domicilio</span> <span class="hljs-selector-tag">completo</span> <span class="hljs-selector-tag">de</span> <span class="hljs-selector-tag">PROVEEDORES</span>;
+            <span class="hljs-selector-tag">cantidad</span> <span class="hljs-selector-tag">movimientos</span>(c); <span class="hljs-selector-tag">menor</span> <span class="hljs-selector-tag">fecha</span> <span class="hljs-selector-tag">en</span> <span class="hljs-selector-tag">cta</span><span class="hljs-selector-class">.cte</span>(c) <span class="hljs-selector-tag">y</span> <span class="hljs-selector-tag">saldo</span>(c) <span class="hljs-selector-tag">para</span> <span class="hljs-selector-tag">ese</span> <span class="hljs-selector-tag">proveedor</span><span class="hljs-selector-class">.n</span>ú<span class="hljs-selector-tag">mero</span> <span class="hljs-selector-tag">proveedor</span>
+        <span class="hljs-selector-tag">FIN</span>
+        </code></pre><p>siendo el diccionario de datos de estos elementos continuos:</p>
+        <p><code>cantidad movimientos = puede tomar valores 0</code> se calcula como: CANTIDAD(ocurrencias) de CTA.CTE.PROVEEDORES</p>
+        <p><code>menor fecha en cta.cte = puede tomar valores 0</code> se calcula como: MÍNIMA(fecha movimiento) de CTA.CTE.PROVEEDORES</p>
+        <p><code>saldo = puede tomar valores 0</code> se calcula como: SUMATORIA(importe crédito – importe débito) de CTA.CTE.PROVEEDORES</p>
+        <p><strong>Ejemplo 3:</strong></p>
         <h2 id="tablas-de-decisi-n-gr-ficas-">Tablas de decisión (gráficas):</h2>
         <h3 id="-c-mo-construir-una-tabla-de-decisi-n-"><em>¿Cómo construir una tabla de decisión?</em>:</h3>
+        
     </body>
 </html>
