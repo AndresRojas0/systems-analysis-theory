@@ -1041,8 +1041,134 @@
         <p><code>menor fecha en cta.cte = puede tomar valores 0</code> se calcula como: MÍNIMA(fecha movimiento) de CTA.CTE.PROVEEDORES</p>
         <p><code>saldo = puede tomar valores 0</code> se calcula como: SUMATORIA(importe crédito – importe débito) de CTA.CTE.PROVEEDORES</p>
         <p><strong>Ejemplo 3:</strong></p>
-        <h2 id="tablas-de-decisi-n-gr-ficas-">Tablas de decisión (gráficas):</h2>
+        <p>Supongamos los siguientes almacenes:</p>
+        <p><code>VENDEDORES = número vendedor + nombre vendedor + domicilio + zona venta</code></p>
+        <p><code>ZONAS = zona venta + nombre zona + localidad cabecera</code></p>
+        <p><code>CLIENTES = número cliente + nombre cliente + domicilio + zona venta</code></p>
+        <p><code>FACTURAS = número factura + fecha + número cliente + estado</code></p>
+        <p><code>DETALLE FACTURAS = número factura + código producto + cantidad + precio unitario</code></p>
+        <p>Donde:</p>
+        <p><code>estado = “pendiente”, “facturada”, “anulada”</code></p>
+        <p>La siguiente visión de contexto:</p>
+        <ul>
+        <li>El rendimiento mensual de un vendedor tomará en cuenta el volumen de ventas como los totales de las facturas no anuladas y se considerará:
+        a) muy bueno, si el volumen de ventas excede los $10000 (sin incluir)
+        b) bueno, si el volumen de ventas se encuentra entre los $5001 (inclusive) y los $10000 (inclusive)
+        c) regular, si el volumen de ventas se encuentra entre los $2001 (inclusive) y los $ 5000 (inclusive)
+        d) malo, si el volumen ventas es inferior a $2000 (inclusive)</li>
+        </ul>
+        <p>Y el siguiente DFD correspondiente al evento: Gerente desea evaluar a los vendedores</p>
+        <p><em>Figura 315</em></p>
+        <p><code>mes a evaluar = mes + año</code></p>
+        <p><code>rendimiento vendedores = mes + año + 1{número vendedor + nombre vendedor + zona venta + nombre zona + cantidad clientes + volumen ventas + rendimiento}n</code></p>
+        <p><code>rendimiento = “malo”, “regular”, “bueno”, “muy bueno”</code></p>
+        <p>La miniespecificación podría llegar a construirse de la siguiente manera:</p>
+        <p>Evento 29 – Obtener rendimiento</p>
+        <pre><code>COMIENZO
+          Pre-1: ocurre mes a evaluar
+          Pre-2: mostrar rendimientos vendedores, con:
+            número vendedor, nombre vendedor y zona venta de VENDEDORES<span class="hljs-comment">;</span>
+            nombre zona de ZONAS para zona venta = VENDEDORES.zona venta<span class="hljs-comment">;</span>
+            cantidad clientes = CONTADOR(ocurrencias) de CLIENTES, para zona venta = VENDEDORES.zona venta<span class="hljs-comment">;</span>
+            volumen ventas = SUMATORIA (cantidad * precio unitario) de DETALLE FACTURAS
+              para todas la facturas cuya fecha corresponda a mes a evaluar.mes y mes a evaluar.año y cuyo cliente pertenezca a VENDEDORES.zona venta y
+              rendimiento = “muy <span class="hljs-keyword">bueno” </span>si SUMATORIA (cantidad * precio unitario) &gt; <span class="hljs-number">10000</span>, o <span class="hljs-keyword">bien
+        </span>        “<span class="hljs-keyword">bueno” </span>si SUMATORIA (cantidad * precio unitario) entre (<span class="hljs-number">5001</span> y <span class="hljs-number">10000</span>), o <span class="hljs-keyword">bien
+        </span>        “regular” si SUMATORIA (cantidad * precio unitario) entre (<span class="hljs-number">2001</span> y <span class="hljs-number">5000</span>), o <span class="hljs-keyword">bien
+        </span>        “malo” si SUMATORIA (cantidad * precio unitario) &lt;= <span class="hljs-number">2000</span>
+              para cada vendedor en VENDEDORES
+        FIN
+        </code></pre><p>O bien, si se empleaba diccionario de datos de elementos continuos:</p>
+        <p>Evento 29 – Obtener rendimiento</p>
+        <pre><code>COMIENZO
+          Pre-1: ocurre mes a evaluar
+          Pre-2: mostrar rendimientos vendedores, con:
+            número vendedor, nombre vendedor y zona venta de VENDEDORES<span class="hljs-comment">;</span>
+            nombre zona de ZONAS para zona venta = VENDEDORES.zona venta<span class="hljs-comment">;</span>
+            cantidad clientes(c)<span class="hljs-comment">; volumen ventas(c) y</span>
+            rendimiento = “muy <span class="hljs-keyword">bueno” </span>si SUMATORIA (cantidad * precio unitario) &gt; <span class="hljs-number">10000</span>, o <span class="hljs-keyword">bien </span>
+              “<span class="hljs-keyword">bueno” </span>si SUMATORIA (cantidad * precio unitario) entre (<span class="hljs-number">5001</span> y <span class="hljs-number">10000</span>), o <span class="hljs-keyword">bien
+        </span>      “regular” si SUMATORIA (cantidad * precio unitario) entre (<span class="hljs-number">2001</span> y <span class="hljs-number">5000</span>), o <span class="hljs-keyword">bien
+        </span>      “malo” si SUMATORIA (cantidad * precio unitario) &lt;= <span class="hljs-number">2000</span>
+            para cada vendedor en VENDEDORES
+        FIN
+        </code></pre><p>donde:</p>
+        <p><code>cantidad clientes = puede tomar valores 0</code> 
+        se calcula como: CONTADOR(ocurrencias) de CLIENTES, para zona venta =
+        VENDEDORES.zona venta</p>
+        <p><code>volumen ventas = puede tomar valores 0</code>
+        se calcula como: SUMATORIA (cantidad * precio unitario) de DETALLE FACTURAS para todas la facturas cuya fecha corresponda a mes a evaluar.mes y mes a evaluar.año y cuyo cliente pertenezca a VENDEDORES.zona venta</p>
+        <p><strong>Ejemplo 4:</strong></p>
+        <p>Supongamos los siguientes almacenes de datos:</p>
+        <p>SOCIOS = número socio + nombre + domicilio + fecha ingreso + código categoría + estado`</p>
+        <p><code>INSTALACIONES POR CATEGORÍA = código categoría + código instalación</code></p>
+        <p><code>USOS INSTALACIÓN: fecha + número socio + código instalación</code></p>
+        <p>Y las siguientes visiones de contexto:
+        1) Un socio pertenece a una única categoría
+        2) Una categoría le permitirá a un socio hacer uso de ciertas instalaciones del club
+        3) Un socio puede hacer uso de una instalación del club si no es moroso y la instalación corresponde a la categoría</p>
+        <p>Y el siguiente DFD, correspondiente al evento: Socio quiere hacer uso de una instalación</p>
+        <p><em>Figur 316</em></p>
+        <p>Donde:</p>
+        <p><code>instalación a usar = número socio + código instalación</code></p>
+        <p><code>respuesta uso = número socio + código instalación + [estado | rechazo uso]</code></p>
+        <p><code>rechazo uso = “la instalación no corresponde a la categoría”</code></p>
+        <p>La miniespecificación podría llegar a construirse de la siguiente manera:</p>
+        <p>Evento 13 – Autorizar uso de instalación</p>
+        <pre><code>COMIENZO
+          Pre-1: ocurre <span class="hljs-keyword">instalación </span>a usar y
+            SOCIOS.estado &lt;&gt; “moroso” para <span class="hljs-keyword">instalación </span>a usar.número socio y
+            existe ocurrencia en <span class="hljs-keyword">INSTALACIONES </span>POR CATEGORÍA para có<span class="hljs-keyword">digo </span>categoría de SOCIOS e <span class="hljs-keyword">instalación </span>a usar.có<span class="hljs-keyword">digo </span><span class="hljs-keyword">instalación
+        </span>  Post-1: <span class="hljs-keyword">insertar </span>ocurrencia en USOS <span class="hljs-keyword">INSTALACIÓN </span>con:
+            número socio y có<span class="hljs-keyword">digo </span><span class="hljs-keyword">instalación </span>de <span class="hljs-keyword">instalación </span>a usar<span class="hljs-comment">; HOY()</span>
+          Pre-2: ocurre <span class="hljs-keyword">instalación </span>a usar y SOCIOS.estado = “moroso” para <span class="hljs-keyword">instalación </span>a usar.número socio
+          Post-2: mostrar respuesta uso con:
+            número socio y có<span class="hljs-keyword">digo </span><span class="hljs-keyword">instalación </span>de <span class="hljs-keyword">instalación </span>a usar<span class="hljs-comment">;</span>
+            estado de SOCIOS
+          Pre-3: ocurre <span class="hljs-keyword">instalación </span>a usar y 
+            SOCIOS.estado &lt;&gt; “moroso” para <span class="hljs-keyword">instalación </span>a usar.número socio y 
+            no existe ocurrencia en <span class="hljs-keyword">INSTALACIONES </span>POR CATEGORÍA para có<span class="hljs-keyword">digo </span>categoría de SOCIOS e <span class="hljs-keyword">instalación </span>a usar.có<span class="hljs-keyword">digo </span><span class="hljs-keyword">instalación
+        </span>  Post-2: mostrar respuesta uso con:
+            número socio y có<span class="hljs-keyword">digo </span>de <span class="hljs-keyword">instalación </span>de <span class="hljs-keyword">instalación </span>a usar<span class="hljs-comment">;</span>
+            “la <span class="hljs-keyword">instalación </span>no corresponde a categoría”
+        FIN
+        </code></pre><p>En este último ejemplo se puede ver, no sólo la “fotografía” del flujo de entrada sino también, de los almacenes que usa el evento para elaborar su respuesta.</p>
+        <p>Otra de las atracciones del uso de esta herramienta es que cada par individual de pre y post condición puede ser estudiada independientemente de las demás: nos podemos concentrar en los detalles de una solo pre y post condición. Esto facilitará en las etapas posteriores del desarrollo del sistema el testeo o prueba de la lógica del evento: se podrán setear o establecer los valores correspondientes a una pre-condición y comprar los resultados contra la correspondiente post-condición.</p>
+        <p>Quizás la mayor dificultad resida en determinar cuándo usar esta herramienta para miniespecificar, dado que una miniespecificación con una elevada cantidad de pares de pre y post condiciones resultaría quizás más difícil de entender y de seguir que la contrapartida en lenguaje estructurado.</p>
+        <p>Existe una táctica que puede emplearse para simplificar una miniespecificación construida con esta herramienta y consiste en agrupar las pre y post condiciones relacionadas a situaciones erróneas en un solo par genérico, que tendría un formato como el siguiente:</p>
+        <p>Pre-n: si pre-j y/o pre-i fallan</p>
+        <p>Post-n: sentencias que correspondan</p>
+        <p><strong>Ejemplo 5:</strong></p>
+        <p>Supongamos los siguientes almacenes:</p>
+        <p><code>CLIENTES = número cliente + nombre + domicilio + límite crédito</code></p>
+        <p><code>CTA.CTE.CLIENTE = número cliente + fecha + tipo comprobante + número comprobante + importe débito + importe crédito</code></p>
+        <p>Donde:</p>
+        <p><code>tipo comprobante = “factura”, “recibo”, “nota de débito”, “nota de crédito”</code></p>
+        <p>Y las siguientes visiones de contexto:
+        1) Cada cliente tiene asignado un límite de crédito para compra en cuenta corriente
+        2) Un cliente podrá comprar en cuenta corriente si el saldo de la misma más el importe de la nueva compra no excede el límite de crédito</p>
+        <p>Y el siguiente DFD del evento: Cliente solicita autorización para compra en cuenta corriente</p>
+        <p><em>Figura 317</em></p>
+        <p>Donde:</p>
+        <p><code>autorización compra = número cliente + nueva compra</code></p>
+        <p><code>respuesta compra = número cliente + nueva compra + respuesta</code></p>
+        <p><code>respuesta = “se autoriza la compra”, “no se autoriza la compra”</code></p>
+        <p>La miniespecificación podría construirse de la siguiente manera:</p>
+        <p>Evento 16 – Autorizar compra en cuenta corriente</p>
+        <pre><code>COMIENZO
+          Pre-1: ocurre autorizació<span class="hljs-keyword">n</span> compra <span class="hljs-built_in">y</span>
+            SUMATORIA (importe <span class="hljs-keyword">d</span>ébito – importe crédito) <span class="hljs-keyword">de</span> CTA.CTE.CLIENTES para
+            autorizació<span class="hljs-keyword">n</span> compra.<span class="hljs-keyword">n</span>úmero cliente + autorizació<span class="hljs-keyword">n</span> compra.nueva compra &lt;= <span class="hljs-keyword">l</span>ímite crédito <span class="hljs-keyword">de</span> CLIENTES para autorizació<span class="hljs-keyword">n</span> compra.<span class="hljs-keyword">n</span>úmero cliente
+          <span class="hljs-keyword">Post</span>-1: mostrar compra con:
+            <span class="hljs-keyword">n</span>úmero cliente y nueva compra <span class="hljs-keyword">de</span> autorizació<span class="hljs-keyword">n</span> compra;
+            “<span class="hljs-keyword">se</span> autoriza <span class="hljs-keyword">la</span> compra”
+          Pre-2: Pre-1 falla
+          <span class="hljs-keyword">Post</span>-2: mostrar compra con:
+            <span class="hljs-keyword">n</span>úmero cliente y nueva compra <span class="hljs-keyword">de</span> autorizació<span class="hljs-keyword">n</span> compra;
+            “<span class="hljs-keyword">no</span> <span class="hljs-keyword">se</span> autoriza <span class="hljs-keyword">la</span> compra”
+        FIN
+        </code></pre><h2 id="tablas-de-decisi-n-gr-ficas-">Tablas de decisión (gráficas):</h2>
         <h3 id="-c-mo-construir-una-tabla-de-decisi-n-"><em>¿Cómo construir una tabla de decisión?</em>:</h3>
-        
+         
     </body>
 </html>
