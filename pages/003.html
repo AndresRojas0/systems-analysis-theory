@@ -11,12 +11,12 @@
       <h1 id="an-lisis-de-sistemas">ANÁLISIS DE SISTEMAS</h1>
       <h1 id="modelo-de-comportamiento">Modelo de Comportamiento</h1>
       <h2 id="miniespecificaciones">MINIESPECIFICACIONES</h2>
-      <h2 id="introducci-n">Introducción</h2>
+      <h2 id="introduccion">Introducción</h2>
       <p>Cuando comenzamos a construir el Modelo de Comportamiento de un sistema, tomamos evento por evento y dibujamos un DFD de cada uno, explicitando:</p>
       <p>a) La entidad externa y el flujo de entrada, si es externo, o bien el flujo de control, si es temporal;<br>b) Los almacenes externos que ya habíamos detectado en el Modelo Ambiental del sistema y que son accedidos por el evento, ya sean para insertar, borrar, modificar o consultar ocurrencias de los mismos;<br>c) Los almacenes internos, que se corresponden a cada una de las entidades del Mapa de Información Canónico y que son accedidos por el evento, ya sean para insertar, borrar, modificar o consultar ocurrencias de los mismos;<br>d) La(s) entidad(es) externa(s) y el(los) flujo(s) de salida, si es que el evento posee respuesta externa a una o más entidades.</p>
       <p>Como resultado, si uniéramos cada uno de los DFD para formar uno solo, nos quedaría cada evento representado por una burbuja, de manera tal que no existiría conexión mediante flujos de datos con otros eventos. Es decir: los eventos sólo se comunican mediante almacenes de datos, ya sean éstos internos o externos.</p>
       <p>Pero hasta ahora no hemos dicho nada sobre <strong>cómo</strong> cada evento procesará su entrada para obtener la respuesta, pudiendo ser ésta externa (flujo de salida), o bien interna (actualiza almacenes de datos), o bien ambas.</p>
-      <h2 id="miniespecificaci-n">Miniespecificación</h2>
+      <h2 id="miniespecificacion">Miniespecificación</h2>
       <h3 id="-qu-es-"><em>¿Qué es?</em></h3>
       <blockquote>
       <p>Una miniespecificación es una descripción formal de cómo un evento, a partir de su entrada, produce su respuesta.</p>
@@ -37,14 +37,14 @@
       <blockquote>
       <p><strong>UNA MINIESPECIFICACIÓN NO ES UN PROGRAMA.</strong></p>
       </blockquote>
-      <h2 id="herramientas-que-se-usan-en-la-construcci-n-de-una-miniespecificaci-n-">Herramientas que se usan en la construcción de una miniespecificación:</h2>
+      <h2 id="herramientas-que-se-usan-en-la-construccion-de-una-miniespecificacion">Herramientas que se usan en la construcción de una miniespecificación:</h2>
       <p>Para construir una miniespecificación tenemos una serie de herramientas, las cuales se podrían clasificar en:</p>
       <ul>
       <li><strong>Procedurales</strong>: lenguaje estructurado.</li>
       <li><strong>No procedurales</strong>: precondición y postcondición.</li>
       <li><strong>Gráficas</strong>: tablas de decisión y árboles de decisión.</li>
       </ul>
-      <h2 id="formato-que-deber-a-tener-una-miniespecificaci-n-">Formato que debería tener una miniespecificación:</h2>
+      <h2 id="formato-que-deberia-tener-una-miniespecificacion">Formato que debería tener una miniespecificación:</h2>
       <p>Una miniespecificación debería tener el siguiente formato:</p>
       <p><strong>Evento N - Nombre de la burbuja del DFD</strong></p>
       <pre><code>COMIENZO
@@ -52,7 +52,7 @@
       </span><span class="hljs-bullet">.
       </span><span class="hljs-bullet">.
       </span>FIN
-      </code></pre><h2 id="notaci-n-para-los-elementos-de-datos-de-almacenes-y-o-flujos-">Notación para los elementos de datos de almacenes y/o flujos:</h2>
+      </code></pre><h2 id="notacion-para-los-elementos-de-datos-de-almacenes-y-o-flujos">Notación para los elementos de datos de almacenes y/o flujos:</h2>
       <p>Si bien en el diccionario de datos cada elemento de datos tiene un nombre único que lo identifica, 
       dentro de un flujo y/o almacén, en una miniespecificación puedo llegar a utilizar muchos elementos que 
       tienen el mismo bombre y que pertenecen a un flujo de entrada, varios fkujos de salida y/o varios almacenes.</p>
@@ -62,7 +62,7 @@
       <li><code>almacén.elemento_de_datos</code></li>
       </ul>
       <p>Por supuesto, será necesario que esta notación se emplee sólo cuando sea necesario, es decir: para evitar ambigüedades en la miniespecificación.</p>
-      <h2 id="lenguaje-estructurado-procedural-">Lenguaje estructurado (procedural)</h2>
+      <h2 id="lenguaje-estructurado-procedural">Lenguaje estructurado (procedural)</h2>
       <p>Construir una miniespecificación con esta herramienta procedural consiste en emplear un lenguaje 
       estructurado, el cual brinda una serie de construcciones formales para estructurar la lógica de la respuesta del evento en términos de:</p>
       <ul>
@@ -161,7 +161,10 @@
       <p>i - El sistema asignará un número de socio único</p>
       <p>ii - El sistema deberá asignar el estado “activo” cuando el socio ingrese al club.</p>
       <p>Y el siguiente DFD, correspondiente al evento: Ingresa un nuevo socio al club</p>
-      <p><em>Figura 301</em></p>
+      <figure>
+        <img src="../images/figure_301.jpg" alt="Figura 1" style="width:50%">
+        <figcaption>Figura 1 - Ejemplo</figcaption>
+      </figure>
       <p>siendo:</p>
       <p><code>inscripción al club = nombre + domicilio + teléfono + fax + e-mail + fecha nacimiento + código categoría</code></p>
       <p>Podríamos construir la miniespecificación para incorporar el nuevo socio de la siguiente manera:</p>
@@ -219,7 +222,10 @@
       <p>La siguiente visión de contexto :
       i - el sistema colocará al artículo como “inhabilitado” cuando se lo quiera inhabilitar en forma individual o por rubro.</p>
       <p>Y el siguiente DFD correspondiente al evento : Se ha decidido inhabilitar artículos de un rubro.</p>
-      <p><em>Figura 302</em></p>
+      <figure>
+        <img src="../images/figure_302.jpg" alt="Figura 2" style="width:50%">
+        <figcaption>Figura 2 - Ejemplo</figcaption>
+      </figure>
       <p>siendo: </p>
       <p><code>inhabilitación por rubro = código rubro</code></p>
       <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
@@ -236,7 +242,10 @@
       <p>Supongamos un almacén</p>
       <p><code>SOCIOS = número socio + nombre + domicilio + teléfono + fax + e-mail + fecha nacimiento + código categoría + estado</code></p>
       <p>Y el siguiente DFD, correspondiente al evento: Se producen novedades en los datos del socio</p>
-      <p><em>Figura 303</em></p>
+      <figure>
+        <img src="../images/figure_303.jpg" alt="Figura 3" style="width:50%">
+        <figcaption>Figura 3 - Ejemplo</figcaption>
+      </figure>
       <p>siendo:</p>
       <p><code>novedades socio = número socio + (nombre) + (domicilio) + (teléfono) + (fax) + (e-mail) + (fecha nacimiento)</code></p>
       <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
@@ -271,7 +280,10 @@
       <li>si es positivo significa un recargo sobre el precio presupuestado;</li>
       </ul>
       <p>Y el siguiente DFD del evento: Cada dos meses, eliminar todos aquellos presupuestos con estado “pendiente”</p>
-      <p><em>Figura 304</em></p>
+      <figure>
+        <img src="../images/figure_304.jpg" alt="Figura 4" style="width:50%">
+        <figcaption>Figura 4 - Ejemplo</figcaption>
+      </figure>
       <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
       <p>Evento 15 - Eliminar presupuestos pendientes:</p>
       <pre><code>COMIENZO
@@ -324,7 +336,10 @@
       <li>si es positivo significa un recargo sobre el precio presu</li>
       </ul>
       <p>Y el siguiente DFD del evento: Se desea consultar un presupuesto</p>
-      <p><em>Figura 305</em></p>
+      <figure>
+        <img src="../images/figure_305.jpg" alt="Figura 5" style="width:50%">
+        <figcaption>Figura 5 - Ejemplo</figcaption>
+      </figure>
       <p>donde:</p>
       <p><code>presupuesto a consultar = número presupuesto</code></p>
       <p><code>presupuesto consultado = número presupuesto + fecha presupuesto + fecha vencimiento + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + estado + 1{código artículo + cantidad + precio presupuestado}n + 1{cantidad días + interés presupuesto}4</code></p>
@@ -373,7 +388,10 @@
       <p>En el caso de que se recuperen varias ocurrencias y deba hacerse manipulaciones adicionarles con cada una de ellas, las sentencias para ello se deben incluir antes del Fin-..., ya que en este caso, estas sentencias de recuperación de datos establecen un bucle. Esto se muestra en el siguiente ejemplo.</p>
       <p><strong>Ejemplo 2:</strong></p>
       <p>Supongamos los mismos almacenes que para el ejemplo 1, y el siguiente DFD del evento: Se desean consultar los presupuestos pendientes</p>
-      <p><em>Figura 306</em></p>
+      <figure>
+        <img src="../images/figure_306.jpg" alt="Figura 6" style="width:50%">
+        <figcaption>Figura 6 - Ejemplo</figcaption>
+      </figure>
       <p>donde</p>
       <p><code>presupuestos pendientes = {}</code></p>
       <p><code>presupuestos pendientes consultados = número presupuesto + fecha presupuesto + fecha vencimiento + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + 1{código artículo + cantidad + precio presupuestado}n + 1{cantidad días + interés presupuesto}4</code></p>
@@ -419,7 +437,10 @@
       FIN
       </code></pre><p><strong>Ejemplo 3:</strong></p>
       <p>Supongamos los mismos almacenes del Ejemplo 1 y el siguiente DFD para el evento: Se desea obtener estadística de presupuestos aceptados</p>
-      <p><em>Figura 307</em></p>
+      <figure>
+        <img src="../images/figure_307.jpg" alt="Figura 7" style="width:50%">
+        <figcaption>Figura 7 - Ejemplo</figcaption>
+      </figure>
       <p>donde:</p>
       <p><code>rango de meses = mes desde + mes hasta</code></p>
       <p><code>estadística presupuesto = mes desde + mes hasta + 1{mes + total del mes}n</code></p>
@@ -450,7 +471,10 @@
       <p><code>CTA. CTE. PROVEEDORES = número proveedor + fecha movimiento + código comprobante + número comprobante + importe débito + importe crédito</code></p>
       <p><code>PROVEEDORES = número proveedor + nombre completo + domicilio completo + situación tributaria + CUITA + contacto comercial</code></p>
       <p>Y el siguiente DFD del evento: Se desea conocer el saldo de la cuenta corriente de un proveedor</p>
-      <p><em>Figura 308</em></p>
+      <figure>
+        <img src="../images/figure_308.jpg" alt="Figura 8" style="width:50%">
+        <figcaption>Figura 8 - Ejemplo</figcaption>
+      </figure>
       <p>donde:</p>
       <p><code>proveedor = número proveedor</code></p>
       <p><code>saldo cuenta corriente = número proveedor + nombre completo + domicilio completo + saldo + cantidad movimientos + menor fecha en cta.cte</code></p>
@@ -482,7 +506,10 @@
       <p>i - La empresa sólo mantiene relaciones comerciales con clientes inscriptos en IVA.
       ii - Todas las facturan vencen a los 30 días de la fecha de la misma.</p>
       <p>Y el siguiente DFD que corresponde al evento: Todos los días, al inicio de la jornada, generar facturas</p>
-      <p><em>Figura 309</em></p>
+      <figure>
+        <img src="../images/figure_309.jpg" alt="Figura 9" style="width:50%">
+        <figcaption>Figura 9 - Ejemplo</figcaption>
+      </figure>
       <p>donde:</p>
       <p><code>facturas a entregar = 1{ número factura + fecha factura + fecha vencimiento + número remito + número cliente + nombre completo + domicilio completo + situación tributaria + CUIT + 1{código artículo + descripción + cantidad + precio unitario + precio total}n + subtotal factura + % IVA + total factura}n</code></p>
       <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
@@ -587,7 +614,10 @@
       <p>Donde:</p>
       <p><code>materias a consultar = [número legajo | tipo documento + número documento] + año cursado</code></p>
       <p><code>materias regulares = número legajo + nombre + tipo documento + número documento + código carrera + nombre carrera + año cursado + 0{código materia + nombre materia}n</code></p>
-      <p><em>Figura 310</em></p>
+      <figure>
+        <img src="../images/figure_310.jpg" alt="Figura 10" style="width:50%">
+        <figcaption>Figura 10 - Ejemplo</figcaption>
+      </figure>
       <p>Podríamos construir la miniespecificación de la siguiente manera:</p>
       <pre><code>COMIENZO
         Aceptar materias <span class="hljs-selector-tag">a</span> consultar
@@ -633,7 +663,10 @@
       <li>malo, si el volumen ventas es inferior a $2000 (inclusive)</li>
       </ul>
       <p>Y el siguiente DFD correspondiente al evento: Gerente desea evaluar a los vendedores</p>
-      <p><em>Figura 311</em></p>
+      <figure>
+        <img src="../images/figure_311.jpg" alt="Figura 11" style="width:50%">
+        <figcaption>Figura 11 - Ejemplo</figcaption>
+      </figure>
       <p>Donde:</p>
       <p><code>mes a evaluar = mes + año</code></p>
       <p><code>rendimiento vendedores = mes + año + 1{número vendedor + nombre vendedor + zona venta + nombre zona + cantidad clientes + volumen ventas + rendimiento}n</code></p>
@@ -720,7 +753,10 @@
       <p>Y el siguiente DFD que corresponde al evento: Cliente solicita productos</p>
       <p><code>pedido = número cliente + 1{código producto + cantidad}n</code></p>
       <p><code>remito a entregar = número remito + fecha remito + número cliente + nombre + domicilio completo + situación tributaria + CUIT + 1{código producto + descripción + cantidad}n</code></p>
-      <p><em>Figura 312</em></p>
+      <figure>
+        <img src="../images/figure_312.jpg" alt="Figura 12" style="width:50%">
+        <figcaption>Figura 12 - Ejemplo</figcaption>
+      </figure>
       <p>La miniespecificación podría construirse de la siguiente manera:</p>
       <p>Evento 9 – Generar remito</p>
       <pre><code>COMIENZO
@@ -940,7 +976,7 @@
         Mostrar estadística presupuesto
       FIN
       </code></pre><p>La flecha está indicando el fin de la miniespecificación.</p>
-      <h2 id="pre-condici-n-y-post-condici-n-no-procedural-">Pre-condición y post-condición (no procedural):</h2>
+      <h2 id="pre-condicion-y-post-condicion-no-procedural">Pre-condición y post-condición (no procedural):</h2>
       <p>Un problema, y muy grave del empleo del lenguaje estructurado, es que, al parecerse tanto a un lenguaje de programación, existe el peligro de que el analista preste más atención en construir una solución inteligente sin pensar lo suficiente en el problema. Muchas veces se complica la vida en explicitar la forma adecuada de acceder a los datos de un almacén en vez de reflejar los verdaderos requerimientos del sistema.</p>
       <p>Lamentablemente, el uso de herramientas CASE refuerza esta actitud.</p>
       <p>El uso de pre y post condición permite al analista enfocar su atención que qué es lo que debe hacer un evento en vez de las distintas maneras en que lo puede hacer.</p>
@@ -985,7 +1021,10 @@
       <li>si es positivo significa un recargo sobre el precio presupuestado</li>
       </ul>
       <p>Y el siguiente DFD para el evento: Se desea obtener estadística de presupuestos aceptados</p>
-      <p><em>Figura 313</em></p>
+      <figure>
+        <img src="../images/figure_313.jpg" alt="Figura 13" style="width:50%">
+        <figcaption>Figura 13 - Ejemplo</figcaption>
+      </figure>
       <p>donde:</p>
       <p><code>rango de meses = mes desde + mes hasta</code></p>
       <p><code>estadística presupuesto = mes desde + mes hasta + 1{mes + total del mes}n</code></p>
@@ -1014,7 +1053,10 @@
       <p><code>CTA. CTE. PROVEEDORES = número proveedor + fecha movimiento + código comprobante + número comprobante + importe débito + importe crédito</code></p>
       <p><code>PROVEEDORES = número proveedor + nombre completo + domicilio completo + situación tributaria + CUITA + contacto comercial</code></p>
       <p>Y el siguiente DFD del evento: Se desea conocer el saldo de la cuenta corriente de un proveedor</p>
-      <p><em>Figura 314</em></p>
+      <figure>
+        <img src="../images/figure_314.jpg" alt="Figura 14" style="width:50%">
+        <figcaption>Figura 14 - Ejemplo</figcaption>
+      </figure>
       <p>donde:</p>
       <p><code>proveedor = número proveedor</code></p>
       <p><code>saldo cuenta corriente = número proveedor + nombre completo + domicilio completo + saldo + cantidad movimientos + menor fecha en cta.cte.</code></p>
@@ -1058,7 +1100,10 @@
       d) malo, si el volumen ventas es inferior a $2000 (inclusive)</li>
       </ul>
       <p>Y el siguiente DFD correspondiente al evento: Gerente desea evaluar a los vendedores</p>
-      <p><em>Figura 315</em></p>
+      <figure>
+        <img src="../images/figure_315.jpg" alt="Figura 15" style="width:50%">
+        <figcaption>Figura 15 - Ejemplo</figcaption>
+      </figure>
       <p><code>mes a evaluar = mes + año</code></p>
       <p><code>rendimiento vendedores = mes + año + 1{número vendedor + nombre vendedor + zona venta + nombre zona + cantidad clientes + volumen ventas + rendimiento}n</code></p>
       <p><code>rendimiento = “malo”, “regular”, “bueno”, “muy bueno”</code></p>
@@ -1108,7 +1153,10 @@
       2) Una categoría le permitirá a un socio hacer uso de ciertas instalaciones del club
       3) Un socio puede hacer uso de una instalación del club si no es moroso y la instalación corresponde a la categoría</p>
       <p>Y el siguiente DFD, correspondiente al evento: Socio quiere hacer uso de una instalación</p>
-      <p><em>Figur 316</em></p>
+      <figure>
+        <img src="../images/figure_316.jpg" alt="Figura 16" style="width:50%">
+        <figcaption>Figura 16 - Ejemplo</figcaption>
+      </figure>
       <p>Donde:</p>
       <p><code>instalación a usar = número socio + código instalación</code></p>
       <p><code>respuesta uso = número socio + código instalación + [estado | rechazo uso]</code></p>
@@ -1148,7 +1196,10 @@
       1) Cada cliente tiene asignado un límite de crédito para compra en cuenta corriente
       2) Un cliente podrá comprar en cuenta corriente si el saldo de la misma más el importe de la nueva compra no excede el límite de crédito</p>
       <p>Y el siguiente DFD del evento: Cliente solicita autorización para compra en cuenta corriente</p>
-      <p><em>Figura 317</em></p>
+      <figure>
+        <img src="../images/figure_317.jpg" alt="Figura 17" style="width:50%">
+        <figcaption>Figura 17 - Ejemplo</figcaption>
+      </figure>
       <p>Donde:</p>
       <p><code>autorización compra = número cliente + nueva compra</code></p>
       <p><code>respuesta compra = número cliente + nueva compra + respuesta</code></p>
@@ -1167,7 +1218,7 @@
           <span class="hljs-keyword">n</span>úmero cliente y nueva compra <span class="hljs-keyword">de</span> autorizació<span class="hljs-keyword">n</span> compra;
           “<span class="hljs-keyword">no</span> <span class="hljs-keyword">se</span> autoriza <span class="hljs-keyword">la</span> compra”
       FIN
-      </code></pre><h2 id="tablas-de-decisi-n-gr-ficas-">Tablas de decisión (gráficas):</h2>
+      </code></pre><h2 id="tablas-de-decision-graficas">Tablas de decisión (gráficas):</h2>
       <p>Dentro de las herramientas gráficas para la construcción de una miniespecificación encontramos las tablas de decisiones.</p>
       <p>Una tabla de decisión es una tabla de renglones y columnas que contiene cuatro cuadrantes, tal y como se muestra en la siguiente figura:</p>
       <table>
