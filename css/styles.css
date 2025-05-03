@@ -99,12 +99,21 @@ table, th, td {
     padding: 200px 25px 200px 25px;
   }
 
-  figure p {
-    color: #1D1E22;
-  }
-
   blockquote {
     color: #1cb7cf;
+  }
+
+  code{
+    background-color: #282c34;
+    color: #e06c75;
+  }
+
+  pre{
+    background-color: #282c34;
+  }
+
+  figure p {
+    color: #1D1E22;
   }
 
   p em {
@@ -115,10 +124,19 @@ table, th, td {
  /* From 768px and up */
  @media (min-width: 768px) {
    body {
-     background-color: #FBF0D9;
+     background-color: #F0F8FF;
      color: #5F4B32;
      font-size: 1.5em;
      padding: 200px 100px 200px 100px;
+   }
+
+   code{
+    background-color: #343028;
+    color: #6ce0d7;
+   }
+
+   pre{
+     background-color: #343028;
    }
 
    figure p {
@@ -167,6 +185,7 @@ table, th, td {
    body {
      background-color: #F0F8FF;
      color: #5F4B32;
+     font-size: 1.5em;
      padding: 200px 100px 200px 100px;
    }
  }
