@@ -206,14 +206,14 @@
       <li><code>criterio</code>: {elemento-dato ; valor determinado ; expresión aritmética}</li>
       </ul>
       <p><strong>Ejemplo de condiciones:</strong></p>
-      <p>1) número socio = novedades socio.número socio (siendo novedades socio un flujo de entrada)
-      2) saldo &gt;= solicitud informe.saldo (siendo solicitud informe un flujo de entrada)
-      3) pedido estadistica.fecha desde &lt;= fecha solicitud &lt;= pedido estadística.fecha hasta (siendo pedido estadística un flujo de entrada). Esta condición también podría haberse escrito: fecha solicitud entre (pedido estadística.fecha desde, pedido estadística, fecha hasta)
-      4) estado &lt;&gt; “activo”
-      5) código categoría = CATEGORÍAS.código categoría (siendo CATEGORÍAS un almacén de datos)
-      6) fecha factura &gt; HOY() - 5 meses
-      7) fecha factura corresponda a MES() 
-      8) fecha remito corresponda a AÑO() - 3</p>
+      <p>1) número socio = novedades socio.número socio (siendo novedades socio un flujo de entrada)</p>
+      <p>2) saldo &gt;= solicitud informe.saldo (siendo solicitud informe un flujo de entrada)</p>
+      <p>3) pedido estadistica.fecha desde &lt;= fecha solicitud &lt;= pedido estadística.fecha hasta (siendo pedido estadística un flujo de entrada). Esta condición también podría haberse escrito: fecha solicitud entre (pedido estadística.fecha desde, pedido estadística, fecha hasta)</p>
+      <p>4) estado &lt;&gt; “activo”</p>
+      <p>5) código categoría = CATEGORÍAS.código categoría (siendo CATEGORÍAS un almacén de datos)</p>
+      <p>6) fecha factura &gt; HOY() - 5 meses</p>
+      <p>7) fecha factura corresponda a MES()</p>
+      <p>8) fecha remito corresponda a AÑO() - 3</p>
       <p><strong>Observaciones respecto a las condiciones:</strong>
       Ante anidamientos de condiciones muy completos por el uso de <code>y</code> y/u <code>o</code> en la sintaxis, podrán emplearse paréntesis para mayor claridad y/o para alterar el orden de precedencia de la <code>y</code>, <code>o</code>.</p>
       <p><strong>Ejemplo 1:</strong></p>
@@ -934,12 +934,12 @@
       <li>etc.</li>
       </ul>
       <p><strong>Ejemplos:</strong></p>
-      <p>1) resultados.primer raíz = √indicadores.índice principal
-      2) factura.total factura = ∑ (DETALLE FACTURAS.precio unitario <em> DETALLE FACTURAS.cantidad)
-      3) factura.subtotal factura = (factura.total factura </em> DESCUENTOS.porcentaje) / 100
-      4) totales.total movimiento = totales.total movimiento + MOVIMIENTOS.importe
-      5) resultado.indicador = cantidad * índice
-      6) estadística.relación ventas = v.total ventas / v.total facturas</p>
+      <p>1) resultados.primer raíz = √indicadores.índice principal</p>
+      <p>2) factura.total factura = ∑ (DETALLE FACTURAS.precio unitario <em> DETALLE FACTURAS.cantidad)</p>
+      <p>3) factura.subtotal factura = (factura.total factura </em> DESCUENTOS.porcentaje) / 100</p>
+      <p>4) totales.total movimiento = totales.total movimiento + MOVIMIENTOS.importe</p>
+      <p>5) resultado.indicador = cantidad * índice</p>
+      <p>6) estadística.relación ventas = v.total ventas / v.total facturas</p>
       <p>Mediante el diccionario de datos:</p>
       <p>Si cuando construimos el diccionario de datos de elementos continuos indicamos la forma de cálculo, entonces ahorraríamos palabras en las miniespecificaciones.</p>
       <p>Por ejemplo, supongamos que definimos en el diccionario de datos:</p>
