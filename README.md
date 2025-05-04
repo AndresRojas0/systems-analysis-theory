@@ -8,7 +8,7 @@ El objetivo es generar un libro electrónico en formato EPUB.
 Clona este repositorio en tu host.
 
 # Despliegue
-El proyecto no se encuentra desplegado (30/03/2025).
+El proyecto se encuentra desplegado en https://systems-analysis.netlify.app/ (desde el 04/05/2025)
 
 # Tecnologías Utilizadas
 [![Languages](https://skillicons.dev/icons?i=html,css)](https://skillicons.dev)
