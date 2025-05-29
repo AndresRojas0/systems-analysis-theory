@@ -540,7 +540,13 @@
     <p>Para los dos primeros casos es evidente que si no se hace una buena
     recolección de los datos difícilmente podamos salvar estos errores.</p>
     <figure>
-      <img src="../images/figure_103.jpg" alt="Figura 3" style="width:50%">
+      <div class="mermaid">
+        xychart-beta
+          title "% de errores"
+          x-axis ["R Incorrectos", "Omisiones", "Inconsistencias", "Ambigüedades", "R de otro Prod"]
+          y-axis " " 0 --> 50
+          bar [48, 30, 15, 5, 2]
+      </div>
       <figcaption>Figura 3 - Errores cometidos en la Especificación de Requerimientos</figcaption>
     </figure>
     <hr>
@@ -559,7 +565,60 @@
     las etapas más tempranas del desarrollo, ya que es muy difícil y costoso
     corregirlas luego de haber implementado el sistema.</p>
     <figure>
-      <img src="../images/figure_104.jpg" alt="Figura 4" style="width:60%">
+      <div class="mermaid">
+        block-beta
+        columns 1
+          0["El problema real"]
+          blockArrowId1<["&nbsp;&nbsp;&nbsp;"]>(down)
+          1["Especificación de Requerimientos"]
+          block:ID1
+            11["Especificación correcta"]
+            12["Errores de especificación"]
+          end
+          space
+          2["Diseño"]
+          block:ID2
+            21["Diseño correcto"]
+            22["Errores 
+        de diseño"]
+            23["Diseño basado 
+        en errores de especificación"]
+          end
+          space
+          3["Implementación"]
+          block:ID3
+            31["Programas correctos"]
+            32["Errores 
+        de Programación"]
+            33["Progr. basados 
+        en errores de Diseño"]
+            34["Progr. basados 
+        en errores de especificación"]
+          end
+          space
+          4["Testing"]
+          block:ID4
+            41["Funciones correctas"]
+            42["Errores corregibles"]
+            43["Errores no corregibles"]
+            44["Errores ocultos"]
+          end
+          blockArrowId2<["&nbsp;&nbsp;&nbsp;"]>(down)
+          5["Programas Imperfectos"]
+          space
+        
+          11 --> 22
+          12 --> 23
+        
+          21 --> 32
+          22 --> 33
+          23 --> 34
+        
+          31 --> 41
+          32 --> 42
+          33 --> 43
+          34 --> 44
+      </div>
       <figcaption>Figura 4 - Propagación de errores entre las distintas etapas del 
         Ciclo de Desarrollo</figcaption>
     </figure>
