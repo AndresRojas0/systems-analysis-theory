@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="https://stackedit.io/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <title>ANÁLISIS DE SISTEMAS - REQUERIMIENTOS Y MODELO AMBIENTAL</title>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
 </head>
 <body>
     
@@ -426,28 +430,19 @@
     </ul>
 
     <figure>
-      <div class="container">
-        <div class="box">
-            Workshop estructurado <br>
-            Líder del workshop <br>
-            Usuarios y profesionales de sistemas
-        </div>
-    
-        <div class="arrow-container">
-            <div class="arrow">&#8595;</div>
-            <div class="arrow">&#8595;</div>
-        </div>
-    
-        <div class="boxes">
-            <div class="sub-box">
-                <strong>JAD/Plan</strong><br>
-                Objetivo: establecer los requerimientos y la justificación del sistema a construir
-            </div>
-            <div class="sub-box">
-                <strong>JAD/Design</strong><br>
-                Objetivo: diseñar el sistema en forma conjunta
-            </div>
-        </div>
+      <div class="mermaid">
+        %%{init: {"flowchart": {"htmlLabels": false}} }%%
+        flowchart TD
+            W["`• Workshop estructurado 
+            • Líder del workshop 
+            • Usuarios y profesionales de sistemas`"]
+            JP["`**JAD/Plan**
+            Objetivo: establecer los requerimientos y la justificación del sistema a construir`"]
+            JD["`**JAD/Design**
+            Objetivo: diseñar el sistema en forma conjunta`"]
+        
+        W ---> JP
+        W ---> JD
       </div>
       <figcaption>Figura 1 - Sesiones JAD</figcaption>
     </figure>
@@ -455,7 +450,24 @@
     <hr>
 
     <figure>
-      <img src="../images/figure_102.jpg" alt="Figura 2" style="width:50%">
+      <div class="mermaid">
+        flowchart LR
+          P1((**Parte 1:** 
+          Generar la mayor cantidad de ideas posibles))
+          P2((**Parte 2:**
+           Reducir la lista de ideas a una cantidad manejable))
+          11[No permitir las críticas o el debate]
+          12[Dejar volar la imaginación]
+          13[Apuntar hacia la cantidad]
+          14[Mutar y combinar ideas]
+          21[Votación con mínimo]
+          22[Votación con discursos]
+          23[Mezclar ideas]
+          24[Aplicar criterios]
+          25[Rankings]
+        P1 ---> 11 & 12 & 13 & 14
+        P2 ---> 21 & 22 & 23 & 24 & 25
+      </div>
       <figcaption>Figura 2 - Principios y técnicas de las Etapas del Brainstorming</figcaption>
     </figure>
 

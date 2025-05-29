@@ -37,53 +37,12 @@ table, th, td {
   border-collapse: collapse;
 }
 
-
-
-/* Figure 01 styles */
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
-  padding: 20px;
-  width: auto;
-  margin: 0 auto;
-}
-
-.box {
-  background-color: #a9c9f6;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 20px;
+.mermaid {
   width: 80%;
-}
-
-.arrow-container {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
 }
-
-.arrow {
-  font-size: 40px;
-  color: gray;
-}
-
-.boxes {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.sub-box {
-  background-color: #a9c9f6;
-  padding: 15px;
-  text-align: center;
-  width: 40%;
-}
-
 
 
 /* MEDIA QUERIES */
