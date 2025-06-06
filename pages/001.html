@@ -674,7 +674,91 @@
     sistema permitiendo al analista manejar en forma organizada la
     complejidad total del problema del usuario.</p>
     <figure>
-      <img src="../images/figure_105.jpg" alt="Figura 5" style="width:50%">
+      <div class="mermaid">
+        graph TD
+    classDef sub opacity:0
+    classDef note fill:#ffd, stroke:#ccb
+    A((⠀⠀⠀ANALISTA⠀⠀⠀))
+    U((⠀⠀⠀USUARIO⠀⠀⠀))
+    O[Oportunidades 
+de mejora]
+    P[Problemas]
+    NR[Nuevos 
+Requerimientos]
+
+    DO@{ shape: doc, label: "Declaración 
+de Objetivos" }
+    NS@{ shape: doc, label: "Narrativa 
+del Sistema" }
+
+    subgraph subRQ [" "]
+      RQ@{ shape: doc, label: "Requerimientos" }
+      noteRQ@{ shape: comment, label: "Técnicas de Relevamiento: Lectura de Documentos y Formularios
+Observación directa
+Cuestionarios
+Entrevistas
+Análisis de Dominios 
+Enfoques de Grupos" }
+    end
+
+    subgraph subMS [" "]
+      ME[Modelo de la Esencia]
+      noteME@{ shape: comment, label: "Modelo Ambiental 
+Modelo de Datos
+Modelo de Comportamiento" }
+    end
+
+A ---> DO
+A --propone---> O
+O ---> A
+U --plantea---> P
+P ---> A
+U --sugiere---> NR
+O ---> U
+NR ---> A
+DO ---> RQ
+RQ ---> NS
+NS ---> ME
+ME ---> MA
+
+subgraph subME [" "]
+MA ---> MD
+MA ---> MC
+MD ---> MC
+    subgraph subMA [" "]
+      MA[Modelo Ambiental]
+      noteMA@{ shape: comment, label: "Herramientas:
+Lista de Eventos
+Diagrama de Contexto
+Visiones de Contexto
+DD Flujos Entradas
+DD Flujos Salidas
+Estructuras
+Datos Elementales" }
+    end
+    subgraph subMD [" "]
+      MD[Modelo Datos]
+      noteMD@{ shape: comment, label: "Herramientas:
+DER
+DD Entidades
+Mapa Canónico Normalizado
+Visiones de Contexto" }
+    end
+    subgraph subMC [" "]
+      MC[Modelo Comportamiento]
+      noteMC@{ shape: comment, label: "Herramientas:
+DFD
+ME
+Visiones de Contexto" }
+    end
+end
+
+class subRQ sub
+class subMS sub
+class subMA sub
+class subMD sub
+class subMC sub
+      </div>
       <figcaption>Figura 5 - Etapas del Análisis de Sistemas</figcaption>
     </figure>
     <hr>
