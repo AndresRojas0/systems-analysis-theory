@@ -1399,26 +1399,26 @@ W -- diariamente si comienza algún torneo ---> 0
     datos elementales que forman parte de un flujo, un almacén y/o una
     estructura. Lo que sigue es el DD correspondiente al modelo ambiental
     del Sistema de Administración de Torneos de Golf.</p>
-    <p>DD Flujos De Entrada Y Salida Del Sistema E Administración De Torneos
-    De Golf:</p>
-    <p>1 E InformaciónSobreTorneo = NombreTorneo + EnteOrganizador + Lugar +
-    FechaRealización + FechaCierreInscripción + MaximoDeParticipantes</p>
-    <p>2 E Período = FechaDesde + FechaHasta 2 S PróximosTorneos = 1{
+    <p>DD Flujos de Entrada y Salida del Sistema de Administración de Torneos
+    de Golf:</p>
+    <p><code>1E InformaciónSobreTorneo = NombreTorneo + EnteOrganizador + Lugar +
+    FechaRealización + FechaCierreInscripción + MaximoDeParticipantes</code></p>
+    <p><code>2E Período = FechaDesde + FechaHasta 2 S PróximosTorneos = 1{
     DatosSocio(e) + 1{ NombreTorneo + EnteOrganizador + Lugar +
     FechaRealización + FechaCierreInscripción + MáximoParticipantes } N }
-    N</p>
-    <p>3 E DatosDeInscripción = NombreTorneo + [NroSocio |
-    DatosJugador(e)]</p>
-    <p>3 S ResultadoInscripción = NombreTorneo + NombreyApellido + Resultado
-    + (Motivo)</p>
-    <p>4 S JugadoresInscriptos = NombreTorneo + FechaRealización + 1 {
-    NroInscripto + NombreyApellido + Handicap } N</p>
-    <p>5 S Tarjetas = 1{NombreTorneo + DatosJugador(e)} N</p>
-    <p>6 E TarjetaDelJugador = NombreTorneo + NroInscripto + 1 {NroHoyo +
-    Golpes} 18</p>
-    <p>7 S ResultadosDeTorneos = FechaListado + 1{NombreTorneo +
+    N</code></p>
+    <p><code>3E DatosDeInscripción = NombreTorneo + [NroSocio |
+    DatosJugador(e)]</code></p>
+    <p><code>3S ResultadoInscripción = NombreTorneo + NombreyApellido + Resultado
+    + (Motivo)</code></p>
+    <p><code>4S JugadoresInscriptos = NombreTorneo + FechaRealización + 1 {
+    NroInscripto + NombreyApellido + Handicap } N</code></p>
+    <p><code>5S Tarjetas = 1{NombreTorneo + DatosJugador(e)} N</code></p>
+    <p><code>6E TarjetaDelJugador = NombreTorneo + NroInscripto + 1 {NroHoyo +
+    Golpes} 18</code></p>
+    <p><code>7S ResultadosDeTorneos = FechaListado + 1{NombreTorneo +
     FechaRealización + 1{NombreyApellido + TotalGolpesBrutos + Handicap +
-    TotalGolpesNetos } N } N</p>
+    TotalGolpesNetos } N } N</code></p>
     <p>Cada flujo de datos tiene un nombre único que lo identifica. Además,
     este nombre no debe ser igual al de un atributo y/o estructura y/o
     entidad.</p>
@@ -1464,9 +1464,9 @@ W -- diariamente si comienza algún torneo ---> 0
     <p>DD De Estructuras Del Sistema De Administración De Torneos De
     Golf:</p>
     <ul>
-    <li>Documento = TipoDocumento + NúmeroDocumento</li>
-    <li>DatosJugador = NroInscripto + NombreyApellido + Handicap</li>
-    <li>DatosSocio = NroSocio + NombreyApellido + Dirección</li>
+    <li><code>Documento = TipoDocumento + NúmeroDocumento</code></li>
+    <li><code>DatosJugador = NroInscripto + NombreyApellido + Handicap</code></li>
+    <li><code>DatosSocio = NroSocio + NombreyApellido + Dirección</code></li>
     </ul>
     <p>Todos los datos elementales que se utilizan en el DD de flujos, de
     estructuras, almacenes y entidades del modelo de datos deben describirse
@@ -1479,30 +1479,27 @@ W -- diariamente si comienza algún torneo ---> 0
     Golf:</p>
     <p>
     <ul>
-      <li>Atributo | Descripción | Valores Posibles</li>
-      <li>Estado | Indica el estado que el socio posee para el club. | Activo, Inactivo.</li>
-      <li>Resultado | Indica el resultado de la inscripción, la cual puede ser aceptada o rechazada.
-        | Aceptada, Rechazada.</li>
-      <li>Motivo | Motivo por el cual se rechaza la
-        inscripción. | “Ya cerró la inscripción”, “No hay más cupo”.</li>
+      <li><code>Estado</code> — Indica el estado que el socio posee para el club. Valores Posibles: <code>Activo | Inactivo</code></li>
+      <li><code>Resultado</code> — Indica el resultado de la inscripción, la cual puede ser aceptada o rechazada. <code>Aceptada | Rechazada</code></li>
+      <li><code>Motivo</code> — Motivo por el cual se rechaza la inscripción. <code>“Ya cerró la inscripción” | “No hay más cupo”</code></li>
     </ul>
     </p>
     <p>DD De Almacenes Externos: </p>
-    <p>Socios = NroSocio + NombreyApellido +
+    <p><code>Socios = NroSocio + NombreyApellido +
     FechaIngreso + FechaNacimiento + Direccion + Telefono + Documento(e) +
-    Estado + Handicap + Categoria</p>
+    Estado + Handicap + Categoria</code></p>
     <h2 id="reglas-y-consejos-para-usar-la-notación"><em>Reglas Y Consejos
     Para Usar la Notación</em></h2>
     <p><strong>Composición</strong></p>
     <p>Cada uno de los atributos que componen una entidad, entidad
     asociativa y flujo de datos, estructuras y almacenes debe listarse
-    separados por el signo +. Ejemplo: Código + Descripción + Estado</p>
+    separados por el signo +. Ejemplo: <code>Código + Descripción + Estado</code></p>
     <p><strong>Selección</strong></p>
     <p>Se usa para indicar que en un determinado momento, sólo uno de varios
     posibles componentes va a estar presente. Esto debería leerse como
     elegir una, pero sólo una componente de la siguiente lista. Como ejemplo
     de esto tenemos el flujo de entrada del evento 3.</p>
-    <p>DatosDeInscripción = NombreTorneo + [NroSocio | DatosJugador(e)]</p>
+    <p><code>DatosDeInscripción = NombreTorneo + [NroSocio | DatosJugador(e)]</code></p>
     <p>En este caso si el jugador que se inscribe es socio del club se
     ingresara su número de socio, caso contrario se ingresaran el nombre,
     apellido y handicap del jugador, estos datos se encuentran agrupados en
@@ -1517,7 +1514,7 @@ W -- diariamente si comienza algún torneo ---> 0
     mostrando a los componente entre {}. Esto debería leerse como
     “iteraciones de”. Como ejemplo de esto tenemos el flujo de salida del
     evento 5.</p>
-    <p>Tarjetas = 1{NombreTorneo + DatosJugador(e)} N</p>
+    <p><code>Tarjetas = 1{NombreTorneo + DatosJugador(e)} N</code></p>
     <p>La N indica que existe un número indefinido de pares de estas dos
     componentes.</p>
     <p>Si existe un límite inferior para el número de iteraciones, el mismo
@@ -1539,9 +1536,9 @@ W -- diariamente si comienza algún torneo ---> 0
     <p>Puede suceder que algunos atributos y/o estructuras no estén siempre
     presente. Estos componentes se dicen opcionales y se muestran encerrados
     entre ( ). Por ejemplo la salida del evento 3.</p>
-    <p>ResultadoInscripción = NombreTorneo + NombreyApellido + Resultado +
-    (Motivo)</p>
-    <p>Esto significa que NombreTorneo, NombreyApellido y Resultado siempre
+    <p><code>ResultadoInscripción = NombreTorneo + NombreyApellido + Resultado +
+    (Motivo)</code></p>
+    <p>Esto significa que <code>NombreTorneo</code>, <code>NombreyApellido</code> y <code>Resultado</code> siempre
     estarán presentes; mientras que Motivo puede estar presente o no, solo
     estará presente en los casos en que la inscripción sea rechazada.</p>
     <p><strong>Complejidad</strong></p>
@@ -1549,12 +1546,12 @@ W -- diariamente si comienza algún torneo ---> 0
     recomendable que en casos extremos se creen estructuras, para que no
     exista más de un nivel dentro de otro. Ejemplo, supongamos un flujo de
     datos llamado almuerzo, el cual está compuesto por:</p>
-    <p>[[[Paté | Pasta] | [Sopa de Pollo | Sopa de Cebolla]] + ½ Entrecot +
-    [Helado | Torta] | Sandwich]</p>
-    <p>podríamos simplificarlo de la siguiente manera: [completo(e) |
-    Sandwich]</p>
-    <p>donde la estructura completo está compuesto por: [Paté | pasta | sopa
-    de pollo | sopa de cebolla ] + ½ Entrecot + [helado | torta]</p>
+    <p><code>[[[Paté | Pasta] | [Sopa de Pollo | Sopa de Cebolla]] + ½ Entrecot +
+    [Helado | Torta] | Sandwich]</code></p>
+    <p>podríamos simplificarlo de la siguiente manera: <code>[completo(e) |
+    Sandwich]</code></p>
+    <p>donde la estructura <code>completo</code> está compuesto por: <code>completo = [Paté | pasta | sopa
+    de pollo | sopa de cebolla ] + ½ Entrecot + [helado | torta]</code></p>
     <h3><em>Forma de Estructurar un Diccionario de Datos</em></h3>
     <p>Como esta herramienta es netamente textual es importante organizarla
     de forma tal que sea fácil de localizar cada uno de los componentes
