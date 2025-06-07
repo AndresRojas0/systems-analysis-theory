@@ -901,7 +901,35 @@ class subMC sub
     determinadas.</li>
     </ul>
     <figure>
-      <img src="../images/figure_107.jpg" alt="Figura 7" style="width:50%">
+      <div class="mermaid">
+        flowchart RL
+    0((ADMINISTRACIÓN TORNEOS DE GOLF))
+    A[ADMINISTRACIÓN]
+    G[ASOCIACIÓN ARGENTINA GOLF]
+    J[JUGADOR]
+    S[SOCIOS]
+    M@{ shape: bow-rect, label: "SOCIOS" }
+    U@{ shape: sm-circ, label: "Small start" }
+    V@{ shape: sm-circ, label: "Small start" }
+    W@{ shape: sm-circ, label: "Small start" }
+
+A -- información torneos ---> 0
+A -- período ---> 0
+0 -- jugadores inscriptos ---> A
+
+J -- datos de inscripción ---> 0
+0 -- tarjetas ---> J
+0 -- resultado inscripción ---> J
+J -- tarjeta del jugador ---> 0
+
+0 -- próximos torneos ---> S
+0 -- resultados torneos ---> G
+
+M ----- 0
+U -- el día posterior al cierre de la inscripción ---> 0
+V -- bimestralmente ---> 0
+W -- diariamente si comienza algún torneo ---> 0
+      </div>
       <figcaption>Figura 7 - Diagrama de Contexto del Sistema de Administración de
         Torneos de Golf</figcaption>
     </figure>
