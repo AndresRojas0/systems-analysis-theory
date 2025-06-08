@@ -66,6 +66,20 @@ body {
   padding: 200px 25px 200px 25px;
 }
 
+a {
+  color: #dadada;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+
+}
+
+a:visited {
+  color: #dadada;
+}
+
 blockquote {
   color: #1cb7cf;
 }
@@ -95,6 +109,14 @@ p em {
    color: #5F4B32;
    font-size: 1.5em;
    padding: 200px 100px 200px 100px;
+ }
+
+ a {
+   color: #5F4B32;
+ }
+
+ a:visited {
+   color: #5F4B32;
  }
 
  code{
