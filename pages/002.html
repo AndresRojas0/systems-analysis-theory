@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://stackedit.io/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <title>ANÁLISIS DE SISTEMAS - MODELO DE DATOS</title>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
 </head>
 <body>
     <div style="text-align:center">
@@ -66,13 +70,18 @@
     <p>El concepto de integridad implica la completitud del Modelo en lo referente a la relación de los datos.</p>
     <p>Se deberá buscar una estructura mínima óptima que a su vez asegure la no pérdida de información, validando que el sistema pueda seguir produciendo las respuestas, respetando las visiones de contexto, y en un todo con los objetivos planteados.</p>
     <h3 id="-inserci-n-dentro-del-ciclo-de-desarrollo-"><em>Inserción dentro del ciclo de desarrollo</em></h3>
-
     <figure>
-        <pre><code>               Problemas, requerimientos y objetivos
-                Modelo Ambiental  |  Modelo de Datos 
-Punto de Control--&gt; ---------------------------
-                    Modelo de Comportamiento
-        </code></pre>
+        <div class="mermaid">
+        block
+        columns 2
+          space:1 1["Problemas, requerimientos y objetivos"]
+          space:1 2["Modelo Ambiental | Modelo de Datos"]
+          blockArrowId6<["Punto de Control"]>(right) 
+          block:ID3
+            31["Punto de inserción"]
+          end
+          space:1 4["Modelo de Comportamiento"]
+        </div>
         <figcaption>Figura 1 - Punto de inserción</figcaption>
     </figure>
     <h2 id="construcción-del-modelo-de-datos">Construcción del Modelo de Datos</h2>
@@ -97,12 +106,54 @@ Punto de Control--&gt; ---------------------------
     <p>El Modelo de Datos usa el DER para mostrar las entidades y relaciones de las cuales el sistema es responsable (ya sea de recolectar información o de usar información).</p>
     <p><strong>Ejemplo:</strong></p>
     <figure>
-        <img src="../images/figure_202.jpg" alt="Figura 2" style="width:50%">
+        <div class="mermaid">
+%%{init: {'theme': 'neutral'}}%%
+flowchart TB
+  subgraph DER
+    direction TB
+    subgraph 1
+        direction TB 
+        C ---> D1
+        C ---> D2 --> T 
+        D1 --> D
+        D1 --> A
+        P2 ---> D1
+        P2 --> D5
+        D5 --> CIN
+        D5 --> CPU
+    end
+    subgraph 2
+        direction TB 
+        I --> D3 --> T
+        I --> D4 --> P
+    end
+  end
+A[AULA] 
+D[DIA]
+C[CURSO]
+CIN[CURSO INTERNO]
+CPU[CURSO PUBLICO]
+I[INSTRUCTOR]
+P[CURSO PROGRAMADO*]
+P2[CURSO PROGRAMADO*]
+T[TEMA]
+D1{tiene}
+D2{abarca}
+D3{puede enseñar}
+D4{enseña}
+D5{disponibilidad}
+style DER stroke:transparent
+style 1 stroke:transparent
+style 2 stroke:transparent
+        </div>
         <figcaption>Figura 2 - DER: Programación de Cursos</figcaption>
     </figure>
     <p><strong>Entidad</strong></p>
     <figure>
-        <img src="../images/figure_203.jpg" alt="Figura 3" style="width:50%">
+        <div class="mermaid">
+            graph TD
+    I[INSTRUCTOR]
+        </div>
         <figcaption>Figura 3 - Entidad: INSTRUCTOR</figcaption>
     </figure>
     <p>Una entidad es una clase de objeto del mundo real cuyo rol o función dentro del sistema está bien definido. Puede corresponder a un objeto tangible, intangible o a conceptos abstractos. El sistema usará información de una entidad, interactuando con ocurrencias de la misma. Toda entidad tiene un nombre único que debería reflejar el rol que posee dentro del sistema.</p>
@@ -115,12 +166,45 @@ Punto de Control--&gt; ---------------------------
     <p>Si una potencial entidad no satisface este criterio, entonces no es una entidad.</p>
     <p>Por ejemplo: para un negocio que se dedica a la venta de artículos de ferretería, podríamos haber modelado lo siguiente (fragmento del DER del subsistema de ventas).</p>
     <figure>
-        <img src="../images/figure_204.jpg" alt="Figura 4" style="width:50%">
+        <div class="mermaid">
+            flowchart TB
+    M --- D1 --- A
+    M --- D2 --- P
+    M --- D3 --- R
+    M --- D4 --- S
+    P --- D5 --- A
+    S --- D6 --- P
+    R --- D7 --- S
+M[MARGEN DE GANANCIA] 
+A[ARTICULO]
+P[PRODUCTO]
+R[RUBRO]
+S[SUBRUBRO]
+D1{posee}
+D2{posee}
+D3{posee}
+D4{posee}
+D5{esta compuesto}
+D6{tiene}
+D7{se divide en}
+        </div>
         <figcaption>Figura 4 - Fragmento del DER del subsistema de ventas</figcaption>
     </figure>
     <p>Sin embargo, un revisión más detallada de este fragmento del DER nos permite concluir que <em>Margen de Ganancia</em> no posee ocurrencias a las cuales podamos referenciar o apuntar, o bien describirlas con atributos. La entidad deberá transformarse en atributo de <em>Rubro</em>, <em>Subrubro</em>, <em>Producto</em> y <em>Artículo</em>, y el DER quedaría:</p>
     <figure>
-        <img src="../images/figure_205.jpg" alt="Figura 5" style="width:50%">
+        <div class="mermaid">
+            flowchart TB
+    P --- D5 --- A
+    S --- D6 --- P
+    R --- D7 --- S
+A[ARTICULO]
+P[PRODUCTO]
+R[RUBRO]
+S[SUBRUBRO]
+D5{esta compuesto}
+D6{tiene}
+D7{se divide en}
+        </div>
         <figcaption>Figura 5 - DER resultante</figcaption>
     </figure>
     <p>Conclusiones:</p>
@@ -134,13 +218,23 @@ Punto de Control--&gt; ---------------------------
     </blockquote>
     <p><strong>Relación</strong></p>
     <figure>
-        <img src="../images/figure_206.jpg" alt="Figura 6" style="width:50%">
+        <div class="mermaid">
+    flowchart LR
+    A --- D --- B
+    D{abarca}
+        </div>
         <figcaption>Figura 6 - Relación</figcaption>
     </figure>
     <p>Una relación representa una posible asociación que puede darse entre ocurrencia de entidades. Cada ocurrencia de una relación corresponde a ocurrencias específicas de aquellas entidades que están relacionadas.</p>
     <p>Una relación puede considerarse como un patrón al cual se le puede adicionar referencias a entidades específicas para obtener hechos específicos acerca del mundo real. Por ejemplo:</p>
     <figure>
-        <img src="../images/figure_207.jpg" alt="Figura 7" style="width:50%">
+        <div class="mermaid">
+    flowchart LR
+    C --- D --- T
+    C[CURSO]
+    T[TEMA]
+    D{abarca}
+        </div>
         <figcaption>Figura 7 - Ejemplo de una relación</figcaption>
     </figure>
     <p>actúa como un template o patrón en el cual ocurrencias de Curso y Tema pueden ingresarse para obtener hechos específicos:</p>
@@ -155,14 +249,29 @@ Punto de Control--&gt; ---------------------------
     <p><strong>Relaciones de orden superior:</strong></p>
     <p>Una relación que involucre a más de dos ocurrencias de entidades se dice que es de orden superior. Una relación de 3º orden aparece en el DER con tres líneas que salen del diamante. Por ejemplo:</p>
     <figure>
-        <img src="../images/figure_208.jpg" alt="Figura 8" style="width:50%">
+        <div class="mermaid">
+    flowchart TB
+    P --- D
+    D --- H
+    D --- M
+    P[PERSONA]
+    H[HOMBRE]
+    M[MUJER]
+    D{es hijo de}
+        </div>
         <figcaption>Figura 8 - Ejemplo de una relación de orden superior</figcaption>
     </figure>
     <p>puede indicarse: Persona es hijo de Hombre y Mujer.</p>
     <p><strong>Relaciones recursivas:</strong></p>
     <p>Muchas veces una relación involucra ocurrencias de una misma entidad, por ejemplo:</p>
     <figure>
-        <img src="../images/figure_209.jpg" alt="Figura 9" style="width:50%">
+        <div class="mermaid">
+    flowchart TB
+    E -- subordinado --- D
+    E -- jefe --- D
+    E[EMPLEADO]
+    D{se reporta a}
+        </div>
         <figcaption>Figura 9 - Ejemplo de una relación recursiva</figcaption>
     </figure>
     <p>Cuando una entidad se repite en una relación, se dice que la relación es recursiva.</p>
@@ -176,14 +285,27 @@ Punto de Control--&gt; ---------------------------
     <p>Para la mayoría de las relaciones recursivas, la distinción entre los distintos roles que una entidad puede desempeñar en la relación debe ser clara a efectos de que la relación esté definida correctamente.</p>
     <p>Para algunas relaciones recursivas, la posición de la entidad en la relación no es significativa. Estas relaciones se conocen como simétricas. La relación “es amigo de”, es un ejemplo de una relación simétrica.</p>
     <figure>
-        <img src="../images/figure_210.jpg" alt="Figura 10" style="width:50%">
+        <div class="mermaid">
+    flowchart TB
+    P --- D
+    D --- P
+    P[PERSONA]
+    D{es amigo}
+        </div>
         <figcaption>Figura 10 - Ejemplo de una relación simétrica</figcaption>
     </figure>
     <p>Para este tipo de relaciones no es necesario distinguir el rol que juegan las entidades. Para el ejemplo anterior, podríamos indicar: Persona es amiga de Persona.</p>
     <p><strong>Relaciones recursivas de orden superior</strong></p>
     <p>La relación de 3º orden que se indicó anteriormente (ver (*)), podría haberse modelado de la siguiente manera:</p>
     <figure>
-        <img src="../images/figure_211.jpg" alt="Figura 11" style="width:50%">
+        <div class="mermaid">
+    flowchart TB
+    P --- D
+    P --- D
+    P --- D
+    P[PERSONA]
+    D{es hijo de}
+        </div>
         <figcaption>Figura 11 - Ejemplo de relación recursiva de orden superior</figcaption>
     </figure>
     <p>indicando: Persona es hija de Persona(madre) y Persona(padre)</p>
@@ -195,7 +317,12 @@ Punto de Control--&gt; ---------------------------
     </blockquote>
     <p><strong>Entidad asociativa</strong></p>
     <figure>
-        <img src="../images/figure_212.jpg" alt="Figura 12" style="width:50%">
+        <div class="mermaid">
+    flowchart RL
+    C ---> D
+    C[CURSO PROGRAMADO]
+    D{...}
+        </div>
         <figcaption>Figura 12 - Entidad asociativa</figcaption>
     </figure>
     <p>Una entidad asociativa actúa al mismo tiempo como una relación y como una entidad. </p>
@@ -204,19 +331,49 @@ Punto de Control--&gt; ---------------------------
     <p><strong>La entidad asociativa como una relación con atributos:</strong></p>
     <p>Los atributos de una entidad asociativa no describen a las entidades que participan de la relación, sino más bien a la asociación entre ellas. Por ejemplo, dada la siguiente relación:</p>
     <figure>
-        <img src="../images/figure_213.jpg" alt="Figura 13" style="width:50%">
+        <div class="mermaid">
+    flowchart LR
+    H --- D --- M
+    H[HOMBRE]
+    M[MUJER]
+    D{esta casado con}
+        </div>
         <figcaption>Figura 13 - Ejemplo de una relación</figcaption>
     </figure>
     <p>podríamos decir que es necesario recordar la fecha en la cual se casaron por Civil. Este atributo (fecha del Civil) no es un atributo ni de la entidad Hombre, ni de la entidad Mujer, sino que describe cuándo se estableció la ocurrencia de la relación. Para modelar esta situación, reemplazamos la relación “está casado con” por la entidad asociativa Casamiento, con “fecha del Civil” como atributo.</p>
     <figure>
-        <img src="../images/figure_214.jpg" alt="Figura 14" style="width:50%">
+        <div class="mermaid">
+    flowchart TB
+    H --- D
+    C ---> D
+    M --- D
+    C[CASAMIENTO]
+    H[HOMBRE]
+    M[MUJER]
+    D{ }
+        </div>
         <figcaption>Figura 14 - Ejemplo anterior usando entidad asociativa</figcaption>
     </figure>
     <p>La entidad asociativa mantiene la propiedad de ser una relación (cada ocurrencia de Casamiento recuerda el hecho de que un determinado Hombre se casó con una determinada Mujer en una determinada fecha).</p>
     <p><strong>La entidad asociativa como entidad en otras relaciones:</strong></p>
     <p>Una entidad asociativa puede participar en relaciones con otras entidades. La entidad asociativa actúa como relación en el sentido de que “recuerda” la asociación original y también como una entidad involucrada como participante en relaciones posteriores. Por ejemplo, la entidad asociativa <em>Curso programado</em> actúa como una relación entre las entidades <em>Curso</em>, <em>Aula</em> y <em>Día</em>, y también como una entidad en la relación “reserva lugar en”:</p>
     <figure>
-        <img src="../images/figure_215.jpg" alt="Figura 15" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+        C --- D1
+        D1 --- D
+        D1 --- A
+        P ---> D1
+        P --- D5
+        D5 --- DE
+A[AULA] 
+D[DIA]
+C[CURSO]
+DE[DELEGADO]
+P[CURSO PROGRAMADO*]
+D1{ }
+D5{reserva lugar en}
+        </div>
         <figcaption>Figura 15 - Entidad asociativa como entidad en otras relaciones</figcaption>
     </figure>
     <p>Para que una ocurrencia de una entidad asociativa pueda participar en otra relación por sí misma, primero debe crearse. No tiene sentido pensar en un <em>Delegado</em> de una empresa reservando lugar en un <em>Curso programado</em> antes de que éste haya sido creado definiendo una asociación entre Curso, Aula y Día.</p>
@@ -230,13 +387,33 @@ Punto de Control--&gt; ---------------------------
     </blockquote>
     <p><strong>Subtipo</strong></p>
     <figure>
-        <img src="../images/figure_216.jpg" alt="Figura 16" style="width:50%">
+        <div class="mermaid">
+    flowchart TB
+        P -- "`**_**`" --- D5
+        D5 --- CIN
+        D5 --- CPU
+CIN[CURSO INTERNO]
+CPU[CURSO PUBLICO]
+P[CURSO PROGRAMADO]
+D5{disponibilidad}
+        </div>
         <figcaption>Figura 16 - Subtipo</figcaption>
     </figure>
     <p>El subtipo de una entidad está formado por un grupo bien definido de ocurrencias de una entidad, que pueden considerarse como una entidad por derecho propio. Como ejemplo podemos considerar a la entidad Mamífero. Ocurrencias individuales de esta entidad podrían ser: Arquímedes, Juan María Traverso, Tom y Jerry.</p>
     <p>Un grupo bien definido es la entidad Humano, que contiene varias ocurrencias (dos de las cuales se mencionaron en el párrafo anterior). Decimos que esta entidad es un subtipo de la entidad Mamífero. Otros subtipos de la misma son Gato y Ratón.</p>
     <figure>
-        <img src="../images/figure_217.jpg" alt="Figura 17" style="width:50%">
+        <div class="mermaid">
+    flowchart TB
+        M -- "`**_**`" --- D
+        D --- G
+        D --- R
+        D --- H
+M[MAMIFERO]
+G[GATO]
+R[RATON]
+H[HUMANO]
+D{ }
+        </div>
         <figcaption>Figura 17 - Supertipo, Subtipificación y Subtipo</figcaption>
     </figure>
     <p>Esta subtipificación también podría visualizarse con un diagrama de Venn, que muestra a cada entidad como un subconjunto conteniendo ocurrencias de la misma:</p>
