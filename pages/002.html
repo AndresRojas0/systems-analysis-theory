@@ -388,8 +388,8 @@ D5{reserva lugar en}
     <p><strong>Subtipo</strong></p>
     <figure>
         <div class="mermaid">
-    flowchart TB
-        P -- "`**_**`" --- D5
+flowchart TB
+        P -- "`___`" --- D5
         D5 --- CIN
         D5 --- CPU
 CIN[CURSO INTERNO]
@@ -474,13 +474,32 @@ PC[PARTE COMPRADA]
 IT[ITEM TERMINADO]
 IS[ITEM SEMIELABORADO]
 D1{origen}
-D2{proposito}
+D2{propósito}
         </div>
         <figcaption>Figura 20 - Múltiples supertipos</figcaption>
     </figure>
     <p>un Ítem terminado es un tipo de Ítem de manufactura y también un tipo de Ítem de inventario. Esto también puede mostrarse como un diagrama de Venn:</p>
     <figure>
-        <img src="../images/figure_221.jpg" alt="Figura 21" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    subgraph .
+    II
+    IM
+    I
+    end
+    PC --> II --> I
+    IS --> IM --> I
+    IT --> I
+II((ITEM DE INVENTARIO))
+IM((ITEM DE MANUFACTURA))
+I((⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀))
+PC[PARTE COMPRADA]
+IS[ITEM SEMIELABORADO]
+IT[ITEM TERMINADO]
+style PC fill:None,stroke:None
+style IS fill:None,stroke:None
+style IT fill:None,stroke:None
+        </div>
         <figcaption>Figura 21 - Diagrama de Venn</figcaption>
     </figure>
     <p>Como consecuencia, cualquier ocurrencia de Ítem terminado es también de Ítem de manufactura e Ítem de inventario, y por lo tanto, tiene atributos heredados de ambos.</p>
