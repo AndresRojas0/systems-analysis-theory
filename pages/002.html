@@ -510,7 +510,16 @@ style IT fill:None,stroke:None
     </blockquote>
     <p><strong>Subtipificación</strong></p>
     <figure>
-        <img src="../images/figure_222.jpg" alt="Figura 22" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    P -- "`__`" --- D1
+    D1 --- CIN
+    D1 --- CPU
+CIN[CURSO INTERNO]
+CPU[CURSO PUBLICO]
+P[CURSO PROGRAMADO]
+D1{disponibilidad}
+        </div>
         <figcaption>Figura 22 - Subtipificación</figcaption>
     </figure>
     <p>Una subtipificación indica que a la entidad involucrada se la considera como compuesta por grupos distintos y bien identificables, cada uno de los cuales se lo considera un subtipo. Su importancia radica en la semántica, ya que permite que el modelador piense en conceptos generales, de alto nivel (relaciones, atributos) como relevantes para el supertipo y pueda detallar aquellos relacionados ç con cada uno de los subtipos, sin llegar a verse desbordado por la complejidad.</p>
@@ -524,7 +533,21 @@ style IT fill:None,stroke:None
     Existen diferentes maneras para subtipificar una determinada entidad, de manera tal que cada subtipificación se identifica con un nombre único.</p>
     <p>Por ejemplo: la entidad Persona podría subtipificarse por “género” en Femenino y Masculino; y por “antigüedad” en Niño, Adolescente, Adulto y Anciano:</p>
     <figure>
-        <img src="../images/figure_223.jpg" alt="Figura 23" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    P -- "`puede ser`" --- D1 & D2
+    D1 --- M & F
+    D2 --- A & AD & AN & N
+A[ADULTO]
+AD[ADOLESCENTE]
+AN[ANCIANO]
+N[NIÑO]
+F[FEMENINO]
+M[MASCULINO]
+P[PERSONA]
+D1{género}
+D2{antiguedad}
+        </div>
         <figcaption>Figura 23 - Múltiples subtipificaciones</figcaption>
     </figure>
     <p>Este DER debería leerse:
@@ -537,7 +560,24 @@ style IT fill:None,stroke:None
     Si se define que una entidad asociativa va a tener subtipos, entonces, cada ocurrencia de uno de ellos debe ser una ocurrencia del supertipo. Cada ocurrencia del subtipo es, por lo tanto, una entidad asociativa, que hace referencia a las mismas entidades a las que hace referencia el supertipo.</p>
     <p>Ejemplo:</p>
     <figure>
-        <img src="../images/figure_224.jpg" alt="Figura 24" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    D1 --- A
+    D1 --- C
+    D1 --- D
+    P --> D1
+    P -- "`__`" --- D5
+    D5 --> CIN
+    D5 --> CPU
+A[AULA] 
+D[DIA]
+C[CURSO]
+CIN[CURSO INTERNO]
+CPU[CURSO PUBLICO]
+P[CURSO PROGRAMADO*]
+D1{tiene}
+D5{disponibilidad}
+        </div>
         <figcaption>Figura 24 - Subtipificaciones de una entidad asociativa</figcaption>
     </figure>
     <p>Al momento de volcar cada una de estas entidades y relaciones al Diccionario de
@@ -556,7 +596,13 @@ style IT fill:None,stroke:None
     </blockquote>
     <p><strong>Supertipo</strong></p>
     <figure>
-        <img src="../images/figure_225.jpg" alt="Figura 25" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    P -- "`__`" --- D5
+    D5 --- a & b
+P[CURSO PROGRAMADO*]
+D5{disponibilidad}
+        </div>
         <figcaption>Figura 25 - Supertipo</figcaption>
     </figure>
     <p>Podemos considerar a un supertipo como un agrupamiento general de varias entidades. Este agrupamiento es considerado como una entidad por derecho propio. Las entidades que son agrupadas dentro de esta entidad más general se conocen como subtipos.</p>
@@ -604,7 +650,10 @@ style IT fill:None,stroke:None
     <p>El Listado de Docentes contiene entonces el apellido y nombre del docente, su dirección y su teléfono. Si tuviéramos que pensar que describen estos atributos contestaríamos al docente. Además el sistema necesita conservar estos datos para poder responder con el requerimiento. Podríamos decir entonces que estamos en presencia de un tipo de objeto: DOCENTE.</p>
     <p>Nuestro DER sería: </p>
     <figure>
-        <img src="../images/figure_226.jpg" alt="Figura 26" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    D[DOCENTE]
+        </div>
         <figcaption>Figura 26 - Ejemplo DER: Docente</figcaption>
     </figure>
     <p>Docente = Apellido + Nombre + Tel + Domicilio</p>
@@ -612,7 +661,10 @@ style IT fill:None,stroke:None
     <p>Flujo de Salida: Listado De Comisiones = 1{NroComisión + Aula + 1{Apellido + Nombre}n}n</p>
     <p>Estudiando este flujo de salida podríamos sugerir la idea de estar trabajando con docentes y con comisiones. Y también con la idea que el objetivo de este listado es mostrar quienes dictan clases en las comisiones.</p>
     <figure>
-        <img src="../images/figure_227.jpg" alt="Figura 27" style="width:50%">
+        <div class="mermaid">
+flowchart LR
+    D[DOCENTE] --- d{dicta} --- C[COMISION]
+        </div>
         <figcaption>Figura 27 - Se crea relación entre Docente y Comisión</figcaption>
     </figure>
     <p>Nuestro DER tomaría la siguiente forma:</p>
@@ -628,7 +680,11 @@ style IT fill:None,stroke:None
     <p>2) o por el contrario, pueden desempeñar cualquier función.</p>
     <p>Si contempláramos la primer alternativa veríamos que la función sería una característica exclusiva del docente, mientras que si observamos la segunda concluiríamos que esto de la función no es del docente, ni de la comisión solamente, sino que lo es de la relación entre el docente y la comisión. Este atributo debe ser agregado a la relación y por lo tanto toma la forma de Entidad o Tipo de objeto asociativo:</p>
     <figure>
-        <img src="../images/figure_228.jpg" alt="Figura 28" style="width:50%">
+        <div class="mermaid">
+flowchart LR
+    DI[DICTADO] ---> d{dicta}
+    D[DOCENTE] --- d --- C[COMISION]
+        </div>
         <figcaption>Figura 28 - Se crea una entidad asociativa</figcaption>
     </figure>
     <p>Algunas de las cosas que sufren cambios son: el nombre de la relación que se traslada de lugar y quizás toma un nombre mas significativo, también aparece en el diccionario de datos.</p>
