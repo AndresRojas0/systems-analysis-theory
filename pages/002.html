@@ -403,8 +403,8 @@ D5{disponibilidad}
     <p>Un grupo bien definido es la entidad Humano, que contiene varias ocurrencias (dos de las cuales se mencionaron en el párrafo anterior). Decimos que esta entidad es un subtipo de la entidad Mamífero. Otros subtipos de la misma son Gato y Ratón.</p>
     <figure>
         <div class="mermaid">
-    flowchart TB
-        M -- "`**_**`" --- D
+flowchart TB
+        M -- "`___`" --- D
         D --- G
         D --- R
         D --- H
@@ -418,7 +418,22 @@ D{ }
     </figure>
     <p>Esta subtipificación también podría visualizarse con un diagrama de Venn, que muestra a cada entidad como un subconjunto conteniendo ocurrencias de la misma:</p>
     <figure>
-        <img src="../images/figure_218.jpg" alt="Figura 18" style="width:50%">
+        <dive class="mermaid">
+flowchart LR
+    subgraph conjunto
+    C1((subconjunto))
+    C2((subconjunto))
+    C3((subconjunto))
+    end
+    M ---> conjunto
+    G --> C1
+    H --> C2
+    R --> C3
+M[MAMIFERO]
+G[GATO]
+H[HUMANO]
+R[RATON]
+        </dive>
         <figcaption>Figura 18 - Diagrama de Venn de la subtipificación</figcaption>
     </figure>
     <p>Una ocurrencia del subtipo es siempre una ocurrencia del supertipo (Ej.: una ocurrencia de Gato es automáticamente una ocurrencia de Mamífero). Como consecuencia, cualquier propiedad que posea el supertipo es automáticamente una propiedad del subtipo. Podemos decir que el subtipo hereda las propiedades del supertipo.</p>
@@ -428,13 +443,39 @@ D{ }
     <li>Relaciones específicas: algunas relaciones pueden afectar solamente a cierto subtipo de una entidad. Por ejemplo, un Delegado de una empresa sólo puede “reservar lugar” en un Curso público:</li>
     </ol>
     <figure>
-        <img src="../images/figure_219.jpg" alt="Figura 19" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    P -- "`___`" --- D1
+    DE --- D2
+    D1 --- CIN
+    D1 --- CPU
+    D2 --- CPU
+CIN[CURSO INTERNO]
+CPU[CURSO PUBLICO]
+DE[DELEGADO]
+P[CURSO PROGRAMADO]
+D1{disponibilidad}
+D2{reserva lugar en}
+        </div>
         <figcaption>Figura 19 - Propiedades heredadas</figcaption>
     </figure>
     <p><strong>Múltiples supertipos:</strong></p>
     <p>Una entidad puede ser un subtipo de subtipificaciones de varias entidades diferentes. En este caso, hereda cualquier relación y atributos comunes a ambos supertipos. Por ejemplo:</p>
     <figure>
-        <img src="../images/figure_220.jpg" alt="Figura 20" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    II --- D1
+    D1 --- PC & IT
+    IM --- D2
+    D2 --- IT & IS
+II[ITEM DE INVENTARIO]
+IM[ITEM DE MANUFACTURA]
+PC[PARTE COMPRADA]
+IT[ITEM TERMINADO]
+IS[ITEM SEMIELABORADO]
+D1{origen}
+D2{proposito}
+        </div>
         <figcaption>Figura 20 - Múltiples supertipos</figcaption>
     </figure>
     <p>un Ítem terminado es un tipo de Ítem de manufactura y también un tipo de Ítem de inventario. Esto también puede mostrarse como un diagrama de Venn:</p>
