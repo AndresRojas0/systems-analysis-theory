@@ -729,7 +729,22 @@ flowchart LR
     Supongamos un sistema de Gestión de Stock de una empresa que manufactura los productos que vende.</p>
     <p><strong>DER (fragmento)</strong></p>
     <figure>
-        <img src="../images/figure_229.jpg" alt="Figura 29" style="width:50%">
+        <div class="mermaid">
+flowchart TB
+    I -- "`__`" --- D1
+    D1 --- M & S & T
+    M --- D2
+    O ---> D2
+    P --- D2
+I[ITEM DE STOCK]
+M[MATERIA PRIMA] 
+S[SEMIELABORADO]
+T[TERMINADO]
+O[ORDEN DE COMPRA]
+P[PROVEEDOR]
+D1{⠀⠀⠀}
+D2{⠀⠀⠀}
+        </div>
         <figcaption>Figura 29 - Ejemplo DER: Gestión de Stock</figcaption>
     </figure>
     <p><strong>Diccionario de Datos</strong></p>
@@ -754,7 +769,16 @@ flowchart LR
     <p>Las vinculaciones entre ellas pueden explicitarse de diferentes maneras, en este apunte se verá la notación empleada por Martin, a saber:</p>
     <p><strong>Vinculación 1 a 1:</strong></p>
     <figure>
-        <img src="../images/figure_230.jpg" alt="Figura 30" style="width:50%">
+        <div class="mermaid">
+---
+title: Vinculación 1 a 1
+---
+erDiagram
+    A1 ||--|| B1:⠀
+    A2 ||--o| B2:⠀
+    A3 |o--|| B3:⠀
+    A4 |o--o| B4:⠀
+        </div>
         <figcaption>Figura 30 - Vinculación 1 a 1</figcaption>
     </figure>
     <ul>
@@ -773,7 +797,18 @@ flowchart LR
     <hr>
     <p><strong>Vinculación 1 a N (muchos):</strong></p>
     <figure>
-        <img src="../images/figure_231.jpg" alt="Figura 31" style="width:50%">
+        <div class="mermaid">
+---
+title: Vinculación 1 a N (muchos)
+---
+erDiagram
+    A1 ||--|{ B1:⠀
+    A2 ||--o{ B2:⠀
+    A3 ||--|{ B3:⠀
+    A4 |o--|{ B4:⠀
+    A5 |o--o{ B5:⠀
+    A6 |o--|{ B6:⠀
+        </div>
         <figcaption>Figura 31 - Vinculación 1 a N (muchos)</figcaption>
     </figure>
     <ul>
@@ -797,7 +832,18 @@ flowchart LR
     <hr>
     <p><strong>Vinculación N (muchos) a 1:</strong></p>
     <figure>
-        <img src="../images/figure_232.jpg" alt="Figura 32" style="width:50%">
+        <div class="mermaid">
+---
+title: Vinculación N (muchos) a 1
+---
+erDiagram
+    A1 }|--|| B1:⠀
+    A2 }|--o| B2:⠀
+    A3 }o--|| B3:⠀
+    A4 }o--o| B4:⠀
+    A5 }|--|| B5:⠀
+    A6 }|--o| B6:⠀
+        </div>
         <figcaption>Figura 32 - Vinculación N (muchos) a 1</figcaption>
     </figure>
     <ul>
@@ -821,7 +867,21 @@ flowchart LR
     <hr>
     <p><strong>Vinculación N a M (muchos a muchos):</strong></p>
     <figure>
-        <img src="../images/figure_233.jpg" alt="Figura 33" style="width:50%">
+        <div class="mermaid">
+---
+title: Vinculación N a M (muchos a muchos)
+---
+erDiagram
+    A1 }|--|{ B1:⠀
+    A2 }|--o{ B2:⠀
+    A3 }|--|{ B3:⠀
+    A4 }o--|{ B4:⠀
+    A5 }o--o{ B5:⠀
+    A6 }o--|{ B6:⠀
+    A7 }|--|{ B7:⠀
+    A8 }|--o{ B8:⠀
+    A9 }|--|{ B9:⠀
+        </div>
         <figcaption>Figura 33 - Vinculación N (muchos) a M (muchos)</figcaption>
     </figure>
     <ul>
@@ -853,7 +913,14 @@ flowchart LR
     </ul>
     <p>Veamos cómo queda el gráfico del Mapa de Información Preliminar de nuestro fragmento de DER del ejemplo del sistema de Gestión de Stock presentado cuando tratamos la construcción del Diccionario de Datos:</p>
     <figure>
-        <img src="../images/figure_234.jpg" alt="Figura 34" style="width:50%">
+        <div class="mermaid">
+erDiagram
+    ITEM_DE_STOCK ||--|| MATERIA_PRIMA : ⠀
+    ITEM_DE_STOCK ||--|| SEMIELABORADO : ⠀
+    ITEM_DE_STOCK ||--|| TERMINADO : ⠀
+    MATERIA_PRIMA }|--o{ ORDEN_DE_COMPRA : ⠀
+    PROVEEDOR ||--o{ ORDEN_DE_COMPRA : ⠀
+        </div>
         <figcaption>Figura 34 - Mapa de Información Preliminar: Sistema Gestión de Stock</figcaption>
     </figure>
     <hr>
@@ -871,7 +938,15 @@ flowchart LR
     <p>Podemos observar además, que las relaciones de subtipo se corresponden uno a uno con las vinculaciones de nuestro gráfico. Pero, ¿porqué la relación de la cual surge la entidad Orden de Compra se mapea en dos vinculaciones ?. Porque Orden de Compra es una entidad asociativa que involucra a dos entidades : Materia Prima y Proveedores. No olvidemos que una entidad asociativa muestra que un evento ocurre, relacionando a dos o más entidades y además el sistema deberá recordar datos de esa relación. La entidad asociativa contendrá datos comunes con todas las entidades que participan de la relación de la cual surgen.</p>
     <p>El Mapa de Información preliminar de nuestro ejemplo será:</p>
     <figure>
-        <img src="../images/figure_235.jpg" alt="Figura 35" style="width:50%">
+        <div class="mermaid">
+erDiagram
+    ITEM_DE_STOCK ||--|| MATERIA_PRIMA : ⠀
+    ITEM_DE_STOCK ||--|| SEMIELABORADO : ⠀
+    ITEM_DE_STOCK ||--|| TERMINADO : ⠀
+    MATERIA_PRIMA }|--o{ ORDEN_DE_COMPRA : ⠀
+    PROVEEDOR ||--o{ ORDEN_DE_COMPRA : ⠀
+        </div>
+        </div>
         <figcaption>Figura 35 - Mapa de Información Preliminar: Sistema Gestión de Stock</figcaption>
     </figure>
     <p><strong>Diccionario de datos</strong></p>
